@@ -1,11 +1,11 @@
-Ryan Bates Dot Files
+Bodo Tasche Dot Files
 
-These are config files to set up a system the way I like it.
+These are config files to set up a system the way I like it. This is a Fork of dotfiles by Ryan Bates
 
 
 Installation
 
-  git clone git://github.com/ryanb/dotfiles ~/.dotfiles
+  git clone git://github.com/bodo/dotfiles ~/.dotfiles
   cd ~/.dotfiles
   rake install
   # edit ~/.gitconfig and personalize it

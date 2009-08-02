@@ -1,10 +1,15 @@
 require 'rake'
+require 'ftools'
 
 desc "install the dot files into user's home directory"
 task :install do
   replace_all = false
   Dir['*'].each do |file|
     next if %w[Rakefile README LICENSE].include? file
+    
+    puts "----------"
+    puts file
+    puts "----------"
     
     if File.exist?(File.join(ENV['HOME'], ".#{file}"))
       if replace_all
@@ -13,9 +18,11 @@ task :install do
         print "overwrite ~/.#{file}? [ynaq] "
         case $stdin.gets.chomp
         when 'a'
+          remove_if_directory(File.join(ENV['HOME'], ".#{file}"))
           replace_all = true
           replace_file(file)
         when 'y'
+          remove_if_directory(File.join(ENV['HOME'], ".#{file}"))
           replace_file(file)
         when 'q'
           exit
@@ -26,6 +33,12 @@ task :install do
     else
       link_file(file)
     end
+  end
+end
+
+def remove_if_directory(file)
+  if (File.directory? file)
+    FileUtils.rm_rf file
   end
 end
 
