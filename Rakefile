@@ -7,10 +7,6 @@ task :install do
   Dir['*'].each do |file|
     next if %w[Rakefile README LICENSE].include? file
     
-    puts "----------"
-    puts file
-    puts "----------"
-    
     if File.exist?(File.join(ENV['HOME'], ".#{file}"))
       if replace_all
         replace_file(file)
@@ -18,11 +14,9 @@ task :install do
         print "overwrite ~/.#{file}? [ynaq] "
         case $stdin.gets.chomp
         when 'a'
-          remove_if_directory(File.join(ENV['HOME'], ".#{file}"))
           replace_all = true
           replace_file(file)
         when 'y'
-          remove_if_directory(File.join(ENV['HOME'], ".#{file}"))
           replace_file(file)
         when 'q'
           exit
@@ -43,6 +37,7 @@ def remove_if_directory(file)
 end
 
 def replace_file(file)
+  remove_if_directory(File.join(ENV['HOME'], ".#{file}"))
   system %Q{rm "$HOME/.#{file}"}
   link_file(file)
 end
