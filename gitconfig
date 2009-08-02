@@ -8,7 +8,7 @@
 	status = auto
 	branch = auto
 [core]
-	excludesfile = /Users/rbates/.gitignore
+	excludesfile = /Users/bodo/.gitignore
 	editor = mate -w
 [apply]
 	whitespace = nowarn
