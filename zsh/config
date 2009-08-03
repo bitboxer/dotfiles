@@ -14,6 +14,8 @@ export M2_HOME=/usr/local/apache-maven
 export M2=$M2_HOME/bin
 export PATH=$M2:$PATH
 
+export JDK_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/Home
+
 fpath=(~/.zsh/functions $fpath)
 
 autoload -U ~/.zsh/functions/*(:t)
