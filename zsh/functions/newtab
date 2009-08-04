@@ -22,5 +22,5 @@ on do_submenu(app_name, menu_name, menu_item, submenu_item)
 		end tell
 end do_submenu
 
-do_submenu("Terminal", "Shell", "New Tab", 1)
+do_submenu("Terminal", "Shell", "Neuer Tab", 1)
 EOF
