@@ -9,6 +9,5 @@
 	branch = auto
 [core]
 	excludesfile = ~/.gitignore
-	editor = mate -w
 [apply]
 	whitespace = nowarn
