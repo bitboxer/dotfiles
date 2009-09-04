@@ -1,21 +1,3 @@
-" Copied from $VIMRUNTIME/vimrc_example.vim
-
-" An example for a vimrc file.
-"
-" Maintainer: Bram Moolenaar <Bram@vim.org>
-" Last change:  2002 Sep 19
-"
-" To use it, copy it to
-"     for Unix and OS/2:  ~/.vimrc
-"       for Amiga:  s:.vimrc
-"  for MS-DOS and Win32:  $VIM\_vimrc
-"     for OpenVMS:  sys$login:.vimrc
-
-" When started as "evim", evim.vim will already have done these settings.
-if v:progname =~? "evim"
-  finish
-endif
-
 " Use Vim settings, rather then Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible
@@ -23,27 +5,12 @@ set nocompatible
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
-if has("vms")
-  set nobackup    " do not keep a backup file, use versions instead
-else
-  set backup    " keep a backup file
-endif
-set history=50    " keep 50 lines of command line history
-set ruler   " show the cursor position all the time
-set showcmd   " display incomplete commands
-set incsearch   " do incremental searching
-"set number    " show line number
-set tabstop=2
-set shiftwidth=2
-set expandtab
-set textwidth=80
-set background=dark
-color desert
-
-set gfn=Monaco:h14  " setting to a good Mac OS X font
-
-" For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
-" let &guioptions = substitute(&guioptions, "t", "", "g")
+set nobackup
+set nowritebackup
+set history=50		" keep 50 lines of command line history
+set ruler		" show the cursor position all the time
+set showcmd		" display incomplete commands
+set incsearch		" do incremental searching
 
 " Don't use Ex mode, use Q for formatting
 map Q gq
@@ -54,7 +21,7 @@ map Q gq
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
-if &t_Co > 2 || has("gui_running")
+if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
   syntax on
   set hlsearch
 endif
@@ -82,12 +49,128 @@ if has("autocmd")
     \ if line("'\"") > 0 && line("'\"") <= line("$") |
     \   exe "normal g`\"" |
     \ endif
-  autocmd BufRead *.rhtml set filetype=eruby
 
   augroup END
 
 else
 
-  set autoindent    " always set autoindenting on
+  set autoindent		" always set autoindenting on
 
 endif " has("autocmd")
+
+" if has("folding")
+  " set foldenable
+  " set foldmethod=syntax
+  " set foldlevel=1
+  " set foldnestmax=2
+  " set foldtext=strpart(getline(v:foldstart),0,50).'\ ...\ '.substitute(getline(v:foldend),'^[\ #]*','','g').'\ '
+" endif
+
+" Softtabs, 2 spaces
+set tabstop=2
+set shiftwidth=2
+set expandtab
+
+" Always display the status line
+set laststatus=2
+
+" \ is the leader character
+let mapleader = "\\"
+
+" Edit the README_FOR_APP (makes :R commands work)
+map <Leader>R :e doc/README_FOR_APP<CR>
+
+" Leader shortcuts for Rails commands
+map <Leader>m :Rmodel 
+map <Leader>c :Rcontroller 
+map <Leader>v :Rview 
+map <Leader>u :Runittest 
+map <Leader>f :Rfunctionaltest 
+map <Leader>tm :RTmodel 
+map <Leader>tc :RTcontroller 
+map <Leader>tv :RTview 
+map <Leader>tu :RTunittest 
+map <Leader>tf :RTfunctionaltest 
+map <Leader>sm :RSmodel 
+map <Leader>sc :RScontroller 
+map <Leader>sv :RSview 
+map <Leader>su :RSunittest 
+map <Leader>sf :RSfunctionaltest 
+
+" Hide search highlighting
+map <Leader>h :set invhls <CR>
+
+" Opens an edit command with the path of the currently edited file filled in
+" Normal mode: <Leader>e
+map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
+
+" Opens a tab edit command with the path of the currently edited file filled in
+" Normal mode: <Leader>t
+map <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
+
+" Inserts the path of the currently edited file into a command
+" Command mode: Ctrl+P
+cmap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
+
+" Maps autocomplete to tab
+imap <Tab> <C-N>
+
+" Duplicate a selection
+" Visual mode: D
+vmap D y'>p
+
+" For Haml
+au! BufRead,BufNewFile *.haml         setfiletype haml
+
+" No Help, please
+nmap <F1> <Esc>
+
+" Press ^F from insert mode to insert the current file name
+imap <C-F> <C-R>=expand("%")<CR>
+
+" Press Shift+P while in visual mode to replace the selection without
+" overwriting the default register
+vmap P p :call setreg('"', getreg('0')) <CR>
+
+" Display extra whitespace
+set list listchars=tab:»·,trail:·
+
+" Edit routes
+command! Rroutes :e config/routes.rb
+command! RTroutes :tabe config/routes.rb
+
+" Local config
+if filereadable(".vimrc.local")
+  source .vimrc.local
+endif
+
+" Use Ack instead of Grep when available
+if executable("ack")
+  set grepprg=ack\ -H\ --nogroup\ --nocolor
+endif
+
+" Color scheme
+colorscheme wombat
+highlight NonText guibg=#060606
+highlight Folded  guibg=#0A0A0A guifg=#9090D0
+
+" Numbers
+set number
+set numberwidth=5
+
+" Snippets are activated by Shift+Tab
+let g:snippetsEmu_key = "<S-Tab>"
+
+" Tab completion options
+" (only complete to the longest unambiguous match, and show a menu)
+set completeopt=longest,menu
+set wildmode=list:longest,list:full
+set complete=.,t
+
+" case only matters with mixed case expressions
+set ignorecase
+set smartcase
+
+" Tags
+let g:Tlist_Ctags_Cmd="ctags --exclude='*.js'"
+
