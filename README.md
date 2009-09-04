@@ -1,8 +1,10 @@
-= Bodo Tasche Dot Files =
+Bodo Tasche Dot Files
+=====================
 
 These are config files to set up a system the way I like it. This is a Fork of dotfiles by Ryan Bates
 
-= Installation =
+Installation
+------------
 
   git clone git://github.com/bodo/dotfiles ~/.dotfiles
   cd ~/.dotfiles
@@ -10,7 +12,8 @@ These are config files to set up a system the way I like it. This is a Fork of d
   # edit ~/.gitconfig and personalize it
 
 
-= Environment =
+Environment
+-----------
 
 I am running on Mac OS X, but it will likely work on Linux as well with 
 minor fiddling. I primarily use zsh. If you would like to switch to zsh, 
@@ -19,7 +22,8 @@ you can do so with the following command.
   chsh -s /bin/zsh
 
 
-= Features =
+Features
+--------
 
 I normally place all of my coding projects in ~/code, so this directory 
 can easily be accessed (and tab completed) with the "c" command.
