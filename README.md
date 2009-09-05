@@ -77,7 +77,7 @@ See irbrc and railsrc files for details.
 
 I added the vim-config Files of [Joe Ferris](http://github.com/jferris/config_files) . 
 The vim config includes the rails.vim Plugin for vim and some other tweaks to make
-vim the best rails command line editor on the planet :) . Try out :Rcon<tab> in vim when
+vim the best rails command line editor on the planet :) . Try out `:Rcon<tab>` in vim when
 opening a rails project.
 
 The color scheme mimics the railscast scheme when in GUI-Mode (e.g. when using 
