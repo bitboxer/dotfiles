@@ -174,3 +174,7 @@ set smartcase
 " Tags
 let g:Tlist_Ctags_Cmd="ctags --exclude='*.js'"
 
+augroup mkd
+  autocmd BufRead *.mkd  set ai formatoptions=tcroqn2 comments=n:>
+  autocmd BufRead *.md  set ai formatoptions=tcroqn2 comments=n:>
+augroup END
