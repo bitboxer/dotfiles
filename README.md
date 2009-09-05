@@ -8,7 +8,6 @@ of [dotfiles](http://github.com/ryanb/dotfiles) by [Ryan Bates](http://railscast
     git clone git://github.com/bodo/dotfiles ~/.dotfiles
     cd ~/.dotfiles
     rake install
-    # edit ~/.gitconfig and personalize it
 
 ## Environment ##
 
