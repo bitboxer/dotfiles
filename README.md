@@ -68,10 +68,10 @@ If there are some shell configuration settings which you want secure or
 specific to one system, place it into a `~/.localrc` file. This will be 
 loaded automatically if it exists.
 
-There are several features enabled in Ruby's irb including history, 
-completion and auto-indent. Many convenience methods are added as well 
-such as "ri" which can be used to get inline documentation in IRB. 
-See irbrc and railsrc files for details.
+There are several features enabled in Ruby's irb including history and 
+completion. Many convenience methods are added as well 
+such as `ri` which can be used to get inline documentation in IRB. 
+See `irbrc` and `railsrc` files for details.
 
 ### Vim config ###
 
