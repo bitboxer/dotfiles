@@ -1,7 +1,7 @@
 # Bodo Tasche Dot Files #
 
-These are config files to set up a system the way I like it. This is a Fork 
-of dotfiles by Ryan Bates
+These are config files to set up a system the way I like it. This is a fork 
+of [dotfiles](http://github.com/ryanb/dotfiles) by [Ryan Bates](http://railscasts.com/).
 
 ## Installation ##
 
