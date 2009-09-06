@@ -1,6 +1,9 @@
 # Colors for the prompt
 autoload -U colors && colors
 
+fpath=(~/.zsh/functions $fpath)
+autoload -U ~/.zsh/functions/*(:t)
+
 if [[ -n $SSH_CONNECTION ]]; then
   export PS1="%{$fg[green]%}%n@%m:%{$reset_color%}% %3~$(git_info_for_prompt)% # "
 else
@@ -18,15 +21,11 @@ esac
 
 export GREP_OPTIONS="--exclude=\*.svn\*"
 
-fpath=(~/.zsh/functions $fpath)
-
-autoload -U ~/.zsh/functions/*(:t)
-
 HISTFILE=~/.zsh_history
 HISTSIZE=1000
 SAVEHIST=1000
 
-setopt NO_BG_NICE # don't nice background tasks
+setopt NO_BG_NICE # do not nice background tasks
 setopt NO_HUP
 setopt NO_LIST_BEEP
 setopt LOCAL_OPTIONS # allow functions to have local options
@@ -41,7 +40,7 @@ setopt IGNORE_EOF
 
 setopt APPEND_HISTORY # adds history
 setopt INC_APPEND_HISTORY SHARE_HISTORY  # adds history incrementally and share it across sessions
-setopt HIST_IGNORE_ALL_DUPS  # don't record dupes in history
+setopt HIST_IGNORE_ALL_DUPS  # do not record dupes in history
 setopt HIST_REDUCE_BLANKS
 
 zle -N newtab
