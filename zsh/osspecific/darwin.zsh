@@ -1,4 +1,5 @@
 alias ls="ls -FG"
+alias oa='open -a' # App Launcher
 
 export EDITOR='mate -w'
 
