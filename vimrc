@@ -133,12 +133,16 @@ imap <C-F> <C-R>=expand("%")<CR>
 vmap P p :call setreg('"', getreg('0')) <CR>
 
 " Display extra whitespace
-set list listchars=tab:»·,trail:·
-
+if v:version < 702
+  set list listchars=tab:>-,trail:-
+else
+  set list listchars=tab:»·,trail:·
+endif
+    
 " Edit routes
 command! Rroutes :e config/routes.rb
 command! RTroutes :tabe config/routes.rb
-
+   
 " Local config
 if filereadable(".vimrc.local")
   source .vimrc.local
