@@ -3,7 +3,6 @@ alias ..='cd ..'
 alias ...='cd ../..'
 
 # ls
-alias ls="ls -FG"
 alias l="ls -lAh"
 alias ll="ls -l"
 alias la='ls -A'

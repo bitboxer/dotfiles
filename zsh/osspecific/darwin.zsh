@@ -1,3 +1,5 @@
+alias ls="ls -FG"
+
 export EDITOR='mate -w'
 
 export PATH="~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/git/bin:$PATH"
