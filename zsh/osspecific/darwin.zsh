@@ -3,7 +3,7 @@ alias oa='open -a' # App Launcher
 
 export EDITOR='mate -w'
 
-export PATH="~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/git/bin:$PATH"
+export PATH="~/bin:/opt/local/bin/:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/git/bin:$PATH"
 export MANPATH="/usr/local/man:/usr/local/mysql/man:/usr/local/git/man:$MANPATH"
 
 export M2_HOME=/usr/local/apache-maven
