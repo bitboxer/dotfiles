@@ -3,7 +3,6 @@ alias ..='cd ..'
 alias ...='cd ../..'
 
 # ls
-alias ls="ls -FG"
 alias l="ls -lAh"
 alias ll="ls -l"
 alias la='ls -A'
@@ -35,6 +34,3 @@ alias %=' '
 # Fix for the c and h commands. These shouldn't get zsh correction
 alias c='nocorrect c'
 alias h='nocorrect h'
-
-# Other stuff
-alias oa='open -a' # App Launcher
