@@ -11,3 +11,6 @@ export M2=$M2_HOME/bin
 export PATH=$M2:$PATH
 
 export JDK_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/Home
+
+export LDFLAGS=-L/opt/local/lib
+export CFLAGS=-I/opt/local/include
