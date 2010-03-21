@@ -2,23 +2,20 @@
     name = <%= print("Your Name: "); STDOUT.flush; STDIN.gets.chomp %>
     email = <%= print("Your Email: "); STDOUT.flush; STDIN.gets.chomp %>
 [alias]
-	co = checkout
+    co = checkout
 [color]
-	diff = auto
-	status = auto
-	branch = auto
+    diff = auto
+    status = auto
+    branch = auto
 [core]
-	excludesfile = <%= ENV['HOME'] %>/.gitignore
+    excludesfile = <%= ENV['HOME'] %>/.gitignore
 [apply]
-  whitespace = nowarn
+    whitespace = nowarn
 <% 
   print("Your Github Username (Press enter to ignore Github) : ")
   STDOUT.flush;
   github = STDIN.gets.chomp;
-  if (github.length > 0)
-%>
-[github]
-  user = <%= github %>
-<%
-  end
-%>
+  if (github.length > 0) 
+%>[github]
+    user = <%= github %>
+<% end %>
