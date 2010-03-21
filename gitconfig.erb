@@ -10,4 +10,15 @@
 [core]
 	excludesfile = <%= ENV['HOME'] %>/.gitignore
 [apply]
-	whitespace = nowarn
+  whitespace = nowarn
+<% 
+  print("Your Github Username (Press enter to ignore Github) : ")
+  STDOUT.flush;
+  github = STDIN.gets.chomp;
+  if (github.length > 0)
+%>
+[github]
+  user = <%= github %>
+<%
+  end
+%>
