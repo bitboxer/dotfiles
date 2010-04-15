@@ -1,0 +1,8 @@
+if [ ! $1 ]; then
+    echo "Usage: gemmate <gem>"
+else
+    local gemdir="$(gem environment gemdir)"
+    local foundgem="$(ls $gemdir/gems | grep $1 | sort -r | head -1)"
+    echo "open $gemdir/gems/$foundgem"
+    mate "$gemdir/gems/$foundgem"
+fi
