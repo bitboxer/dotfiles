@@ -36,15 +36,15 @@ Tab completion is also added to rake and cap commands:
     rake db:mi<tab>
     cap de<tab>
 
+To speed things up, the results are cached in local `.rake_tasks~` and 
+`.cap_tasks~`. It is smart enough to expire the cache automatically in 
+most cases, but you can simply remove the files to flush the cache.
+
 Opening the source for a gem file can be done using the "gemmate" command.
 
     gemmate rail<tab>
     
-If no version is given, the latest gem will be opend in Textmate
-
-To speed things up, the results are cached in local `.rake_tasks~` and 
-`.cap_tasks~`. It is smart enough to expire the cache automatically in 
-most cases, but you can simply remove the files to flush the cache.
+If no version is given, the latest gem will be opened in Textmate
 
 There are a few key bindings set. Many of these require option to be
 set as the meta key. Option-left/right arrow will move cursor by word, 
