@@ -38,7 +38,7 @@ Tab completion is also added to rake and cap commands:
 
 Opening the source for a gem file can be done using the "gemmate" command.
 
-    gemmate rais<tab>
+    gemmate rail<tab>
     
 If no version is given, the latest gem will be opend in Textmate
 
