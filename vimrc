@@ -26,6 +26,9 @@ if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
   set hlsearch
 endif
 
+" Switch wrap off for everything
+set nowrap
+
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
 
@@ -34,6 +37,10 @@ if has("autocmd")
   " 'cindent' is on in C files, etc.
   " Also load indent files, to automatically do language-dependent indenting.
   filetype plugin indent on
+
+  " Set File type to 'text' for files ending in .txt
+  autocmd BufNewFile,BufRead *.txt setfiletype text
+  autocmd FileType text,markdown,html,xhtml,eruby setlocal wrap linebreak nolist
 
   " Put these in an autocmd group, so that we can delete them easily.
   augroup vimrcEx
