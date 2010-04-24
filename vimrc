@@ -184,3 +184,8 @@ set smartcase
 
 " Tags
 let g:Tlist_Ctags_Cmd="ctags --exclude='*.js'"
+
+let g:fuf_splitPathMatching=1
+
+" Open URL
+command -bar -nargs=1 OpenURL :!open <args>
