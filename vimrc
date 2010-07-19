@@ -65,7 +65,6 @@ if has("autocmd")
     \   exe "normal g`\"" |
     \ endif
 
-
   " Automatically load .vimrc source when saved
   autocmd BufWritePost .vimrc source $MYVIMRC
 
@@ -219,7 +218,6 @@ function! OpenURL()
   endif
 endfunction
 map <Leader>w :call OpenURL()<CR>
-
 
 " don't warn if switching buffers with unsaved changes
 set hidden
