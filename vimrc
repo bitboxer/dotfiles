@@ -116,7 +116,7 @@ map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 map <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
 
 " Command T Plugin
-map <Leader>o :CommandT<CR> 
+map <Leader>o :CommandT<CR>
 
 " Nerd Tree On/Off
 map <F2> :NERDTreeToggle<CR>
