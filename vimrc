@@ -82,7 +82,7 @@ set expandtab
 set laststatus=2
 
 " \ is the leader character
-let mapleader = "\\"
+let mapleader = ","
 
 " Edit the README_FOR_APP (makes :R commands work)
 map <Leader>R :e doc/README_FOR_APP<CR>
@@ -114,6 +114,9 @@ map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 " Opens a tab edit command with the path of the currently edited file filled in
 " Normal mode: <Leader>t
 map <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
+
+" Command T Plugin
+map <Leader>o :CommandT<CR> 
 
 " Inserts the path of the currently edited file into a command
 " Command mode: Ctrl+P
