@@ -41,6 +41,9 @@ function! s:Ack(cmd, args)
         botright copen
     endif
     redraw!
+
+    exec "nnoremap <silent> <buffer> q :ccl<CR>"  
+  
 endfunction
 
 function! s:AckFromSearch(cmd, args)
