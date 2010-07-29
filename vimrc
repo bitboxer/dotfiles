@@ -118,6 +118,9 @@ map <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
 " Command T Plugin
 map <Leader>o :CommandT<CR> 
 
+" Nerd Tree On/Off
+map <F2> :NERDTreeToggle<CR>
+
 " Inserts the path of the currently edited file into a command
 " Command mode: Ctrl+P
 cmap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
