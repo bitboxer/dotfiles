@@ -125,8 +125,8 @@ map <F2> :NERDTreeToggle<CR>
 " Command mode: Ctrl+P
 cmap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
 
-" Maps autocomplete to tab
-imap <Tab> <C-N>
+" Maps autocomplete to shift+tab
+imap <S-Tab> <C-N>
 
 " Duplicate a selection
 " Visual mode: D
@@ -149,9 +149,10 @@ vmap P p :call setreg('"', getreg('0')) <CR>
 if v:version < 702
   set list listchars=tab:>-,trail:-
 else
-  set list listchars=tab:»·,trail:·
+  set list
+  set listchars=tab:▸\ ,eol:¬,trail:-
 endif
-    
+
 " Edit routes
 command! Rroutes :e config/routes.rb
 command! RTroutes :tabe config/routes.rb
@@ -168,7 +169,9 @@ endif
 
 " Color scheme
 colorscheme railscasts
-highlight NonText guibg=#060606
+"Invisible character colors
+highlight NonText guifg=#4a4a59 guibg=NONE
+highlight SpecialKey guifg=#4a4a59 guibg=NONE
 highlight Folded  guibg=#0A0A0A guifg=#9090D0
 
 " Numbers
@@ -176,7 +179,7 @@ set number
 set numberwidth=5
 
 " Snippets are activated by Shift+Tab
-let g:snippetsEmu_key = "<S-Tab>"
+let g:snippetsEmu_key = "<S-Space>"
 
 " Tab completion options
 " (only complete to the longest unambiguous match, and show a menu)
