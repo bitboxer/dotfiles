@@ -81,7 +81,7 @@ set expandtab
 " Always display the status line
 set laststatus=2
 
-" \ is the leader character
+" , is the leader character
 let mapleader = ","
 
 " Edit the README_FOR_APP (makes :R commands work)
@@ -104,6 +104,10 @@ map <Leader>sv :RSview
 map <Leader>su :RSunittest 
 map <Leader>sf :RSfunctionaltest 
 
+" Edit routes
+command! Rroutes :e config/routes.rb
+command! RTroutes :tabe config/routes.rb
+   
 " Hide search highlighting
 map <Leader>h :set invhls <CR>
 
@@ -153,10 +157,6 @@ else
   set listchars=tab:▸\ ,eol:¬,trail:-
 endif
 
-" Edit routes
-command! Rroutes :e config/routes.rb
-command! RTroutes :tabe config/routes.rb
-   
 " Local config
 if filereadable(".vimrc.local")
   source .vimrc.local
@@ -178,7 +178,7 @@ highlight Folded  guibg=#0A0A0A guifg=#9090D0
 set number
 set numberwidth=5
 
-" Snippets are activated by Shift+Tab
+" Snippets are activated by Ctrl-Y
 let g:snippetsEmu_key = "<C-Y>"
 
 " Tab completion options
