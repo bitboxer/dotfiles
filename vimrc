@@ -179,7 +179,7 @@ set number
 set numberwidth=5
 
 " Snippets are activated by Shift+Tab
-let g:snippetsEmu_key = "<S-Space>"
+let g:snippetsEmu_key = "<C-Y>"
 
 " Tab completion options
 " (only complete to the longest unambiguous match, and show a menu)
