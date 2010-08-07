@@ -202,3 +202,8 @@ command -bar -nargs=1 OpenURL :!open <args>
 " don't warn if switching buffers with unsaved changes
 set hidden
 
+" MacVim specific code
+if has("gui_macvim")
+  " select text with shift 
+  let macvim_hig_shift_movement = 1
+endif
