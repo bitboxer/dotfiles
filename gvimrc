@@ -3,7 +3,7 @@ macm Window.Previous\ Tab  key=<D-S-Left>
 macm Window.Next\ Tab    key=<D-S-Right>
 
 " Default window size
-set lines=60 columns=150
+set lines=50 columns=140
 
 " Hide toolbar
 set guioptions-=T
