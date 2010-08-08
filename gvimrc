@@ -6,6 +6,6 @@ macm Window.Next\ Tab    key=<D-S-Right>
 set lines=60 columns=150
 
 " Hide toolbar
-" set guioptions-=T
+set guioptions-=T
 
 set guifont=DejaVu\ Sans\ Mono:h13
