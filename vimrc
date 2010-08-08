@@ -40,6 +40,7 @@ if has("autocmd")
 
   " Set File type to 'text' for files ending in .txt
   autocmd BufNewFile,BufRead *.txt setfiletype text
+  " Enable soft-wrapping for text files
   autocmd FileType text,markdown,html,xhtml,eruby setlocal wrap linebreak nolist
 
   " Put these in an autocmd group, so that we can delete them easily.
@@ -56,6 +57,10 @@ if has("autocmd")
     \ if line("'\"") > 0 && line("'\"") <= line("$") |
     \   exe "normal g`\"" |
     \ endif
+
+
+  " Automatically load .vimrc source when saved
+  autocmd BufWritePost .vimrc source $MYVIMRC
 
   augroup END
 
@@ -122,6 +127,10 @@ map <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
 " Command T Plugin
 map <Leader>o :CommandT<CR>
 
+" Move lines up and down
+map <C-J> :m +1 <CR>
+map <C-K> :m -2 <CR>
+
 " Nerd Tree On/Off
 map <F2> :NERDTreeToggle<CR>
 
@@ -178,9 +187,6 @@ highlight Folded  guibg=#0A0A0A guifg=#9090D0
 set number
 set numberwidth=5
 
-" Snippets are activated by Ctrl-Y
-let g:snippetsEmu_key = "<C-Y>"
-
 " Tab completion options
 " (only complete to the longest unambiguous match, and show a menu)
 set completeopt=longest,menu
@@ -191,13 +197,19 @@ set complete=.,t
 set ignorecase
 set smartcase
 
-" Tags
-let g:Tlist_Ctags_Cmd="ctags --exclude='*.js'"
-
-let g:fuf_splitPathMatching=1
-
 " Open URL
 command -bar -nargs=1 OpenURL :!open <args>
+function! OpenURL()
+  let s:uri = matchstr(getline("."), '[a-z]*:\/\/[^ >,;:]*')
+  echo s:uri
+  if s:uri != ""
+	  exec "!open \"" . s:uri . "\""
+  else
+	  echo "No URI found in line."
+  endif
+endfunction
+map <Leader>w :call OpenURL()<CR>
+
 
 " don't warn if switching buffers with unsaved changes
 set hidden
