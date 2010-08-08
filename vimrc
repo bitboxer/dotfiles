@@ -139,7 +139,7 @@ map <F2> :NERDTreeToggle<CR>
 cmap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
 
 " Maps autocomplete to shift+tab
-imap <S-Tab> <C-N>
+imap <S-Space> <C-N>
 
 " Duplicate a selection
 " Visual mode: D
