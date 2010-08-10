@@ -99,11 +99,11 @@ let mapleader = ","
 map <Leader>R :e doc/README_FOR_APP<CR>
 
 " Leader shortcuts for Rails commands
-map <Leader>m :Rmodel 
-map <Leader>c :Rcontroller 
-map <Leader>v :Rview 
-map <Leader>u :Runittest 
-map <Leader>f :Rfunctionaltest 
+map <Leader>m :REmodel 
+map <Leader>c :REcontroller 
+map <Leader>v :REview 
+map <Leader>u :REunittest 
+map <Leader>f :REfunctionaltest 
 map <Leader>tm :RTmodel 
 map <Leader>tc :RTcontroller 
 map <Leader>tv :RTview 
