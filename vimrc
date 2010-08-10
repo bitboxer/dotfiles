@@ -5,8 +5,8 @@ set nocompatible
 " Call pathogen. This allowes plugins to be installed in seperate
 " bundle-directories
 filetype off 
-call pathogen#helptags()
 call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
