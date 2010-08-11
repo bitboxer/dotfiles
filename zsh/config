@@ -55,3 +55,6 @@ bindkey '^?' backward-delete-char
 
 # Light Blue for directories
 export LSCOLORS='Gxfxcxdxbxegedabagacad'
+
+# Emacs keyboard for zsh line editor ( ctrl + r for search in buffer )
+bindkey -e
