@@ -144,9 +144,6 @@ map <F2> :NERDTreeToggle<CR>
 " Command mode: Ctrl+P
 cmap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
 
-" Maps autocomplete to shift+tab
-imap <S-Space> <C-N>
-
 " Duplicate a selection
 " Visual mode: D
 vmap D y'>p
@@ -198,6 +195,9 @@ set numberwidth=5
 set completeopt=longest,menu
 set wildmode=list:longest,list:full
 set complete=.,t
+
+" Maps autocomplete to shift+tab
+imap <C-Space> <C-N>
 
 " case only matters with mixed case expressions
 set ignorecase
