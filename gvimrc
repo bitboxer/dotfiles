@@ -8,4 +8,4 @@ set lines=50 columns=140
 " Hide toolbar
 set guioptions-=T
 
-set guifont=DejaVu\ Sans\ Mono:h13
+set guifont=Menlo-Regular:h13
