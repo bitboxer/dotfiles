@@ -5,7 +5,7 @@ of [dotfiles](http://github.com/ryanb/dotfiles) by [Ryan Bates](http://railscast
 
 ## Installation ##
 
-    git clone git://github.com/bodo/dotfiles ~/.dotfiles
+    git clone git://github.com/bitboxer/dotfiles ~/.dotfiles
     cd ~/.dotfiles
     rake install
 
