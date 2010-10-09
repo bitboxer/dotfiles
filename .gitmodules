@@ -1,0 +1,36 @@
+[submodule "vim/bundle/delimitMate"]
+	path = vim/bundle/delimitMate
+	url = http://github.com/Raimondi/delimitMate.git
+[submodule "vim/bundle/vim-rails"]
+	path = vim/bundle/vim-rails
+	url = http://github.com/tpope/vim-rails.git
+[submodule "vim/bundle/ack"]
+	path = vim/bundle/ack
+	url = http://github.com/mileszs/ack.vim.git
+[submodule "vim/bundle/command-t"]
+	path = vim/bundle/command-t
+	url = http://github.com/wincent/Command-T.git
+[submodule "vim/bundle/nerdtree"]
+	path = vim/bundle/nerdtree
+	url = http://github.com/scrooloose/nerdtree.git
+[submodule "vim/bundle/nerdcommenter"]
+	path = vim/bundle/nerdcommenter
+	url = http://github.com/scrooloose/nerdcommenter.git
+[submodule "vim/bundle/vim-ragtag"]
+	path = vim/bundle/vim-ragtag
+	url = http://github.com/tpope/vim-ragtag.git
+[submodule "vim/bundle/snipmate"]
+	path = vim/bundle/snipmate
+	url = http://github.com/msanders/snipmate.vim.git
+[submodule "vim/bundle/vim-surround"]
+	path = vim/bundle/vim-surround
+	url = http://github.com/tpope/vim-surround.git
+[submodule "vim/bundle/vim-markdown"]
+	path = vim/bundle/vim-markdown
+	url = http://github.com/hallison/vim-markdown.git
+[submodule "vim/bundle/textile"]
+	path = vim/bundle/textile
+	url = http://github.com/timcharper/textile.vim.git
+[submodule "vim/bundle/vim-rake"]
+	path = vim/bundle/vim-rake
+	url = http://github.com/tpope/vim-surround.git
