@@ -12,6 +12,7 @@ call pathogen#helptags()
 set backspace=indent,eol,start
 
 set nobackup
+set noswapfile
 set nowritebackup
 set history=50		" keep 50 lines of command line history
 set ruler		" show the cursor position all the time
