@@ -14,10 +14,13 @@ set backspace=indent,eol,start
 set nobackup
 set noswapfile
 set nowritebackup
-set history=50		" keep 50 lines of command line history
+set history=1000	" keep 100 lines of command line history
+set undolevels=1000      " use many muchos levels of undo
 set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
 set incsearch		" do incremental searching
+set title " change the terminal's title
+set wildignore=*.swp,*.bak,*.pyc,*.class
 
 " Don't use Ex mode, use Q for formatting
 map Q gq
@@ -87,7 +90,14 @@ endif " has("autocmd")
 " Softtabs, 2 spaces
 set tabstop=2
 set shiftwidth=2
+set shiftround    " use multiple of shiftwidth when indenting with '<' and '>'
+set showmatch     " set show matching parenthesis
 set expandtab
+set copyindent
+set smarttab      " insert tabs on the start of a line according to
+                  "    shiftwidth, not tabstop
+
+
 
 " Always display the status line
 set laststatus=2
@@ -169,7 +179,7 @@ if v:version < 702
   set list listchars=tab:>-,trail:-
 else
   set list
-  set listchars=tab:▸\ ,eol:¬,trail:-
+  set listchars=tab:▸\ ,eol:¬,trail:.,extends:#,nbsp:.
 endif
 
 " Local config
