@@ -45,6 +45,9 @@ setopt HIST_REDUCE_BLANKS
 
 zle -N newtab
 
+# Emacs keyboard for zsh line editor ( ctrl + r for search in buffer )
+bindkey -e
+
 bindkey '^[^[[D' backward-word
 bindkey '^[^[[C' forward-word
 bindkey '^[[5D' beginning-of-line
@@ -56,5 +59,3 @@ bindkey '^?' backward-delete-char
 # Light Blue for directories
 export LSCOLORS='Gxfxcxdxbxegedabagacad'
 
-# Emacs keyboard for zsh line editor ( ctrl + r for search in buffer )
-bindkey -e
