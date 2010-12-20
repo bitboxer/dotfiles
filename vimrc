@@ -238,5 +238,16 @@ if has("gui_macvim")
   let macvim_hig_shift_movement = 1
 endif
 
+" Make sure xa0 (alt + space) is automatically changed to a normal whitespace
+" " if pressed accidentally while in insert mode (happens on Mac when alt
+" " doesn't send escape). filereadable() is necessary for Leopard were 'mac'
+" is
+" " no longer set on the console.
+if has('mac')
+  inoremap <Char-0xa0> <Space>
+endif
+
 " Ignore Lusty Explorer Warning
 let g:LustyJugglerSuppressRubyWarning = 1
+
+set wildignore+=/Users/btasche/tr/ruby/ror/putpat/public/assets/**
