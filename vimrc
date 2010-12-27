@@ -240,3 +240,5 @@ endif
 
 " Ignore Lusty Explorer Warning
 let g:LustyJugglerSuppressRubyWarning = 1
+
+runtime macros/matchit.vim
