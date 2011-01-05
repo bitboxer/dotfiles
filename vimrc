@@ -252,3 +252,8 @@ let g:LustyJugglerSuppressRubyWarning = 1
 
 runtime macros/matchit.vim
 set wildignore+=/Users/btasche/tr/ruby/ror/putpat/public/assets/**
+
+" Include user's local vim config
+if filereadable(expand("~/.vimrc.local"))
+  source ~/.vimrc.local
+endif

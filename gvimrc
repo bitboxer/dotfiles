@@ -14,6 +14,11 @@ if has("gui_macvim")
   " Fullscreen takes up entire screen
   set fuoptions=maxhorz,maxvert
 
+  " Command-T for CommandT
+  macmenu &File.New\ Tab key=<nop>
+  map <D-t> :CommandT<CR>
+  imap <D-t> <Esc>:CommandT<CR>"
+
   " Command-Shift-F for Ack
   macmenu Window.Toggle\ Full\ Screen\ Mode key=<nop>
   map <D-F> :Ack<space>
@@ -117,6 +122,11 @@ function Remove(file)
   call s:UpdateNERDTree()
 endfunction
 
+function Mkdir(file)
+  execute "!mkdir " . a:file
+  call s:UpdateNERDTree()
+endfunction
+
 function Edit(file)
   if exists("b:NERDTreeRoot")
     wincmd p
@@ -140,6 +150,7 @@ call s:DefineCommand("cd", "ChangeDirectory")
 call s:DefineCommand("touch", "Touch")
 call s:DefineCommand("rm", "Remove")
 call s:DefineCommand("e", "Edit")
+call s:DefineCommand("mkdir", "MkDir")
 
 " Include user's local vim config
 if filereadable(expand("~/.gvimrc.local"))

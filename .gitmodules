@@ -1,6 +1,3 @@
-[submodule "vim/bundle/delimitMate"]
-	path = vim/bundle/delimitMate
-	url = http://github.com/Raimondi/delimitMate.git
 [submodule "vim/bundle/vim-rails"]
 	path = vim/bundle/vim-rails
 	url = http://github.com/tpope/vim-rails.git
