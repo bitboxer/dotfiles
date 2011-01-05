@@ -17,7 +17,7 @@ if has("gui_macvim")
   " Command-T for CommandT
   macmenu &File.New\ Tab key=<nop>
   map <D-t> :CommandT<CR>
-  imap <D-t> <Esc>:CommandT<CR>"
+  imap <D-t> <Esc>:CommandT<CR>
 
   " Command-Shift-F for Ack
   macmenu Window.Toggle\ Full\ Screen\ Mode key=<nop>
@@ -30,7 +30,19 @@ endif
 " Project Tree
 autocmd VimEnter * call s:CdIfDirectory(expand("<amatch>"))
 autocmd FocusGained * call s:UpdateNERDTree()
+autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
 
+" Close all open buffers on entering a window if the only
+" buffer that's left is the NERDTree buffer
+function s:CloseIfOnlyNerdTreeLeft()
+  if exists("t:NERDTreeBufName")
+    if bufwinnr(t:NERDTreeBufName) != -1
+      if winnr("$") == 1
+        q
+      endif
+    endif
+  endif
+endfunction
 
 " If the parameter is a directory, cd into it
 function s:CdIfDirectory(directory)

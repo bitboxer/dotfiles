@@ -150,6 +150,9 @@ map <C-K> :m -2 <CR>
 " Nerd Tree On/Off
 map <F2> :NERDTreeToggle<CR>
 
+" Command-T configuration
+let g:CommandTMaxHeight=20
+
 " Inserts the path of the currently edited file into a command
 " Command mode: Ctrl+P
 cmap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
@@ -180,11 +183,6 @@ if v:version < 702
 else
   set list
   set listchars=tab:▸\ ,eol:¬,trail:.,extends:#,nbsp:.
-endif
-
-" Local config
-if filereadable(".vimrc.local")
-  source .vimrc.local
 endif
 
 " Use Ack instead of Grep when available
@@ -251,7 +249,6 @@ endif
 let g:LustyJugglerSuppressRubyWarning = 1
 
 runtime macros/matchit.vim
-set wildignore+=/Users/btasche/tr/ruby/ror/putpat/public/assets/**
 
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
