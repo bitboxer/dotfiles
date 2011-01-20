@@ -170,6 +170,9 @@ vmap D y'>p
 " For Haml
 au! BufRead,BufNewFile *.haml         setfiletype haml
 
+" For Arduino
+autocmd! BufNewFile,BufRead *.pde setlocal ft=arduino
+
 " No Help, please
 nmap <F1> <Esc>
 
