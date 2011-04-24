@@ -9,5 +9,3 @@ nnoremap <F2> :NERDTreeToggle<CR>
 if has('mac')
   inoremap <Char-0xa0> <Space>
 endif
-
-let mapleader = ","
