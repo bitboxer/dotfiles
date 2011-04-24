@@ -80,11 +80,6 @@ See `irbrc` and `railsrc` files for details.
 
 ### Vim config ###
 
-The vim config includes the [Rails.vim](http://rails.vim.tpope.net/) Plugin for vim and some other tweaks to make
-vim the best rails command line editor on the planet :) . Try out `:Rcon<tab>` in vim when
-opening a rails project.
-
-The color scheme mimics the railscast scheme when in GUI-Mode (e.g. when using 
-[MacVim](http://code.google.com/p/macvim/) ).
-
-Please look into the vim/plugin directory to see what plugins are installed.
+Since 2011-04-25 I am using [janus](https://github.com/carlhuda/janus)
+as my vim package manager. I only added a few tweaks and changed a few
+defaults.
