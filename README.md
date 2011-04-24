@@ -40,11 +40,12 @@ To speed things up, the results are cached in local `.rake_tasks~` and
 `.cap_tasks~`. It is smart enough to expire the cache automatically in 
 most cases, but you can simply remove the files to flush the cache.
 
-Opening the source for a gem file can be done using the "gemmate" command.
+Opening the source for a gem file can be done using the "gemvim" command.
 
-    gemmate rail<tab>
+    gemvim rail<tab>
     
-If no version is given, the latest gem will be opened in Textmate
+If no version is given, the latest gem will be opened in MacVim.
+`gemmate` will do the same for Textmate.
 
 There are a few key bindings set. Many of these require option to be
 set as the meta key. Option-left/right arrow will move cursor by word, 
