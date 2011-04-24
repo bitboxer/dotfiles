@@ -1,0 +1,13 @@
+nnoremap <F5> :GundoToggle<CR>
+nnoremap <F2> :NERDTreeToggle<CR>
+
+" Make sure xa0 (alt + space) is automatically changed to a normal whitespace
+" " if pressed accidentally while in insert mode (happens on Mac when alt
+" " doesn't send escape). filereadable() is necessary for Leopard were 'mac'
+" is
+" " no longer set on the console.
+if has('mac')
+  inoremap <Char-0xa0> <Space>
+endif
+
+let mapleader = ","
