@@ -35,3 +35,6 @@ alias %=' '
 # Fix for the c and h commands. These shouldn't get zsh correction
 alias c='nocorrect c'
 alias h='nocorrect h'
+
+# Start pry for rails console debugging
+alias pryc='pry -I . -rconfig/environment'
