@@ -15,12 +15,11 @@ IRB.conf[:PROMPT_MODE] = :SIMPLE
 end
 
 begin
-    # load wirble
+  # load wirble
   # start wirble (with color)
   Wirble.init
   Wirble.colorize
-rescue LoadError => err
-  warn "Couldn't load Wirble: #{err}"
+rescue
 end
 
 class Object
