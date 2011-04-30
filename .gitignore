@@ -1,4 +1,2 @@
-vim/bundle/command-t/ruby/command-t/ext.bundle
-vim/bundle/command-t/ruby/command-t/*.o
 zsh/local_aliases
 .*
