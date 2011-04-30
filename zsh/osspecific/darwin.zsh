@@ -14,5 +14,3 @@ export JDK_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/
 export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/Home
 
 export PYTHONPATH="/usr/local/lib/python2.6/site-packages/:$PYTHONPATH"
-
-if [[ -s $HOME/.rvm/scripts/rvm ]] ; then source $HOME/.rvm/scripts/rvm ; fi
