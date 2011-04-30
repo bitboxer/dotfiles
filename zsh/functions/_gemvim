@@ -1,2 +1,0 @@
-#compdef gemmate
-_files -W $(gem environment gemdir)/gems -/

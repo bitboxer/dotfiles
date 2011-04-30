@@ -1,8 +1,0 @@
-if [ ! $1 ]; then
-    echo "Usage: gemmvim <gem>"
-else
-    local gemdir="$(gem environment gemdir)"
-    local foundgem="$(ls $gemdir/gems | grep $1 | sort -r | head -1)"
-    echo "open $gemdir/gems/$foundgem"
-    mvim -f "$gemdir/gems/$foundgem"
-fi
