@@ -4,6 +4,7 @@ alias la='ls -A'
 # git
 alias gs='git status'
 alias changelog='git log `git log -1 --format=%H -- CHANGELOG*`..; cat CHANGELOG*'
+alias gd='git diff'
 
 # commands starting with % for pasting from web
 alias %=' '

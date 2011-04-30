@@ -10,7 +10,7 @@ but is heavily modified.
     cd ~/.dotfiles
     rake install
 
-You need to install [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) and
+You need to install my branch of [oh-my-zsh](https://github.com/bitboxer/oh-my-zsh) and
 [janus](https://github.com/carlhuda/janus) before you can start using this.
 
 ## Environment ##
