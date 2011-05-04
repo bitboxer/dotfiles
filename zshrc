@@ -38,3 +38,5 @@ case `uname` in
     ;;;
 esac
 
+# Delete-Key has to work :)
+bindkey "^[[3~" delete-char
