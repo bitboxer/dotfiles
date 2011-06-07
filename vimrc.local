@@ -69,3 +69,9 @@ vnoremap <silent> <C-Down> :<C-u>call MoveVisualDown()<CR>
 if filereadable(expand("~/.vimrc.machine"))
   source ~/.vimrc.machine
 endif
+
+" Delete fugitive buffers
+autocmd BufReadPost fugitive://* set bufhidden=delete
+set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
+
+
