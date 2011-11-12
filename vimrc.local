@@ -79,3 +79,10 @@ let $JS_CMD='node'
 
 " god should get ruby syntax highlight
 au BufNewFile,BufRead *.god set filetype=ruby
+
+" Escape unselects search selection
+nnoremap <esc> :noh<return><esc>
+
+" ingore doc-dir for command-t
+set wildignore+=doc/*
+
