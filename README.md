@@ -33,3 +33,11 @@ dotfiles. Only a few config files are left.
 Since 2011-04-25 I am using [janus](https://github.com/carlhuda/janus)
 as my vim package manager. I only added a few tweaks and changed a few
 defaults.
+
+As additional vim plugins i am currently using
+
+* BufOnly.vim  
+* gundo.vim
+* jslint.vim 
+* vim-powerline
+* vim-ragtag
