@@ -1,5 +1,5 @@
 require 'rake'
-require 'ftools'
+#require 'ftools'
 require 'erb'
 
 desc "install the dot files into user's home directory"
