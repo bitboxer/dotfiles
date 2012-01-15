@@ -3,11 +3,8 @@
 
 if [[ -s $HOME/.rvm/scripts/rvm ]] ; then source $HOME/.rvm/scripts/rvm ; fi
 
-case `uname` in
-  Darwin*)
+if [[ $OSTYPE == darwin* ]]; then
     source ~/.dotfiles/zsh/osspecific/darwin.zsh
-    ;;
-  *)
+  else
     source ~/.dotfiles/zsh/osspecific/linux.zsh
-    ;;;
-esac
+fi
