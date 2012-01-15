@@ -11,33 +11,8 @@
     excludesfile = <%= ENV['HOME'] %>/.gitignore
 [apply]
     whitespace = nowarn
-<% 
-  print("Your Github Username (Press enter to ignore Github) : ")
-  STDOUT.flush;
-  github = STDIN.gets.chomp;
-  if (github.length > 0) 
-%>[github]
-    user = <%= github %>
-<% end %>
+[github]
+	user = <%= print("GitHub Username: "); STDOUT.flush; STDIN.gets.chomp %>
+	token = <%= print("GitHub API Token: "); STDOUT.flush; STDIN.gets.chomp %>
 [format]
 	pretty = %C(yellow)%h%Creset %s %C(red)(%cr)%Creset
-
-# More details about the git mergetool option can be found here:
-# http://gitguru.com/2009/02/22/integrating-git-with-a-visual-merge-tool/
-<% if PLATFORM.match /darwin/i %>
-
-[merge]
-	tool = diffmerge
-    # DiffMerge can be found here : 
-    # http://www.sourcegear.com/diffmerge/
-
-[mergetool "diffmerge"]
-    cmd = diffmerge --merge --result=$MERGED $LOCAL $BASE $REMOTE
-    trustExitCode = false
-
-<% else %>
-
-[merge]
-	tool = kdiff3
-
-<% end %>
