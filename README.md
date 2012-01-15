@@ -38,6 +38,5 @@ As additional vim plugins i am currently using
 
 * BufOnly.vim  
 * gundo.vim
-* jslint.vim 
 * vim-powerline
 * vim-ragtag
