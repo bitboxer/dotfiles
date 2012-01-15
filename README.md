@@ -8,14 +8,11 @@ but is heavily modified.
 
     git clone git://github.com/bitboxer/dotfiles ~/.dotfiles
     cd ~/.dotfiles
-    rake install
+    rake
 
 You need to install my branch of [oh-my-zsh](https://github.com/bitboxer/oh-my-zsh) and
 [janus](https://github.com/carlhuda/janus) before you can start using this.
 
-The vim config uses janus and an slightly modified version of the Inconsolata font. 
-The changes in the font are necessary for the powerline gem. You can find the font 
-in the font directory.
 
 ## Environment ##
 
@@ -38,9 +35,15 @@ Since 2011-04-25 I am using [janus](https://github.com/carlhuda/janus)
 as my vim package manager. I only added a few tweaks and changed a few
 defaults.
 
+The vim config uses janus and an slightly modified version of the Inconsolata font. 
+The changes in the font are necessary for the powerline gem. You can find the font 
+in the font directory.
+
 As additional vim plugins i am currently using
 
 * BufOnly.vim  
 * gundo.vim
 * vim-powerline
 * vim-ragtag
+
+Those plugins have to be installed in .janus if you want to use them, too.

@@ -2,6 +2,8 @@ require 'rake'
 #require 'ftools'
 require 'erb'
 
+task :default => [:install]
+
 desc "install the dot files into user's home directory"
 task :install do
   replace_all = false
