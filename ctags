@@ -1,0 +1,3 @@
+--regex-ruby=/^[ \t]*describe (.*) do/\1/d,rspec describe/
+--regex-ruby=/^[ \t]*context ['"](.*)['"] do/\1/C,rspec context/
+--regex-ruby=/^[ \t]*test (.*) do/\1/t,unit test/
