@@ -29,14 +29,5 @@ source $ZSH/oh-my-zsh.sh
 if [[ -f $HOME/.dotfiles/zsh/aliases ]] ; then . $HOME/.dotfiles/zsh/aliases ; fi
 if [[ -f $HOME/.dotfiles/zsh/local_aliases ]] ; then . $HOME/.dotfiles/zsh/local_aliases ; fi
 
-case `uname` in
-  Darwin*)
-    source ~/.dotfiles/zsh/osspecific/darwin.zsh
-    ;;
-  *)
-    source ~/.dotfiles/zsh/osspecific/linux.zsh
-    ;;;
-esac
-
 # Delete-Key has to work :)
 bindkey "^[[3~" delete-char
