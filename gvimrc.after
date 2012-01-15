@@ -1,4 +1,4 @@
 color railscasts2
-set guifont=Monaco:h14
+set guifont=Inconsolata\ for\ Powerline:h16
 set guioptions-=T
 set vb

@@ -13,6 +13,10 @@ but is heavily modified.
 You need to install my branch of [oh-my-zsh](https://github.com/bitboxer/oh-my-zsh) and
 [janus](https://github.com/carlhuda/janus) before you can start using this.
 
+The vim config uses janus and an slightly modified version of the Inconsolata font. 
+The changes in the font are necessary for the powerline gem. You can find the font 
+in the font directory.
+
 ## Environment ##
 
 I am running on Mac OS X, but it will likely work on Linux as well with 
