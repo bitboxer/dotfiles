@@ -1,5 +1,7 @@
 let mapleader = ","
 
+set t_Co=256
+
 " Tagbar Plugin
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_match_window_reversed = 0
