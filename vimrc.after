@@ -78,9 +78,12 @@ let $JS_CMD='node'
 
 " god should get ruby syntax highlight
 au BufNewFile,BufRead *.god set filetype=ruby
+" json builder is ruby code
+au BufNewFile,BufRead *.jbuilder set filetype=ruby
 
 " syntax highlight for javascript modules
 au BufNewFile,BufRead *.jsm set filetype=javascript
+
 
 " Escape unselects search selection
 nnoremap <esc> :noh<return><esc>
