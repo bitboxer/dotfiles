@@ -2,24 +2,6 @@ let mapleader = ","
 
 set t_Co=256
 
-" Tagbar Plugin
-let g:ctrlp_working_path_mode = 0
-let g:ctrlp_match_window_reversed = 0
-let g:ctrlp_custom_ignore = 'doc$'
-
-let g:tagbar_type_ruby = {
-    \ 'ctagstype' : 'Ruby',
-    \ 'kinds'     : [
-        \ 'c:classes',
-        \ 'f:methods',
-        \ 'm:modules',
-        \ 'F:singleton methods',
-        \ 'd:rspec describe',
-        \ 'C:rspec context',
-        \ 't:unit test'
-    \ ]
-\ }
-
 
 nnoremap <Esc>A <up>
 nnoremap <Esc>B <down>

@@ -84,7 +84,6 @@ au BufNewFile,BufRead *.jbuilder set filetype=ruby
 " syntax highlight for javascript modules
 au BufNewFile,BufRead *.jsm set filetype=javascript
 
-
 " Escape unselects search selection
 nnoremap <esc> :noh<return><esc>
 
@@ -98,6 +97,30 @@ let g:Powerline_symbols = 'fancy'
 let g:tagbar_autoclose=1
 let g:tagbar_autofocus=1
 let g:tagbar_iconchars = ['▾', '▸']
+
+" CtrlP
+let g:ctrlp_custom_ignore = {
+    \ 'dir':  '\.git$\|\.hg$\|\.svn$',
+    \ 'file': '\.pyc$\|\.pyo$\|\.rbc$|\.rbo$\|\.class$\|\.o$\|\~$\',
+    \ 'doc': 'doc$'
+    \ }
+
+let g:ctrlp_working_path_mode = 0
+let g:ctrlp_match_window_reversed = 0
+
+let g:tagbar_type_ruby = {
+    \ 'ctagstype' : 'Ruby',
+    \ 'kinds'     : [
+        \ 'c:classes',
+        \ 'f:methods',
+        \ 'm:modules',
+        \ 'F:singleton methods',
+        \ 'd:rspec describe',
+        \ 'C:rspec context',
+        \ 't:unit test'
+    \ ]
+\ }
+
 
 if has("gui_macvim")
     let macvim_hig_shift_movement = 1
