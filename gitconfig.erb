@@ -15,4 +15,4 @@
 	user = <%= print("GitHub Username: "); STDOUT.flush; STDIN.gets.chomp %>
 	token = <%= print("GitHub API Token: "); STDOUT.flush; STDIN.gets.chomp %>
 [format]
-	pretty = %C(yellow)%h%Creset %s %C(red)(%cr)%Creset
+ pretty = %C(yellow)%h%Creset %C(green)%s%Creset %C(redd)(%cr)%Creset - %an
