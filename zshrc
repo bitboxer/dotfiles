@@ -31,3 +31,6 @@ if [[ -f $HOME/.dotfiles/zsh/local_aliases ]] ; then . $HOME/.dotfiles/zsh/local
 
 # Delete-Key has to work :)
 bindkey "^[[3~" delete-char
+
+alias glog="git log"
+alias trst="touch tmp/restart"

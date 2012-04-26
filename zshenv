@@ -8,3 +8,5 @@ if [[ $OSTYPE == darwin* ]]; then
   else
     source ~/.dotfiles/zsh/osspecific/linux.zsh
 fi
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
