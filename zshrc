@@ -34,3 +34,5 @@ bindkey "^[[3~" delete-char
 
 alias glog="git log"
 alias trst="touch tmp/restart"
+
+cat ~/.dotfiles/logo.ascii
