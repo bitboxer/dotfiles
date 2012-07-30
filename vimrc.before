@@ -2,7 +2,7 @@ let mapleader = ","
 
 set t_Co=256
 
-
+" Needed for iTerm2 Cursor Handling
 nnoremap <Esc>A <up>
 nnoremap <Esc>B <down>
 nnoremap <Esc>C <right>
