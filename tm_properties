@@ -1,0 +1,30 @@
+#TextMate 2 Configuration
+fontName = "Monaco"
+fontSize = 11
+softWrap = false
+softTabs = true
+tabSize  = 2
+
+# Add these files to the project view:
+myExtraIncludes = ".tm_properties,.gitignore,.rvmrc,.powenv"
+fileBrowserGlob  = "{*,$myExtraIncludes}"
+include = "{$include,$myExtraIncludes}"
+
+# Hide these files from the search dialog:
+myExtraExcludes = "log,vendor,tmp,*.sqlite3,node_modules"
+excludeInFileChooser  = "{$excludeInFileChooser,$myExtraExcludes}" 
+excludeInFolderSearch = "{$excludeInFolderSearch,$myExtraExcludes}" 
+
+# Plain Text (including Markdown and Latex) Spell Checking and Soft Wrapping:
+[ text ]
+spellChecking    = true
+spellingLanguage = 'en'
+softWrap         = true
+
+# Binary Files:
+[ *.{icns,ico,jpg,jpeg,m4v,nib,pdf,png,psd,pyc,rtf,tif,tiff,xib,sqlite3} ]
+binary           = true
+
+# I always write them in Markdown. Don't you?
+[ "{README,INSTALL,LICENSE}" ]
+fileType         = "text.markdown"'
