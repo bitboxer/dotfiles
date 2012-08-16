@@ -1,6 +1,6 @@
 #TextMate 2 Configuration
 fontName = "Monaco"
-fontSize = 11
+fontSize = 14
 softWrap = false
 softTabs = true
 tabSize  = 2
