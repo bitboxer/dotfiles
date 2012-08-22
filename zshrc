@@ -35,4 +35,9 @@ bindkey "^[[3~" delete-char
 alias glog="git log"
 alias trst="touch tmp/restart"
 
-cat ~/.dotfiles/logo.ascii
+if  { [ "$TERM" != "screen" ] && ! [ -n "$TMUX" ] } then
+  cat ~/.dotfiles/logo.ascii
+fi
+
+# tmuxinator
+[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
