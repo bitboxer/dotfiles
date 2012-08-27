@@ -1,2 +1,0 @@
-export rvm_path="$HOME/.rvm"
-export rvm_project_rvmrc=1
