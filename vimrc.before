@@ -1,4 +1,5 @@
 let mapleader = ","
+noremap \ ,
 
 set t_Co=256
 
@@ -7,3 +8,7 @@ nnoremap <Esc>A <up>
 nnoremap <Esc>B <down>
 nnoremap <Esc>C <right>
 nnoremap <Esc>D <left>
+
+" must be active for textobj-usr plugin
+runtime macros/matchit.vim
+
