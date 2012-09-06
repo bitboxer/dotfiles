@@ -122,7 +122,4 @@ if has("gui_macvim")
     let macvim_hig_shift_movement = 1
 endi
 
-" Spell checker for markdown files
-au BufEnter *.md  set spell spelllang=en_us
-
 command Leerzeichen :%s/\s\+$
