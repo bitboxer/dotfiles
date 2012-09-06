@@ -118,8 +118,6 @@ let g:tagbar_type_ruby = {
     \ ]
 \ }
 
-"map <LEADER>rt  :TagbarToggle<CR>
-
 if has("gui_macvim")
     let macvim_hig_shift_movement = 1
 endi
