@@ -87,9 +87,6 @@ au BufNewFile,BufRead *.jsm set filetype=javascript
 " Escape unselects search selection
 nnoremap <esc> :noh<return><esc>
 
-" ingore doc-dir for command-t
-set wildignore+=doc/*
-
 " Powerline Plugin should use fancy symbols
 let g:Powerline_symbols = 'fancy'
 
