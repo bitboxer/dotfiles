@@ -39,5 +39,8 @@ if  { [ "$TERM" != "screen" ] && ! [ -n "$TMUX" ] } then
   cat ~/.dotfiles/logo.ascii
 fi
 
+# Trying vim mode
+bindkey -v
+
 # tmuxinator
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
