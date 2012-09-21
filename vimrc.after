@@ -93,10 +93,12 @@ let g:Powerline_symbols = 'fancy'
 set hidden
 
 " Easytags
-:set tags=./.ctagsfile,.ctagsfile;
-:let g:easytags_file = './.ctagsfile'
-:let g:easytags_dynamic_files = 1
-:let b:easytags_auto_highlight = 0
+set tags=./.ctagsfile,.ctagsfile;
+let g:easytags_file = './.ctagsfile'
+let g:easytags_dynamic_files = 1
+let g:easytags_auto_highlight = 0
+let g:easytags_auto_update = 0
+let g:easytags_on_cursorhold = 0
 
 " Tagbar Plugin
 let g:tagbar_autoclose=1
@@ -131,3 +133,4 @@ if has("gui_macvim")
 endi
 
 command Leerzeichen :%s/\s\+$
+noremap <D-t> :tabe<CR>
