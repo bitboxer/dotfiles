@@ -1,3 +1,4 @@
+color sexy-railscasts
 
 " doesn't send escape). filereadable() is necessary for Leopard were 'mac'
 " is no longer set on the console.
@@ -44,8 +45,6 @@ endfunction
 function! MoveLineOrVisualDown(line_getter, range)
   let l_num = line(a:line_getter)
   if l_num + v:count1 > line("$")
-    let move_arg = "$"
-  else
     let move_arg = a:line_getter." +".v:count1
   endif
   call MoveLineOrVisualUpOrDown(a:range."move ".move_arg)
@@ -134,3 +133,5 @@ endi
 
 command Leerzeichen :%s/\s\+$
 noremap <D-t> :tabe<CR>
+
+colorscheme sexy-railscasts
