@@ -4,4 +4,5 @@ if [[ $OSTYPE == darwin* ]]; then
     source ~/.dotfiles/zsh/osspecific/linux.zsh
 fi
 export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="/usr/local/share/npm/bin/:$PATH"
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
