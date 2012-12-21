@@ -16,3 +16,6 @@ if has('mac')
   " use mac clipboard
   set clipboard=unnamed
 endif
+
+set mouse=a
+set title
