@@ -1,2 +1,4 @@
 -i
 --type-set=haml=.haml
+--type-add=css=.scss,.sass
+--type-add=js=.coffee
