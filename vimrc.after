@@ -1,6 +1,10 @@
 "color sexy-railscasts
 color Tomorrow-Night-Bright
 
+" Color theme for git gutter
+highlight clear SignColumn
+
+
 " doesn't send escape). filereadable() is necessary for Leopard were 'mac'
 " is no longer set on the console.
 if has('mac')
