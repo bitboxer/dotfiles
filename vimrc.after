@@ -88,3 +88,17 @@ endi
 
 command Leerzeichen :%s/\s\+$
 noremap <D-t> :tabe<CR>
+
+" Searches Dash for the word under your cursor in vim
+function! SearchDash()
+  " Some setup
+  let s:browser = "/usr/bin/open"
+  let s:wordUnderCursor = expand("<cword>")
+ 
+  " Run it
+  let s:url = "dash://".s:wordUnderCursor
+  let s:cmd ="silent ! " . s:browser . " " . s:url
+  execute s:cmd
+  redraw!
+endfunction
+map <leader>d :call SearchDash()<CR>
