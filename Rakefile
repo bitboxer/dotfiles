@@ -4,14 +4,18 @@ require 'erb'
 
 task :default => [:install]
 
+TILDE_PATH="tilde"
+
 desc "install the dot files into user's home directory"
 task :install do
   replace_all = false
-  Dir['*'].each do |file|
-    next if %w[Rakefile README.md LICENSE bin zsh font logo.ascii].include? file
+  Dir.new(TILDE_PATH).each do |file|
+    next if %w[. .. gitconfig.erb].include? file
 
-    if File.exist?(File.join(ENV['HOME'], ".#{file.sub('.erb', '')}"))
-      if File.identical? file, File.join(ENV['HOME'], ".#{file.sub('.erb', '')}")
+    p File.join(ENV['HOME'], ".#{file}")
+
+    if File.exist?(File.join(ENV['HOME'], ".#{File.basename file}"))
+      if File.identical? File.join(TILDE_PATH, file), File.join(ENV['HOME'], ".#{File.basename file}")
         puts "identical ~/.#{file.sub('.erb', '')}"
       elsif replace_all
         replace_file(file)
@@ -48,13 +52,6 @@ def replace_file(file)
 end
 
 def link_file(file)
-  if file =~ /.erb$/
-    puts "generating ~/.#{file.sub('.erb', '')}"
-    File.open(File.join(ENV['HOME'], ".#{file.sub('.erb', '')}"), 'w') do |new_file|
-      new_file.write ERB.new(File.read(file)).result(binding)
-    end
-  else
-    puts "linking ~/.#{file}"
-    system %Q{ln -s "$PWD/#{file}" "$HOME/.#{file}"}
-  end
+  puts "linking ~/.#{file}"
+  system %Q{ln -sf "$PWD/#{TILDE_PATH}/#{file}" "$HOME/.#{file}"}
 end

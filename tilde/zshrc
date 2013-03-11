@@ -26,8 +26,8 @@ plugins=(heroku git brew bundler gem git github osx rails3 dirhelper screen npm 
 source $ZSH/oh-my-zsh.sh
 
 # My config files for zsh
-if [[ -f $HOME/.dotfiles/zsh/aliases ]] ; then . $HOME/.dotfiles/zsh/aliases ; fi
-if [[ -f $HOME/.dotfiles/zsh/local_aliases ]] ; then . $HOME/.dotfiles/zsh/local_aliases ; fi
+if [[ -f $HOME/.zsh/aliases ]] ; then . $HOME/.zsh/aliases ; fi
+if [[ -f $HOME/.zsh/local_aliases ]] ; then . $HOME/.zsh/local_aliases ; fi
 
 # Delete-Key has to work :)
 bindkey "^[[3~" delete-char
@@ -36,7 +36,7 @@ alias glog="git log"
 alias trst="touch tmp/restart"
 
 if  { [ "$TERM" != "screen" ] && ! [ -n "$TMUX" ] } then
-  cat ~/.dotfiles/logo.ascii
+  cat ~/.logo/joker.ascii
 fi
 
 # tmuxinator

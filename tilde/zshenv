@@ -1,7 +1,7 @@
 if [[ $OSTYPE == darwin* ]]; then
-    source ~/.dotfiles/zsh/osspecific/darwin.zsh
+    source ~/.zsh/osspecific/darwin.zsh
   else
-    source ~/.dotfiles/zsh/osspecific/linux.zsh
+    source ~/.zsh/osspecific/linux.zsh
 fi
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="/usr/local/share/npm/bin/:$PATH"

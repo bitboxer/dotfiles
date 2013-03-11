@@ -1,7 +1,7 @@
 alias ls="ls -FG"
 alias oa='open -a' # App Launcher
 
-export EDITOR='mvim -f'
+export EDITOR='vim'
 
 export PATH="$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH"
 export MANPATH="/usr/local/man:$MANPATH"

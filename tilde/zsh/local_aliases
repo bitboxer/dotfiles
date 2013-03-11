@@ -1,0 +1,2 @@
+alias log_prod="/Users/bodo/tr/ruby/log_server/logmonitor.rb -h 192.168.1.13"
+alias log_staging="/Users/bodo/tr/ruby/log_server/logmonitor.rb -h 10.49.221.31"

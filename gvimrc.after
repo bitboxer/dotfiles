@@ -1,5 +1,0 @@
-set guifont=Inconsolata\ for\ Powerline:h17
-set guioptions-=T
-set vb
-
-set lines=50 columns=130

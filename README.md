@@ -6,13 +6,10 @@ but is heavily modified.
 
 ## Installation ##
 
-    git clone git://github.com/bitboxer/dotfiles ~/.dotfiles
-    cd ~/.dotfiles
-    rake
+    rake install
 
 You need to install my branch of [oh-my-zsh](https://github.com/bitboxer/oh-my-zsh) and
 [janus](https://github.com/carlhuda/janus) before you can start using this.
-
 
 ## Environment ##
 
