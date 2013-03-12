@@ -1,6 +1,4 @@
 require 'rake'
-#require 'ftools'
-require 'erb'
 
 task :default => [:install]
 
