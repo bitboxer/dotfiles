@@ -44,3 +44,9 @@ As additional vim plugins i am currently using
 * vim-ragtag
 
 Those plugins have to be installed in .janus if you want to use them, too.
+
+### GIT ###
+
+I added my Git config as example file. Just rename the
+.gitconfig_example to .gitconfig and change the Email and Username to
+yours.
