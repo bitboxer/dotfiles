@@ -9,7 +9,8 @@ to manage the installation process.
 
 ## Installation ##
 
-    rake install
+    bundle
+    bundle exec rake install
 
 This will link the settings and install my branch of [oh-my-zsh](https://github.com/bitboxer/oh-my-zsh).
 
