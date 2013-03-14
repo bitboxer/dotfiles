@@ -4,7 +4,7 @@ These are config files to set up a system the way I like it. This was a
 fork of  [dotfiles](http://github.com/ryanb/dotfiles) by [Ryan Bates](http://railscasts.com/)
 but this is no longer the case.
 
-Currently it is using the [exogenesis](http://github.com/exogenesis) gem
+Currently it is using the [exogenesis](http://github.com/moonglum/exogenesis) gem
 to manage the installation process.
 
 ## Installation ##
