@@ -1,16 +1,12 @@
 #!/usr/bin/env rake
-require "yaml"
 require "rubygems"
 require "exogenesis"
-
-packages = YAML.load_file "packages.yml"
 
 package_managers = [
   Dotfile.new,
   OhMyZSH.new("bitboxer"),
-#  Homebrew.new(packages["brews"]),
 #  Vundle.new,
-#  Rvm.new(packages["rubies"])
+  Fonts.new
 ]
 
 desc "Install the dotfiles"

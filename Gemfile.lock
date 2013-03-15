@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/moonglum/exogenesis.git
-  revision: a3949a60c9de71dc8ef8bf7be27fb28f7e8e333b
+  revision: 7797d032e7850afe7cd8c4a80d4d22f8b0f54f6a
   specs:
     exogenesis (0.0.1)
 
