@@ -2,6 +2,8 @@
 require "rubygems"
 require "exogenesis"
 
+Output.fancy
+
 package_managers = [
   Dotfile.new,
   OhMyZSH.new("bitboxer"),
@@ -17,4 +19,9 @@ end
 desc "Update everything"
 task :update do
   package_managers.each(&:update)
+end
+
+desc "Uninstall the dotfiles"
+task :uninstall do
+  package_managers.each(&:teardown)
 end
