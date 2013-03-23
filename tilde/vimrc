@@ -91,6 +91,7 @@ Bundle "tpope/vim-haml"
 Bundle "pangloss/vim-javascript"
 Bundle "tpope/vim-markdown"
 Bundle "kchmck/vim-coffee-script"
+Bundle "tpope/vim-rails"
 
 " Syntastic: Really great Syntax checker
 Bundle "scrooloose/syntastic"
