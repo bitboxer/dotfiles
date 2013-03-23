@@ -80,6 +80,7 @@ Bundle "scrooloose/nerdtree"
 let NERDTreeIgnore=['\.pyc$', '\.pyo$', '\.rbc$', '\.rbo$', '\.class$', '\.o$', '\~$']
 map <C-n> :NERDTreeToggle<CR>
 map <leader>n :NERDTreeToggle<CR>
+let g:ctrlp_dont_split = 'NERD_tree_2'
 
 " Color Theme
 Bundle "chriskempson/vim-tomorrow-theme"
