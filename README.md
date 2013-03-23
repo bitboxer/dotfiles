@@ -12,9 +12,7 @@ to manage the installation process.
     bundle
     bundle exec rake install
 
-This will link the settings and install my branch of [oh-my-zsh](https://github.com/bitboxer/oh-my-zsh).
-
-If you want to use the vim config, you need to install [janus](https://github.com/carlhuda/janus).
+This will install all needed packages and links my config files to ``$HOME``
 
 ## ZSH ##
 
@@ -27,7 +25,7 @@ you can do so with the following command.
 ## Vim config ##
 
 I am using [vundle](https://github.com/gmarik/vundle) to organize my plugins. Vundle
-is installed with exogenesis.
+is installed via exogenesis.
 
 ## GIT ##
 

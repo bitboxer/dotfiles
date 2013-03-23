@@ -163,7 +163,7 @@ set wildignore+=*/vendor/gems/*,*/vendor/cache/*,*/.bundle/*,*/.sass-cache/*
 set wildignore+=*.swp,*~,._*
 
 " Make sure all markdown files have the correct filetype set and setup wrapping
-au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} set ft=markdown | call s:setupWrapping()
+au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} set ft=markdown
 
 " LaTeX files should also have Wrapping
 au BufRead,BufNewFile *.tex call s:setupWrapping()
