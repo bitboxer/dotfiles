@@ -26,22 +26,8 @@ you can do so with the following command.
 
 ## Vim config ##
 
-Since 2011-04-25 I am using [janus](https://github.com/carlhuda/janus)
-as my vim package manager. I only added a few tweaks and changed a few
-defaults.
-
-The vim config uses janus and an slightly modified version of the Inconsolata font. 
-The changes in the font are necessary for the powerline gem. You can find the font 
-in the font directory.
-
-As additional vim plugins i am currently using
-
-* BufOnly.vim  
-* gundo.vim
-* vim-powerline
-* vim-ragtag
-
-Those plugins have to be installed in .janus if you want to use them, too.
+I am using [vundle](https://github.com/gmarik/vundle) to organize my plugins. Vundle
+is installed with exogenesis.
 
 ## GIT ##
 

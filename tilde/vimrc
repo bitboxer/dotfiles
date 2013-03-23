@@ -1,0 +1,205 @@
+" This vimrc is "inspired" by @moonglum, @garybernhardt and @railsbros-dirk
+" Thanks to all of you for letting me steal your stuff :)
+
+" Use Vim settings, rather then Vi settings (much better!).
+" This must be first, because it changes other options as a side effect.
+set nocompatible
+" This is required for Vundle
+filetype off
+" Activate Syntax Highlight
+syntax enable
+" set default encoding to UTF-8
+set encoding=utf-8
+
+" Highlight search results
+set hlsearch
+" Incremental search, search as you type
+set incsearch
+" Ignore case when searching
+set ignorecase smartcase
+" Ignore case when searching lowercase
+set smartcase
+
+" Deactivate Wrapping
+set nowrap
+" Treat all numbers as decimal
+set nrformats=
+" I don't like Swapfiles
+set noswapfile
+" I prefer , to be the leader key
+let mapleader = ","
+noremap \ ,
+" show line numbers
+set number
+" MOAR colors
+set t_Co=256
+" Escape unselects search selection
+nnoremap <esc> :noh<return><esc>
+" Better buffer handling
+set hidden
+
+" Use the clipboard of Mac OS
+if has('mac')
+  set clipboard=unnamed
+end
+
+" Enable mouse
+set mouse=a
+" Set the title of the iterm tab
+set title
+
+" Needed for iTerm2 Cursor Handling
+nnoremap <Esc>A <up>
+nnoremap <Esc>B <down>
+nnoremap <Esc>C <right>
+nnoremap <Esc>D <left>
+
+" === Vundle Setup ===
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+Bundle 'gmarik/vundle'
+
+" CtrlP: Full path fuzzy finder
+Bundle "kien/ctrlp.vim"
+
+let g:ctrlp_custom_ignore = {
+    \ 'dir':  '\.git$\|\.hg$\|\.svn$',
+    \ 'file': '\.pyc$\|\.pyo$\|\.rbc$|\.rbo$\|\.class$\|\.o$\|\~$\',
+    \ 'doc': 'doc$'
+    \ }
+
+let g:ctrlp_working_path_mode = 0
+let g:ctrlp_match_window_reversed = 0
+
+" Nerdtree
+Bundle "scrooloose/nerdtree"
+map <C-n> :NERDTreeToggle<CR>
+map <leader>n :NERDTreeToggle<CR>
+
+" Color Theme
+Bundle "chriskempson/vim-tomorrow-theme"
+colorscheme Tomorrow-Night-Bright
+
+" === Additional Language Support ===
+Bundle "tpope/vim-haml"
+Bundle "pangloss/vim-javascript"
+Bundle "tpope/vim-markdown"
+Bundle "kchmck/vim-coffee-script"
+
+" Syntastic: Really great Syntax checker
+Bundle "scrooloose/syntastic"
+" Use Node.js for JavaScript interpretation
+let $JS_CMD='node'
+
+" ack.vim: ack integration
+Bundle "mileszs/ack.vim"
+
+" Git Gutter: shows a git diff in the gutter
+Bundle "airblade/vim-gitgutter"
+" without any weird color
+highlight clear SignColumn
+
+" Better statusbar
+Bundle "Lokaltog/vim-powerline"
+set laststatus=2
+let g:Powerline_symbols = 'fancy'
+
+" Cool Undo Tree
+Bundle "sjl/gundo.vim"
+map <Leader>g :GundoToggle<CR>
+
+" Tab completion
+Bundle "ervandew/supertab"
+
+" Show invisible characters:
+" Tabs and trailing whitespace
+set list
+set listchars=tab:›\ ,trail:.
+
+" Tabs should be 2 spaces
+set tabstop=2
+" Soft-Tabs should be 2 spaces
+set softtabstop=2
+" When shifting, use 2 spaces
+set shiftwidth=2
+" Use Soft-Tabs
+set expandtab
+" backspace through everything in insert mode
+set backspace=indent,eol,start
+" Makefiles require tabs
+autocmd FileType make setlocal noexpandtab
+
+" Highlight Characters that overstep the 100 character limit
+match ErrorMsg '\%>100v.\+'
+
+" Automatically set the indent of a new line (local to buffer)
+" from railsbros-dirk
+set ai
+
+" Disable output and VCS files
+set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.rbo,*.class,.svn,*.gem
+
+" Disable archive files
+set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz
+
+" Ignore bundler and sass cache
+set wildignore+=*/vendor/gems/*,*/vendor/cache/*,*/.bundle/*,*/.sass-cache/*
+
+" Disable temp and backup files
+set wildignore+=*.swp,*~,._*
+
+" Make sure all markdown files have the correct filetype set and setup wrapping
+au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} set ft=markdown | call s:setupWrapping()
+
+" LaTeX files should also have Wrapping
+au BufRead,BufNewFile *.tex call s:setupWrapping()
+
+" Set the Ruby filetype for a number of common Ruby files without .rb
+au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Procfile,Guardfile,config.ru,*.rake,*.rabl,*.god,*.jbuilder} set ft=ruby
+
+" Treat JSON files like JavaScript
+au BufNewFile,BufRead {*.json,*.jsm} set ft=javascript
+
+" Recognize CoffeeScript
+au BufNewFile,BufRead *.coffee set ft=coffee
+
+" Make cursor move by visual lines instead of file lines (when wrapping)
+map k gk
+map j gj
+
+" Remove unwanted spaces command
+command Leerzeichen :%s/\s\+$
+
+" upper/lower word
+nmap <leader>u mQviwU`Q
+nmap <leader>l mQviwu`Q
+
+" upper/lower first char of word
+nmap <leader>U mQgewvU`Q
+nmap <leader>L mQgewvu`Q
+
+" find merge conflict markers
+nmap <silent> <leader>fc <ESC>/\v^[<=>]{7}( .*\|$)<CR>
+
+" Remember last location in file, but not for commit messages.
+" see :help last-position-jump
+au BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= line("$")
+  \| exe "normal! g`\"" | endif
+
+" Searches Dash for the word under your cursor in vim
+function! SearchDash()
+  " Some setup
+  let s:browser = "/usr/bin/open"
+  let s:wordUnderCursor = expand("<cword>")
+
+  " Run it
+  let s:url = "dash://".s:wordUnderCursor
+  let s:cmd ="silent ! " . s:browser . " " . s:url
+  execute s:cmd
+  redraw!
+endfunction
+map <leader>d :call SearchDash()<CR>
+
+" --- End ---
+" This is required for Vundle
+filetype plugin indent on

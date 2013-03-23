@@ -7,9 +7,14 @@ Output.fancy
 package_managers = [
   Dotfile.new,
   OhMyZSH.new("bitboxer"),
-#  Vundle.new,
+  Vundle.new,
   Fonts.new
 ]
+
+desc "Setup the dotfiles"
+task :setup do
+  package_managers.each(&:setup)
+end
 
 desc "Install the dotfiles"
 task :install do
