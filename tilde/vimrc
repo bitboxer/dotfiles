@@ -26,6 +26,10 @@ set nowrap
 set nrformats=
 " I don't like Swapfiles
 set noswapfile
+" Don't make a backup before overwriting a file.
+set nobackup
+" And again.
+set nowritebackup
 " I prefer , to be the leader key
 let mapleader = ","
 noremap \ ,
@@ -73,6 +77,7 @@ let g:ctrlp_match_window_reversed = 0
 
 " Nerdtree
 Bundle "scrooloose/nerdtree"
+let NERDTreeIgnore=['\.pyc$', '\.pyo$', '\.rbc$', '\.rbo$', '\.class$', '\.o$', '\~$']
 map <C-n> :NERDTreeToggle<CR>
 map <leader>n :NERDTreeToggle<CR>
 
@@ -88,6 +93,10 @@ Bundle "kchmck/vim-coffee-script"
 
 " Syntastic: Really great Syntax checker
 Bundle "scrooloose/syntastic"
+let g:syntastic_enable_signs=1
+let g:syntastic_quiet_warnings=0
+let g:syntastic_auto_loc_list=2
+
 " Use Node.js for JavaScript interpretation
 let $JS_CMD='node'
 
@@ -110,6 +119,9 @@ map <Leader>g :GundoToggle<CR>
 
 " Tab completion
 Bundle "ervandew/supertab"
+
+" Start rspec the smart way
+Bundle "skalnik/vim-vroom"
 
 " Show invisible characters:
 " Tabs and trailing whitespace
@@ -155,7 +167,8 @@ au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} set ft=markdown | call 
 au BufRead,BufNewFile *.tex call s:setupWrapping()
 
 " Set the Ruby filetype for a number of common Ruby files without .rb
-au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Procfile,Guardfile,config.ru,*.rake,*.rabl,*.god,*.jbuilder} set ft=ruby
+au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Procfile,Guardfile,
+      \config.ru,*.rake,*.rabl,*.god,*.jbuilder} set ft=ruby
 
 " Treat JSON files like JavaScript
 au BufNewFile,BufRead {*.json,*.jsm} set ft=javascript
@@ -177,6 +190,14 @@ nmap <leader>l mQviwu`Q
 " upper/lower first char of word
 nmap <leader>U mQgewvU`Q
 nmap <leader>L mQgewvu`Q
+
+" Move selected block
+nnoremap <C-j> :m .+1<CR>==
+nnoremap <C-k> :m .-2<CR>==
+inoremap <C-j> <Esc>:m .+1<CR>==gi
+inoremap <C-k> <Esc>:m .-2<CR>==gi
+vnoremap <C-j> :m '>+1<CR>gv=gv
+vnoremap <C-k> :m '<-2<CR>gv=gv
 
 " find merge conflict markers
 nmap <silent> <leader>fc <ESC>/\v^[<=>]{7}( .*\|$)<CR>
