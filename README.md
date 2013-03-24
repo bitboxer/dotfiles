@@ -12,7 +12,7 @@ to manage the installation process.
     bundle
     bundle exec rake install
 
-This will install all needed packages and links my config files to ``$HOME``
+This will install all needed packages and links my config files to ``$HOME``.
 
 ## ZSH ##
 
@@ -30,5 +30,5 @@ is installed via exogenesis.
 ## GIT ##
 
 I added my Git config as example file. Just rename the
-.gitconfig_example to .gitconfig and change the Email and Username to
+``.gitconfig_example`` to ``.gitconfig`` and change the Email and Username to
 yours.
