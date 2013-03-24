@@ -162,11 +162,8 @@ set wildignore+=*/vendor/gems/*,*/vendor/cache/*,*/.bundle/*,*/.sass-cache/*
 " Disable temp and backup files
 set wildignore+=*.swp,*~,._*
 
-" Make sure all markdown files have the correct filetype set and setup wrapping
+" Make sure all markdown files have the correct filetype
 au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} set ft=markdown
-
-" LaTeX files should also have Wrapping
-au BufRead,BufNewFile *.tex call s:setupWrapping()
 
 " Set the Ruby filetype for a number of common Ruby files without .rb
 au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Procfile,Guardfile,
