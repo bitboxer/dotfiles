@@ -1,12 +1,12 @@
 brews:
-  - ack
   - aacgain
+  - ack
   - ctags
   - ffmpeg
+  - git
+  - htop-osx
   - mysql
   - tig
-  - htop-osx
-  - vim
-  - git
   - tmux
+  - vim
   - watch
