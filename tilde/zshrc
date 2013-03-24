@@ -32,9 +32,6 @@ if [[ -f $HOME/.zsh/local_aliases ]] ; then . $HOME/.zsh/local_aliases ; fi
 # Delete-Key has to work :)
 bindkey "^[[3~" delete-char
 
-alias glog="git log"
-alias trst="touch tmp/restart"
-
 if  { [ "$TERM" != "screen" ] && ! [ -n "$TMUX" ] } then
   cat ~/.logo/joker.ascii
 fi

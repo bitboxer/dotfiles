@@ -5,6 +5,7 @@ alias la='ls -A'
 alias gs='git status'
 alias changelog='git log `git log -1 --format=%H -- CHANGELOG*`..; cat CHANGELOG*'
 alias gd='git diff'
+alias glog="git log"
 
 # Respect ANSI Color Strings
 alias less="less -R"
@@ -17,3 +18,7 @@ alias %=' '
 
 # Start pry for rails console debugging
 alias pryc='pry -I . -rconfig/environment'
+
+# Rails aliases
+alias trst="touch tmp/restart"
+alias tlog="tail -f log/development.log"
