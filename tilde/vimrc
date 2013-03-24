@@ -132,7 +132,7 @@ let g:dash_map = {
         \ 'ruby'       : 'rb',
         \ 'javascript' : 'js'
         \ }
-map <leader>d :Dash!<CR>
+map <leader>d :Dash<CR>
 
 " Show invisible characters:
 " Tabs and trailing whitespace
