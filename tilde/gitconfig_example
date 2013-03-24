@@ -1,6 +1,6 @@
 [user]
-	name  = NAME
-	email = EMAIL
+  name  = NAME
+  email = EMAIL
 
 [alias]
   co = checkout
@@ -21,7 +21,7 @@
   user = bitboxer
 
 [format]
-	pretty = %C(yellow)%h%Creset %C(green)%s%Creset %C(red)(%cr)%Creset - %an
+  pretty = %C(yellow)%h%Creset %C(green)%s%Creset %C(red)(%cr)%Creset - %an
 
 
 [merge]
@@ -30,7 +30,7 @@
 
   # DiffMerge can be found here : 
   # http://www.sourcegear.com/diffmerge/
-	tool = diffmerge
+  tool = diffmerge
 
 [mergetool "diffmerge"]
   cmd = diffmerge --merge --result=$MERGED $LOCAL $BASE $REMOTE
@@ -38,4 +38,4 @@
 
 [push]
   # simple wäre besser, aber xcode hat ein uralt git mitgeliefert was sonst meckert
-	default = matching
+  default = matching
