@@ -21,7 +21,7 @@ export DISABLE_AUTO_UPDATE="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(heroku git brew bundler gem git github osx rails3 dirhelper screen npm rake forklift tmuxinator)
+plugins=(brew bundler dirhelper forklift gem git git github heroku npm osx rails3 rake rbenv screen thor tmuxinator vundle)
 
 source $ZSH/oh-my-zsh.sh
 
