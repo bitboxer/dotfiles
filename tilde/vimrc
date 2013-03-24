@@ -129,8 +129,7 @@ Bundle "skalnik/vim-vroom"
 Bundle 'rizzatti/funcoo.vim'
 Bundle 'rizzatti/dash.vim'
 let g:dash_map = {
-        \ 'ruby'       : 'rails',
-        \ 'python'     : 'python2',
+        \ 'ruby'       : 'rb',
         \ 'javascript' : 'js'
         \ }
 map <leader>d :Dash!<CR>
