@@ -125,6 +125,16 @@ Bundle "ervandew/supertab"
 " Start rspec the smart way
 Bundle "skalnik/vim-vroom"
 
+" Search in Dash
+Bundle 'rizzatti/funcoo.vim'
+Bundle 'rizzatti/dash.vim'
+let g:dash_map = {
+        \ 'ruby'       : 'rails',
+        \ 'python'     : 'python2',
+        \ 'javascript' : 'js'
+        \ }
+map <leader>d :Dash!<CR>
+
 " Show invisible characters:
 " Tabs and trailing whitespace
 set list
@@ -205,20 +215,6 @@ nmap <silent> <leader>fc <ESC>/\v^[<=>]{7}( .*\|$)<CR>
 " see :help last-position-jump
 au BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= line("$")
   \| exe "normal! g`\"" | endif
-
-" Searches Dash for the word under your cursor in vim
-function! SearchDash()
-  " Some setup
-  let s:browser = "/usr/bin/open"
-  let s:wordUnderCursor = expand("<cword>")
-
-  " Run it
-  let s:url = "dash://".s:wordUnderCursor
-  let s:cmd ="silent ! " . s:browser . " " . s:url
-  execute s:cmd
-  redraw!
-endfunction
-map <leader>d :call SearchDash()<CR>
 
 " --- End ---
 " This is required for Vundle
