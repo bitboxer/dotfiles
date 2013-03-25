@@ -134,6 +134,10 @@ let g:dash_map = {
         \ }
 map <leader>d :Dash<CR>
 
+" Better * search for selections.
+" http://vimcasts.org/episodes/search-for-the-selected-text/
+Bundle 'nelstrom/vim-visual-star-search'
+
 " Show invisible characters:
 " Tabs and trailing whitespace
 set list
