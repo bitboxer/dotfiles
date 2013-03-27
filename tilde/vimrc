@@ -138,6 +138,10 @@ map <leader>d :Dash<CR>
 " http://vimcasts.org/episodes/search-for-the-selected-text/
 Bundle 'nelstrom/vim-visual-star-search'
 
+" Open Markdown files in Marked
+Bundle "itspriddle/vim-marked"
+map <leader>m :MarkedOpen<CR>
+
 " Show invisible characters:
 " Tabs and trailing whitespace
 set list
