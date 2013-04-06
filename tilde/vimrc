@@ -111,7 +111,7 @@ Bundle "airblade/vim-gitgutter"
 highlight clear SignColumn
 
 " Better statusbar
-Bundle "Lokaltog/vim-powerline"
+set rtp+=/usr/local/lib/python2.7/site-packages/powerline/bindings/vim
 set laststatus=2
 let g:Powerline_symbols = 'fancy'
 

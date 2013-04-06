@@ -13,6 +13,7 @@ package_managers = [
   Vundle.new,
   Fonts.new,
   Homebrew.new(packages["brews"]),
+  Python.new(packages["pips"])
 ]
 
 desc "Setup the dotfiles"

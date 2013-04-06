@@ -10,3 +10,6 @@ brews:
   - tmux
   - vim
   - watch
+pips:
+  - pygments
+  - "git+git://github.com/Lokaltog/powerline"
