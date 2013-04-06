@@ -1,5 +1,6 @@
-PATH
-  remote: ../
+GIT
+  remote: https://github.com/moonglum/exogenesis.git
+  revision: 167a026989c2abb64a3be967d86bab610e10a6a4
   specs:
     exogenesis (0.1.0)
 
