@@ -192,6 +192,12 @@ au BufNewFile,BufRead {*.json,*.jsm} set ft=javascript
 " Recognize CoffeeScript
 au BufNewFile,BufRead *.coffee set ft=coffee
 
+" Folding should use syntax mode
+set foldmethod=syntax
+" Set the start to a very high level to make all folds open
+" when opening a new document
+au BufRead * normal zR
+
 " Make cursor move by visual lines instead of file lines (when wrapping)
 map k gk
 map j gj
