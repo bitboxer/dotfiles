@@ -22,3 +22,6 @@ alias pryc='pry -I . -rconfig/environment'
 # Rails aliases
 alias trst="touch tmp/restart"
 alias tlog="tail -f log/development.log"
+
+# Bundler
+alias be="bundle exec"
