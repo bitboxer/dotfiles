@@ -236,9 +236,6 @@ vmap r "_dP
 au BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= line("$")
   \| exe "normal! g`\"" | endif
 
-" Disable <esc> in normal mode, use <c-c> instead!
-inoremap <esc> <nop>
-
 " --- End ---
 " This is required for Vundle
 filetype plugin indent on
