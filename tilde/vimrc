@@ -92,7 +92,10 @@ Bundle "pangloss/vim-javascript"
 Bundle "tpope/vim-markdown"
 Bundle "kchmck/vim-coffee-script"
 Bundle "tpope/vim-rails"
+
+" Support for slim
 Bundle "slim-template/vim-slim"
+autocmd BufNewFile,BufRead *.slim set filetype=slim
 
 " Syntastic: Really great Syntax checker
 Bundle "scrooloose/syntastic"
