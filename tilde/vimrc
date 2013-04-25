@@ -78,8 +78,8 @@ let g:ctrlp_match_window_reversed = 0
 " Nerdtree
 Bundle "scrooloose/nerdtree"
 let NERDTreeIgnore=['\.pyc$', '\.pyo$', '\.rbc$', '\.rbo$', '\.class$', '\.o$', '\~$']
-map <C-n> :NERDTreeToggle<CR>
-map <leader>n :NERDTreeToggle<CR>
+noremap <C-n> :NERDTreeToggle<CR>
+noremap <leader>n :NERDTreeToggle<CR>
 let g:ctrlp_dont_split = 'NERD_tree_2'
 
 " Color Theme
@@ -121,7 +121,7 @@ let g:Powerline_symbols = 'fancy'
 
 " Cool Undo Tree
 Bundle "sjl/gundo.vim"
-map <Leader>g :GundoToggle<CR>
+noremap <Leader>g :GundoToggle<CR>
 
 " Tab completion
 Bundle "ervandew/supertab"
@@ -136,7 +136,7 @@ let g:dash_map = {
         \ 'ruby'       : 'rb',
         \ 'javascript' : 'js'
         \ }
-map <leader>d :Dash<CR>
+noremap <leader>d :Dash<CR>
 
 " Better * search for selections.
 " http://vimcasts.org/episodes/search-for-the-selected-text/
@@ -144,7 +144,7 @@ Bundle 'nelstrom/vim-visual-star-search'
 
 " Open Markdown files in Marked
 Bundle "itspriddle/vim-marked"
-map <leader>m :MarkedOpen<CR>
+noremap <leader>m :MarkedOpen<CR>
 
 " Show invisible characters:
 " Tabs and trailing whitespace
@@ -197,19 +197,19 @@ au BufNewFile,BufRead {*.json,*.jsm} set ft=javascript
 au BufNewFile,BufRead *.coffee set ft=coffee
 
 " Make cursor move by visual lines instead of file lines (when wrapping)
-map k gk
-map j gj
+noremap k gk
+noremap j gj
 
 " Remove unwanted spaces command
 command Leerzeichen :%s/\s\+$
 
 " upper/lower word
-nmap <leader>u mQviwU`Q
-nmap <leader>l mQviwu`Q
+nnoremap <leader>u mQviwU`Q
+nnoremap <leader>l mQviwu`Q
 
 " upper/lower first char of word
-nmap <leader>U mQgewvU`Q
-nmap <leader>L mQgewvu`Q
+nnoremap <leader>U mQgewvU`Q
+nnoremap <leader>L mQgewvu`Q
 
 " Move selected block
 nnoremap <C-j> :m .+1<CR>==
@@ -220,16 +220,16 @@ vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
 
 " ARROW KEYS ARE UNACCEPTABLE
-map <Left> <Nop>
-map <Right> <Nop>
-map <Up> <Nop>
-map <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
+noremap <Up> <Nop>
+noremap <Down> <Nop>
 
 " find merge conflict markers
-nmap <silent> <leader>fc <ESC>/\v^[<=>]{7}( .*\|$)<CR>
+nnoremap <silent> <leader>fc <ESC>/\v^[<=>]{7}( .*\|$)<CR>
 
 " Replace selection with text in clipboard
-vmap r "_dP
+vnoremap r "_dP
 
 " Remember last location in file, but not for commit messages.
 " see :help last-position-jump
