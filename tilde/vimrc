@@ -109,11 +109,6 @@ let $JS_CMD='node'
 " ack.vim: ack integration
 Bundle "mileszs/ack.vim"
 
-" Git Gutter: shows a git diff in the gutter
-Bundle "airblade/vim-gitgutter"
-" without any weird color
-highlight clear SignColumn
-
 " Better statusbar
 set rtp+=/usr/local/lib/python2.7/site-packages/powerline/bindings/vim
 set laststatus=2
