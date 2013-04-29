@@ -110,9 +110,14 @@ let $JS_CMD='node'
 Bundle "mileszs/ack.vim"
 
 " Better statusbar
-set rtp+=/usr/local/lib/python2.7/site-packages/powerline/bindings/vim
+Bundle "Lokaltog/vim-powerline"
 set laststatus=2
 let g:Powerline_symbols = 'fancy'
+
+" Git Gutter: shows a git diff in the gutter
+Bundle "airblade/vim-gitgutter"
+" without any weird color
+highlight clear SignColumn
 
 " Cool Undo Tree
 Bundle "sjl/gundo.vim"
