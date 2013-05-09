@@ -29,7 +29,7 @@
 		},
 		"tmux": {
 			"colorscheme": "default",
-			"theme": "default"
+			"theme": "bitboxer"
 		},
 		"vim": {
 			"colorscheme": "default",
