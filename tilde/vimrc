@@ -110,7 +110,10 @@ let $JS_CMD='node'
 Bundle "mileszs/ack.vim"
 
 " Better statusbar
-Bundle "Lokaltog/vim-powerline"
+" In case there is a regression in the new powerline,
+" switch back to the bundled version:
+" Bundle "Lokaltog/vim-powerline"
+set rtp+=/usr/local/lib/python2.7/site-packages/powerline/bindings/vim
 set laststatus=2
 let g:Powerline_symbols = 'fancy'
 
