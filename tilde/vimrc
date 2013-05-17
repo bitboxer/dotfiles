@@ -241,7 +241,7 @@ au BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= l
 
 " Spell only for certain files
 autocmd FileType Markdown setlocal spell spelllang=en,de
-autocmd FileType COMMIT_EDITMSG setlocal spell spelllang=en,de
+autocmd BufNewFile,BufRead COMMIT_EDITMSG setlocal spell spelllang=en,de
 
 " --- End ---
 " This is required for Vundle
