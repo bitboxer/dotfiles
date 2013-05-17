@@ -239,6 +239,10 @@ vnoremap r "_dP
 au BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= line("$")
   \| exe "normal! g`\"" | endif
 
+" Spell only for certain files
+autocmd FileType Markdown setlocal spell spelllang=en,de
+autocmd FileType COMMIT_EDITMSG setlocal spell spelllang=en,de
+
 " --- End ---
 " This is required for Vundle
 filetype plugin indent on
