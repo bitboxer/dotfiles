@@ -240,7 +240,7 @@ au BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= l
   \| exe "normal! g`\"" | endif
 
 " Spell only for certain files
-autocmd FileType Markdown setlocal spell spelllang=en,de
+autocmd FileType markdown setlocal spell spelllang=en,de
 autocmd BufNewFile,BufRead COMMIT_EDITMSG setlocal spell spelllang=en,de
 
 " --- End ---
