@@ -8,7 +8,7 @@ set fish_theme bitboxer
 # Custom plugins may be added to ~/.oh-my-fish/custom/plugins/
 # Example format: set fish_plugins autojump bundler
 
-set fish_plugins rake rbenv
+set fish_plugins rake rbenv code
 
 # Path to your custom folder (default path is $FISH/custom)
 #set fish_custom $HOME/dotfiles/oh-my-fish
