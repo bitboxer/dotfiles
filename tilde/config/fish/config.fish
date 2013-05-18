@@ -16,6 +16,11 @@ set fish_plugins rake rbenv code
 # Load oh-my-fish cofiguration.
 . $fish_path/oh-my-fish.fish
 
+# RBenv via homebrew
+set PATH $PATH /usr/local/opt/rbenv/shims
+set PATH $PATH /usr/local/opt/rbenv/bin
+set PATH $PATH /usr/local/share/npm/bin
+
 # ls
 alias la='ls -A'
 
@@ -27,7 +32,6 @@ alias glog='git log'
 alias gca='git commit -v -a'
 alias gl='git pull'
 alias gp='git push'
-
 
 # Respect ANSI Color Strings
 alias less="less -R"
