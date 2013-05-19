@@ -2,4 +2,5 @@ tilde/zsh/local_aliases
 tilde/config/fish/fish_history
 tilde/config/fish/fish_history
 tilde/config/fish/fishd.*
+tilde/config/fish/generated_completions/*
 .*
