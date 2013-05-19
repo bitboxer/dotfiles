@@ -16,6 +16,10 @@ set fish_plugins rbenv code
 # Load oh-my-fish cofiguration.
 . $fish_path/oh-my-fish.fish
 
+# Homebrew must be first in PATH
+set PATH /usr/local/sbin $PATH
+set PATH /usr/local/bin $PATH
+
 # RBenv via homebrew
 set PATH $PATH /usr/local/opt/rbenv/shims
 set PATH $PATH /usr/local/opt/rbenv/bin
