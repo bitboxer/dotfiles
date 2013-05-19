@@ -36,6 +36,7 @@ alias glog='git log'
 alias gca='git commit -v -a'
 alias gl='git pull'
 alias gp='git push'
+alias gco='git checkout'
 
 # Respect ANSI Color Strings
 alias less="less -R"
