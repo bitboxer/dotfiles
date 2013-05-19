@@ -57,3 +57,10 @@ alias be="bundle exec"
 function fish_greeting
   cat ~/.logo/joker.ascii
 end
+
+function fish_title
+  if test $_  != fish
+    echo $_ ' '
+  end
+  pwd
+end
