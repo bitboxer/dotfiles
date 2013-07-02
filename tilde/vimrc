@@ -88,7 +88,6 @@ colorscheme Tomorrow-Night-Bright
 
 " === Additional Language Support ===
 Bundle "tpope/vim-haml"
-Bundle "pangloss/vim-javascript"
 Bundle "kchmck/vim-coffee-script"
 Bundle "tpope/vim-rails"
 
