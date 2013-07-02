@@ -1,1 +1,1 @@
-export PATH="/usr/local/opt/rbenv/shims:/usr/local/opt/rbenv/bin:$PATH"
+export PATH="/Users/bodo/.rbenv/shims:/Users/bodo/.rbenv/bin:$PATH"
