@@ -241,6 +241,10 @@ au BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= l
 autocmd FileType markdown setlocal spell spelllang=en,de
 autocmd BufNewFile,BufRead COMMIT_EDITMSG setlocal spell spelllang=en,de
 
+" enable project based vimrc
+set exrc
+set secure
+
 " --- End ---
 " This is required for Vundle
 filetype plugin indent on
