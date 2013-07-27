@@ -148,6 +148,9 @@ Bundle 'nelstrom/vim-visual-star-search'
 Bundle "itspriddle/vim-marked"
 noremap <leader>m :MarkedOpen<CR>
 
+" Smart line number toggle
+Bundle "jeffkreeftmeijer/vim-numbertoggle"
+
 " Show invisible characters:
 " Tabs and trailing whitespace
 set list
