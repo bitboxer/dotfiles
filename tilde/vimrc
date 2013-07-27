@@ -206,7 +206,7 @@ noremap k gk
 noremap j gj
 
 " Remove unwanted spaces command
-command Leerzeichen :%s/\s\+$
+command Leerzeichen :%!git stripspace < %
 
 " upper/lower word
 nnoremap <leader>u mQviwU`Q
