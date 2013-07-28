@@ -16,6 +16,54 @@ bind "C", ["cmd", "alt", "ctrl"], -> moveWindow (frame) ->
   frame.size.width /= 1.5
   frame.size.height /= 1.3
 
+# Center Window
+bind "b", ["cmd", "alt", "ctrl"], -> moveWindow (frame) ->
+  # in SizeUp, this feature has a few options.. they're easy to emulate
+  # by altering this function.. 'frame' starts out as the full screen's
+  # size so you can just do calculations on it and you're done.
+  frame.origin.x += frame.size.width / 15
+  frame.size.width /= 1.2
+
+# Top Left Corner
+bind "1", ["cmd", "alt", "ctrl"], -> moveWindow (frame) ->
+  # in SizeUp, this feature has a few options.. they're easy to emulate
+  # by altering this function.. 'frame' starts out as the full screen's
+  # size so you can just do calculations on it and you're done.
+  frame.size.width /= 1.5
+  frame.size.height /= 1.3
+
+# Top Right Corner
+bind "2", ["cmd", "alt", "ctrl"], -> moveWindow (frame) ->
+  # in SizeUp, this feature has a few options.. they're easy to emulate
+  # by altering this function.. 'frame' starts out as the full screen's
+  # size so you can just do calculations on it and you're done.
+  width = api.focusedWindow().screen().frameIncludingDockAndMenu().size.width
+  frame.origin.x = width - (frame.size.width / 1.5)
+  frame.size.width /= 1.5
+  frame.size.height /= 1.3
+
+# Bottom Left Corner
+bind "3", ["cmd", "alt", "ctrl"], -> moveWindow (frame) ->
+  # in SizeUp, this feature has a few options.. they're easy to emulate
+  # by altering this function.. 'frame' starts out as the full screen's
+  # size so you can just do calculations on it and you're done.
+  height = api.focusedWindow().screen().frameIncludingDockAndMenu().size.height
+  frame.origin.y = height - (frame.size.height / 1.3)
+  frame.size.width /= 1.5
+  frame.size.height /= 1.3
+
+# Bottom Right Corner
+bind "4", ["cmd", "alt", "ctrl"], -> moveWindow (frame) ->
+  # in SizeUp, this feature has a few options.. they're easy to emulate
+  # by altering this function.. 'frame' starts out as the full screen's
+  # size so you can just do calculations on it and you're done.
+  height = api.focusedWindow().screen().frameIncludingDockAndMenu().size.height
+  width = api.focusedWindow().screen().frameIncludingDockAndMenu().size.width
+  frame.origin.x = width - (frame.size.width / 1.5)
+  frame.origin.y = height - (frame.size.height / 1.3)
+  frame.size.width /= 1.5
+  frame.size.height /= 1.3
+
 bind "i", ["cmd", "alt", "ctrl"], -> 
   alert api.clipboardContents()
 
