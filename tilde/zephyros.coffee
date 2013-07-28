@@ -4,106 +4,89 @@
 # - send window space [dir]
 
 # Make Window Full Screen
-bind "M", ["cmd", "alt", "ctrl"], -> moveWindow null
+bind "M", ["cmd", "ctrl"], -> moveWindow null
 
 # Center Window
-bind "C", ["cmd", "alt", "ctrl"], -> moveWindow (frame) ->
-  # in SizeUp, this feature has a few options.. they're easy to emulate
-  # by altering this function.. 'frame' starts out as the full screen's
-  # size so you can just do calculations on it and you're done.
+bind "C", ["cmd", "ctrl"], -> moveWindow (win, frame) ->
   frame.origin.x += frame.size.width / 6
   frame.origin.y += frame.size.height / 8
   frame.size.width /= 1.5
   frame.size.height /= 1.3
 
-# Center Window
-bind "b", ["cmd", "alt", "ctrl"], -> moveWindow (frame) ->
-  # in SizeUp, this feature has a few options.. they're easy to emulate
-  # by altering this function.. 'frame' starts out as the full screen's
-  # size so you can just do calculations on it and you're done.
+# Center Window with borders
+bind "b", ["cmd", "ctrl"], -> moveWindow (win, frame) ->
   frame.origin.x += frame.size.width / 15
-  frame.size.width /= 1.2
+  frame.size.width /= 1.15
 
 # Top Left Corner
-bind "1", ["cmd", "alt", "ctrl"], -> moveWindow (frame) ->
-  # in SizeUp, this feature has a few options.. they're easy to emulate
-  # by altering this function.. 'frame' starts out as the full screen's
-  # size so you can just do calculations on it and you're done.
+bind "1", ["cmd", "ctrl"], -> moveWindow (win, frame) ->
   frame.size.width /= 1.5
   frame.size.height /= 1.3
 
 # Top Right Corner
-bind "2", ["cmd", "alt", "ctrl"], -> moveWindow (frame) ->
-  # in SizeUp, this feature has a few options.. they're easy to emulate
-  # by altering this function.. 'frame' starts out as the full screen's
-  # size so you can just do calculations on it and you're done.
-  width = api.focusedWindow().screen().frameIncludingDockAndMenu().size.width
+bind "2", ["cmd", "ctrl"], -> moveWindow (win, frame) ->
+  width = win.screen().frameIncludingDockAndMenu().size.width
   frame.origin.x = width - (frame.size.width / 1.5)
   frame.size.width /= 1.5
   frame.size.height /= 1.3
 
 # Bottom Left Corner
-bind "3", ["cmd", "alt", "ctrl"], -> moveWindow (frame) ->
-  # in SizeUp, this feature has a few options.. they're easy to emulate
-  # by altering this function.. 'frame' starts out as the full screen's
-  # size so you can just do calculations on it and you're done.
-  height = api.focusedWindow().screen().frameIncludingDockAndMenu().size.height
+bind "3", ["cmd", "ctrl"], -> moveWindow (win, frame) ->
+  height = win.screen().frameIncludingDockAndMenu().size.height
   frame.origin.y = height - (frame.size.height / 1.3)
   frame.size.width /= 1.5
   frame.size.height /= 1.3
 
 # Bottom Right Corner
-bind "4", ["cmd", "alt", "ctrl"], -> moveWindow (frame) ->
-  # in SizeUp, this feature has a few options.. they're easy to emulate
-  # by altering this function.. 'frame' starts out as the full screen's
-  # size so you can just do calculations on it and you're done.
-  height = api.focusedWindow().screen().frameIncludingDockAndMenu().size.height
-  width = api.focusedWindow().screen().frameIncludingDockAndMenu().size.width
+bind "4", ["cmd", "ctrl"], -> moveWindow (win, frame) ->
+  height = win.screen().frameIncludingDockAndMenu().size.height
+  width = win.screen().frameIncludingDockAndMenu().size.width
   frame.origin.x = width - (frame.size.width / 1.5)
   frame.origin.y = height - (frame.size.height / 1.3)
   frame.size.width /= 1.5
   frame.size.height /= 1.3
 
-bind "i", ["cmd", "alt", "ctrl"], -> 
+# show clipboard contents
+bind "i", ["cmd", "ctrl"], -> 
   alert api.clipboardContents()
 
 # Send Window Left
-bind "left", ["cmd", "alt", "ctrl"], -> moveWindow (frame) ->
+bind "left", ["cmd", "ctrl"], -> moveWindow (win, frame) ->
   frame.size.width /= 2
 
 # Send Window Right
-bind "right", ["cmd", "alt", "ctrl"], -> moveWindow (frame) ->
+bind "right", ["cmd", "ctrl"], -> moveWindow (win, frame) ->
   frame.origin.x += frame.size.width / 2
   frame.size.width /= 2
 
 # Send Window Up
-bind "up", ["cmd", "alt", "ctrl"], -> moveWindow (frame) ->
+bind "up", ["cmd", "ctrl"], -> moveWindow (win, frame) ->
   frame.size.height /= 2
 
 # Send Window Down
-bind "down", ["cmd", "alt", "ctrl"], -> moveWindow (frame) ->
+bind "down", ["cmd", "ctrl"], -> moveWindow (win, frame) ->
   frame.origin.y += frame.size.height / 2
   frame.size.height /= 2
 
 # Send Window Upper Left
-bind "left", ["shift", "alt", "ctrl"], -> moveWindow (frame) ->
+bind "left", ["shift", "alt", "ctrl"], -> moveWindow (win, frame) ->
   frame.size.width /= 2
   frame.size.height /= 2
 
 # Send Window Upper Right
-bind "up", ["shift", "alt", "ctrl"], -> moveWindow (frame) ->
+bind "up", ["shift", "alt", "ctrl"], -> moveWindow (win, frame) ->
   frame.origin.y += frame.size.height / 2
   frame.size.width /= 2
   frame.size.height /= 2
 
 # Send Window Lower Left
-bind "down", ["shift", "alt", "ctrl"], -> moveWindow (frame) ->
+bind "down", ["shift", "alt", "ctrl"], -> moveWindow (win, frame) ->
   frame.origin.x += frame.size.width / 2
   frame.size.width /= 2
   frame.size.height /= 2
 
 # Send Window Lower Right
-bind "right", ["shift", "alt", "ctrl"], -> moveWindow (frame) ->
+bind "right", ["shift", "alt", "ctrl"], -> moveWindow (win, frame) ->
   frame.origin.x += frame.size.width / 2
   frame.origin.y += frame.size.height / 2
   frame.size.width /= 2
@@ -137,5 +120,5 @@ moveToScreen = (win, screen) ->
 moveWindow = (fn) ->
   win = api.focusedWindow()
   frame = win.screen().frameWithoutDockOrMenu()
-  fn frame if fn
+  fn win, frame if fn
   win.setFrame frame
