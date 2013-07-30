@@ -119,6 +119,7 @@ moveToScreen = (win, screen) ->
 
 moveWindow = (fn) ->
   win = api.focusedWindow()
-  frame = win.screen().frameWithoutDockOrMenu()
-  fn win, frame if fn
-  win.setFrame frame
+  if win?
+    frame = win.screen().frameWithoutDockOrMenu()
+    fn win, frame if fn
+    win.setFrame frame
