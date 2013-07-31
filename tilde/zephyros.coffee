@@ -1,4 +1,4 @@
-# Based on this Config: https://github.com/sdegutis/zephyros/wiki/Sizeup-config
+# Based on this Config: https://github.com/sdegutis/zephyros/wiki.p-config
 # todo:
 # - snapback window
 # - send window space [dir]
@@ -8,43 +8,43 @@ bind "M", ["cmd", "ctrl"], -> moveWindow null
 
 # Center Window
 bind "C", ["cmd", "ctrl"], -> moveWindow (win, frame) ->
-  frame.origin.x += frame.size.width / 6
-  frame.origin.y += frame.size.height / 8
-  frame.size.width /= 1.5
-  frame.size.height /= 1.3
+  frame.x += frame.w / 6
+  frame.y += frame.h / 8
+  frame.w /= 1.5
+  frame.h /= 1.3
 
 # Center Window with borders
 bind "b", ["cmd", "ctrl"], -> moveWindow (win, frame) ->
-  frame.origin.x += frame.size.width / 15
-  frame.size.width /= 1.15
+  frame.x += frame.w / 15
+  frame.w /= 1.15
 
 # Top Left Corner
 bind "1", ["cmd", "ctrl"], -> moveWindow (win, frame) ->
-  frame.size.width /= 1.5
-  frame.size.height /= 1.3
+  frame.w /= 1.5
+  frame.h /= 1.3
 
 # Top Right Corner
 bind "2", ["cmd", "ctrl"], -> moveWindow (win, frame) ->
-  width = win.screen().frameIncludingDockAndMenu().size.width
-  frame.origin.x = width - (frame.size.width / 1.5)
-  frame.size.width /= 1.5
-  frame.size.height /= 1.3
+  width = win.screen().frameIncludingDockAndMenu().w
+  frame.x = width - (frame.w / 1.5)
+  frame.w /= 1.5
+  frame.h /= 1.3
 
 # Bottom Left Corner
 bind "3", ["cmd", "ctrl"], -> moveWindow (win, frame) ->
-  height = win.screen().frameIncludingDockAndMenu().size.height
-  frame.origin.y = height - (frame.size.height / 1.3)
-  frame.size.width /= 1.5
-  frame.size.height /= 1.3
+  height = win.screen().frameIncludingDockAndMenu().h
+  frame.y = height - (frame.h / 1.3)
+  frame.w /= 1.5
+  frame.h /= 1.3
 
 # Bottom Right Corner
 bind "4", ["cmd", "ctrl"], -> moveWindow (win, frame) ->
-  height = win.screen().frameIncludingDockAndMenu().size.height
-  width = win.screen().frameIncludingDockAndMenu().size.width
-  frame.origin.x = width - (frame.size.width / 1.5)
-  frame.origin.y = height - (frame.size.height / 1.3)
-  frame.size.width /= 1.5
-  frame.size.height /= 1.3
+  height = win.screen().frameIncludingDockAndMenu().h
+  width = win.screen().frameIncludingDockAndMenu().w
+  frame.x = width - (frame.w / 1.5)
+  frame.y = height - (frame.h / 1.3)
+  frame.w /= 1.5
+  frame.h /= 1.3
 
 # show clipboard contents
 bind "i", ["cmd", "ctrl"], -> 
@@ -52,45 +52,45 @@ bind "i", ["cmd", "ctrl"], ->
 
 # Send Window Left
 bind "left", ["cmd", "ctrl"], -> moveWindow (win, frame) ->
-  frame.size.width /= 2
+  frame.w /= 2
 
 # Send Window Right
 bind "right", ["cmd", "ctrl"], -> moveWindow (win, frame) ->
-  frame.origin.x += frame.size.width / 2
-  frame.size.width /= 2
+  frame.x += frame.w / 2
+  frame.w /= 2
 
 # Send Window Up
 bind "up", ["cmd", "ctrl"], -> moveWindow (win, frame) ->
-  frame.size.height /= 2
+  frame.h /= 2
 
 # Send Window Down
 bind "down", ["cmd", "ctrl"], -> moveWindow (win, frame) ->
-  frame.origin.y += frame.size.height / 2
-  frame.size.height /= 2
+  frame.y += frame.h / 2
+  frame.h /= 2
 
 # Send Window Upper Left
 bind "left", ["shift", "alt", "ctrl"], -> moveWindow (win, frame) ->
-  frame.size.width /= 2
-  frame.size.height /= 2
+  frame.w /= 2
+  frame.h /= 2
 
 # Send Window Upper Right
 bind "up", ["shift", "alt", "ctrl"], -> moveWindow (win, frame) ->
-  frame.origin.y += frame.size.height / 2
-  frame.size.width /= 2
-  frame.size.height /= 2
+  frame.y += frame.h / 2
+  frame.w /= 2
+  frame.h /= 2
 
 # Send Window Lower Left
 bind "down", ["shift", "alt", "ctrl"], -> moveWindow (win, frame) ->
-  frame.origin.x += frame.size.width / 2
-  frame.size.width /= 2
-  frame.size.height /= 2
+  frame.x += frame.w / 2
+  frame.w /= 2
+  frame.h /= 2
 
 # Send Window Lower Right
 bind "right", ["shift", "alt", "ctrl"], -> moveWindow (win, frame) ->
-  frame.origin.x += frame.size.width / 2
-  frame.origin.y += frame.size.height / 2
-  frame.size.width /= 2
-  frame.size.height /= 2
+  frame.x += frame.w / 2
+  frame.y += frame.h / 2
+  frame.w /= 2
+  frame.h /= 2
 
 # Send Window to Next Display
 bind "right", ['ctrl', 'alt'], ->
@@ -109,13 +109,13 @@ moveToScreen = (win, screen) ->
   oldScreenRect = win.screen().frameWithoutDockOrMenu()
   newScreenRect = screen.frameWithoutDockOrMenu()
 
-  xRatio = newScreenRect.size.width  / oldScreenRect.size.width
-  yRatio = newScreenRect.size.height / oldScreenRect.size.height
+  xRatio = newScreenRect.w  / oldScreenRect.w
+  yRatio = newScreenRect.h / oldScreenRect.h
 
-  win.setFrame CGRectMake(Math.round((oldFrame.origin.x - NSMinX(oldScreenRect)) * xRatio) + NSMinX(newScreenRect),
-                          Math.round((oldFrame.origin.y - NSMinY(oldScreenRect)) * yRatio) + NSMinY(newScreenRect),
-                          Math.round(oldFrame.size.width * xRatio),
-                          Math.round(oldFrame.size.height * yRatio))
+  win.setFrame CGRectMake(Math.round((oldFrame.x - NSMinX(oldScreenRect)) * xRatio) + NSMinX(newScreenRect),
+                          Math.round((oldFrame.y - NSMinY(oldScreenRect)) * yRatio) + NSMinY(newScreenRect),
+                          Math.round(oldframe.w * xRatio),
+                          Math.round(oldframe.h * yRatio))
 
 moveWindow = (fn) ->
   win = api.focusedWindow()
