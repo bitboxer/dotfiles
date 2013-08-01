@@ -105,17 +105,19 @@ bind "left", ['ctrl', 'alt'], ->
 moveToScreen = (win, screen) ->
   return if screen.null?
 
-  oldFrame      = win.frame()
+  frame = win.frame()
   oldScreenRect = win.screen().frameWithoutDockOrMenu()
   newScreenRect = screen.frameWithoutDockOrMenu()
 
   xRatio = newScreenRect.w  / oldScreenRect.w
   yRatio = newScreenRect.h / oldScreenRect.h
 
-  win.setFrame CGRectMake(Math.round((oldFrame.x - NSMinX(oldScreenRect)) * xRatio) + NSMinX(newScreenRect),
-                          Math.round((oldFrame.y - NSMinY(oldScreenRect)) * yRatio) + NSMinY(newScreenRect),
-                          Math.round(oldframe.w * xRatio),
-                          Math.round(oldframe.h * yRatio))
+  win.setFrame {
+    x: Math.round((frame.x - oldScreenRect.x) * xRatio) + newScreenRect.x
+    y: Math.round((frame.y - oldScreenRect.y) * yRatio) + newScreenRect.y
+    w: Math.round(frame.w * xRatio)
+    h: Math.round(frame.h * yRatio)
+  }
 
 moveWindow = (fn) ->
   win = api.focusedWindow()
