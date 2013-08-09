@@ -14,7 +14,7 @@ bind "C", ["cmd", "ctrl"], -> moveWindow (win, frame) ->
   frame.h /= 1.3
 
 # Center Window with borders
-bind "b", ["cmd", "ctrl"], -> moveWindow (win, frame) ->
+bind "B", ["cmd", "ctrl"], -> moveWindow (win, frame) ->
   frame.x += frame.w / 15
   frame.w /= 1.15
 
@@ -47,58 +47,58 @@ bind "4", ["cmd", "ctrl"], -> moveWindow (win, frame) ->
   frame.h /= 1.3
 
 # show clipboard contents
-bind "i", ["cmd", "ctrl"], -> 
+bind "I", ["cmd", "ctrl"], -> 
   alert api.clipboardContents()
 
 # Send Window Left
-bind "left", ["cmd", "ctrl"], -> moveWindow (win, frame) ->
+bind "LEFT", ["cmd", "ctrl"], -> moveWindow (win, frame) ->
   frame.w /= 2
 
 # Send Window Right
-bind "right", ["cmd", "ctrl"], -> moveWindow (win, frame) ->
+bind "RIGHT", ["cmd", "ctrl"], -> moveWindow (win, frame) ->
   frame.x += frame.w / 2
   frame.w /= 2
 
 # Send Window Up
-bind "up", ["cmd", "ctrl"], -> moveWindow (win, frame) ->
+bind "UP", ["cmd", "ctrl"], -> moveWindow (win, frame) ->
   frame.h /= 2
 
 # Send Window Down
-bind "down", ["cmd", "ctrl"], -> moveWindow (win, frame) ->
+bind "DOWN", ["cmd", "ctrl"], -> moveWindow (win, frame) ->
   frame.y += frame.h / 2
   frame.h /= 2
 
 # Send Window Upper Left
-bind "left", ["shift", "alt", "ctrl"], -> moveWindow (win, frame) ->
+bind "LEFT", ["shift", "alt", "ctrl"], -> moveWindow (win, frame) ->
   frame.w /= 2
   frame.h /= 2
 
 # Send Window Upper Right
-bind "up", ["shift", "alt", "ctrl"], -> moveWindow (win, frame) ->
+bind "UP", ["shift", "alt", "ctrl"], -> moveWindow (win, frame) ->
   frame.y += frame.h / 2
   frame.w /= 2
   frame.h /= 2
 
 # Send Window Lower Left
-bind "down", ["shift", "alt", "ctrl"], -> moveWindow (win, frame) ->
+bind "DOWN", ["shift", "alt", "ctrl"], -> moveWindow (win, frame) ->
   frame.x += frame.w / 2
   frame.w /= 2
   frame.h /= 2
 
 # Send Window Lower Right
-bind "right", ["shift", "alt", "ctrl"], -> moveWindow (win, frame) ->
+bind "RIGHT", ["shift", "alt", "ctrl"], -> moveWindow (win, frame) ->
   frame.x += frame.w / 2
   frame.y += frame.h / 2
   frame.w /= 2
   frame.h /= 2
 
 # Send Window to Next Display
-bind "right", ['ctrl', 'alt'], ->
+bind "RIGHT", ['ctrl', 'alt'], ->
   win = api.focusedWindow()
   moveToScreen win, win.screen().nextScreen()
 
 # Send Window to Previous Display
-bind "left", ['ctrl', 'alt'], ->
+bind "LEFT", ['ctrl', 'alt'], ->
   win = api.focusedWindow()
   moveToScreen win, win.screen().previousScreen()
 
