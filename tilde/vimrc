@@ -151,6 +151,10 @@ noremap <leader>m :MarkedOpen<CR>
 " Smart line number toggle
 Bundle "jeffkreeftmeijer/vim-numbertoggle"
 
+" Added Javascript Template Support
+Bundle "briancollins/vim-jst"
+au BufNewFile,BufRead *.ejs set filetype=jst
+
 " Show invisible characters:
 " Tabs and trailing whitespace
 set list
