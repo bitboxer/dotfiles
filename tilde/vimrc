@@ -37,8 +37,9 @@ noremap \ ,
 set number
 " MOAR colors
 set t_Co=256
-" Escape unselects search selection
-nnoremap <esc> :noh<return><esc>
+" Unselect the search result
+map <Leader><Space> :noh<CR>
+" nnoremap <esc> :noh<return><esc>
 " Better buffer handling
 set hidden
 
@@ -52,11 +53,8 @@ set mouse=a
 " Set the title of the iterm tab
 set title
 
-" Needed for iTerm2 Cursor Handling
-nnoremap <Esc>A <up>
-nnoremap <Esc>B <down>
-nnoremap <Esc>C <right>
-nnoremap <Esc>D <left>
+" no timeout, make switching modes easier
+set timeoutlen=1000 ttimeoutlen=0
 
 " === Vundle Setup ===
 set rtp+=~/.vim/bundle/vundle/
