@@ -54,6 +54,9 @@ alias tlog="tail -f log/development.log"
 # Bundler
 alias be="bundle exec"
 
+# Manuals for Ruby People (thanks @moonglum)
+alias man="gem man -s"
+
 function fish_greeting
   cat ~/.logo/joker.ascii
 end
