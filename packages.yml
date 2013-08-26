@@ -10,5 +10,9 @@ brews:
   - tmux
   - vim
   - watch
+  - hub
+  - ant
+  - maven
+  - tree
 pips:
   - pygments
