@@ -1,6 +1,0 @@
-if [[ $OSTYPE == darwin* ]]; then
-    source ~/.zsh/osspecific/darwin.zsh
-  else
-    source ~/.zsh/osspecific/linux.zsh
-fi
-export PATH="/usr/local/share/npm/bin:$PATH"
