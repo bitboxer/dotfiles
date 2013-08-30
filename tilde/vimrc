@@ -153,6 +153,9 @@ Bundle "jeffkreeftmeijer/vim-numbertoggle"
 Bundle "briancollins/vim-jst"
 au BufNewFile,BufRead *.ejs set filetype=jst
 
+" Toggle comment blocks
+Bundle "tpope/vim-commentary"
+
 " Show invisible characters:
 " Tabs and trailing whitespace
 set list
