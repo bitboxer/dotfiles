@@ -42,6 +42,8 @@ map <Leader><Space> :noh<CR>
 " nnoremap <esc> :noh<return><esc>
 " Better buffer handling
 set hidden
+" hightlight cursor position
+set cursorline
 
 " Use the clipboard of Mac OS
 if has('mac')
