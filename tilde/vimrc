@@ -86,14 +86,10 @@ let g:ctrlp_dont_split = 'NERD_tree_2'
 Bundle "chriskempson/vim-tomorrow-theme"
 colorscheme Tomorrow-Night-Bright
 
-" === Additional Language Support ===
-Bundle "tpope/vim-haml"
-Bundle "kchmck/vim-coffee-script"
-Bundle "tpope/vim-rails"
-
-" Support for slim
-Bundle "slim-template/vim-slim"
-autocmd BufNewFile,BufRead *.slim set filetype=slim
+" Polyglot: A collection of language packs, loaded on demand
+Bundle "sheerun/vim-polyglot"
+" Added Javascript Template Support
+au BufNewFile,BufRead *.ejs set filetype=jst
 
 " Syntastic: Really great Syntax checker
 Bundle "scrooloose/syntastic"
@@ -151,10 +147,6 @@ noremap <leader>m :MarkedOpen<CR>
 " Smart line number toggle
 Bundle "jeffkreeftmeijer/vim-numbertoggle"
 
-" Added Javascript Template Support
-Bundle "briancollins/vim-jst"
-au BufNewFile,BufRead *.ejs set filetype=jst
-
 " Toggle comment blocks
 Bundle "tpope/vim-commentary"
 
@@ -162,8 +154,8 @@ Bundle "tpope/vim-commentary"
 " Tabs and trailing whitespace
 set list
 set listchars=tab:›\ ,trail:.
-
 " Tabs should be 2 spaces
+
 set tabstop=2
 " Soft-Tabs should be 2 spaces
 set softtabstop=2
