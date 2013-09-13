@@ -127,6 +127,9 @@ Bundle "ervandew/supertab"
 " Start rspec the smart way
 Bundle "skalnik/vim-vroom"
 
+" Zooming into Windows
+Bundle "vim-scripts/ZoomWin"
+
 " Search in Dash
 Bundle 'rizzatti/funcoo.vim'
 Bundle 'rizzatti/dash.vim'
