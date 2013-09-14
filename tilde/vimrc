@@ -105,12 +105,13 @@ let $JS_CMD='node'
 Bundle "mileszs/ack.vim"
 
 " Better statusbar
-" In case there is a regression in the new powerline,
-" switch back to the bundled version:
-Bundle "Lokaltog/vim-powerline"
-" set rtp+=/usr/local/lib/python2.7/site-packages/powerline/bindings/vim
+Bundle "bling/vim-airline"
+let g:airline#extensions#tabline#enabled = 1
 set laststatus=2
-let g:Powerline_symbols = 'fancy'
+let g:airline_powerline_fonts = 1
+let g:airlinetheme = "powerlineish"
+
+Bundle "tpope/vim-fugitive"
 
 " Git Gutter: shows a git diff in the gutter
 Bundle "airblade/vim-gitgutter"
