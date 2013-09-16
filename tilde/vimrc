@@ -106,7 +106,6 @@ Bundle "mileszs/ack.vim"
 
 " Better statusbar
 Bundle "bling/vim-airline"
-let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:airlinetheme = "powerlineish"
 set laststatus=2
