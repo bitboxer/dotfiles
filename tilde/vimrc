@@ -196,6 +196,7 @@ set wildignore+=*.swp,*~,._*
 
 " Make sure all markdown files have the correct filetype
 au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} set ft=markdown
+au BufRead,BufNewFile *.{cehtml} set ft=html
 
 " Set the Ruby filetype for a number of common Ruby files without .rb
 au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Procfile,Guardfile,
