@@ -154,8 +154,8 @@ Bundle "jeffkreeftmeijer/vim-numbertoggle"
 Bundle "tpope/vim-commentary"
 
 " show tags for current file
-Bundle "majutsushi/tagbar"
-nnoremap <silent> <Leader>b :TagbarToggle<CR>
+" Bundle "majutsushi/tagbar"
+" nnoremap <silent> <Leader>b :TagbarToggle<CR>
 
 " Show invisible characters:
 " Tabs and trailing whitespace
