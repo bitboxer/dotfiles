@@ -57,6 +57,9 @@ alias be="bundle exec"
 # Manuals for Ruby People (thanks @moonglum)
 alias man="gem man -s"
 
+# Use siver searcher, it is faster!
+alias ack="ag"
+
 function fish_greeting
   cat ~/.logo/joker.ascii
 end

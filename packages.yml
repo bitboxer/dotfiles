@@ -14,5 +14,6 @@ brews:
   - ant
   - maven
   - tree
+  - the_silver_searcher
 pips:
   - pygments
