@@ -32,7 +32,6 @@ set nobackup
 set nowritebackup
 " I prefer , to be the leader key
 let mapleader = ","
-noremap \ ,
 " show line numbers
 set number
 " MOAR colors
