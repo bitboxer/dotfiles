@@ -64,12 +64,13 @@ Bundle 'gmarik/vundle'
 
 " CtrlP: Full path fuzzy finder
 Bundle "kien/ctrlp.vim"
-
-let g:ctrlp_custom_ignore = {
-    \ 'dir':  '\.git$\|\.hg$\|\.svn$',
-    \ 'file': '\.pyc$\|\.pyo$\|\.rbc$|\.rbo$\|\.class$\|\.o$\|\~$\',
-    \ 'doc': 'doc$'
-    \ }
+let g:ctrlp_user_command = {
+  \ 'types': {
+    \ 1: ['.git', 'cd %s && git ls-files --exclude-standard -co'],
+    \ 2: ['.ctrlp_root_dir', 'find %s -type f'],
+  \ },
+  \ 'fallback': 'find %s -type f'
+\ }
 
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_match_window_reversed = 0
