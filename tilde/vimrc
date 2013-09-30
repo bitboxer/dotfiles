@@ -103,7 +103,7 @@ let $JS_CMD='node'
 
 " ack.vim: ack integration
 Bundle "mileszs/ack.vim"
-let g:ackprg = 'ag --nogroup --column'
+let g:ackprg = 'ag -S --nogroup --column'
 
 " Better statusbar
 Bundle "bling/vim-airline"
