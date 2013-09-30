@@ -58,7 +58,8 @@ alias be="bundle exec"
 alias man="gem man -s"
 
 # Use siver searcher, it is faster!
-alias ack="ag"
+alias ack="ag -S"
+alias ag="ag -S"
 
 function fish_greeting
   cat ~/.logo/joker.ascii
