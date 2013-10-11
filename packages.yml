@@ -15,5 +15,6 @@ brews:
   - maven
   - tree
   - the_silver_searcher
+  - grc
 pips:
   - pygments
