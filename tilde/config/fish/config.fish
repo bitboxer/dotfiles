@@ -25,6 +25,8 @@ set PATH $PATH /usr/local/opt/rbenv/shims
 set PATH $PATH /usr/local/opt/rbenv/bin
 set PATH $PATH /usr/local/share/npm/bin
 
+set PATH $PATH ~/bin
+
 # ls
 alias la='ls -A'
 
