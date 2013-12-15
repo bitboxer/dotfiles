@@ -18,3 +18,14 @@ brews:
   - grc
 pips:
   - pygments
+gems:
+  - gem-man
+  - airplay-cli
+  - thor
+  - cocoapods
+  - elasticsearch
+  - localtunnel
+npm:
+  # -g Flag?!
+  - buster
+  - bower
