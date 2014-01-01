@@ -19,6 +19,8 @@ set fish_plugins rbenv code metamorph
 # Homebrew must be first in PATH
 set PATH /usr/local/sbin $PATH
 set PATH /usr/local/bin $PATH
+# Added local bin to path for binstubs
+set PATH ./bin $PATH
 
 # RBenv via homebrew
 set PATH $PATH /usr/local/opt/rbenv/shims
