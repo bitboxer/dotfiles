@@ -25,6 +25,7 @@ gems:
   - cocoapods
   - elasticsearch
   - localtunnel
+  - timetrap
 npm:
   # -g Flag?!
   - buster
