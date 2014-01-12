@@ -156,9 +156,6 @@ Bundle "jeffkreeftmeijer/vim-numbertoggle"
 " Toggle comment blocks
 Bundle "tpope/vim-commentary"
 
-" Fixes iTerm2 cursor focus lost handling
-Bundle "sjl/vitality.vim"
-
 " show tags for current file
 " Bundle "majutsushi/tagbar"
 " nnoremap <silent> <Leader>b :TagbarToggle<CR>
