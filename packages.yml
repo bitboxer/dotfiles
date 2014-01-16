@@ -26,6 +26,7 @@ gems:
   - elasticsearch
   - localtunnel
   - timetrap
+  - powder
 npm:
   # -g Flag?!
   - buster
