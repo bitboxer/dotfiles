@@ -8,7 +8,7 @@ set fish_theme bitboxer
 # Custom plugins may be added to ~/.oh-my-fish/custom/plugins/
 # Example format: set fish_plugins autojump bundler
 
-set fish_plugins rbenv code metamorph
+set fish_plugins node rbenv jump extract rbenv code metamorph bitcrowd
 
 # Path to your custom folder (default path is $FISH/custom)
 #set fish_custom $HOME/dotfiles/oh-my-fish
@@ -19,15 +19,10 @@ set fish_plugins rbenv code metamorph
 # Homebrew must be first in PATH
 set PATH /usr/local/sbin $PATH
 set PATH /usr/local/bin $PATH
+
 # Added local bin to path for binstubs
-set PATH ./bin $PATH
-
-# RBenv via homebrew
-set PATH $PATH /usr/local/opt/rbenv/shims
-set PATH $PATH /usr/local/opt/rbenv/bin
-set PATH $PATH /usr/local/share/npm/bin
-
 set PATH $PATH ~/bin
+set PATH ./bin $PATH
 
 # ls
 alias la='ls -A'
