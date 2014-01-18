@@ -36,12 +36,6 @@ alias gca='git commit -v -a'
 alias gl='git pull'
 alias gp='git push'
 alias gco='git checkout'
-
-# Respect ANSI Color Strings
-alias less="less -R"
-
-# Trees should have colors
-alias tree="tree -C"
 alias unmerged='git branch -r --no-merged | grep -v HEAD | xargs -L1 git --no-pager log --pretty=tformat:\'%Cgreen%d%Creset - %h by %an (%Cblue%ar%Creset)\' -1'
 
 # Start pry for rails console debugging
@@ -72,8 +66,21 @@ function fish_title
   pwd
 end
 
+#################################
+# Here begins the color block
+#################################
+
+# Trees should have colors
+alias tree="tree -C"
+
+# Respect ANSI Color Strings
+alias less="less -R"
+
+# And now to colourify...
+
 # GRC add color the output (thanks to @klaustopher)
 set GRC (which grc)
+
 alias colourify="$GRC -es --colour=auto"
 alias configure='colourify ./configure'
 alias diff='colourify diff'
