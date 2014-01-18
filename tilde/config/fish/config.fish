@@ -37,6 +37,7 @@ alias gl='git pull'
 alias gp='git push'
 alias gco='git checkout'
 alias unmerged='git branch -r --no-merged | grep -v HEAD | xargs -L1 git --no-pager log --pretty=tformat:\'%Cgreen%d%Creset - %h by %an (%Cblue%ar%Creset)\' -1'
+alias merged='git branch -r --merged | grep -v HEAD | xargs -L1 git --no-pager log --pretty=tformat:\'%Cgreen%d%Creset - %h by %an (%Cblue%ar%Creset)\' -1'
 
 # Start pry for rails console debugging
 alias pryc='pry -I . -rconfig/environment'
@@ -93,4 +94,3 @@ alias ld='colourify ld'
 alias netstat='colourify netstat'
 alias ping='colourify ping'
 alias traceroute='colourify /usr/sbin/traceroute'
-
