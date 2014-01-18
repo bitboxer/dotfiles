@@ -42,6 +42,7 @@ alias less="less -R"
 
 # Trees should have colors
 alias tree="tree -C"
+alias unmerged='git branch -r --no-merged | grep -v HEAD | xargs -L1 git --no-pager log --pretty=tformat:\'%Cgreen%d%Creset - %h by %an (%Cblue%ar%Creset)\' -1'
 
 # Start pry for rails console debugging
 alias pryc='pry -I . -rconfig/environment'
