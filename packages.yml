@@ -16,6 +16,7 @@ brews:
   - tree
   - the_silver_searcher
   - grc
+  - go
 pips:
   - pygments
 gems:

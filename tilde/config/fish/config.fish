@@ -24,6 +24,10 @@ set PATH /usr/local/bin $PATH
 set PATH $PATH ~/bin
 set PATH ./bin $PATH
 
+# Stuff for go
+set -x GOPATH $HOME/golang
+set PATH $PATH $HOME/golang/bin
+
 # ls
 alias la='ls -A'
 
