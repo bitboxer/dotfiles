@@ -98,3 +98,17 @@ alias ld='colourify ld'
 alias netstat='colourify netstat'
 alias ping='colourify ping'
 alias traceroute='colourify /usr/sbin/traceroute'
+
+# Special aliases with command line completion
+# This was copied from here:
+# https://github.com/fish-shell/fish-shell/issues/393
+function make_completion --argument alias command
+  complete -c $alias -xa "(
+      set -l cmd (commandline -pc | sed -e 's/^ *\S\+ *//' );
+      complete -C\"$command \$cmd\";
+  )"
+end
+
+# Completion for the mark plugin
+alias j=jump
+make_completion j jump
