@@ -31,6 +31,9 @@ set PATH $PATH $HOME/golang/bin
 # ls
 alias la='ls -A'
 
+# Serve local dir via http
+alias http='ruby -run -e httpd . -p 5000'
+
 # git
 alias gs='git status'
 alias changelog='git log `git log -1 --format=%H -- CHANGELOG*`..; cat CHANGELOG*'
