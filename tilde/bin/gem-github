@@ -1,0 +1,23 @@
+#!/usr/bin/env ruby
+# open github page for given gem
+# Stolen from https://github.com/grosser/dotfiles/blob/master/bin/gem-github
+
+require 'open-uri'
+require 'json'
+
+raise "give me a gem name" if ARGV.size != 1
+
+gem = ARGV[0]
+json = JSON.parse(open("https://rubygems.org/api/v1/gems/#{gem}.json").read)
+
+uri = nil
+['source_code_uri', 'homepage_uri', 'documentation_uri'].each do |type|
+   uri = json[type] if uri.nil? && !json[type].nil? && !json[type].empty?
+end
+
+unless uri
+  puts "Did not find homepage for #{gem}"
+  uri = "https://rubygems.org/gems/#{gem}"
+end
+
+exec "open #{uri}"
