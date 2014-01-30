@@ -1,3 +1,10 @@
+passengers:
+- dotfile
+- homebrew
+- vundle
+- python
+- npm
+directory_name: "tilde"
 brews:
   - aacgain
   - ack
@@ -28,7 +35,8 @@ gems:
   - localtunnel
   - timetrap
   - powder
-npm:
-  # -g Flag?!
+npms:
   - buster
   - bower
+  - coffee-script
+  - uglifyjs
