@@ -6,4 +6,5 @@ tilde/config/fish/generated_completions/*
 tilde/config/mc/*
 tilde/config/inkscape/*
 tilde/config/configstore/*
+tilde/config/hub
 .*
