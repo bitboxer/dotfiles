@@ -66,6 +66,8 @@ alias man="gem man -s"
 alias ack="ag -S"
 alias ag="ag -S"
 
+alias git="hub"
+
 function fish_greeting
   cat ~/.logo/joker.ascii
 end
