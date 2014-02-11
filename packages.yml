@@ -28,6 +28,7 @@ pips:
   - pygments
 gems:
   - gem-man
+  - gem-web
   - gemrat
   - airplay-cli
   - thor
