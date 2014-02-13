@@ -28,9 +28,6 @@ set PATH ./bin $PATH
 set -x GOPATH $HOME/golang
 set PATH $PATH $HOME/golang/bin
 
-# Pip tools
-set PATH $PATH /usr/local/share/python/
-
 # ls
 alias la='ls -A'
 
