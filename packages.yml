@@ -1,10 +1,15 @@
 passengers:
 - dotfile
+- rbenv
 - homebrew
 - vundle
 - python
 - npm
 directory_name: "tilde"
+rubies:
+  - 2.0.0-p353
+  - 2.1.0-rc1
+  - jruby-1.7.9
 brews:
   - aacgain
   - ack
