@@ -21,7 +21,7 @@ set PATH /usr/local/sbin $PATH
 set PATH /usr/local/bin $PATH
 
 # Added local bin to path for binstubs
-set PATH $PATH ~/bin ~/.bin
+set PATH $PATH ~/bin
 set PATH ./bin $PATH
 
 # Stuff for go
