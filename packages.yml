@@ -1,15 +1,11 @@
-passengers:
-- dotfile
-- rbenv
-- homebrew
-- vundle
-- python
-- npm
 directory_name: "tilde"
-rubies:
-  - 2.0.0-p353
-  - 2.1.0-rc1
-  - jruby-1.7.9
+passengers:
+  - dotfile
+  - rbenv
+  - homebrew
+  - vundle
+  - python
+  - npm
 brews:
   - aacgain
   - ack
@@ -29,8 +25,10 @@ brews:
   - the_silver_searcher
   - grc
   - go
-pips:
-  - pygments
+rubies:
+  - 2.0.0-p353
+  - 2.1.0-rc1
+  - jruby-1.7.9
 gems:
   - gem-man
   - gem-web
@@ -42,6 +40,8 @@ gems:
   - localtunnel
   - timetrap
   - powder
+pips:
+  - pygments
 npms:
   - buster
   - bower
