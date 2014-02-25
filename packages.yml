@@ -27,7 +27,8 @@ brews:
   - go
 rubies:
   - 2.0.0-p353
-  - 2.1.0-rc1
+  - 2.1.0
+  - 2.1.1
   - jruby-1.7.9
 gems:
   - gem-man
