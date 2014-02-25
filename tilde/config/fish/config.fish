@@ -111,3 +111,6 @@ end
 # Completion for the mark plugin
 alias j=jump
 make_completion j jump
+
+# Allow rbenv to replace the ruby in the current shell
+status --is-interactive; and . (rbenv init -|psub)
