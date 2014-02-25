@@ -5,7 +5,7 @@ set fish_path $HOME/.oh-my-fish
 set fish_theme bitboxer
 
 # Fish Plugins
-set fish_plugins node rbenv jump extract rbenv code metamorph bitcrowd
+set fish_plugins node rbenv jump extract rbenv code bitcrowd
 
 # Load oh-my-fish cofiguration.
 . $fish_path/oh-my-fish.fish
