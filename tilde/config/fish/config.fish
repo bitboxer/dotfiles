@@ -30,15 +30,16 @@ alias http='ruby -run -e httpd . -p 5000'
 
 # git
 alias gs='git status'
-alias changelog='git log `git log -1 --format=%H -- CHANGELOG*`..; cat CHANGELOG*'
 alias gd='git diff'
 alias glog='git log'
 alias gca='git commit -v -a'
 alias gl='git pull'
 alias gp='git push'
+alias gpb='git push origin (git rev-parse --abbrev-ref HEAD)' # Push local branch to remote
 alias gco='git checkout'
 alias unmerged='git branch -r --no-merged | grep -v HEAD | xargs -L1 git --no-pager log --pretty=tformat:\'%Cgreen%d%Creset - %h by %an (%Cblue%ar%Creset)\' -1'
 alias merged='git branch -r --merged | grep -v HEAD | xargs -L1 git --no-pager log --pretty=tformat:\'%Cgreen%d%Creset - %h by %an (%Cblue%ar%Creset)\' -1'
+alias changelog='git log `git log -1 --format=%H -- CHANGELOG*`..; cat CHANGELOG*'
 
 # Start pry for rails console debugging
 alias pryc='pry -I . -rconfig/environment'
