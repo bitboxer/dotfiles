@@ -8,4 +8,5 @@ tilde/config/inkscape/*
 tilde/config/configstore/*
 tilde/config/hub
 tilde/config/gtk-2.0/
+tilde/config/git
 .*
