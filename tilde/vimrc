@@ -133,15 +133,6 @@ Bundle "skalnik/vim-vroom"
 " Zooming into Windows
 Bundle "vim-scripts/ZoomWin"
 
-" Search in Dash
-Bundle 'rizzatti/funcoo.vim'
-Bundle 'rizzatti/dash.vim'
-let g:dash_map = {
-        \ 'ruby'       : 'rb',
-        \ 'javascript' : 'js'
-        \ }
-noremap <leader>d :Dash<CR>
-
 " Better * search for selections.
 " http://vimcasts.org/episodes/search-for-the-selected-text/
 Bundle 'nelstrom/vim-visual-star-search'
@@ -149,9 +140,6 @@ Bundle 'nelstrom/vim-visual-star-search'
 " Open Markdown files in Marked
 Bundle "itspriddle/vim-marked"
 noremap <leader>m :MarkedOpen<CR>
-
-" Smart line number toggle
-Bundle "jeffkreeftmeijer/vim-numbertoggle"
 
 " Toggle comment blocks
 Bundle "tpope/vim-commentary"
