@@ -1,0 +1,1 @@
+cat ~/.logo/joker.ascii
