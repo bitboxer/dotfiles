@@ -50,7 +50,6 @@ gems:
   - localtunnel
   - powder
   - thor
-  - timetrap
 pips:
   - pygments
 npms:
