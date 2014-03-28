@@ -8,6 +8,7 @@ passengers:
   - python
   - npm
   - fonts
+  - git_repo
 brews:
   - aacgain
   - ack
@@ -29,10 +30,10 @@ brews:
   - go
   - chromedriver
 rubies:
-  - 2.0.0-p353
-  - 2.1.0
+  - 2.0.0-p451
   - 2.1.1
-  - jruby-1.7.9
+  # - jruby-1.7.9:
+  #   - no-default-gems
 gems:
   - bundler
   - gem-man
@@ -46,6 +47,9 @@ gems:
   - timetrap
   - powder
   - geordi
+  - jekyll
+  - jekyll-sass
+  - fzf
 pips:
   - pygments
 npms:
@@ -53,3 +57,6 @@ npms:
   - bower
   - coffee-script
   - uglifyjs
+repos:
+  "robbyrussell/oh-my-zsh": "~/.oh-my-zsh"
+  "zsh-users/zsh-syntax-highlighting": "~/.oh-my-zsh/custom/plugins"

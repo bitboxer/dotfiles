@@ -1,0 +1,112 @@
+# Path to your oh-my-zsh configuration.
+ZSH=$HOME/.oh-my-zsh
+
+# Set name of the theme to load.
+# Look in ~/.oh-my-zsh/themes/
+# Optionally, if you set this to "random", it'll load a random theme each
+# time that oh-my-zsh is loaded.
+ZSH_THEME="bitboxer"
+
+# Comment this out to disable bi-weekly auto-update checks
+DISABLE_AUTO_UPDATE="true"
+
+# Uncomment following line if you want to disable command autocorrection
+DISABLE_CORRECTION="true"
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+plugins=(brew bundler dirhelper extract forklift rbenv gem zsh-syntax-highlighting)
+
+source $ZSH/oh-my-zsh.sh
+
+# Homebrew must be first in PATH
+export PATH=/usr/local/sbin:$PATH
+export PATH=/usr/local/bin:$PATH
+
+# Added local bin to path for binstubs
+export PATH=~/bin/:$PATH
+export PATH=./bin/:$PATH
+
+# Serve local dir via http
+alias http='ruby -run -e httpd . -p 5000'
+
+# git
+alias gs='git status'
+alias gd='git diff'
+alias glog='git log'
+alias gca='git commit -v -a'
+alias gl='git pull'
+alias gp='git push'
+alias gpb='git push --set-upstream origin HEAD' # Push local branch to remote
+alias gco='git checkout'
+alias changelog='git log `git log -1 --format=%H -- CHANGELOG*`..; cat CHANGELOG*'
+
+# Start pry for rails console debugging
+alias pryc='pry -I . -rconfig/environment'
+
+# Rails aliases
+alias trst="touch tmp/restart"
+alias tlog="tail -f log/development.log"
+
+# Bundler
+alias be="bundle exec"
+
+# Manuals for Ruby People (thanks @moonglum)
+alias man="gem man -s"
+
+# Use siver searcher, it is faster!
+alias ack="ag -S"
+alias ag="ag -S"
+
+alias git="hub"
+
+#################################
+# Here begins the color block
+#################################
+
+# Trees should have colors
+alias tree="tree -C"
+
+# Respect ANSI Color Strings
+alias less="less -R"
+
+# And now to colourify...
+
+# GRC add color the output (thanks to @klaustopher)
+export GRC=`which grc`
+
+alias colourify="$GRC -es --colour=auto"
+alias configure='colourify ./configure'
+alias diff='colourify diff'
+alias make='colourify make'
+alias gcc='colourify gcc'
+alias g++='colourify g++'
+alias as='colourify as'
+alias gas='colourify gas'
+alias ld='colourify ld'
+alias netstat='colourify netstat'
+alias ping='colourify ping'
+alias traceroute='colourify /usr/sbin/traceroute'
+
+# Jump
+# Inspired by the Oh-My-ZSH Jump Plugin
+export MARKPATH=$HOME/.marks
+
+alias j=jump
+# jump FOO: jump to a mark named FOO
+jump() { cd -P "$MARKPATH/$1" }
+_jump() { _files -W "$MARKPATH/$1" }
+compdef _jump jump
+
+# mark FOO: create a mark named FOO
+mark() { mkdir -p "$MARKPATH"; ln -s "$(pwd)" "$MARKPATH/$1" }
+
+# unmark FOO: delete a mark
+unmark() { rm -i "$MARKPATH/$1" }
+
+# marks: lists all marks (see: functions)
+
+# Finished!
+cat ~/.logo/joker.ascii
+

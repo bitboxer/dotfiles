@@ -1,6 +1,5 @@
-GIT
-  remote: https://github.com/bitboxer/exogenesis.git
-  revision: 45764e26519f89d54782ab955497c63a0e30c99a
+PATH
+  remote: ../exogenesis
   specs:
     exogenesis (0.2.0)
 

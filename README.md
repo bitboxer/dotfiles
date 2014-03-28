@@ -13,12 +13,11 @@ but this is no longer the case.
 
 This will install all needed packages and links my config files to ``$HOME``.
 
-## Fish##
+## ZSH ##
 
-Currently I am  using [Fish](http://fishshell.com) as my shell.
+Currently I am  using [ZSH](http://fishshell.com) as my shell.
 
-I am using a forked version of [oh-my-fish](https://github.com/bitboxer/oh-my-fish)
-as setup.
+I am using [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh/) as setup.
 
 ## Vim config ##
 
