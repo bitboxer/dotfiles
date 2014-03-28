@@ -17,3 +17,5 @@ alias man="gem man -s"
 # Use siver searcher, it is faster!
 alias ack="ag -S"
 alias ag="ag -S"
+
+alias j="jump"
