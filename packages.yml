@@ -60,4 +60,4 @@ npms:
   - uglifyjs
 repos:
   "robbyrussell/oh-my-zsh": "~/.oh-my-zsh"
-  "zsh-users/zsh-syntax-highlighting": "~/.oh-my-zsh/custom/plugins"
+  "zsh-users/zsh-syntax-highlighting": "~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"
