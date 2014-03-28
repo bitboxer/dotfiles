@@ -2,59 +2,60 @@ directory_name: "tilde"
 fonts_path: "fonts"
 passengers:
   - dotfile
-  - rbenv
-  - homebrew
-  - vundle
-  - python
-  - npm
   - fonts
   - git_repo
+  - homebrew
+  - npm
+  - python
+  - rbenv
+  - vundle
 brews:
   - aacgain
   - ack
+  - ant
+  - chromedriver
   - ctags
   - ffmpeg
   - git
+  - go
+  - grc
   - htop-osx
+  - hub
+  - maven
+  - mtr
   - mysql
+  - the_silver_searcher
   - tig
   - tmux
+  - tree
   - vim
   - watch
-  - hub
-  - ant
-  - maven
-  - tree
-  - the_silver_searcher
-  - grc
-  - go
-  - chromedriver
 rubies:
   - 2.0.0-p451
   - 2.1.1
   # - jruby-1.7.9:
   #   - no-default-gems
 gems:
+  - airplay-cli
   - bundler
+  - cocoapods
+  - elasticsearch
+  - fzf
   - gem-man
   - gem-web
   - gemrat
-  - airplay-cli
-  - thor
-  - cocoapods
-  - elasticsearch
-  - localtunnel
-  - timetrap
-  - powder
   - geordi
   - jekyll
   - jekyll-sass
-  - fzf
+  - localtunnel
+  - powder
+  - thor
+  - timetrap
 pips:
   - pygments
 npms:
-  - buster
   - bower
+  - buster
   - coffee-script
   - uglifyjs
 repos:
