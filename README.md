@@ -4,7 +4,8 @@ These are config files to set up a system the way I like it. This was a
 fork of  [dotfiles](http://github.com/ryanb/dotfiles) by [Ryan Bates](http://railscasts.com/)
 but this is no longer the case.
 
-[![badge](https://raw.github.com/moonglum/exogenesis/master/badge.png)](https://github.com/moonglum/exogenesis)
+[![badge](http://img.shields.io/badge/%F0%9F%9A%80-Created_with_Exogenesis-be1d77.svg)](https://github.com/moonglum/exogenesis)
+
 
 ## Installation ##
 
