@@ -16,7 +16,7 @@ This will install all needed packages and links my config files to ``$HOME``.
 
 ## ZSH ##
 
-Currently I am  using [ZSH](http://fishshell.com) as my shell.
+Currently I am  using [ZSH](http://www.zsh.org/) as my shell.
 
 I am using [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh/) as setup.
 
