@@ -20,6 +20,8 @@ plugins=(brew bundler dirhelper extract forklift jump rbenv gem zsh-syntax-highl
 
 source $ZSH/oh-my-zsh.sh
 
+export EDITOR=vi
+
 source ~/.zsh/paths.sh
 source ~/.zsh/aliases.sh
 source ~/.zsh/bitcrowd.sh
