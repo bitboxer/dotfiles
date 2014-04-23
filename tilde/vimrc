@@ -152,6 +152,13 @@ Bundle "tpope/vim-commentary"
 Bundle "justinmk/vim-sneak"
 Bundle "tpope/vim-rails"
 
+" Jump between pairs of keywords via %
+runtime macros/matchit.vim
+
+" Textobj Rubyblock: Custom text object for selecting ruby blocks
+Bundle "kana/vim-textobj-user"
+Bundle "nelstrom/vim-textobj-rubyblock"
+
 " Show invisible characters:
 " Tabs and trailing whitespace
 set list
