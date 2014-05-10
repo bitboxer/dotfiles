@@ -6,7 +6,7 @@ passengers:
   - git_repo
   - homebrew
   - npm
-  - python
+  # - python
   - rbenv
   - vundle
 brews:
@@ -59,6 +59,7 @@ npms:
   - keybase
   - phantomjs
   - uglifyjs
+  - spoof
 repos:
   "robbyrussell/oh-my-zsh": "~/.oh-my-zsh"
   "zsh-users/zsh-syntax-highlighting": "~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"
