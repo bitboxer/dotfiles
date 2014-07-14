@@ -31,7 +31,7 @@ fkill() {
 fbr() {
   local branches branch
   branches=$(git branch) &&
-  branch=$(echo "$branches" | fzf +s +m) &&
+  branch=$(echo "$branches" | fzf +s +m --query="$1") &&
   git checkout $(echo "$branch" | sed "s/.* //")
 }
 
