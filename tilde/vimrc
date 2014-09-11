@@ -201,7 +201,7 @@ au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} set ft=markdown
 au BufRead,BufNewFile *.{cehtml} set ft=html
 
 " Set the Ruby filetype for a number of common Ruby files without .rb
-au BufRead,BufNewFile {Procfile,config.ru,*.god,*.arb} set ft=ruby
+au BufRead,BufNewFile {Berksfile,Vagrantfile,Procfile,config.ru,*.god,*.arb} set ft=ruby
 
 " Treat JSON files like JavaScript
 au BufNewFile,BufRead {*.json,*.jsm} set ft=javascript
