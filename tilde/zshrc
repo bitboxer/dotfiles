@@ -30,3 +30,4 @@ source ~/.zsh/colorify.sh
 source ~/.zsh/fzf.sh
 source ~/.zsh/logo.sh
 
+source ~/.secrets
