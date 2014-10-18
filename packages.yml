@@ -32,6 +32,8 @@ brews:
   - watch
   - ssh-copy-id
   - wget
+  - imagemagick
+  - beanstalk
 rubies:
   - 2.0.0-p451
   - 2.1.1
@@ -52,6 +54,8 @@ gems:
   - localtunnel
   - powder
   - thor
+  - invoker
+  - terminal-notifieR
 pips:
   - pygments
 npms:
