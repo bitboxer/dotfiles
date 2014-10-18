@@ -31,6 +31,7 @@ brews:
   - vim
   - watch
   - ssh-copy-id
+  - wget
 rubies:
   - 2.0.0-p451
   - 2.1.1
