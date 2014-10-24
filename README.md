@@ -10,7 +10,7 @@ but this is no longer the case.
 ## Installation ##
 
     bundle
-    bundle exec rake install
+    bundle exec rake up
 
 This will install all needed packages and links my config files to ``$HOME``.
 
