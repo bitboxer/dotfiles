@@ -55,7 +55,7 @@ gems:
   - powder
   - thor
   - invoker
-  - terminal-notifieR
+  - terminal-notifier
 pips:
   - pygments
 npms:
