@@ -109,6 +109,9 @@ let g:ackprg = 'ag -S --nogroup --column'
 Bundle "bling/vim-airline"
 let g:airline_powerline_fonts = 1
 let g:airlinetheme = "powerlineish"
+
+let g:airline#extensions#branch#displayed_head_limit = 17
+
 set laststatus=2
 
 Bundle "tpope/vim-fugitive"
