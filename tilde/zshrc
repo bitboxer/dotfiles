@@ -31,3 +31,5 @@ source ~/.zsh/fzf.sh
 source ~/.zsh/logo.sh
 
 source ~/.secrets
+
+export DISABLE_SPRING='SORRY_BUT_YOU_ARE_WAY_TO_PROBLEMATIC_AND_NEED_TO_GO_HOME'
