@@ -145,11 +145,6 @@ noremap <leader>m :MarkedOpen<CR>
 " Toggle comment blocks
 Bundle "tpope/vim-commentary"
 
-" show tags for current file
-" Bundle "majutsushi/tagbar"
-" nnoremap <silent> <Leader>b :TagbarToggle<CR>
-
-" Experimenting with plugins again...
 Bundle "justinmk/vim-sneak"
 Bundle "tpope/vim-rails"
 
@@ -159,7 +154,6 @@ runtime macros/matchit.vim
 " Textobj Rubyblock: Custom text object for selecting ruby blocks
 Bundle "kana/vim-textobj-user"
 Bundle "nelstrom/vim-textobj-rubyblock"
-
 Bundle "jeetsukumaran/vim-buffergator"
 
 " Show invisible characters:
@@ -181,7 +175,7 @@ set backspace=indent,eol,start
 autocmd FileType make setlocal noexpandtab
 
 " Highlight Characters that overstep the 100 character limit
-match ErrorMsg '\%>100v.\+'
+set colorcolumn=100
 
 " Automatically set the indent of a new line (local to buffer)
 " from railsbros-dirk
