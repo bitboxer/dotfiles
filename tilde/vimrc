@@ -157,10 +157,6 @@ Bundle "nelstrom/vim-textobj-rubyblock"
 Bundle "jeetsukumaran/vim-buffergator"
 
 " Experimental again :)
-Bundle "haya14busa/incsearch.vim"
-map /  <Plug>(incsearch-forward)
-map ?  <Plug>(incsearch-backward)
-map g/ <Plug>(incsearch-stay)
 
 Bundle "takac/vim-spotifysearch"
 
