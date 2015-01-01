@@ -5,7 +5,7 @@ passengers:
   - fonts
   - git_repo
   - homebrew
-  - npm
+  # - npm
   # - python
   - rbenv
   - vundle
