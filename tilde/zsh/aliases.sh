@@ -11,9 +11,6 @@ alias tlog="tail -f log/development.log"
 # Bundler
 alias be="bundle exec"
 
-# Manuals for Ruby People (thanks @moonglum)
-alias man="gem man -s"
-
 # Use siver searcher, it is faster!
 alias ack="ag -S"
 alias ag="ag -S"
