@@ -16,3 +16,5 @@ alias ack="ag -S"
 alias ag="ag -S"
 
 alias j="jump"
+
+tmuxssh() { ssh -t $@ 'tmux attach || tmux new' }
