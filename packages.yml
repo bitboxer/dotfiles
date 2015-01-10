@@ -13,6 +13,7 @@ brews:
   - aacgain
   - ack
   - ant
+  - beanstalk
   - chromedriver
   - ctags
   - ffmpeg
@@ -21,19 +22,19 @@ brews:
   - grc
   - htop-osx
   - hub
+  - imagemagick
   - maven
   - mtr
   - mysql
+  - ssh-copy-id
   - the_silver_searcher
   - tig
   - tmux
   - tree
   - vim
   - watch
-  - ssh-copy-id
+  - webp
   - wget
-  - imagemagick
-  - beanstalk
 rubies:
   - 2.0.0-p451
   - 2.1.3
