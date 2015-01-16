@@ -141,6 +141,7 @@ Bundle 'nelstrom/vim-visual-star-search'
 " Open Markdown files in Marked
 Bundle "itspriddle/vim-marked"
 noremap <leader>m :MarkedOpen<CR>
+let g:marked_app = "Marked"
 
 " Toggle comment blocks
 Bundle "tpope/vim-commentary"
