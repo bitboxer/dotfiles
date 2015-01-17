@@ -6,7 +6,7 @@ passengers:
   - git_repo
   - homebrew
   # - npm
-  # - python
+  - python
   - rbenv
   - vundle
 brews:
