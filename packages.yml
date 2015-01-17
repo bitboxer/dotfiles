@@ -10,6 +10,7 @@ passengers:
   - rbenv
   - vundle
 brews:
+  - autossh
   - aacgain
   - ack
   - ant
