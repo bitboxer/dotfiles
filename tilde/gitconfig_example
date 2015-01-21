@@ -5,6 +5,10 @@
 [alias]
   co = checkout
   lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%= "<%" %>an>%Creset' --abbrev-commit
+  unmerged = !git branch -r --no-merged | grep -v HEAD | xargs -L1 git --no-pager log --pretty=tformat:'%Cgreen%d%Creset - %h by %an (%Cblue%ar%Creset)' -1
+  merged = !git branch -r --merged | grep -v HEAD | xargs -L1 git --no-pager log --pretty=tformat:'%Cgreen%d%Creset - %h by %an (%Cblue%ar%Creset)' -1
+  ctags = "!sh -c '[ -f .git/hooks/ctags ] || git init; .git/hooks/ctags' git-ctags"
+  cleanup = "!git branch --merged | grep -E '(feature|bug|chore)/'| xargs git branch -D && git remote prune origin"
 
 [color]
   diff = auto
@@ -13,6 +17,7 @@
 
 [core]
   excludesfile = /Users/bodo/.gitignore
+  editor = /usr/local/bin/vim
 
 [apply]
   whitespace = nowarn
@@ -36,6 +41,15 @@
   cmd = diffmerge --merge --result=$MERGED $LOCAL $BASE $REMOTE
   trustExitCode = false
 
+[init]
+  templatedir = ~/.git_template
+
 [push]
-  # simple wäre besser, aber xcode hat ein uralt git mitgeliefert was sonst meckert
-  default = matching
+  default = simple
+
+[filter "media"]
+  clean = git-media-clean %f
+  smudge = git-media-smudge %f
+
+[tig]
+  line-graphics = "utf-8"
