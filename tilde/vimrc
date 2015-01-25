@@ -164,6 +164,12 @@ Bundle "bitboxer/vim-playpause"
 
 Bundle "takac/vim-spotifysearch"
 
+Bundle "AndrewRadev/switch.vim"
+let g:switch_mapping = "-"
+
+Bundle "int3/vim-extradite"
+let g:extradite_resize=0
+
 " Show invisible characters:
 " Tabs and trailing whitespace
 set list
