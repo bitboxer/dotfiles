@@ -157,6 +157,9 @@ Bundle "kana/vim-textobj-user"
 Bundle "nelstrom/vim-textobj-rubyblock"
 Bundle "jeetsukumaran/vim-buffergator"
 
+" My self written plugins
+Bundle "bitboxer/vim-playpause"
+
 " Experimental again :)
 
 Bundle "takac/vim-spotifysearch"
