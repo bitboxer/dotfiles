@@ -27,6 +27,7 @@ brews:
   - maven
   - mtr
   - mysql
+  - reattach-to-user-namespace
   - ssh-copy-id
   - the_silver_searcher
   - tig
