@@ -10,10 +10,10 @@ passengers:
   - rbenv
   - vundle
 brews:
-  - autossh
   - aacgain
   - ack
   - ant
+  - autossh
   - beanstalk
   - chromedriver
   - ctags
@@ -27,6 +27,7 @@ brews:
   - maven
   - mtr
   - mysql
+  - pgcli
   - reattach-to-user-namespace
   - ssh-copy-id
   - the_silver_searcher
