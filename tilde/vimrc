@@ -285,7 +285,12 @@ vnoremap r "_dP
 au BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= line("$")
   \| exe "normal! g`\"" | endif
 
-" Spell only for certain files
+
+" Spelling highlights in bright green
+hi clear SpellBad
+hi SpellBad ctermfg=41
+
+" Enable spell as default only for certain files
 autocmd FileType markdown setlocal spell spelllang=en,de
 autocmd BufNewFile,BufRead COMMIT_EDITMSG setlocal spell spelllang=en,de
 
