@@ -178,6 +178,23 @@ let g:switch_mapping = "-"
 Bundle "int3/vim-extradite"
 let g:extradite_resize=0
 
+Bundle "junegunn/goyo.vim"
+let g:goyo_margin_top=2
+let g:goyo_margin_bottom=2
+
+function! s:goyo_enter()
+  set wrap linebreak
+endfunction
+
+function! s:goyo_leave()
+  set nowrap
+endfunction
+
+autocmd! User GoyoEnter
+autocmd! User GoyoLeave
+autocmd  User GoyoEnter nested call <SID>goyo_enter()
+autocmd  User GoyoLeave nested call <SID>goyo_leave()
+
 " Show invisible characters:
 " Tabs and trailing whitespace
 set list
