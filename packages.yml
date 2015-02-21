@@ -63,6 +63,7 @@ gems:
   - terminal-notifier
 pips:
   - pygments
+  - neovim
 npms:
   - bower
   - buster
