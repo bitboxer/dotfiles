@@ -186,12 +186,15 @@ let g:extradite_resize=0
 Bundle "junegunn/goyo.vim"
 let g:goyo_margin_top=2
 let g:goyo_margin_bottom=2
+let g:goyo_width=80
 
 function! s:goyo_enter()
+  set textwidth=80
   set wrap linebreak
 endfunction
 
 function! s:goyo_leave()
+  set textwidth&
   set nowrap
 endfunction
 
