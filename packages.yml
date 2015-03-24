@@ -62,6 +62,7 @@ gems:
   - thor
   - invoker
   - terminal-notifier
+  - git-up
 pips:
   - pygments
   - neovim
