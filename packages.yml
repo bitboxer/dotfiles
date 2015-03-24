@@ -38,6 +38,7 @@ brews:
   - watch
   - webp
   - wget
+  - fzf
 rubies:
   - 2.0.0-p451
   - 2.1.3
@@ -49,7 +50,6 @@ gems:
   - bundler
   - cocoapods
   - elasticsearch
-  - fzf
   - gem-man
   - gem-web
   - gemrat
