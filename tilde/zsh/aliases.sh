@@ -18,5 +18,6 @@ alias ag="ag -S"
 alias j="jump"
 
 alias vim="nvim"
+alias vi="nvim"
 
 tmuxssh() { autossh -M 0 -t $@ 'tmux attach || tmux new' }
