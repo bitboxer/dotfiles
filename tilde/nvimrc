@@ -1,9 +1,6 @@
 " This vimrc is "inspired" by @moonglum, @garybernhardt and @railsbros-dirk
 " Thanks to all of you for letting me steal your stuff :)
 
-" Use Vim settings, rather then Vi settings (much better!).
-" This must be first, because it changes other options as a side effect.
-set nocompatible
 " This is required for Vundle
 filetype off
 " Activate Syntax Highlight
@@ -63,8 +60,8 @@ set diffopt=vertical
 au FilterWritePre * if &diff | colorscheme Tomorrow-Night | endif
 
 " === Vundle Setup ===
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.nvim/bundle/vundle/
+call vundle#rc('~/.nvim/bundle')
 Bundle 'gmarik/vundle'
 
 " CtrlP: Full path fuzzy finder
@@ -202,6 +199,27 @@ autocmd! User GoyoEnter
 autocmd! User GoyoLeave
 autocmd  User GoyoEnter nested call <SID>goyo_enter()
 autocmd  User GoyoLeave nested call <SID>goyo_leave()
+
+Bundle "kassio/neoterm"
+
+let g:neoterm_clear_cmd = "clear; printf '=%.0s' {1..80}; clear"
+let g:neoterm_position = 'vertical'
+let g:neoterm_automap_keys = ',rt'
+
+nnoremap <silent> <f9> :call neoterm#repl#line()<cr>
+vnoremap <silent> <f9> :call neoterm#repl#selection()<cr>
+
+" run set test lib
+nnoremap <silent> ,ra :call neoterm#test#run('all')<cr>
+nnoremap <silent> ,rf :call neoterm#test#run('file')<cr>
+nnoremap <silent> ,rn :call neoterm#test#run('current')<cr>
+nnoremap <silent> ,rr :call neoterm#test#rerun()<cr>
+
+" Useful maps
+" closes the all terminal buffers
+nnoremap <silent> ,rc :call neoterm#close_all()<cr>
+" clear terminal
+nnoremap <silent> ,rl :call neoterm#clear()<cr>
 
 " Show invisible characters:
 " Tabs and trailing whitespace
