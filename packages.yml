@@ -34,7 +34,6 @@ brews:
   - tig
   - tmux
   - tree
-  - vim
   - watch
   - webp
   - wget
