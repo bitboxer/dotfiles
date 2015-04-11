@@ -108,6 +108,10 @@ Plug 'airblade/vim-gitgutter'
 " without any weird color
 highlight clear SignColumn
 
+" Git Commit Browser
+Plug 'int3/vim-extradite'
+let g:extradite_resize=0
+
 " Cool Undo Tree
 Plug 'sjl/gundo.vim', { 'on': 'GundoToggle' }
 noremap <Leader>g :GundoToggle<CR>
@@ -147,15 +151,8 @@ Plug 'jeetsukumaran/vim-buffergator'
 " My self written plugins
 Plug 'bitboxer/vim-playpause'
 
-" Experimental again :)
-
-Plug 'takac/vim-spotifysearch'
-
 Plug 'AndrewRadev/switch.vim'
 let g:switch_mapping = "-"
-
-Plug 'int3/vim-extradite'
-let g:extradite_resize=0
 
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
 let g:goyo_margin_top=2
