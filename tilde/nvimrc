@@ -1,8 +1,6 @@
 " This vimrc is "inspired" by @moonglum, @garybernhardt and @railsbros-dirk
 " Thanks to all of you for letting me steal your stuff :)
 
-" This is required for Vundle
-filetype off
 " Activate Syntax Highlight
 syntax enable
 " set default encoding to UTF-8
@@ -59,10 +57,7 @@ set timeoutlen=1000 ttimeoutlen=0
 set diffopt=vertical
 au FilterWritePre * if &diff | colorscheme Tomorrow-Night | endif
 
-" === Vundle Setup ===
-set rtp+=~/.nvim/bundle/vundle/
-call vundle#rc('~/.nvim/bundle')
-Bundle 'gmarik/vundle'
+call plug#begin('~/.nvim/plugged')
 
 " CtrlP: Full path fuzzy finder
 Bundle "ctrlpvim/ctrlp.vim"
@@ -86,23 +81,22 @@ let g:ctrlp_match_window_reversed = 0
 noremap <C-b> :CtrlPBuffer<CR>
 
 " Nerdtree
-Bundle "scrooloose/nerdtree"
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 let NERDTreeIgnore=['\.pyc$', '\.pyo$', '\.rbc$', '\.rbo$', '\.class$', '\.o$', '\~$']
 noremap <C-n> :NERDTreeToggle<CR>
 noremap <leader>n :NERDTreeToggle<CR>
 let g:ctrlp_dont_split = 'NERD_tree_2'
 
 " Color Theme
-Bundle "chriskempson/vim-tomorrow-theme"
-colorscheme Tomorrow-Night-Bright
+Plug 'chriskempson/vim-tomorrow-theme'
 
 " Polyglot: A collection of language packs, loaded on demand
-Bundle "sheerun/vim-polyglot"
+Plug 'sheerun/vim-polyglot'
 " Added Javascript Template Support
 au BufNewFile,BufRead *.ejs set filetype=jst
 
 " Syntastic: Really great Syntax checker
-Bundle "scrooloose/syntastic"
+Plug 'scrooloose/syntastic'
 let g:syntastic_enable_signs=1
 let g:syntastic_quiet_messages = {'level': 'warnings'}
 let g:syntastic_auto_loc_list=2
@@ -112,11 +106,11 @@ let g:syntastic_javascript_checkers = ['jsl']
 let $JS_CMD='node'
 
 " ack.vim: ack integration
-Bundle "mileszs/ack.vim"
+Plug 'mileszs/ack.vim'
 let g:ackprg = 'ag -S --nogroup --column'
 
 " Better statusbar
-Bundle "bling/vim-airline"
+Plug 'bling/vim-airline'
 let g:airline_powerline_fonts = 1
 let g:airlinetheme = "powerlineish"
 
@@ -124,63 +118,63 @@ let g:airline#extensions#branch#displayed_head_limit = 17
 
 set laststatus=2
 
-Bundle "tpope/vim-fugitive"
+Plug 'tpope/vim-fugitive'
 
 " Git Gutter: shows a git diff in the gutter
-Bundle "airblade/vim-gitgutter"
+Plug 'airblade/vim-gitgutter'
 " without any weird color
 highlight clear SignColumn
 
 " Cool Undo Tree
-Bundle "sjl/gundo.vim"
+Plug 'sjl/gundo.vim', { 'on': 'GundoToggle' }
 noremap <Leader>g :GundoToggle<CR>
 
 " Tab completion
-Bundle "ervandew/supertab"
+Plug 'ervandew/supertab'
 
 " Start rspec the smart way
-Bundle "skalnik/vim-vroom"
+Plug 'skalnik/vim-vroom'
 
 " Zooming into Windows
-Bundle "vim-scripts/ZoomWin"
+Plug 'vim-scripts/ZoomWin'
 
 " Better * search for selections.
 " http://vimcasts.org/episodes/search-for-the-selected-text/
-Bundle 'nelstrom/vim-visual-star-search'
+Plug 'nelstrom/vim-visual-star-search'
 
 " Open Markdown files in Marked
-Bundle "itspriddle/vim-marked"
+Plug 'itspriddle/vim-marked', { 'on': 'MarkedOpen' }
 noremap <leader>m :MarkedOpen<CR>
 let g:marked_app = "Marked"
 
 " Toggle comment blocks
-Bundle "tpope/vim-commentary"
+Plug 'tpope/vim-commentary'
 
-Bundle "justinmk/vim-sneak"
-Bundle "tpope/vim-rails"
+Plug 'justinmk/vim-sneak'
+Plug 'tpope/vim-rails'
 
 " Jump between pairs of keywords via %
 runtime macros/matchit.vim
 
 " Textobj Rubyblock: Custom text object for selecting ruby blocks
-Bundle "kana/vim-textobj-user"
-Bundle "nelstrom/vim-textobj-rubyblock"
-Bundle "jeetsukumaran/vim-buffergator"
+Plug 'kana/vim-textobj-user'
+Plug 'nelstrom/vim-textobj-rubyblock'
+Plug 'jeetsukumaran/vim-buffergator'
 
 " My self written plugins
-Bundle "bitboxer/vim-playpause"
+Plug 'bitboxer/vim-playpause'
 
 " Experimental again :)
 
-Bundle "takac/vim-spotifysearch"
+Plug 'takac/vim-spotifysearch'
 
-Bundle "AndrewRadev/switch.vim"
+Plug 'AndrewRadev/switch.vim'
 let g:switch_mapping = "-"
 
-Bundle "int3/vim-extradite"
+Plug 'int3/vim-extradite'
 let g:extradite_resize=0
 
-Bundle "junegunn/goyo.vim"
+Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
 let g:goyo_margin_top=2
 let g:goyo_margin_bottom=2
 let g:goyo_width=80
@@ -200,7 +194,7 @@ autocmd! User GoyoLeave
 autocmd  User GoyoEnter nested call <SID>goyo_enter()
 autocmd  User GoyoLeave nested call <SID>goyo_leave()
 
-Bundle "kassio/neoterm"
+Plug 'kassio/neoterm'
 
 let g:neoterm_clear_cmd = "clear; printf '=%.0s' {1..80}; clear"
 let g:neoterm_position = 'vertical'
@@ -325,5 +319,6 @@ set exrc
 set secure
 
 " --- End ---
-" This is required for Vundle
-filetype plugin indent on
+call plug#end()
+
+colorscheme Tomorrow-Night-Bright

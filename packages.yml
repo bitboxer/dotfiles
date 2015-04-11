@@ -8,7 +8,7 @@ passengers:
   # - npm
   - python
   - rbenv
-  - vundle
+  # - vundle
 brews:
   - aacgain
   - ack
