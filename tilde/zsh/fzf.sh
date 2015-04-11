@@ -1,3 +1,5 @@
+export FZF_DEFAULT_COMMAND='ag -l -g ""'
+
 vimf() {
   local file
   file=$(fzf --query="$1") && vim "$file"
