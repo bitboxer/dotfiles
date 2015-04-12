@@ -20,7 +20,7 @@ plugins=(brew dirhelper extract forklift jump rbenv gem zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
-export EDITOR=vi
+export EDITOR=nvim
 
 source ~/.zsh/paths.sh
 source ~/.zsh/aliases.sh
