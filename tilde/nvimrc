@@ -60,7 +60,7 @@ au FilterWritePre * if &diff | colorscheme Tomorrow-Night | endif
 call plug#begin('~/.nvim/plugged')
 
 " Fuzzy Finder
-Plug 'junegunn/fzf', { 'do': 'yes \| ./install', 'on': 'FZF' }
+Plug 'junegunn/fzf', { 'do': 'no \| ./install', 'on': 'FZF' }
 noremap <C-p> :FZF<CR>
 
 " Nerdtree
