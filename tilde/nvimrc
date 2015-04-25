@@ -59,9 +59,27 @@ au FilterWritePre * if &diff | colorscheme Tomorrow-Night | endif
 
 call plug#begin('~/.nvim/plugged')
 
-" Fuzzy Finder
-Plug 'junegunn/fzf', { 'do': 'no \| ./install', 'on': 'FZF' }
-noremap <C-p> :FZF<CR>
+" CtrlP: Full path fuzzy finder
+Plug 'ctrlpvim/ctrlp.vim'
+
+" Borrowed from @skwp
+if executable('ag')
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command =
+    \ 'ag %s --files-with-matches -g "" --ignore "\.git$\|\.hg$\|\.svn$"'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+else
+  " Fall back to using git ls-files if Ag is not available
+  let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
+  let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others']
+endif
+
+let g:ctrlp_working_path_mode = 0
+
+noremap <C-b> :CtrlPBuffer<CR>
+let g:ctrlp_dont_split = 'NERD_tree_2'
 
 " Nerdtree
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
