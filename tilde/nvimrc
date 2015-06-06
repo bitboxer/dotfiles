@@ -86,7 +86,6 @@ Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 let NERDTreeIgnore=['\.pyc$', '\.pyo$', '\.rbc$', '\.rbo$', '\.class$', '\.o$', '\~$']
 noremap <C-n> :NERDTreeToggle<CR>
 noremap <leader>n :NERDTreeToggle<CR>
-let NERDTreeQuitOnOpen=1
 
 " Color Theme
 Plug 'chriskempson/vim-tomorrow-theme'
@@ -148,7 +147,7 @@ Plug 'vim-scripts/ZoomWin'
 Plug 'nelstrom/vim-visual-star-search'
 
 " Open Markdown files in Marked
-Plug 'itspriddle/vim-marked', { 'on': 'MarkedOpen' }
+Plug 'itspriddle/vim-marked'
 noremap <leader>m :MarkedOpen<CR>
 let g:marked_app = "Marked"
 
