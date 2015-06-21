@@ -209,7 +209,8 @@ nnoremap <silent> ,rc :call neoterm#close_all()<cr>
 nnoremap <silent> ,rl :call neoterm#clear()<cr>
 
 " experimental area
-Plug 'mhinz/vim-sayonara'
+Plug 'mhinz/vim-sayonara', { 'on': 'Sayonara' }
+Plug 'troydm/zoomwintab.vim', { 'on': 'ZoomWinTabIn' }
 
 " Show invisible characters:
 " Tabs and trailing whitespace
@@ -312,21 +313,6 @@ set secure
 
 " --- End ---
 call plug#end()
-
-" Zoom / Restore window.
-function! s:ZoomToggle() abort
-  if exists('t:zoomed') && t:zoomed
-    execute t:zoom_winrestcmd
-    let t:zoomed = 0
-  else
-    let t:zoom_winrestcmd = winrestcmd()
-    resize
-    vertical resize
-    let t:zoomed = 1
-  endif
-endfunction
-command! ZoomToggle call s:ZoomToggle()
-nnoremap <silent> <C-A> :ZoomToggle<CR>
 
 " colorscheme Tomorrow-Night-Bright
 set background=dark
