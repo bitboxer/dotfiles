@@ -137,9 +137,6 @@ noremap <Leader>g :GundoToggle<CR>
 " Tab completion
 Plug 'ervandew/supertab'
 
-" Start rspec the smart way
-Plug 'skalnik/vim-vroom'
-
 " Zooming into Windows
 Plug 'vim-scripts/ZoomWin'
 
