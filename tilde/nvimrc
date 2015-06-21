@@ -151,6 +151,7 @@ Plug 'tpope/vim-commentary'
 
 Plug 'justinmk/vim-sneak'
 Plug 'tpope/vim-rails'
+Plug 'bronson/vim-trailing-whitespace'
 
 " Jump between pairs of keywords via %
 runtime macros/matchit.vim
@@ -260,9 +261,6 @@ au BufNewFile,BufRead *.coffee set ft=coffee
 " Make cursor move by visual lines instead of file lines (when wrapping)
 noremap k gk
 noremap j gj
-
-" Remove unwanted spaces command
-command Leerzeichen :%!git stripspace < %
 
 " upper/lower word
 nnoremap <leader>u mQviwU`Q
