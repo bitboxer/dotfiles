@@ -137,9 +137,6 @@ noremap <Leader>g :GundoToggle<CR>
 " Tab completion
 Plug 'ervandew/supertab'
 
-" Zooming into Windows
-Plug 'vim-scripts/ZoomWin'
-
 " Better * search for selections.
 " http://vimcasts.org/episodes/search-for-the-selected-text/
 Plug 'nelstrom/vim-visual-star-search'
@@ -300,7 +297,6 @@ vnoremap r "_dP
 au BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= line("$")
   \| exe "normal! g`\"" | endif
 
-
 " Spelling highlights in bright green
 hi clear SpellBad
 hi SpellBad ctermfg=41
@@ -316,7 +312,21 @@ set secure
 " --- End ---
 call plug#end()
 
-colorscheme Tomorrow-Night-Bright
+" Zoom / Restore window.
+function! s:ZoomToggle() abort
+  if exists('t:zoomed') && t:zoomed
+    execute t:zoom_winrestcmd
+    let t:zoomed = 0
+  else
+    let t:zoom_winrestcmd = winrestcmd()
+    resize
+    vertical resize
+    let t:zoomed = 1
+  endif
+endfunction
+command! ZoomToggle call s:ZoomToggle()
+nnoremap <silent> <C-A> :ZoomToggle<CR>
+
 " colorscheme Tomorrow-Night-Bright
 set background=dark
 colorscheme solarized
