@@ -208,6 +208,9 @@ nnoremap <silent> ,rc :call neoterm#close_all()<cr>
 " clear terminal
 nnoremap <silent> ,rl :call neoterm#clear()<cr>
 
+" experimental area
+Plug 'mhinz/vim-sayonara'
+
 " Show invisible characters:
 " Tabs and trailing whitespace
 set list
