@@ -28,7 +28,6 @@ source ~/.zsh/bitcrowd.sh
 source ~/.zsh/git.sh
 source ~/.zsh/colorify.sh
 source ~/.zsh/fzf.sh
-source ~/.zsh/logo.sh
 
 source ~/.secrets
 
