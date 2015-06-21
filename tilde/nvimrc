@@ -89,6 +89,7 @@ noremap <leader>n :NERDTreeToggle<CR>
 
 " Color Theme
 Plug 'chriskempson/vim-tomorrow-theme'
+Plug 'altercation/vim-colors-solarized'
 
 " Polyglot: A collection of language packs, loaded on demand
 Plug 'sheerun/vim-polyglot'
@@ -319,3 +320,6 @@ set secure
 call plug#end()
 
 colorscheme Tomorrow-Night-Bright
+" colorscheme Tomorrow-Night-Bright
+set background=dark
+colorscheme solarized
