@@ -5,7 +5,7 @@ passengers:
   - fonts
   - git_repo
   - homebrew
-  # - npm
+  - npm
   - python
   - rbenv
   # - vundle
@@ -27,6 +27,7 @@ brews:
   - maven
   - mtr
   - mysql
+  - phantomjs
   - pgcli
   - reattach-to-user-namespace
   - ssh-copy-id
@@ -70,7 +71,6 @@ npms:
   - buster
   - coffee-script
   - keybase
-  - phantomjs
   - uglifyjs
   - spoof
 repos:
