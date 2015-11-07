@@ -57,7 +57,7 @@ set timeoutlen=1000 ttimeoutlen=0
 set diffopt=vertical
 au FilterWritePre * if &diff | colorscheme Tomorrow-Night | endif
 
-call plug#begin('~/.nvim/plugged')
+call plug#begin('~/.config/nvim/plugged')
 
 " CtrlP: Full path fuzzy finder
 Plug 'ctrlpvim/ctrlp.vim'

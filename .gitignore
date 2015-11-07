@@ -10,4 +10,7 @@ tilde/config/hub
 tilde/config/gtk-2.0/
 tilde/config/git
 tilde/config/keybase
+tilde/config/nvim/plugged
+tilde/config/nvim/spell
+tilde/config/nvim/shada
 .*
