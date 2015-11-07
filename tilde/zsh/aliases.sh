@@ -20,4 +20,9 @@ alias j="jump"
 alias vim="nvim"
 alias vi="nvim"
 
+alias rb="git rebase $@"
+alias rbm="git rebase master"
+alias rbc="git rebase --continue"
+alias rba="git rebase --abort"
+
 tmuxssh() { autossh -M 0 -t $@ 'tmux attach || tmux new' }
