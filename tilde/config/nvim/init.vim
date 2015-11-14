@@ -203,8 +203,8 @@ nnoremap <silent> ,rn :call neoterm#test#run('current')<cr>
 nnoremap <silent> ,rr :call neoterm#test#rerun()<cr>
 
 " Useful maps
-" closes the all terminal buffers
-nnoremap <silent> ,rc :call neoterm#close_all()<cr>
+" closes the terminal buffers
+nnoremap <silent> ,rc :call neoterm#close()<cr>
 " clear terminal
 nnoremap <silent> ,rl :call neoterm#clear()<cr>
 
