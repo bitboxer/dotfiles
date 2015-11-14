@@ -10,6 +10,7 @@ alias tlog="tail -f log/development.log"
 
 # Bundler
 alias be="bundle exec"
+alias bi="bundle install"
 
 # Use siver searcher, it is faster!
 alias ack="ag -S"
