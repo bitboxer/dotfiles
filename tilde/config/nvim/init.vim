@@ -209,7 +209,7 @@ nnoremap <silent> ,rc :call neoterm#close()<cr>
 nnoremap <silent> ,rl :call neoterm#clear()<cr>
 
 " experimental area
-Plug 'mhinz/vim-sayonara', { 'on': 'Sayonara' }
+Plug 'vim-scripts/BufOnly.vim', {'on': ['Bonly', 'BOnly', 'Bufonly', 'BufOnly'] }
 Plug 'troydm/zoomwintab.vim', { 'on': 'ZoomWinTabIn' }
 Plug 'ngmy/vim-rubocop', { 'on' : 'RubuCop' }
 Plug 'Xuyuanp/nerdtree-git-plugin'
