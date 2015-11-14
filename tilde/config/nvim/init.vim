@@ -212,6 +212,7 @@ nnoremap <silent> ,rl :call neoterm#clear()<cr>
 Plug 'mhinz/vim-sayonara', { 'on': 'Sayonara' }
 Plug 'troydm/zoomwintab.vim', { 'on': 'ZoomWinTabIn' }
 Plug 'ngmy/vim-rubocop', { 'on' : 'RubuCop' }
+Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " Show invisible characters:
 " Tabs and trailing whitespace
