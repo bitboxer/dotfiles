@@ -25,7 +25,7 @@ to() {
   if [[ "$#" > 0 ]]; then
     gittower $@
   else
-    gittower .
+    gittower `git rev-parse --show-toplevel`
   fi
 }
 
