@@ -28,6 +28,7 @@ to() {
     gittower `git rev-parse --show-toplevel`
   fi
 }
+alias gitx='echo "Use tower!!!" && to'
 
 # git
 alias gs='git status'
