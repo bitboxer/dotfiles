@@ -75,4 +75,4 @@ npms:
   - spoof
 repos:
   "robbyrussell/oh-my-zsh": "~/.oh-my-zsh"
-  "zsh-users/zsh-syntax-highlighting": "~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"
+  "zsh-users/zsh-syntax-highlighting": "~/.zsh-syntax-highlighting"

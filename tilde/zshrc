@@ -1,6 +1,8 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
+ZSH_CUSTOM=$HOME/.zsh/oh-my-zsh
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -29,6 +31,8 @@ source ~/.zsh/colorify.sh
 source ~/.zsh/fzf.sh
 
 source ~/.secrets
+
+source ~/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 export DISABLE_SPRING='SORRY_BUT_YOU_ARE_WAY_TO_PROBLEMATIC_AND_NEED_TO_GO_HOME'
 ### Added by the Heroku Toolbelt
