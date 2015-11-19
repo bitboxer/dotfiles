@@ -264,6 +264,9 @@ au BufNewFile,BufRead {*.json,*.jsm} set ft=javascript
 " Recognize CoffeeScript
 au BufNewFile,BufRead *.coffee set ft=coffee
 
+" zsh themes are sh files
+au BufNewFile,BufRead *.zsh-theme set ft=sh
+
 " Make cursor move by visual lines instead of file lines (when wrapping)
 noremap k gk
 noremap j gj
