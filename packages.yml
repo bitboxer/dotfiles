@@ -9,6 +9,7 @@ passengers:
   - rbenv
   - shell
   - fonts
+  - vim_plug
 brews:
   - aacgain
   - ack
