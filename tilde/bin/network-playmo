@@ -1,0 +1,5 @@
+#!/bin/sh
+
+echo "Setting up Playmo Network"
+sudo networksetup -setdnsservers Wi-Fi 213.5.182.117 46.149.22.148
+

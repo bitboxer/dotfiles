@@ -1,0 +1,3 @@
+#!/bin/bash
+file=`basename $1`
+ffmpeg -i "$1" -acodec libfdk_aac -ab 384k -ac 2 -vcodec copy "$file.mp4"
