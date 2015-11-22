@@ -78,5 +78,7 @@ repos:
   "robbyrussell/oh-my-zsh": "~/.oh-my-zsh"
   "zsh-users/zsh-syntax-highlighting": "~/.zsh-syntax-highlighting"
   "rauchg/wifi-password": "~/.wifi-password"
+  "junegunn/vim-plug": "~/.vimplug"
 commands:
   - "ln -sf ~/.wifi-password/wifi-password.sh ~/bin/wifi-password"
+  - "mkdir -p ~/.config/nvim/autoload/ && ln -sf ~/.vimplug/plug.vim ~/.config/nvim/autoload/plug.vim"
