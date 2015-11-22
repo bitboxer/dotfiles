@@ -77,6 +77,7 @@ else
 endif
 
 let g:ctrlp_working_path_mode = 0
+let g:ctrlp_switch_buffer = 'e'
 
 noremap <C-b> :CtrlPBuffer<CR>
 let g:ctrlp_dont_split = 'NERD_tree_2'
@@ -101,7 +102,10 @@ Plug 'scrooloose/syntastic'
 let g:syntastic_enable_signs=1
 let g:syntastic_quiet_messages = {'level': 'warnings'}
 let g:syntastic_auto_loc_list=2
-let g:syntastic_javascript_checkers = ['jsl']
+let g:syntastic_javascript_checkers = ['jshint', 'jscs']
+let g:syntastic_check_on_open=1
+let g:syntastic_error_symbol='🙀'
+let g:syntastic_warning_symbol='😿'
 
 " Use Node.js for JavaScript interpretation
 let $JS_CMD='node'
@@ -311,6 +315,11 @@ hi SpellBad ctermfg=41
 " Enable spell as default only for certain files
 autocmd FileType markdown setlocal spell spelllang=en,de
 autocmd BufNewFile,BufRead COMMIT_EDITMSG setlocal spell spelllang=en,de
+
+" Switch spell checking language
+command! British :set spelllang=en_gb
+command! American :set spelllang=en_us
+command! German :set spelllang=de
 
 " enable project based vimrc
 set exrc

@@ -74,6 +74,8 @@ npms:
   - keybase
   - uglifyjs
   - spoof
+  - jshint
+  - jscs
 repos:
   "robbyrussell/oh-my-zsh": "~/.oh-my-zsh"
   "zsh-users/zsh-syntax-highlighting": "~/.zsh-syntax-highlighting"
