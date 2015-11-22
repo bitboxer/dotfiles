@@ -1,15 +1,14 @@
 directory_name: "tilde"
-fonts_path: "fonts"
+fonts_path: "../../.powerline-fonts"
 passengers:
   - dotfile
-  - fonts
   - git_repo
   - homebrew
   - npm
   - python
   - rbenv
   - shell
-  # - vundle
+  - fonts
 brews:
   - aacgain
   - ack
@@ -79,6 +78,7 @@ repos:
   "zsh-users/zsh-syntax-highlighting": "~/.zsh-syntax-highlighting"
   "rauchg/wifi-password": "~/.wifi-password"
   "junegunn/vim-plug": "~/.vimplug"
+  "powerline/fonts": "~/.powerline-fonts"
 commands:
   - "ln -sf ~/.wifi-password/wifi-password.sh ~/bin/wifi-password"
   - "mkdir -p ~/.config/nvim/autoload/ && ln -sf ~/.vimplug/plug.vim ~/.config/nvim/autoload/plug.vim"
