@@ -10,9 +10,9 @@ function truncated_git_prompt() {
 }
 
 if [[ -n $SSH_CONNECTION ]]; then
-  export PS1='%n@%m:%F{green}%~%f$(truncated_git_prompt)%# '
+  export PS1='%n@%m:%F{green}%~%f$(truncated_git_prompt)%F{blue}> '
 else
-  export PS1='%F{green}%~%f$(truncated_git_prompt)%# '
+  export PS1='%F{green}%~%f$(truncated_git_prompt)%F{blue}> '
 fi
 
 ZSH_THEME_GIT_PROMPT_PREFIX="[%F{yellow}"
