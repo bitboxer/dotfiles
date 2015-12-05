@@ -298,6 +298,10 @@ noremap <Right> <Nop>
 noremap <Up> <Nop>
 noremap <Down> <Nop>
 
+" Reselect selection after indenting
+vnoremap < <gv
+vnoremap > >gv
+
 " find merge conflict markers
 nnoremap <silent> <leader>fc <ESC>/\v^[<=>]{7}( .*\|$)<CR>
 
