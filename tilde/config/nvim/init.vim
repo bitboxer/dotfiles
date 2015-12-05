@@ -298,6 +298,22 @@ noremap <Right> <Nop>
 noremap <Up> <Nop>
 noremap <Down> <Nop>
 
+" Show contents of registers and paste selected into the buffer
+function! Reg()
+  reg
+  echo "Register: "
+  let char = nr2char(getchar())
+  if char != "\<Esc>"
+    execute "normal! \"".char."p"
+  endif
+  redraw
+endfunction
+
+command! -nargs=0 Reg call Reg()
+
+" paste something using the paste mode
+map <Leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>
+
 " Reselect selection after indenting
 vnoremap < <gv
 vnoremap > >gv
