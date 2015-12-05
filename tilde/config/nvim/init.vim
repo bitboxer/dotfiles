@@ -217,8 +217,7 @@ nnoremap <silent> ,rl :call neoterm#clear()<cr>
 " experimental area
 Plug 'vim-scripts/BufOnly.vim', {'on': ['Bonly', 'BOnly', 'Bufonly', 'BufOnly'] }
 Plug 'troydm/zoomwintab.vim', { 'on': 'ZoomWinTabIn' }
-Plug 'ngmy/vim-rubocop', { 'on' : 'RubuCop' }
-Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'jimsei/winresizer'
 
 " Show invisible characters:
 " Tabs and trailing whitespace
