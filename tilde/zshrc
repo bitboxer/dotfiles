@@ -21,7 +21,7 @@ setopt HIST_IGNORE_DUPS
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(brew dirhelper extract forklift jump rbenv gem)
+plugins=(brew dirhelper extract forklift jump rbenv gem tmuxinator)
 
 source $ZSH/oh-my-zsh.sh
 
