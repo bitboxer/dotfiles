@@ -317,10 +317,6 @@ command! -nargs=0 Reg call Reg()
 " paste something using the paste mode
 map <Leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>
 
-" Reselect selection after indenting
-vnoremap < <gv
-vnoremap > >gv
-
 " find merge conflict markers
 nnoremap <silent> <leader>fc <ESC>/\v^[<=>]{7}( .*\|$)<CR>
 
