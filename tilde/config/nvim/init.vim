@@ -216,7 +216,10 @@ nnoremap <silent> ,rl :call neoterm#clear()<cr>
 
 " experimental area
 Plug 'vim-scripts/BufOnly.vim', {'on': ['Bonly', 'BOnly', 'Bufonly', 'BufOnly'] }
-Plug 'troydm/zoomwintab.vim', { 'on': 'ZoomWinTabIn' }
+
+Plug 'troydm/zoomwintab.vim', { 'on': ['ZoomWinTabToggle', 'ZoomWinTabIn', 'ZoomWinTabOut'] }
+nnoremap <silent> ,zz :ZoomWinTabToggle<cr>
+
 Plug 'jimsei/winresizer'
 
 " Show invisible characters:
