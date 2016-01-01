@@ -222,6 +222,8 @@ nnoremap <silent> ,zz :ZoomWinTabToggle<cr>
 
 Plug 'jimsei/winresizer'
 
+Plug 'fatih/vim-go'
+
 " Show invisible characters:
 " Tabs and trailing whitespace
 set list
