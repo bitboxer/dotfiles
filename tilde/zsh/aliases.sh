@@ -52,3 +52,7 @@ alias rba="git rebase --abort"
 alias git="hub"
 
 tmuxssh() { autossh -M 0 -t $@ 'tmux attach || tmux new' }
+
+# These tools need admin permission to work
+alias htop="sudo htop"
+alias mtr="sudo mtr $@"
