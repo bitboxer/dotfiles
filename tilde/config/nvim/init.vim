@@ -52,9 +52,8 @@ set title
 " no timeout, make switching modes easier
 set timeoutlen=1000 ttimeoutlen=0
 
-" using another color scheme for diffing, my
-" current one does not work that well :(
-set diffopt=vertical
+set diffopt=vertical,filler
+autocmd FileType git set nofoldenable
 
 call plug#begin('~/.config/nvim/plugged')
 
