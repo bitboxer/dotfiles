@@ -55,7 +55,6 @@ set timeoutlen=1000 ttimeoutlen=0
 " using another color scheme for diffing, my
 " current one does not work that well :(
 set diffopt=vertical
-au FilterWritePre * if &diff | colorscheme Tomorrow-Night | endif
 
 call plug#begin('~/.config/nvim/plugged')
 
@@ -223,6 +222,8 @@ nnoremap <silent> ,zz :ZoomWinTabToggle<cr>
 Plug 'jimsei/winresizer'
 
 Plug 'fatih/vim-go'
+
+Plug 'junegunn/gv.vim'
 
 " Show invisible characters:
 " Tabs and trailing whitespace
