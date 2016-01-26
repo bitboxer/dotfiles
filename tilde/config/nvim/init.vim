@@ -212,17 +212,27 @@ nnoremap <silent> ,rc :call neoterm#close()<cr>
 " clear terminal
 nnoremap <silent> ,rl :call neoterm#clear()<cr>
 
-" experimental area
+" create directory if it does not exist
+Plug 'DataWraith/auto_mkdir'
+
+" resize windows easily
+Plug 'jimsei/winresizer'
+
+" show git history in vim
+Plug 'junegunn/gv.vim'
+
+" remove everything except the current buffer
 Plug 'vim-scripts/BufOnly.vim', {'on': ['Bonly', 'BOnly', 'Bufonly', 'BufOnly'] }
 
+" zoom current buffer
 Plug 'troydm/zoomwintab.vim', { 'on': ['ZoomWinTabToggle', 'ZoomWinTabIn', 'ZoomWinTabOut'] }
 nnoremap <silent> ,zz :ZoomWinTabToggle<cr>
 
-Plug 'jimsei/winresizer'
+" **[ experimental area - start ]************************************
 
 Plug 'fatih/vim-go'
 
-Plug 'junegunn/gv.vim'
+" **[ experimental area - end   ]************************************
 
 " Show invisible characters:
 " Tabs and trailing whitespace
