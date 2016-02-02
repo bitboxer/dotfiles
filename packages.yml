@@ -4,6 +4,7 @@ passengers:
   - dotfile
   - git_repo
   - homebrew
+  - homebrew_cask
   - npm
   - python
   - rbenv
@@ -40,6 +41,18 @@ brews:
   - webp
   - wget
   - fzf
+casks:
+  - qlcolorcode
+  - qlstephen
+  - qlmarkdown
+  - quicklook-json
+  - qlprettypatch
+  - quicklook-csv
+  - betterzipql
+  - qlimagesize
+  - webpquicklook
+  - suspicious-package
+  - xscreensaver
 rubies:
   - 2.0.0-p451
   - 2.1.3
