@@ -20,17 +20,19 @@ brews:
   - chromedriver
   - ctags
   - ffmpeg
+  - fzf
   - git
   - go
   - grc
   - htop-osx
   - hub
   - imagemagick
+  - keybase
   - maven
   - mtr
   - mysql
-  - phantomjs
   - pgcli
+  - phantomjs
   - reattach-to-user-namespace
   - ssh-copy-id
   - the_silver_searcher
@@ -40,7 +42,6 @@ brews:
   - watch
   - webp
   - wget
-  - fzf
 casks:
   - qlcolorcode
   - qlstephen
@@ -84,7 +85,6 @@ npms:
   - bower
   - buster
   - coffee-script
-  - keybase
   - uglifyjs
   - spoof
   - jshint
