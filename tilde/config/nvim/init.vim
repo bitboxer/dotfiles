@@ -220,6 +220,13 @@ Plug 'fatih/vim-go'
 
 " **[ experimental area - end   ]************************************
 
+" --- End ---
+call plug#end()
+
+" colorscheme Tomorrow-Night-Bright
+set background=dark
+colorscheme solarized
+
 " Show invisible characters:
 " Tabs and trailing whitespace
 set list
@@ -331,7 +338,7 @@ au BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= l
 
 " Spelling highlights in bright green
 hi clear SpellBad
-hi SpellBad ctermfg=41
+hi SpellBad ctermfg=red cterm=bold,underline
 
 " Enable spell as default only for certain files
 autocmd FileType markdown setlocal spell spelllang=en,de
@@ -345,11 +352,4 @@ command! German :set spelllang=de
 " enable project based vimrc
 set exrc
 set secure
-
-" --- End ---
-call plug#end()
-
-" colorscheme Tomorrow-Night-Bright
-set background=dark
-colorscheme solarized
 
