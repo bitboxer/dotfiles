@@ -33,7 +33,6 @@ set number
 set t_Co=256
 " Unselect the search result
 map <Leader><Space> :noh<CR>
-" nnoremap <esc> :noh<return><esc>
 " Better buffer handling
 set hidden
 " hightlight cursor position
@@ -44,13 +43,8 @@ if has('mac')
   set clipboard=unnamed
 end
 
-" Enable mouse
-set mouse=a
 " Set the title of the iterm tab
 set title
-
-" no timeout, make switching modes easier
-set timeoutlen=1000 ttimeoutlen=0
 
 set diffopt=vertical,filler
 autocmd FileType git set nofoldenable
@@ -82,20 +76,19 @@ let g:ctrlp_dont_split = 'NERD_tree_2'
 
 " Nerdtree
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+
 let NERDTreeIgnore=['\.pyc$', '\.pyo$', '\.rbc$', '\.rbo$', '\.class$', '\.o$', '\~$']
 noremap <C-n> :NERDTreeToggle<CR>
 noremap <leader>n :NERDTreeToggle<CR>
+
 " Git marker for nerdtree
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " Color Theme
-Plug 'chriskempson/vim-tomorrow-theme'
 Plug 'altercation/vim-colors-solarized'
 
 " Polyglot: A collection of language packs, loaded on demand
 Plug 'sheerun/vim-polyglot'
-" Added Javascript Template Support
-au BufNewFile,BufRead *.ejs set filetype=jst
 
 " Syntastic: Really great Syntax checker
 Plug 'scrooloose/syntastic'
@@ -106,9 +99,6 @@ let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_check_on_open=1
 let g:syntastic_error_symbol='🙀'
 let g:syntastic_warning_symbol='😿'
-
-" Use Node.js for JavaScript interpretation
-let $JS_CMD='node'
 
 " ack.vim: ack integration
 Plug 'mileszs/ack.vim'
@@ -129,10 +119,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 " without any weird color
 highlight clear SignColumn
-
-" Git Commit Browser
-Plug 'int3/vim-extradite'
-let g:extradite_resize=0
 
 " Cool Undo Tree
 Plug 'sjl/gundo.vim', { 'on': 'GundoToggle' }
@@ -156,9 +142,6 @@ Plug 'tpope/vim-commentary'
 Plug 'justinmk/vim-sneak'
 Plug 'tpope/vim-rails'
 Plug 'bronson/vim-trailing-whitespace'
-
-" Jump between pairs of keywords via %
-runtime macros/matchit.vim
 
 " Textobj Rubyblock: Custom text object for selecting ruby blocks
 Plug 'kana/vim-textobj-user'
@@ -286,6 +269,9 @@ au BufNewFile,BufRead *.coffee set ft=coffee
 
 " zsh themes are sh files
 au BufNewFile,BufRead *.zsh-theme set ft=sh
+
+" Added Javascript Template Support
+au BufNewFile,BufRead *.ejs set filetype=jst
 
 " Make cursor move by visual lines instead of file lines (when wrapping)
 noremap k gk
