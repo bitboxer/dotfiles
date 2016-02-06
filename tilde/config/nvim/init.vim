@@ -180,8 +180,9 @@ let g:neoterm_clear_cmd = "clear; printf '=%.0s' {1..80}; clear"
 let g:neoterm_position = 'horizontal'
 let g:neoterm_automap_keys = ',rt'
 
-nnoremap <silent> <f9> :call neoterm#repl#line()<cr>
-vnoremap <silent> <f9> :call neoterm#repl#selection()<cr>
+nnoremap <silent> <f10> :TREPLSendFile<cr>
+nnoremap <silent> <f9> :TREPLSend<cr>
+vnoremap <silent> <f9> :TREPLSend<cr>
 
 " run set test lib
 nnoremap <silent> ,ra :call neoterm#test#run('all')<cr>
@@ -194,6 +195,8 @@ nnoremap <silent> ,rr :call neoterm#test#rerun()<cr>
 nnoremap <silent> ,rc :call neoterm#close()<cr>
 " clear terminal
 nnoremap <silent> ,rl :call neoterm#clear()<cr>
+" kills the current job
+nnoremap <silent> ,rk :call neoterm#kill()<cr>
 
 " create directory if it does not exist
 Plug 'DataWraith/auto_mkdir'
