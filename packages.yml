@@ -24,7 +24,7 @@ brews:
   - git
   - go
   - grc
-  - htop-osx
+  - htop
   - hub
   - imagemagick
   - keybase

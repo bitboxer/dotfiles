@@ -7,6 +7,7 @@ tilde/config/mc/*
 tilde/config/inkscape/*
 tilde/config/configstore/*
 tilde/config/hub
+tilde/config/htop
 tilde/config/gtk-2.0/
 tilde/config/git
 tilde/config/keybase
