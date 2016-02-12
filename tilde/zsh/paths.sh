@@ -11,7 +11,7 @@ export PATH=./bin:$PATH
 
 # AVM stuff :)
 export PATH=/Users/bodo/.cargo/bin:$PATH
-export PATH=~/.avm/:~/.avm/bin:$PATH
+export PATH=~/.avm/node/bin:~/.avm/ruby/bin:$PATH
 
 export GOPATH=~/go
 export PATH=~/go/bin:$PATH
