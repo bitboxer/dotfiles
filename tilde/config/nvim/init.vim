@@ -134,7 +134,7 @@ Plug 'nelstrom/vim-visual-star-search'
 " Open Markdown files in Marked
 Plug 'itspriddle/vim-marked'
 noremap <leader>m :MarkedOpen<CR>
-let g:marked_app = "Marked"
+let g:marked_app = "Markoff"
 
 " Toggle comment blocks
 Plug 'tpope/vim-commentary'
