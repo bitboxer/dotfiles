@@ -106,8 +106,10 @@ let g:ackprg = 'ag -S --nogroup --column'
 
 " Better statusbar
 Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
 let g:airline_powerline_fonts = 1
-let g:airlinetheme = "powerlineish"
+let g:airlinetheme = "solarized"
 
 let g:airline#extensions#branch#displayed_head_limit = 17
 
