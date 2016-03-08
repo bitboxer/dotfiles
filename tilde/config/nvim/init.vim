@@ -219,6 +219,7 @@ nnoremap <silent> ,zz :ZoomWinTabToggle<cr>
 " **[ experimental area - start ]************************************
 
 Plug 'fatih/vim-go'
+Plug 'bogado/file-line'
 
 " **[ experimental area - end   ]************************************
 
