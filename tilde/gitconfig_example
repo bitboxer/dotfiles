@@ -4,37 +4,31 @@
 
 [alias]
   co = checkout
-  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%= "<%" %>an>%Creset' --abbrev-commit
+  lg = log --color --graph --pretty=format:'%C(yellow)%h%Creset %C(green)%s%Creset %C(red)(%cr)%Creset - %an'
   unmerged = !git branch -r --no-merged | grep -v HEAD | xargs -L1 git --no-pager log --pretty=tformat:'%Cgreen%d%Creset - %h by %an (%Cblue%ar%Creset)' -1
   merged = !git branch -r --merged | grep -v HEAD | xargs -L1 git --no-pager log --pretty=tformat:'%Cgreen%d%Creset - %h by %an (%Cblue%ar%Creset)' -1
   ctags = "!sh -c '[ -f .git/hooks/ctags ] || git init; .git/hooks/ctags' git-ctags"
   cleanup = "!git branch --merged | grep -E '(feature|bug|chore)/'| xargs git branch -D && git remote prune origin"
+  pf = push --force-with-lease
 
 [color]
   diff = auto
   status = auto
   branch = auto
-
 [core]
   excludesfile = /Users/bodo/.gitignore
-  editor = /usr/local/bin/vim
-
+  editor = /usr/local/bin/nvim
 [apply]
   whitespace = nowarn
-
 [github]
   user = bitboxer
 
-[format]
-  pretty = %C(yellow)%h%Creset %C(green)%s%Creset %C(red)(%cr)%Creset - %an
-
-
+# More details about the git mergetool option can be found here:
+# http://gitguru.com/2009/02/22/integrating-git-with-a-visual-merge-tool/
+#
+# DiffMerge can be found here :
+# http://www.sourcegear.com/diffmerge/
 [merge]
-  # More details about the git mergetool option can be found here:
-  # http://gitguru.com/2009/02/22/integrating-git-with-a-visual-merge-tool/
-
-  # DiffMerge can be found here : 
-  # http://www.sourcegear.com/diffmerge/
   tool = diffmerge
 
 [mergetool "diffmerge"]
@@ -43,13 +37,15 @@
 
 [init]
   templatedir = ~/.git_template
-
 [push]
   default = simple
-
 [filter "media"]
   clean = git-media-clean %f
   smudge = git-media-smudge %f
 
 [tig]
   line-graphics = "utf-8"
+[git-up "bundler"]
+	check = true
+[rebase]
+	autosquash = true

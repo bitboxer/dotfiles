@@ -38,7 +38,9 @@ alias gca='git commit -v -a'
 # Till this (https://github.com/aanand/git-up/issues/114) is fixed, i keep using git pull :(
 alias gl='git pull'
 alias gp='git push'
+alias gpf='git pf'
 alias gpb='git push --set-upstream origin HEAD' # Push local branch to remote
+alias gpbf='git pf --set-upstream origin HEAD' # Push local branch to remote and force it
 alias gco='git checkout'
 alias gcb='git checkout -b'
 
