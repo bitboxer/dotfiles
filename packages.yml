@@ -91,6 +91,7 @@ npms:
   - jshint
   - jscs
   - how2
+  - caniuse-cmd
 repos:
   "robbyrussell/oh-my-zsh": "~/.oh-my-zsh"
   "zsh-users/zsh-syntax-highlighting": "~/.zsh-syntax-highlighting"
