@@ -98,6 +98,7 @@ repos:
   "rauchg/wifi-password": "~/.wifi-password"
   "junegunn/vim-plug": "~/.vimplug"
   "powerline/fonts": "~/.powerline-fonts"
+  "caarlos0/zsh-open-pr": "~/.zsh-open-pr"
 commands:
   - "ln -sf ~/.wifi-password/wifi-password.sh ~/bin/wifi-password"
   - "mkdir -p ~/.config/nvim/autoload/ && ln -sf ~/.vimplug/plug.vim ~/.config/nvim/autoload/plug.vim"

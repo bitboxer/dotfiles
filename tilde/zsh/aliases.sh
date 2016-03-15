@@ -40,6 +40,7 @@ alias gl='git pull'
 alias gp='git push'
 alias gpf='git pf'
 alias gpb='git push --set-upstream origin HEAD' # Push local branch to remote
+alias gpr='git push --set-upstream origin HEAD && open-pr "$*"' # Push local branch to remote
 alias gpbf='git pf --set-upstream origin HEAD' # Push local branch to remote and force it
 alias gco='git checkout'
 alias gcb='git checkout -b'

@@ -27,6 +27,7 @@ source $ZSH/oh-my-zsh.sh
 
 export EDITOR=nvim
 
+source ~/.zsh-open-pr/open-pr.plugin.zsh
 source ~/.zsh/paths.sh
 source ~/.zsh/aliases.sh
 source ~/.zsh/bitcrowd.sh
