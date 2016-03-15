@@ -220,6 +220,10 @@ nnoremap <silent> ,zz :ZoomWinTabToggle<cr>
 
 Plug 'fatih/vim-go'
 Plug 'bogado/file-line'
+Plug 'mhinz/vim-startify'
+
+autocmd User Startified setlocal buftype=
+let g:ctrlp_reuse_window = 'startify'
 
 " **[ experimental area - end   ]************************************
 
