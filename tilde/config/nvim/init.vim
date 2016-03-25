@@ -222,6 +222,7 @@ Plug 'fatih/vim-go'
 Plug 'bogado/file-line'
 Plug 'mhinz/vim-startify'
 Plug 'jreybert/vimagit'
+Plug 'elixir-lang/vim-elixir'
 
 autocmd User Startified setlocal buftype=
 let g:ctrlp_reuse_window = 'startify'
