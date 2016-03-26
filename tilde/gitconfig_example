@@ -45,7 +45,5 @@
 
 [tig]
   line-graphics = "utf-8"
-[git-up "bundler"]
-	check = true
 [rebase]
 	autosquash = true

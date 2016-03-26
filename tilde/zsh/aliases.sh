@@ -35,7 +35,6 @@ alias gs='git status'
 alias gd='git diff'
 alias glog='git log'
 alias gca='git commit -v -a'
-# Till this (https://github.com/aanand/git-up/issues/114) is fixed, i keep using git pull :(
 alias gl='git pull'
 alias gp='git push'
 alias gpf='git pf'
