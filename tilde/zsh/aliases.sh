@@ -11,6 +11,7 @@ alias tlog="tail -f log/development.log"
 # Bundler
 alias be="bundle exec"
 alias bi="bundle install"
+alias ber="bundle exec rake"
 
 # Use siver searcher, it is faster!
 alias ack="ag -S"
