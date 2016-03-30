@@ -16,4 +16,5 @@ tilde/config/nvim/spell
 tilde/config/nvim/shada
 tilde/config/nvim/autoload/plug.vim
 tilde/config/nyaovim
+tilde/config/Cryptocat
 .*
