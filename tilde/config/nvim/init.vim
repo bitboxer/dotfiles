@@ -226,10 +226,8 @@ Plug 'fatih/vim-go'
 
 " **[ experimental area - start ]************************************
 
-Plug 'jreybert/vimagit'
-
 Plug 'ludovicchabant/vim-gutentags'
-let g:gutentags_cache_dir = '~/.git'
+let g:gutentags_cache_dir = '~/.tags_cache'
 
 autocmd User Startified setlocal buftype=
 let g:ctrlp_reuse_window = 'startify'
