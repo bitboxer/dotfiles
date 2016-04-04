@@ -216,13 +216,20 @@ Plug 'vim-scripts/BufOnly.vim', {'on': ['Bonly', 'BOnly', 'Bufonly', 'BufOnly'] 
 Plug 'troydm/zoomwintab.vim', { 'on': ['ZoomWinTabToggle', 'ZoomWinTabIn', 'ZoomWinTabOut'] }
 nnoremap <silent> ,zz :ZoomWinTabToggle<cr>
 
+Plug 'mhinz/vim-startify'
+
+" open files with vim file:123
+Plug 'bogado/file-line'
+
+Plug 'elixir-lang/vim-elixir'
+Plug 'fatih/vim-go'
+
 " **[ experimental area - start ]************************************
 
-Plug 'fatih/vim-go'
-Plug 'bogado/file-line'
-Plug 'mhinz/vim-startify'
 Plug 'jreybert/vimagit'
-Plug 'elixir-lang/vim-elixir'
+
+Plug 'ludovicchabant/vim-gutentags'
+let g:gutentags_cache_dir = '~/.git'
 
 autocmd User Startified setlocal buftype=
 let g:ctrlp_reuse_window = 'startify'
