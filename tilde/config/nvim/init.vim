@@ -218,17 +218,6 @@ nnoremap <silent> ,zz :ZoomWinTabToggle<cr>
 
 Plug 'mhinz/vim-startify'
 
-" open files with vim file:123
-Plug 'bogado/file-line'
-
-Plug 'elixir-lang/vim-elixir'
-Plug 'fatih/vim-go'
-
-" **[ experimental area - start ]************************************
-
-Plug 'ludovicchabant/vim-gutentags'
-let g:gutentags_cache_dir = '~/.tags_cache'
-
 autocmd User Startified setlocal buftype=
 let g:ctrlp_reuse_window = 'startify'
 
@@ -270,6 +259,14 @@ hi StartifyNumber  ctermfg=215
 hi StartifyPath    ctermfg=245
 hi StartifySlash   ctermfg=240
 hi StartifySpecial ctermfg=240
+
+" open files with vim file:123
+Plug 'bogado/file-line'
+
+" **[ experimental area - start ]************************************
+
+Plug 'ludovicchabant/vim-gutentags'
+let g:gutentags_cache_dir = '~/.tags_cache'
 
 " **[ experimental area - end   ]************************************
 
