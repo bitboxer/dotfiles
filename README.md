@@ -30,3 +30,4 @@ readme. A few keypoints (that might already have been changed since writing this
   will see a nice list of brews, gems and npm packages I am using
 
 And for the rest: just dig through here and copy everything that sounds nice to you.
+
