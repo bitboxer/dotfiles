@@ -1,0 +1,3 @@
+djui/alias-tips
+caarlos0/zsh-open-github-pr
+zsh-users/zsh-syntax-highlighting

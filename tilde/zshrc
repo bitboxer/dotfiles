@@ -27,7 +27,11 @@ source $ZSH/oh-my-zsh.sh
 
 export EDITOR=nvim
 
-source ~/.zsh-open-pr/open-pr.plugin.zsh
+source <(antibody init)
+antibody bundle < ~/.zsh/bundles.txt
+
+export ZSH_PLUGINS_ALIAS_TIPS_TEXT="💡 Alias tip: "
+
 source ~/.zsh/paths.sh
 source ~/.zsh/aliases.sh
 source ~/.zsh/bitcrowd.sh
@@ -35,8 +39,6 @@ source ~/.zsh/colorify.sh
 source ~/.zsh/fzf.sh
 
 source ~/.secrets
-
-source ~/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 export DISABLE_SPRING='SORRY_BUT_YOU_ARE_WAY_TOO_PROBLEMATIC'
 ### Added by the Heroku Toolbelt
