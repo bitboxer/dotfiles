@@ -43,6 +43,7 @@ brews:
   - webp
   - wget
   - wifi-password
+  - neovim/neovim/neovim
 casks:
   - qlcolorcode
   - qlstephen
