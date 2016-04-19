@@ -94,6 +94,7 @@ npms:
   - jscs
   - how2
   - caniuse-cmd
+  - spoof
 repos:
   "robbyrussell/oh-my-zsh": "~/.oh-my-zsh"
   "zsh-users/zsh-syntax-highlighting": "~/.zsh-syntax-highlighting"
