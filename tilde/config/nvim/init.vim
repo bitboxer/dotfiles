@@ -181,6 +181,8 @@ Plug 'kassio/neoterm'
 let g:neoterm_clear_cmd = "clear; printf '=%.0s' {1..80}; clear"
 let g:neoterm_position = 'horizontal'
 let g:neoterm_automap_keys = ',rt'
+let g:neoterm_raise_when_tests_fail = 1
+let g:neoterm_focus_when_tests_fail = 1
 
 nnoremap <silent> <f10> :TREPLSendFile<cr>
 nnoremap <silent> <f9> :TREPLSend<cr>
