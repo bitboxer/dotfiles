@@ -15,11 +15,14 @@
   diff = auto
   status = auto
   branch = auto
+
 [core]
   excludesfile = /Users/bodo/.gitignore
   editor = /usr/local/bin/nvim
+
 [apply]
   whitespace = nowarn
+
 [github]
   user = bitboxer
 
@@ -37,13 +40,22 @@
 
 [init]
   templatedir = ~/.git_template
+
 [push]
   default = simple
+
 [filter "media"]
   clean = git-media-clean %f
   smudge = git-media-smudge %f
 
 [tig]
   line-graphics = "utf-8"
+
 [rebase]
-	autosquash = true
+  autosquash = true
+
+[git-up "bundler"]
+   check = true
+
+[diff]
+  compactionHeuristic = true
