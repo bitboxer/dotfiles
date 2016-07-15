@@ -177,7 +177,7 @@ autocmd  User GoyoEnter nested call <SID>goyo_enter()
 autocmd  User GoyoLeave nested call <SID>goyo_leave()
 
 Plug 'kassio/neoterm'
-
+let g:neoterm_shell = "zsh"
 let g:neoterm_clear_cmd = "clear; printf '=%.0s' {1..80}; clear"
 let g:neoterm_position = 'horizontal'
 let g:neoterm_automap_keys = ',rt'
