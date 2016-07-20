@@ -38,6 +38,8 @@ source ~/.zsh/bitcrowd.sh
 source ~/.zsh/colorify.sh
 source ~/.zsh/fzf.sh
 
+source ~/.pgvm/pgvm_env
+
 source ~/.secrets
 
 export DISABLE_SPRING='SORRY_BUT_YOU_ARE_WAY_TOO_PROBLEMATIC'
