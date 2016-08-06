@@ -126,9 +126,6 @@ highlight clear SignColumn
 Plug 'sjl/gundo.vim', { 'on': 'GundoToggle' }
 noremap <Leader>g :GundoToggle<CR>
 
-" Tab completion
-Plug 'ervandew/supertab'
-
 " Better * search for selections.
 " http://vimcasts.org/episodes/search-for-the-selected-text/
 Plug 'nelstrom/vim-visual-star-search'
@@ -265,11 +262,11 @@ hi StartifySpecial ctermfg=240
 " open files with vim file:123
 Plug 'bogado/file-line'
 
-" **[ experimental area - start ]************************************
-
+" Tagging is all the rage
 Plug 'ludovicchabant/vim-gutentags'
 let g:gutentags_cache_dir = '~/.tags_cache'
 
+" Align all the stuff
 Plug 'vim-easy-align'
 
 " Start interactive EasyAlign in visual mode (e.g. vipga)
@@ -281,8 +278,23 @@ nmap ga <Plug>(EasyAlign)
 function! DoRemote(arg)
   UpdateRemotePlugins
 endfunction
+
+" the tab complete thing
 Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
+
 let g:deoplete#enable_at_startup = 1
+let g:deoplete#disable_auto_complete = 1
+
+inoremap <silent><expr> <TAB> pumvisible() ? "\<C-n>" : <SID>check_back_space() ? "\<TAB>" : deoplete#mappings#manual_complete()
+
+function! s:check_back_space() abort "{{{
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction"}}}
+
+" **[ experimental area - start ]************************************
+
+" right now there is nothing to see here
 
 " **[ experimental area - end   ]************************************
 
@@ -313,6 +325,9 @@ autocmd FileType make setlocal noexpandtab
 
 " Highlight Characters that overstep the 100 character limit
 set colorcolumn=100
+
+" Show the linebreak if wrapping is enabled
+set showbreak=↪
 
 " Automatically set the indent of a new line (local to buffer)
 " from railsbros-dirk
