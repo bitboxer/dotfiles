@@ -47,8 +47,8 @@ alias gcb='git checkout -b'
 
 alias changelog='git log `git log -1 --format=%H -- CHANGELOG*`..; cat CHANGELOG*'
 
-alias rb="git rebase $@"
-alias rbm="git rebase master -i"
+alias rb="git rebase --autostash $@"
+alias rbm="git rebase master -i --autostash"
 alias rbc="git rebase --continue"
 alias rba="git rebase --abort"
 
