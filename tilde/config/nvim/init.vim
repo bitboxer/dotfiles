@@ -294,7 +294,21 @@ endfunction"}}}
 
 " **[ experimental area - start ]************************************
 
-" right now there is nothing to see here
+Plug 'beloglazov/vim-online-thesaurus'
+nnoremap <leader>k :OnlineThesaurusCurrentWord<CR>
+
+Plug 'dbmrq/vim-ditto'
+
+au FileType markdown,text,tex DittoOn  " Turn on Ditto's autocmds
+
+nmap <leader>di <Plug>ToggleDitto      " Turn it on and off
+
+nmap =d <Plug>DittoNext                " Jump to the next word
+nmap -d <Plug>DittoPrev                " Jump to the previous word
+nmap +d <Plug>DittoGood                " Ignore the word under the cursor
+nmap _d <Plug>DittoBad                 " Stop ignoring the word under the cursor
+nmap ]d <Plug>DittoMore                " Show the next matches
+nmap [d <Plug>DittoLess                " Show the previous matches
 
 " **[ experimental area - end   ]************************************
 
