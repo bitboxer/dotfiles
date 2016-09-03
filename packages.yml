@@ -30,8 +30,6 @@ brews:
   - keybase
   - maven
   - mtr
-  - mysql
-  - pgcli
   - phantomjs
   - reattach-to-user-namespace
   - ssh-copy-id
