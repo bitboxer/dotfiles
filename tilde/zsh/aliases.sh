@@ -14,8 +14,8 @@ alias bi="bundle install"
 alias ber="bundle exec rake"
 
 # Use siver searcher, it is faster!
-alias ack="ag -S"
-alias ag="ag -S"
+alias ack="rg -S"
+alias ag="rg -S"
 
 alias j="jump"
 

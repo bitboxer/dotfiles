@@ -13,7 +13,6 @@ passengers:
   - vim_plug
 brews:
   - aacgain
-  - ack
   - ant
   - autossh
   - beanstalk
