@@ -30,6 +30,7 @@ brews:
   - maven
   - mtr
   - phantomjs
+  - ripgrep
   - reattach-to-user-namespace
   - ssh-copy-id
   - the_silver_searcher
