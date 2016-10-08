@@ -2,13 +2,13 @@ directory_name: "tilde"
 fonts_path: "../../.powerline-fonts"
 passengers:
   - dotfile
+  - fonts
   - git_repo
   - homebrew
   - homebrew_cask
   - npm
   - python
   - shell
-  - fonts
   - vim_plug
 brews:
   - aacgain
@@ -17,7 +17,6 @@ brews:
   - beanstalk
   - chromedriver
   - chruby
-  - universal-ctags
   - ffmpeg
   - fzf
   - git
@@ -29,30 +28,32 @@ brews:
   - keybase
   - maven
   - mtr
+  - neovim/neovim/neovim
   - phantomjs
-  - ripgrep
   - reattach-to-user-namespace
+  - ripgrep
+  - ruby-install
   - ssh-copy-id
   - the_silver_searcher
   - tig
   - tmux
   - tree
+  - universal-ctags
   - watch
   - webp
   - wget
   - wifi-password
-  - neovim/neovim/neovim
 casks:
-  - qlcolorcode
-  - qlstephen
-  - qlmarkdown
-  - quicklook-json
-  - qlprettypatch
-  - quicklook-csv
   - betterzipql
+  - qlcolorcode
   - qlimagesize
-  - webpquicklook
+  - qlmarkdown
+  - qlprettypatch
+  - qlstephen
+  - quicklook-csv
+  - quicklook-json
   - suspicious-package
+  - webpquicklook
   - xscreensaver
 rubies:
   - 2.0.0-p451
@@ -72,28 +73,28 @@ gems:
   - gem-web
   - gemrat
   - geordi
+  - git-up
+  - invoker
   - jekyll
   - jekyll-sass
   - localtunnel
   - powder
-  - thor
-  - invoker
   - terminal-notifier
-  - git-up
+  - thor
 pips:
-  - pygments
   - neovim
+  - pygments
 npms:
   - bower
   - buster
-  - coffee-script
-  - uglifyjs
-  - spoof
-  - jshint
-  - jscs
-  - how2
   - caniuse-cmd
+  - coffee-script
+  - how2
+  - jscs
+  - jshint
   - spoof
+  - spoof
+  - uglifyjs
 repos:
   "robbyrussell/oh-my-zsh": "~/.oh-my-zsh"
   "zsh-users/zsh-syntax-highlighting": "~/.zsh-syntax-highlighting"
