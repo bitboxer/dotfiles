@@ -7,7 +7,6 @@ passengers:
   - homebrew_cask
   - npm
   - python
-  - rbenv
   - shell
   - fonts
   - vim_plug
@@ -17,6 +16,7 @@ brews:
   - autossh
   - beanstalk
   - chromedriver
+  - chruby
   - universal-ctags
   - ffmpeg
   - fzf
@@ -60,6 +60,7 @@ rubies:
   - 2.2.0
   - 2.2.1
   - 2.3.0
+  - 2.3.1
   # - jruby-1.7.9:
   #   - no-default-gems
 gems:
