@@ -1,5 +1,6 @@
 tilde/zsh/local_aliases
 tilde/bundle/cache/
+tilde/bundle/ruby/
 tilde/config/mc/*
 tilde/config/inkscape/*
 tilde/config/configstore/*
