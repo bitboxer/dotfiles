@@ -27,6 +27,7 @@ brews:
   - imagemagick
   - keybase
   - maven
+  - mas
   - mtr
   - neovim/neovim/neovim
   - phantomjs
