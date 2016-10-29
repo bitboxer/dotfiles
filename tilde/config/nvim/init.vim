@@ -280,7 +280,7 @@ function! DoRemote(arg)
 endfunction
 
 " the tab complete thing
-Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
+Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote'), 'tag': '*' }
 
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#disable_auto_complete = 1
