@@ -304,6 +304,8 @@ Plug 'neomake/neomake'
 autocmd! BufWritePost * Neomake
 command Errors lopen
 
+Plug 'slashmili/alchemist.vim'
+
 " **[ experimental area - end   ]************************************
 
 " --- End ---
