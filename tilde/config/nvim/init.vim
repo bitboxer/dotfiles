@@ -90,16 +90,6 @@ Plug 'altercation/vim-colors-solarized'
 " Polyglot: A collection of language packs, loaded on demand
 Plug 'sheerun/vim-polyglot'
 
-" Syntastic: Really great Syntax checker
-Plug 'scrooloose/syntastic'
-let g:syntastic_enable_signs=1
-let g:syntastic_quiet_messages = {'level': 'warnings'}
-let g:syntastic_auto_loc_list=2
-let g:syntastic_javascript_checkers = ['jshint']
-let g:syntastic_check_on_open=1
-let g:syntastic_error_symbol='🙀'
-let g:syntastic_warning_symbol='😿'
-
 " ack.vim: ack integration
 Plug 'mileszs/ack.vim'
 let g:ackprg = 'ag -S --nogroup --column'
@@ -309,6 +299,10 @@ nmap +d <Plug>DittoGood                " Ignore the word under the cursor
 nmap _d <Plug>DittoBad                 " Stop ignoring the word under the cursor
 nmap ]d <Plug>DittoMore                " Show the next matches
 nmap [d <Plug>DittoLess                " Show the previous matches
+
+Plug 'neomake/neomake'
+autocmd! BufWritePost * Neomake
+command Errors lopen
 
 " **[ experimental area - end   ]************************************
 
