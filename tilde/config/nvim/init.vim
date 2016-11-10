@@ -306,6 +306,9 @@ command Errors lopen
 
 Plug 'slashmili/alchemist.vim'
 
+Plug 'c-brenn/phoenix.vim'
+Plug 'tpope/vim-projectionist'
+
 " **[ experimental area - end   ]************************************
 
 " --- End ---
