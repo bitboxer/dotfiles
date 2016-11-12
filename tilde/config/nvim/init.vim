@@ -304,10 +304,14 @@ Plug 'neomake/neomake'
 autocmd! BufWritePost * Neomake
 command Errors lopen
 
+" Elixir
 Plug 'slashmili/alchemist.vim'
 
 Plug 'c-brenn/phoenix.vim'
 Plug 'tpope/vim-projectionist'
+
+" github pull requests
+Plug 'AndrewRadev/ginitpull.vim'
 
 " **[ experimental area - end   ]************************************
 
