@@ -302,6 +302,8 @@ nmap [d <Plug>DittoLess                " Show the previous matches
 
 Plug 'neomake/neomake'
 autocmd! BufWritePost * Neomake
+autocmd! BufReadPost * Neomake
+
 command Errors lopen
 
 " Elixir
