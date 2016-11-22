@@ -316,6 +316,8 @@ Plug 'tpope/vim-projectionist'
 " github pull requests
 Plug 'AndrewRadev/ginitpull.vim'
 
+Plug 'terryma/vim-multiple-cursors'
+
 " **[ experimental area - end   ]************************************
 
 " --- End ---
