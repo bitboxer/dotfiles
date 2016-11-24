@@ -303,6 +303,7 @@ nmap [d <Plug>DittoLess                " Show the previous matches
 Plug 'neomake/neomake'
 autocmd! BufWritePost * Neomake
 autocmd! BufReadPost * Neomake
+let g:neomake_markdown_enabled_makers = ['alex', 'markdownlint']
 
 command Errors lopen
 
