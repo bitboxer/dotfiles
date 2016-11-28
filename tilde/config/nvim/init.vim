@@ -38,6 +38,8 @@ set hidden
 " hightlight cursor position
 set cursorline
 
+set inccommand=split
+
 " Use the clipboard of Mac OS
 if has('mac')
   set clipboard=unnamed
