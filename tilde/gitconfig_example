@@ -26,17 +26,8 @@
 [github]
   user = bitboxer
 
-# More details about the git mergetool option can be found here:
-# http://gitguru.com/2009/02/22/integrating-git-with-a-visual-merge-tool/
-#
-# DiffMerge can be found here :
-# http://www.sourcegear.com/diffmerge/
 [merge]
-  tool = diffmerge
-
-[mergetool "diffmerge"]
-  cmd = diffmerge --merge --result=$MERGED $LOCAL $BASE $REMOTE
-  trustExitCode = false
+  tool = meld
 
 [init]
   templatedir = ~/.git_template

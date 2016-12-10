@@ -44,6 +44,7 @@ brews:
   - webp
   - wget
   - wifi-password
+  - homebrew/gui/meld
 casks:
   - betterzipql
   - qlcolorcode
@@ -75,6 +76,7 @@ gems:
   - gemrat
   - geordi
   - git-up
+  - github_changelog_generator
   - invoker
   - jekyll
   - jekyll-sass
