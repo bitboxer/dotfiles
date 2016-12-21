@@ -325,6 +325,8 @@ Plug 'AndrewRadev/ginitpull.vim'
 
 Plug 'terryma/vim-multiple-cursors'
 
+Plug 'vimwiki/vimwiki'
+
 " **[ experimental area - end   ]************************************
 
 " --- End ---
