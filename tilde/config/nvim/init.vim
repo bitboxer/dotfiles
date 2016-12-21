@@ -228,6 +228,8 @@ let g:startify_list_order = [
   \ 'dir',
   \ ['   LRU:'],
   \ 'files',
+  \ ['   Bookmarks:'],
+  \ 'bookmarks',
   \ ['   Sessions:'],
   \ 'sessions',
   \ ]
@@ -240,6 +242,7 @@ let g:startify_skiplist = [
             \ ]
 
 let g:startify_bookmarks = [
+            \ '~/vimwiki/index.wiki',
             \ ]
 
 hi StartifyBracket ctermfg=240
