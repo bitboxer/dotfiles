@@ -316,6 +316,7 @@ command Errors lopen
 " Elixir
 Plug 'slashmili/alchemist.vim'
 let g:alchemist_tag_disable = 1
+Plug 'powerman/vim-plugin-AnsiEsc'
 
 Plug 'c-brenn/phoenix.vim'
 Plug 'tpope/vim-projectionist'
