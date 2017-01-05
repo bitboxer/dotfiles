@@ -353,8 +353,8 @@ set backspace=indent,eol,start
 " Makefiles require tabs
 autocmd FileType make setlocal noexpandtab
 
-" Highlight Characters that overstep the 100 character limit
-set colorcolumn=100
+" Highlight Characters that overstep the character limit
+set colorcolumn=80
 
 " Show the linebreak if wrapping is enabled
 set showbreak=↪
