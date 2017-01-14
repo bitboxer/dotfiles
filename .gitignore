@@ -16,4 +16,5 @@ tilde/config/nvim/autoload/plug.vim
 tilde/config/nyaovim
 tilde/config/Cryptocat
 tilde/config/karabiner
+tilde/config/heroku
 .*
