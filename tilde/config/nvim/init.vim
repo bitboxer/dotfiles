@@ -165,32 +165,6 @@ autocmd! User GoyoLeave
 autocmd  User GoyoEnter nested call <SID>goyo_enter()
 autocmd  User GoyoLeave nested call <SID>goyo_leave()
 
-Plug 'kassio/neoterm'
-let g:neoterm_shell = "zsh"
-let g:neoterm_clear_cmd = "clear; printf '=%.0s' {1..80}; clear"
-let g:neoterm_position = 'horizontal'
-let g:neoterm_automap_keys = ',rt'
-let g:neoterm_raise_when_tests_fail = 1
-let g:neoterm_focus_when_tests_fail = 1
-
-nnoremap <silent> <f10> :TREPLSendFile<cr>
-nnoremap <silent> <f9> :TREPLSend<cr>
-vnoremap <silent> <f9> :TREPLSend<cr>
-
-" run set test lib
-nnoremap <silent> ,ra :call neoterm#test#run('all')<cr>
-nnoremap <silent> ,rf :call neoterm#test#run('file')<cr>
-nnoremap <silent> ,rn :call neoterm#test#run('current')<cr>
-nnoremap <silent> ,rr :call neoterm#test#rerun()<cr>
-
-" Useful maps
-" closes the terminal buffers
-nnoremap <silent> ,rc :call neoterm#close()<cr>
-" clear terminal
-nnoremap <silent> ,rl :call neoterm#clear()<cr>
-" kills the current job
-nnoremap <silent> ,rk :call neoterm#kill()<cr>
-
 " create directory if it does not exist
 Plug 'DataWraith/auto_mkdir'
 
@@ -325,6 +299,16 @@ Plug 'tpope/vim-projectionist'
 Plug 'AndrewRadev/ginitpull.vim'
 
 Plug 'vimwiki/vimwiki'
+
+Plug 'enricobacis/vim-airline-clock'
+
+Plug 'janko-m/vim-test'
+let test#strategy = "neovim"
+nmap <silent> <leader>rn :TestNearest<CR>
+nmap <silent> <leader>rf :TestFile<CR>
+nmap <silent> <leader>ra :TestSuite<CR>
+nmap <silent> <leader>rr :TestLast<CR>
+nmap <silent> <leader>rv :TestVisit<CR>
 
 " **[ experimental area - end   ]************************************
 
