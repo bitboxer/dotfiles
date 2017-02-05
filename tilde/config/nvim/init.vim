@@ -86,8 +86,14 @@ noremap <leader>n :NERDTreeToggle<CR>
 " Git marker for nerdtree
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
+" Better statusbar
+Plug 'bling/vim-airline'
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#branch#displayed_head_limit = 17
+set laststatus=2
+
 " Color Theme
-Plug 'altercation/vim-colors-solarized'
+Plug 'morhetz/gruvbox'
 
 " Polyglot: A collection of language packs, loaded on demand
 Plug 'sheerun/vim-polyglot'
@@ -95,17 +101,6 @@ Plug 'sheerun/vim-polyglot'
 " ack.vim: ack integration
 Plug 'mileszs/ack.vim'
 let g:ackprg = 'ag -S --nogroup --column'
-
-" Better statusbar
-Plug 'bling/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-
-let g:airline_powerline_fonts = 1
-let g:airlinetheme = "solarized"
-
-let g:airline#extensions#branch#displayed_head_limit = 17
-
-set laststatus=2
 
 Plug 'tpope/vim-fugitive'
 
@@ -317,7 +312,7 @@ call plug#end()
 
 " colorscheme Tomorrow-Night-Bright
 set background=dark
-colorscheme solarized
+colorscheme gruvbox
 
 " Show invisible characters:
 " Tabs and trailing whitespace
