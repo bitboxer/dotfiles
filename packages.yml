@@ -25,7 +25,6 @@ brews:
   - htop
   - hub
   - imagemagick
-  - keybase
   - maven
   - mas
   - mtr
@@ -46,6 +45,7 @@ brews:
   - wifi-password
 casks:
   - betterzipql
+  - meld
   - qlcolorcode
   - qlimagesize
   - qlmarkdown
@@ -56,7 +56,6 @@ casks:
   - suspicious-package
   - webpquicklook
   - xscreensaver
-  - meld
 rubies:
   - 2.0.0-p451
   - 2.1.3
