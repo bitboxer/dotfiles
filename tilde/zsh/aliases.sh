@@ -44,6 +44,7 @@ alias gpr='git push --set-upstream origin HEAD && open-pr "$*"' # Push local bra
 alias gpbf='git pf --set-upstream origin HEAD' # Push local branch to remote and force it
 alias gco='git checkout'
 alias gcb='git checkout -b'
+alias glc='git log -1 --pretty=%B | tr -d "\n" | pbcopy' # Last git commit message to clipboard
 
 alias changelog='git log `git log -1 --format=%H -- CHANGELOG*`..; cat CHANGELOG*'
 
