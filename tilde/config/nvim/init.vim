@@ -85,6 +85,7 @@ noremap <leader>n :NERDTreeToggle<CR>
 
 " Git marker for nerdtree
 Plug 'Xuyuanp/nerdtree-git-plugin'
+let g:NERDTreeShowIgnoredStatus=0
 
 " Better statusbar
 Plug 'bling/vim-airline'
