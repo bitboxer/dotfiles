@@ -86,6 +86,7 @@ gems:
 pips:
   - neovim
   - pygments
+  - proselint
 npms:
   - bower
   - buster

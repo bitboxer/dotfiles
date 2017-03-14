@@ -278,7 +278,7 @@ nmap [d <Plug>DittoLess                " Show the previous matches
 Plug 'neomake/neomake'
 autocmd! BufWritePost * Neomake
 autocmd! BufReadPost * Neomake
-let g:neomake_markdown_enabled_makers = ['alex', 'markdownlint', 'writegood']
+let g:neomake_markdown_enabled_makers = ['alex', 'markdownlint', 'proselint']
 let g:neomake_elixir_enabled_makers = ['mix', 'credo']
 
 command Errors lopen
