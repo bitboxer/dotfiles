@@ -22,6 +22,7 @@ brews:
   - git
   - go
   - grc
+  - guetzli
   - htop
   - hub
   - imagemagick
