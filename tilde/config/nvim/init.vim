@@ -232,7 +232,7 @@ Plug 'ludovicchabant/vim-gutentags'
 let g:gutentags_cache_dir = '~/.tags_cache'
 
 " Align all the stuff
-Plug 'vim-easy-align'
+Plug 'junegunn/vim-easy-align'
 
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
