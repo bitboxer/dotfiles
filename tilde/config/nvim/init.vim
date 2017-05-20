@@ -38,6 +38,9 @@ set hidden
 " hightlight cursor position
 set cursorline
 
+" enable mouse
+set mouse=a
+
 set inccommand=split
 
 " Use the clipboard of Mac OS
