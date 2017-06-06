@@ -102,6 +102,10 @@ Plug 'morhetz/gruvbox'
 " Polyglot: A collection of language packs, loaded on demand
 Plug 'sheerun/vim-polyglot'
 
+" vue files need special handling because of their
+" mix of different languages in one big file
+autocmd FileType vue syntax sync fromstart
+
 " ack.vim: ack integration
 Plug 'mileszs/ack.vim'
 let g:ackprg = 'ag -S --nogroup --column'
@@ -126,8 +130,30 @@ Plug 'itspriddle/vim-marked'
 noremap <leader>m :MarkedOpen<CR>
 let g:marked_app = "Markoff"
 
-" Toggle comment blocks
-Plug 'tpope/vim-commentary'
+" Toggle comment bloccks
+Plug 'scrooloose/nerdcommenter'
+
+" vue files have mixed content, so this
+" informs nerdcommenter about that.
+let g:ft = ''
+function! NERDCommenter_before()
+  if &ft == 'vue'
+    let g:ft = 'vue'
+    let stack = synstack(line('.'), col('.'))
+    if len(stack) > 0
+      let syn = synIDattr((stack)[0], 'name')
+      if len(syn) > 0
+        exe 'setf ' . substitute(tolower(syn), '^vue_', '', '')
+      endif
+    endif
+  endif
+endfunction
+function! NERDCommenter_after()
+  if g:ft == 'vue'
+    setf vue
+    let g:ft = ''
+  endif
+endfunction
 
 Plug 'justinmk/vim-sneak'
 Plug 'tpope/vim-rails'
