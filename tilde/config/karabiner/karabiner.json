@@ -82,7 +82,10 @@
             },
             "name": "Default profile",
             "selected": true,
-            "simple_modifications": {},
+            "simple_modifications": {
+                "grave_accent_and_tilde": "non_us_backslash",
+                "non_us_backslash": "grave_accent_and_tilde"
+            },
             "virtual_hid_keyboard": {
                 "caps_lock_delay_milliseconds": 0,
                 "keyboard_type": "iso"
