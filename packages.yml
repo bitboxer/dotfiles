@@ -29,7 +29,7 @@ brews:
   - maven
   - mas
   - mtr
-  - neovim/neovim/neovim
+  - neovim
   - phantomjs
   - reattach-to-user-namespace
   - ripgrep
