@@ -21,7 +21,7 @@ setopt HIST_IGNORE_DUPS
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(brew dirhelper extract forklift jump chruby gem tmuxinator mix-fast)
+plugins=(brew dirhelper extract forklift jump chruby gem tmuxinator mix-fast docker docker-compose)
 
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
@@ -43,10 +43,7 @@ source ~/.zsh/bitcrowd.sh
 source ~/.zsh/colorify.sh
 source ~/.zsh/fzf.sh
 
-source /usr/local/opt/chruby/share/chruby/chruby.sh
-source /usr/local/opt/chruby/share/chruby/auto.sh
-
-source ~/.pgvm/pgvm_env
+test -e "${HOME}/.pgvm" && source "${HOME}/.pgvm/pgvm_env"
 
 source ~/.secrets
 export DISABLE_SPRING='SORRY_BUT_YOU_ARE_WAY_TOO_PROBLEMATIC'
@@ -61,3 +58,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+if [ -z "${SSH_AUTH_SOCK}" ]; then
+  eval `ssh-agent`
+fi

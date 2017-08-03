@@ -16,5 +16,11 @@ export PATH=~/.avm/node/bin:~/.avm/ruby/bin:$PATH
 export GOPATH=~/go
 export PATH=~/go/bin:$PATH
 
+export PATH=~/.local/bin:$PATH
+
+if [ -d "/home/bodo/.fzf/bin" ]; then
+  export PATH="$PATH:/home/bodo/.fzf/bin"
+fi
+
 # added python paths
 export PATH=~/Library/Python/2.7/bin:$PATH
