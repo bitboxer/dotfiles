@@ -10,7 +10,7 @@ export PATH=~/bin:$PATH
 export PATH=./bin:$PATH
 
 # AVM stuff :)
-export PATH=/Users/bodo/.cargo/bin:$PATH
+export PATH=~/.cargo/bin:$PATH
 export PATH=~/.avm/node/bin:~/.avm/ruby/bin:$PATH
 
 export GOPATH=~/go
@@ -18,8 +18,8 @@ export PATH=~/go/bin:$PATH
 
 export PATH=~/.local/bin:$PATH
 
-if [ -d "/home/bodo/.fzf/bin" ]; then
-  export PATH="$PATH:/home/bodo/.fzf/bin"
+if [ -d "~/.fzf/bin" ]; then
+  export PATH="$PATH:~/.fzf/bin"
 fi
 
 # added python paths
