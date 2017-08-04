@@ -1,0 +1,2 @@
+#compdef w
+_files -W ~/wooga -/
