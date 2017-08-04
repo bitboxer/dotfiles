@@ -337,6 +337,8 @@ nmap <silent> <leader>ra :TestSuite<CR>
 nmap <silent> <leader>rr :TestLast<CR>
 nmap <silent> <leader>rv :TestVisit<CR>
 
+Plug 'blueyed/vim-qf_resize'
+
 " **[ experimental area - end   ]************************************
 
 " --- End ---
