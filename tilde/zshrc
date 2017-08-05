@@ -39,7 +39,6 @@ export ZSH_PLUGINS_ALIAS_TIPS_TEXT="💡 Alias tip: "
 
 source ~/.zsh/paths.sh
 source ~/.zsh/aliases.sh
-source ~/.zsh/bitcrowd.sh
 source ~/.zsh/colorify.sh
 source ~/.zsh/fzf.sh
 
