@@ -31,3 +31,7 @@ readme. A few keypoints (that might already have been changed since writing this
 
 And for the rest: just dig through here and copy everything that sounds nice to you.
 
+Sadly `exogenesis` will not work on Linux machines, but for those you can use
+the files in the `tilde` directory. To use those files add a dot to the beginning
+of the Filename and copy/link them to your `$HOME` directory.
+

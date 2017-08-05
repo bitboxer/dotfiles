@@ -60,3 +60,7 @@ tmuxssh() { autossh -M 0 -t $@ 'tmux attach || tmux new' }
 # These tools need admin permission to work
 alias htop="sudo htop"
 alias mtr="sudo mtr $@"
+
+alias m="make"
+
+alias im="iex -S mix"

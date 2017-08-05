@@ -46,6 +46,8 @@ set inccommand=split
 " Use the clipboard of Mac OS
 if has('mac')
   set clipboard=unnamed
+else
+  set clipboard=unnamedplus
 end
 
 " Set the title of the iterm tab
@@ -334,6 +336,8 @@ nmap <silent> <leader>rf :TestFile<CR>
 nmap <silent> <leader>ra :TestSuite<CR>
 nmap <silent> <leader>rr :TestLast<CR>
 nmap <silent> <leader>rv :TestVisit<CR>
+
+Plug 'blueyed/vim-qf_resize'
 
 " **[ experimental area - end   ]************************************
 
