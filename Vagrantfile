@@ -10,8 +10,8 @@ Vagrant.configure(2) do |config|
   config.vm.network "private_network", ip: "192.168.23.33"
   config.vm.hostname = "vm"
 
-  #config.vm.synced_folder "/Users/moonglum/Code", "/home/vagrant/Code", type: "nfs"
-  #config.vm.synced_folder "/Users/moonglum/.gnupg", "/home/vagrant/.gnupg", type: "nfs"
+  config.vm.synced_folder "/Users/bodo/code", "/home/vagrant/code", type: "nfs"
+  config.vm.synced_folder "/Users/bodo/.gnupg", "/home/vagrant/.gnupg", type: "nfs"
 
   config.vm.provider :virtualbox do |v|
     v.cpus = 4
@@ -19,7 +19,7 @@ Vagrant.configure(2) do |config|
     v.customize ["modifyvm", :id, "--cableconnected1", "on"]
   end
 
-  #config.vm.provision "ansible_local" do |ansible|
-    #ansible.playbook = "ansible/playbook.yml"
-  #end
+  config.vm.provision "ansible_local" do |ansible|
+    ansible.playbook = "ansible/playbook.yml"
+  end
 end
