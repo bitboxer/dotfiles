@@ -61,6 +61,10 @@
       - bower
       - gulp
       - yarn
+      - jscs
+      - jshint
+      - alex
+      - markdownlint-cli
     ruby_gems:
       - awesome_print
       - bundler
@@ -69,6 +73,7 @@
       - pry
       - tmuxinator
       - neovim
+      - github_changelog_generator
     cargo_packages:
       - cargo-outdated
       - rustfmt

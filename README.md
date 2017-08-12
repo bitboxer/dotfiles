@@ -13,8 +13,8 @@ more details in the future.
 
 - [ ] Document this
 - [ ] Figure out how to deal with code, NFS mount is not ideal
-- [ ] Check out old `packages.yml` and figure out what is needed
-- [ ] Remove stuff from host mac
+- [X] Check out old `packages.yml` and figure out what is needed
+- [X] Remove stuff from host mac
 
 # Thanks
 
