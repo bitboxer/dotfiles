@@ -15,3 +15,14 @@ more details in the future.
 - [ ] Figure out how to deal with code, NFS mount is not ideal
 - [ ] Check out old `packages.yml` and figure out what is needed
 - [ ] Remove stuff from host mac
+
+# Thanks
+
+Most of this config is copied and/or inspired by others. Some of
+them are:
+
+* [Ryan Bates](https://github.com/ryanb)
+* [Lucas Dohmen](https://github.com/moonglum/dotfiles)
+* [Dirk Breuer](https://github.com/railsbros-dirk)
+
+...and many more. Thanks to you all for your input and help!
