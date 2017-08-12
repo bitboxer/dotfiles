@@ -12,6 +12,7 @@ Vagrant.configure(2) do |config|
 
   config.vm.synced_folder "/Users/bodo/code", "/home/vagrant/code", type: "nfs"
   config.vm.synced_folder "/Users/bodo/.gnupg", "/home/vagrant/.gnupg", type: "nfs"
+  config.vm.synced_folder "/Users/bodo/Downloads", "/home/vagrant/Downloads", type: "nfs"
 
   config.vm.provider :virtualbox do |v|
     v.cpus = 4

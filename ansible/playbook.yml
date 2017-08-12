@@ -9,6 +9,7 @@
     ruby_version: 2.4
     rust_version: 1.19.0
     neovim_version: 0.2.0
+    phantom_version: 2.1.1
     apt_keys:
       - 'http://packages.erlang-solutions.com/ubuntu/erlang_solutions.asc'
       - 'https://deb.nodesource.com/gpgkey/nodesource.gpg.key'
@@ -23,6 +24,7 @@
       - curl
       - docker-ce
       - elixir
+      - erlang
       - git
       - htop
       - jq
@@ -47,8 +49,12 @@
       - unzip
       - software-properties-common
       - python-pip
+      - python3-pip
+      - xorg
       - xsel
       - exuberant-ctags
+      - ffmpeg
+      - inotify-tools
     npm_packages:
       - bower
       - gulp
@@ -153,6 +159,16 @@
       command: cp /tmp/hub-linux-amd64-2.2.2/bin/hub /usr/local/bin/hub
       become: true
 
+    - name: Download phantomjs
+      get_url: url=https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-{{ phantom_version }}-linux-x86_64.tar.bz2 dest=/tmp/phantomjs.tar.bz2
+      become: true
+    - name: Unarchive phantomjs
+      unarchive: src=/tmp/phantom.tar.bz2 dest=/tmp copy=false
+      become: true
+    - name: Move phantomjs
+      command: cp /tmp/phantomjs-{{ phantom_version }}-linux-x86-64/bin/phantomjs /usr/local/bin/phantomjs
+      become: true
+
     - name: Download Rust
       get_url: >
         url=https://static.rust-lang.org/dist/rust-{{ rust_version }}-x86_64-unknown-linux-gnu.tar.gz
@@ -190,13 +206,15 @@
       command: bash -c "mkdir -p ~/.config/nvim/autoload/ && cp ~/.vimplug/plug.vim ~/.config/nvim/autoload/plug.vim"
     - name: Install neovim packages
       command: nvim +PlugInstall +qa
+    - name: Install neovim python2 binding
+      command: pip install neovim
+    - name: Install neovim python3 binding
+      command: pip3 install neovim
 
     - name: Download fzf
       git: repo=https://github.com/junegunn/fzf.git dest=/home/vagrant/.fzf
     - name: Install fzf
       command: /home/vagrant/.fzf/install
-
-    # TODO: install python neovim package
 
     - name: Set default shell for Vagrant user
       user: name=vagrant shell=/bin/zsh

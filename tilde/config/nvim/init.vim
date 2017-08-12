@@ -341,6 +341,8 @@ nmap <silent> <leader>rv :TestVisit<CR>
 
 Plug 'blueyed/vim-qf_resize'
 
+Plug 'jreybert/vimagit'
+
 " **[ experimental area - end   ]************************************
 
 " --- End ---
