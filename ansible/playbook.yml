@@ -55,6 +55,7 @@
       - exuberant-ctags
       - ffmpeg
       - inotify-tools
+      - meld
     npm_packages:
       - bower
       - gulp
