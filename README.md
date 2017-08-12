@@ -8,3 +8,10 @@ I will do a `vagrant destroy` to have a clean machine.
 
 This is a work in progress, I will explain my setup in
 more details in the future.
+
+# TODO
+
+- [ ] Document this
+- [ ] Figure out how to deal with code, NFS mount is not ideal
+- [ ] Check out old `packages.yml` and figure out what is needed
+- [ ] Remove stuff from host mac
