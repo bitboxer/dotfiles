@@ -223,6 +223,9 @@
     - name: Install fzf
       command: /home/vagrant/.fzf/install
 
+    - name: Download tmux-yank
+      git: repo=https://github.com/tmux-plugins/tmux-yank.git dest=/home/vagrant/.tmux-yank
+
     - name: Set default shell for Vagrant user
       user: name=vagrant shell=/bin/zsh
       become: true
