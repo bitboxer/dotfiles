@@ -17,7 +17,7 @@
   branch = auto
 
 [core]
-  excludesfile = /Users/bodo/.gitignore
+  excludesfile = ~/.gitignore
   editor = vim
 
 [apply]
