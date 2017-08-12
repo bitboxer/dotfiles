@@ -48,6 +48,7 @@
       - software-properties-common
       - python-pip
       - xsel
+      - exuberant-ctags
     npm_packages:
       - bower
       - gulp
@@ -72,11 +73,11 @@
       - de.utf-8.spl
       - de.utf-8.sug
   tasks:
-    #- shell: ls -1 /vagrant/tilde
-      #register: dotfiles
-    #- name: Link Dotfiles
-      #file: path=/home/vagrant/.{{ item }} src=/vagrant/tilde/{{ item }} owner=vagrant group=vagrant state=link
-      #with_items: "{{ dotfiles.stdout_lines }}"
+    - shell: ls -1 /vagrant/tilde
+      register: dotfiles
+    - name: Link Dotfiles
+      file: path=/home/vagrant/.{{ item }} src=/vagrant/tilde/{{ item }} owner=vagrant group=vagrant state=link
+      with_items: "{{ dotfiles.stdout_lines }}"
 
     - name: Add APT Keys
       apt_key: url="{{ item }}"
@@ -99,7 +100,7 @@
     - name: Install oh-my-zsh
       git: repo=https://github.com/robbyrussell/oh-my-zsh.git dest=/home/vagrant/.oh-my-zsh
     - name: Install zsh-syntax-highlighting
-      git: repo=https://github.com/zsh-users/zsh-syntax-highlighting.git dest=/home/vagrant.zsh-syntax-highlighting/
+      git: repo=https://github.com/zsh-users/zsh-syntax-highlighting.git dest=/home/vagrant/.zsh-syntax-highlighting/
 
     - name: Install antibody
       command: bash -c "curl -sL https://git.io/antibody | bash -s"
@@ -181,13 +182,19 @@
         copy=no
     - name: Install NeoVim
       command: bash -c "CMAKE_BUILD_TYPE=RelWithDebInfo make && sudo make install"
-      chdir: /tmp/neovim-{{ neovim_version }}
+      args:
+        chdir: /tmp/neovim-{{ neovim_version }}
     - name: Install vimplug
       git: repo=https://github.com/junegunn/vim-plug.git dest=/home/vagrant/.vimplug
     - name: Linking vimplug
-      command: bash -c "mkdir -p ~/.config/nvim/autoload/ && ln -sf ~/.vimplug/plug.vim ~/.config/nvim/autoload/plug.vim"
+      command: bash -c "mkdir -p ~/.config/nvim/autoload/ && cp ~/.vimplug/plug.vim ~/.config/nvim/autoload/plug.vim"
     - name: Install neovim packages
       command: nvim +PlugInstall +qa
+
+    - name: Download fzf
+      git: repo=https://github.com/junegunn/fzf.git dest=/home/vagrant/.fzf
+    - name: Install fzf
+      command: /home/vagrant/.fzf/install
 
     # TODO: install python neovim package
 
