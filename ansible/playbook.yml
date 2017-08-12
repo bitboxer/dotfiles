@@ -56,6 +56,7 @@
       - ffmpeg
       - inotify-tools
       - meld
+      - grc
     npm_packages:
       - bower
       - gulp
