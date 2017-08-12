@@ -1,15 +1,15 @@
 [user]
-  name  = NAME
-  email = EMAIL
+  name = Bodo Tasche
+  email = bodo@wannawork.de
+  signingkey = BE5B07AA
 
 [alias]
   co = checkout
   lg = log --color --graph --pretty=format:'%C(yellow)%h%Creset %C(green)%s%Creset %C(red)(%cr)%Creset - %an'
   unmerged = !git branch -r --no-merged | grep -v HEAD | xargs -L1 git --no-pager log --pretty=tformat:'%Cgreen%d%Creset - %h by %an (%Cblue%ar%Creset)' -1
   merged = !git branch -r --merged | grep -v HEAD | xargs -L1 git --no-pager log --pretty=tformat:'%Cgreen%d%Creset - %h by %an (%Cblue%ar%Creset)' -1
-  ctags = "!sh -c '[ -f .git/hooks/ctags ] || git init; .git/hooks/ctags' git-ctags"
-  cleanup = "!git branch --merged | grep -E '(feature|bug|chore)/'| xargs git branch -D && git remote prune origin"
   pf = push --force-with-lease
+  up = pull --rebase --autostash
 
 [color]
   diff = auto
@@ -18,7 +18,7 @@
 
 [core]
   excludesfile = /Users/bodo/.gitignore
-  editor = /usr/local/bin/nvim
+  editor = vim
 
 [apply]
   whitespace = nowarn
@@ -29,24 +29,20 @@
 [merge]
   tool = meld
 
-[init]
-  templatedir = ~/.git_template
-
 [push]
   default = simple
-
-[filter "media"]
-  clean = git-media-clean %f
-  smudge = git-media-smudge %f
 
 [tig]
   line-graphics = "utf-8"
 
+[git-up "bundler"]
+  check = true
+
 [rebase]
   autosquash = true
 
-[git-up "bundler"]
-   check = true
-
 [diff]
   compactionHeuristic = true
+
+[commit]
+  gpgsign = true
