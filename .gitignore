@@ -17,4 +17,5 @@ tilde/config/nyaovim
 tilde/config/Cryptocat
 tilde/config/karabiner
 tilde/config/heroku
+ansible/playbook.retry
 .*
