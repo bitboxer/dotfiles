@@ -9,7 +9,6 @@ brews:
   - wget
   - wifi-password
 casks:
-  - betterzipql
   - qlcolorcode
   - qlimagesize
   - qlmarkdown
@@ -17,7 +16,6 @@ casks:
   - qlstephen
   - quicklook-csv
   - quicklook-json
-  - suspicious-package
   - webpquicklook
   - xscreensaver
 commands:
