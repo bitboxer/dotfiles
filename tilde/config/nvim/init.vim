@@ -46,6 +46,8 @@ set inccommand=split
 " Use the clipboard of Mac OS
 if has('mac')
   set clipboard=unnamed
+else
+  set clipboard=unnamedplus
 end
 
 " Set the title of the iterm tab
@@ -108,7 +110,9 @@ autocmd FileType vue syntax sync fromstart
 
 " ack.vim: ack integration
 Plug 'mileszs/ack.vim'
-let g:ackprg = 'ag -S --nogroup --column'
+if executable('rg')
+  let g:ackprg = 'rg --vimgrep'
+endif
 
 Plug 'tpope/vim-fugitive'
 
@@ -336,6 +340,8 @@ nmap <silent> <leader>rr :TestLast<CR>
 nmap <silent> <leader>rv :TestVisit<CR>
 
 Plug 'blueyed/vim-qf_resize'
+
+Plug 'jreybert/vimagit'
 
 " **[ experimental area - end   ]************************************
 

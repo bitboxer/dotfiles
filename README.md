@@ -1,37 +1,28 @@
 # Bodo Tasche Dot Files #
 
-These are config files to set up a system the way I like it. This was a
-fork of  [dotfiles](http://github.com/ryanb/dotfiles) by [Ryan Bates](http://railscasts.com/)
-but this is no longer the case.
+This is my dotfiles with all the things I need for
+my day to day work. I am developing inside of a
+vagrant box that is provisioned via ansible. Start
+it via `vagrant up && vagrant ssh`. From time to time
+I will do a `vagrant destroy` to have a clean machine.
 
-[![badge](http://img.shields.io/badge/%F0%9F%9A%80-Created_with_Exogenesis-be1d77.svg)](https://github.com/moonglum/exogenesis)
+This is a work in progress, I will explain my setup in
+more details in the future.
 
-## Installation ##
+# TODO
 
-    bundle
-    bundle exec rake up
+- [ ] Document this
+- [ ] Figure out how to deal with code, NFS mount is not ideal
+- [X] Check out old `packages.yml` and figure out what is needed
+- [X] Remove stuff from host mac
 
-This will install all needed packages and links my config files to ``$HOME``.
+# Thanks
 
-## GIT ##
+Most of this config is copied and/or inspired by others. Some of
+them are:
 
-I added my Git config as example file. Just rename the
-``.gitconfig_example`` to ``.gitconfig`` and change the Email and Username to
-yours.
+* [Ryan Bates](https://github.com/ryanb)
+* [Lucas Dohmen](https://github.com/moonglum/dotfiles)
+* [Dirk Breuer](https://github.com/railsbros-dirk)
 
-## And more ... #
-
-There is sadly way to much stuff in this repo to document it all in this
-readme. A few keypoints (that might already have been changed since writing this :wink: ) :
-
-* I use zsh with the awesome [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
-* For neovim I use [vim-plug](https://github.com/junegunn/vim-plug)
-* In the [packages.yml](https://github.com/bitboxer/dotfiles/blob/master/packages.yml) you
-  will see a nice list of brews, gems and npm packages I am using
-
-And for the rest: just dig through here and copy everything that sounds nice to you.
-
-Sadly `exogenesis` will not work on Linux machines, but for those you can use
-the files in the `tilde` directory. To use those files add a dot to the beginning
-of the Filename and copy/link them to your `$HOME` directory.
-
+...and many more. Thanks to you all for your input and help!

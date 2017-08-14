@@ -1,0 +1,232 @@
+---
+- name: Install the required packages
+  hosts: all
+  vars:
+    user_name: "Bodo Tasche"
+    email: "bodo@wannawork.de"
+    url: "https://bitboxer.de"
+    nodejs_version: 7.x
+    ruby_version: 2.4
+    rust_version: 1.19.0
+    neovim_version: 0.2.0
+    phantom_version: 2.1.1
+    apt_keys:
+      - 'http://packages.erlang-solutions.com/ubuntu/erlang_solutions.asc'
+      - 'https://deb.nodesource.com/gpgkey/nodesource.gpg.key'
+      - 'https://download.docker.com/linux/ubuntu/gpg'
+    apt_repositories:
+      - 'deb http://packages.erlang-solutions.com/ubuntu xenial contrib'
+      - 'deb https://deb.nodesource.com/node_{{ nodejs_version }} xenial main'
+      - 'deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable'
+      - 'ppa:brightbox/ruby-ng'
+    apt_packages:
+      - build-essential
+      - curl
+      - docker-ce
+      - elixir
+      - erlang
+      - git
+      - htop
+      - jq
+      - nodejs
+      - ruby-switch
+      - ruby{{ ruby_version }}
+      - ruby{{ ruby_version }}-dev
+      - tig
+      - tmux
+      - tree
+      - wget
+      - youtube-dl
+      - zsh
+      - libtool
+      - libtool-bin
+      - autoconf
+      - automake
+      - cmake
+      - libncurses5-dev
+      - g++
+      - pkg-config
+      - unzip
+      - software-properties-common
+      - python-pip
+      - python3-pip
+      - xorg
+      - xsel
+      - exuberant-ctags
+      - ffmpeg
+      - inotify-tools
+      - meld
+      - grc
+    npm_packages:
+      - bower
+      - gulp
+      - yarn
+      - jscs
+      - jshint
+      - alex
+      - markdownlint-cli
+    ruby_gems:
+      - awesome_print
+      - bundler
+      - manpages
+      - mdless
+      - pry
+      - tmuxinator
+      - neovim
+      - github_changelog_generator
+    cargo_packages:
+      - cargo-outdated
+      - rustfmt
+      - ripgrep
+    marks:
+      c: /home/vagrant/code
+    spell_files:
+      - en.utf-8.spl
+      - en.utf-8.sug
+      - de.utf-8.spl
+      - de.utf-8.sug
+  tasks:
+    - shell: ls -1 /vagrant/tilde
+      register: dotfiles
+    - name: Link Dotfiles
+      file: path=/home/vagrant/.{{ item }} src=/vagrant/tilde/{{ item }} owner=vagrant group=vagrant state=link
+      with_items: "{{ dotfiles.stdout_lines }}"
+
+    - name: Add APT Keys
+      apt_key: url="{{ item }}"
+      with_items: "{{ apt_keys }}"
+      become: true
+    - name: Add APT Repositories
+      apt_repository: repo="{{ item }}" state=present
+      with_items: "{{ apt_repositories }}"
+      become: true
+    - apt: name=aptitude
+      become: true
+    - name: Update cache and upgrade
+      apt: update_cache=yes upgrade=safe
+      become: true
+    - name: Install missing packages
+      apt: name={{ item }}
+      with_items: "{{ apt_packages }}"
+      become: true
+
+    - name: Install oh-my-zsh
+      git: repo=https://github.com/robbyrussell/oh-my-zsh.git dest=/home/vagrant/.oh-my-zsh
+    - name: Install zsh-syntax-highlighting
+      git: repo=https://github.com/zsh-users/zsh-syntax-highlighting.git dest=/home/vagrant/.zsh-syntax-highlighting/
+
+    - name: Install antibody
+      command: bash -c "curl -sL https://git.io/antibody | bash -s"
+
+    - name: Start docker on boot
+      systemd: name=docker enabled=yes
+    - name: Make sure the docker group exists
+      group:
+        name: docker
+        state: present
+      become: true
+    - name: Add the vagrant user to the docker group
+      user:
+        name: vagrant
+        groups: docker
+        append: yes
+      become: true
+
+    - name: Set the timezone
+      command: timedatectl set-timezone Europe/Berlin
+      become: true
+
+    - name: Create the marks directory
+      file: path=/home/vagrant/.marks state=directory
+    - name: Configure the marks
+      file: path=/home/vagrant/.marks/{{ item.key }} state=link src={{ item.value }} force=yes
+      with_dict: "{{ marks }}"
+
+    - name: Install default Ruby gems
+      command: gem install {{ item }}
+      with_items: "{{ ruby_gems }}"
+      become: true
+
+    - name: Install default NPM packages
+      command: npm install -g {{ item }}
+      with_items: "{{ npm_packages }}"
+      become: true
+
+    - command: npm set init-author-name "{{ user_name }}"
+    - command: npm set init-author-email "{{ email }}"
+    - command: npm set init-author-url "{{ url }}"
+
+    - name: Download hub
+      get_url: url=https://github.com/github/hub/releases/download/v2.2.2/hub-linux-amd64-2.2.2.tgz dest=/tmp/hub.tgz
+      become: true
+    - name: Unarchive hub
+      unarchive: src=/tmp/hub.tgz dest=/tmp copy=false
+      become: true
+    - name: Move hub
+      command: cp /tmp/hub-linux-amd64-2.2.2/bin/hub /usr/local/bin/hub
+      become: true
+
+    - name: Download phantomjs
+      get_url: url=https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-{{ phantom_version }}-linux-x86_64.tar.bz2 dest=/tmp/phantomjs.tar.bz2
+      become: true
+    - name: Unarchive phantomjs
+      unarchive: src=/tmp/phantom.tar.bz2 dest=/tmp copy=false
+      become: true
+    - name: Move phantomjs
+      command: cp /tmp/phantomjs-{{ phantom_version }}-linux-x86-64/bin/phantomjs /usr/local/bin/phantomjs
+      become: true
+
+    - name: Download Rust
+      get_url: >
+        url=https://static.rust-lang.org/dist/rust-{{ rust_version }}-x86_64-unknown-linux-gnu.tar.gz
+        dest=/tmp/rust-{{ rust_version }}-x86_64-unknown-linux-gnu.tar.gz
+    - name: Uncompress Rust archive
+      unarchive: >
+        src=/tmp/rust-{{ rust_version }}-x86_64-unknown-linux-gnu.tar.gz
+        dest=/tmp
+        copy=no
+    - name: Install Rust
+      command: "/tmp/rust-{{ rust_version }}-x86_64-unknown-linux-gnu/install.sh"
+      args:
+        creates: /usr/local/lib/rustlib/uninstall.sh
+      become: true
+    - name: Install Cargo packages
+      command: cargo install --verbose --force {{ item }}
+      with_items: "{{ cargo_packages }}"
+
+    - name: Download NeoVim
+      get_url: >
+        url=https://github.com/neovim/neovim/archive/v{{ neovim_version }}.tar.gz
+        dest=/tmp/neovim-{{ neovim_version }}.tar.gz
+    - name: Uncompress NeoVim archive
+      unarchive: >
+        src=/tmp/neovim-{{ neovim_version }}.tar.gz
+        dest=/tmp
+        copy=no
+    - name: Install NeoVim
+      command: bash -c "CMAKE_BUILD_TYPE=RelWithDebInfo make && sudo make install"
+      args:
+        chdir: /tmp/neovim-{{ neovim_version }}
+    - name: Install vimplug
+      git: repo=https://github.com/junegunn/vim-plug.git dest=/home/vagrant/.vimplug
+    - name: Linking vimplug
+      command: bash -c "mkdir -p ~/.config/nvim/autoload/ && cp ~/.vimplug/plug.vim ~/.config/nvim/autoload/plug.vim"
+    - name: Install neovim packages
+      command: nvim +PlugInstall +qa
+    - name: Install neovim python2 binding
+      command: pip install neovim
+    - name: Install neovim python3 binding
+      command: pip3 install neovim
+
+    - name: Download fzf
+      git: repo=https://github.com/junegunn/fzf.git dest=/home/vagrant/.fzf
+    - name: Install fzf
+      command: /home/vagrant/.fzf/install
+
+    - name: Download tmux-yank
+      git: repo=https://github.com/tmux-plugins/tmux-yank.git dest=/home/vagrant/.tmux-yank
+
+    - name: Set default shell for Vagrant user
+      user: name=vagrant shell=/bin/zsh
+      become: true
+

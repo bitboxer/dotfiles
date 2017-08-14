@@ -13,7 +13,7 @@ alias be="bundle exec"
 alias bi="bundle install"
 alias ber="bundle exec rake"
 
-# Use siver searcher, it is faster!
+# Use ripgrep, it is faster!
 alias ack="rg -S"
 alias ag="rg -S"
 
@@ -60,3 +60,9 @@ tmuxssh() { autossh -M 0 -t $@ 'tmux attach || tmux new' }
 # These tools need admin permission to work
 alias htop="sudo htop"
 alias mtr="sudo mtr $@"
+
+alias m="make"
+
+alias im="iex -S mix"
+
+alias shell="vagrant ssh -c \"tmux new-session -A -s main\""
