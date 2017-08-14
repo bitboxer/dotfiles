@@ -12,6 +12,7 @@ more details in the future.
 # TODO
 
 - [ ] Document this
+- [ ] Add list with apps I install on the mac
 - [ ] Figure out how to deal with code, NFS mount is not ideal
 - [X] Check out old `packages.yml` and figure out what is needed
 - [X] Remove stuff from host mac
