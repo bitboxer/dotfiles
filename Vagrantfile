@@ -10,9 +10,9 @@ Vagrant.configure(2) do |config|
   config.vm.network "private_network", ip: "192.168.23.33"
   config.vm.hostname = "vm"
 
-  config.vm.synced_folder "/Users/bodo/code", "/home/vagrant/code", type: "nfs"
-  config.vm.synced_folder "/Users/bodo/.gnupg", "/home/vagrant/.gnupg", type: "nfs"
-  config.vm.synced_folder "/Users/bodo/Downloads", "/home/vagrant/Downloads", type: "nfs"
+  config.vm.synced_folder "~/code", "/home/vagrant/code", type: "nfs"
+  config.vm.synced_folder "~/.gnupg", "/home/vagrant/.gnupg", type: "nfs"
+  config.vm.synced_folder "~/Downloads", "/home/vagrant/Downloads", type: "nfs"
 
   config.vm.provider :virtualbox do |v|
     v.cpus = 4

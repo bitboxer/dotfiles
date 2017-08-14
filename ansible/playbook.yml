@@ -19,6 +19,7 @@
       - 'deb https://deb.nodesource.com/node_{{ nodejs_version }} xenial main'
       - 'deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable'
       - 'ppa:brightbox/ruby-ng'
+      - 'ppa:git-core/ppa'
     apt_packages:
       - build-essential
       - curl
@@ -170,10 +171,10 @@
       get_url: url=https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-{{ phantom_version }}-linux-x86_64.tar.bz2 dest=/tmp/phantomjs.tar.bz2
       become: true
     - name: Unarchive phantomjs
-      unarchive: src=/tmp/phantom.tar.bz2 dest=/tmp copy=false
+      unarchive: src=/tmp/phantomjs.tar.bz2 dest=/tmp copy=false
       become: true
     - name: Move phantomjs
-      command: cp /tmp/phantomjs-{{ phantom_version }}-linux-x86-64/bin/phantomjs /usr/local/bin/phantomjs
+      command: cp /tmp/phantomjs-{{ phantom_version }}-linux-x86_64/bin/phantomjs /usr/local/bin/phantomjs
       become: true
 
     - name: Download Rust
@@ -210,7 +211,7 @@
     - name: Install vimplug
       git: repo=https://github.com/junegunn/vim-plug.git dest=/home/vagrant/.vimplug
     - name: Linking vimplug
-      command: bash -c "mkdir -p ~/.config/nvim/autoload/ && cp ~/.vimplug/plug.vim ~/.config/nvim/autoload/plug.vim"
+      command: bash -c "mkdir -p ~/.config/nvim/autoload/ && cp -f $HOME/.vimplug/plug.vim $HOME/.config/nvim/autoload/plug.vim"
     - name: Install neovim packages
       command: nvim +PlugInstall +qa
     - name: Install neovim python2 binding

@@ -65,7 +65,35 @@
                     }
                 ]
             },
-            "devices": [],
+            "devices": [
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": {},
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 632,
+                        "vendor_id": 1452
+                    },
+                    "ignore": false,
+                    "simple_modifications": {
+                        "grave_accent_and_tilde": "non_us_backslash",
+                        "non_us_backslash": "grave_accent_and_tilde"
+                    }
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": {},
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 617,
+                        "vendor_id": 1241
+                    },
+                    "ignore": false,
+                    "simple_modifications": {}
+                }
+            ],
             "fn_function_keys": {
                 "f1": "display_brightness_decrement",
                 "f10": "mute",
@@ -82,10 +110,7 @@
             },
             "name": "Default profile",
             "selected": true,
-            "simple_modifications": {
-                "grave_accent_and_tilde": "non_us_backslash",
-                "non_us_backslash": "grave_accent_and_tilde"
-            },
+            "simple_modifications": {},
             "virtual_hid_keyboard": {
                 "caps_lock_delay_milliseconds": 0,
                 "keyboard_type": "iso"
