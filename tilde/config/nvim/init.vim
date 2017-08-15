@@ -111,7 +111,7 @@ autocmd FileType vue syntax sync fromstart
 " ack.vim: ack integration
 Plug 'mileszs/ack.vim'
 if executable('rg')
-  let g:ackprg = 'rg --vimgrep'
+  let g:ackprg = 'rg --vimgrep -i'
 endif
 
 Plug 'tpope/vim-fugitive'
