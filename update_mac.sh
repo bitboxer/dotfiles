@@ -3,4 +3,4 @@
 brew update
 brew upgrade
 
-vim +PlugUpdate +qa!
+nvim +PlugUpdate +qa
