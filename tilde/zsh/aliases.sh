@@ -65,4 +65,4 @@ alias m="make"
 
 alias im="iex -S mix"
 
-alias shell="vagrant ssh -c \"tmux new-session -A -s main\""
+alias shell="vagrant ssh -c \"tmux -CC new-session -A -s main\""
