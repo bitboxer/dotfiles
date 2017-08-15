@@ -92,6 +92,21 @@
                     },
                     "ignore": false,
                     "simple_modifications": {}
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": {},
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 611,
+                        "vendor_id": 1452
+                    },
+                    "ignore": false,
+                    "simple_modifications": {
+                        "grave_accent_and_tilde": "non_us_backslash",
+                        "non_us_backslash": "grave_accent_and_tilde"
+                    }
                 }
             ],
             "fn_function_keys": {
