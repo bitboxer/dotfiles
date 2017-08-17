@@ -9,13 +9,9 @@ I will do a `vagrant destroy` to have a clean machine.
 This is a work in progress, I will explain my setup in
 more details in the future.
 
-# TODO
+# TODOs
 
-- [ ] Document this
-- [ ] Add list with apps I install on the mac
-- [ ] Figure out how to deal with code, NFS mount is not ideal
-- [X] Check out old `packages.yml` and figure out what is needed
-- [X] Remove stuff from host mac
+See [this ticket](https://github.com/bitboxer/dotfiles/issues/2).
 
 # Thanks
 
