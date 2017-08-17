@@ -15,6 +15,7 @@ export PATH=~/.avm/node/bin:~/.avm/ruby/bin:$PATH
 
 export GOPATH=~/go
 export PATH=~/go/bin:$PATH
+export PATH=/usr/local/go/bin/:$PATH
 
 export PATH=~/.local/bin:$PATH
 
