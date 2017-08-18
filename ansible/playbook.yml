@@ -10,6 +10,7 @@
     rust_version: 1.19.0
     neovim_version: 0.2.0
     phantom_version: 2.1.1
+    go_version: 1.8.3
     apt_keys:
       - 'http://packages.erlang-solutions.com/ubuntu/erlang_solutions.asc'
       - 'https://deb.nodesource.com/gpgkey/nodesource.gpg.key'
@@ -27,6 +28,7 @@
       - elixir
       - erlang
       - git
+      - git-crypt
       - htop
       - jq
       - nodejs
@@ -79,6 +81,9 @@
       - cargo-outdated
       - rustfmt
       - ripgrep
+    go_packages:
+      - github/hub
+      - realestate-com-au/shush
     marks:
       c: /home/vagrant/code
     spell_files:
@@ -157,16 +162,6 @@
     - command: npm set init-author-email "{{ email }}"
     - command: npm set init-author-url "{{ url }}"
 
-    - name: Download hub
-      get_url: url=https://github.com/github/hub/releases/download/v2.2.2/hub-linux-amd64-2.2.2.tgz dest=/tmp/hub.tgz
-      become: true
-    - name: Unarchive hub
-      unarchive: src=/tmp/hub.tgz dest=/tmp copy=false
-      become: true
-    - name: Move hub
-      command: cp /tmp/hub-linux-amd64-2.2.2/bin/hub /usr/local/bin/hub
-      become: true
-
     - name: Download phantomjs
       get_url: url=https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-{{ phantom_version }}-linux-x86_64.tar.bz2 dest=/tmp/phantomjs.tar.bz2
       become: true
@@ -194,6 +189,22 @@
     - name: Install Cargo packages
       command: cargo install --verbose --force {{ item }}
       with_items: "{{ cargo_packages }}"
+
+    - name: Download go
+      get_url: >
+        url=https://storage.googleapis.com/golang/go{{ go_version }}.linux-amd64.tar.gz
+        dest=/tmp/go{{ go_version }}.linux-amd64.tar.gz
+    - name: Uncompress go archive
+      unarchive: >
+        src=/tmp/go{{ go_version }}.linux-amd64.tar.gz
+        dest=/tmp
+        copy=no
+    - name: Install go
+      command: cp -r /tmp/go /usr/local/go
+      become: true
+    - name: Install go packages
+      command: /usr/local/go/bin/go get github.com/{{ item }}
+      with_items: "{{ go_packages }}"
 
     - name: Download NeoVim
       get_url: >
