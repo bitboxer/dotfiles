@@ -225,7 +225,7 @@
     - name: Linking vimplug
       command: bash -c "mkdir -p ~/.config/nvim/autoload/ && cp -f $HOME/.vimplug/plug.vim $HOME/.config/nvim/autoload/plug.vim"
     - name: Install neovim packages
-      command: nvim +PlugInstall +qa
+      command: nvim +PlugInstall +UpdateRemotePlugin +qa
     - name: Install neovim python2 binding
       command: pip install neovim
     - name: Install neovim python3 binding
