@@ -86,6 +86,7 @@
       - realestate-com-au/shush
     marks:
       c: /home/vagrant/code
+      d: /home/vagrant/Downloads
     spell_files:
       - en.utf-8.spl
       - en.utf-8.sug
