@@ -13,7 +13,7 @@ For my day to day work I am using tmux and neovim together with lots of other
 tools and programming languages. I write code mostly in Elixir, Ruby and
 Javascript and have the tooling optimized for that.
 
-I have no developer tools installed on my mac, but I have installed a lot of
+I have no developer tools installed on my mac, but added a couple of
 apps on my mac to make it my ideal working machine. Most of them can be
 found [in this article](https://thesweetsetup.com/bodo-tasches-mac-iphone-setup/).
 
