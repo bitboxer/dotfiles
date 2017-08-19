@@ -1,4 +1,4 @@
-if [[ ! "$OSTYPE" =~ ^udarwin ]]; then
+if [[ ! "$OSTYPE" =~ ^darwin ]]; then
   echo "This can only be run on a mac"
   exit 1
 fi
