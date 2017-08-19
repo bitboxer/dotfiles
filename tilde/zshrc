@@ -42,19 +42,9 @@ source ~/.zsh/aliases.sh
 source ~/.zsh/colorify.sh
 source ~/.zsh/fzf.sh
 
-test -e "${HOME}/.pgvm" && source "${HOME}/.pgvm/pgvm_env"
-
 source ~/.secrets
+
 export DISABLE_SPRING='SORRY_BUT_YOU_ARE_WAY_TOO_PROBLEMATIC'
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-
-# Use ~~ as the trigger sequence instead of the default **
-export FZF_COMPLETION_TRIGGER='~~'
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 

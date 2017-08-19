@@ -67,3 +67,7 @@ fe() {
   local file
   file=$(fq1 "$1") && ${EDITOR:-vim} "$file"
 }
+
+# Use ~~ as the trigger sequence instead of the default **
+export FZF_COMPLETION_TRIGGER='~~'
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
