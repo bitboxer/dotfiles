@@ -243,3 +243,7 @@
       user: name=vagrant shell=/bin/zsh
       become: true
 
+    - name: Mark the box as vagrant box to check in shell scripts
+      become: true
+      commant: touch /etc/is_vagrant_vm
+
