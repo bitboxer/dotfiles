@@ -48,19 +48,17 @@ export DISABLE_SPRING='SORRY_BUT_YOU_ARE_WAY_TOO_PROBLEMATIC'
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+eval `ssh-agent`
+
 if [ -e "/etc/is_vagrant_vm" ]; then
   # SSH sock connected in my tmux session.
   #
   # See this answer for why I need this here:
   # https://unix.stackexchange.com/a/76256/246406
   SOCK="/tmp/ssh-agent-$USER-screen"
-  if test $SSH_AUTH_SOCK && [ $SSH_AUTH_SOCK != $SOCK ]
-  then
+  if test $SSH_AUTH_SOCK && [ $SSH_AUTH_SOCK != $SOCK ]; then
     rm -f /tmp/ssh-agent-$USER-screen
     ln -sf $SSH_AUTH_SOCK $SOCK
     export SSH_AUTH_SOCK=$SOCK
   fi
-else
-  # This is my real machine, I need a running ssh agent here
-  eval `ssh-agent`
 fi
