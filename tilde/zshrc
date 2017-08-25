@@ -54,8 +54,6 @@ if [ -e "/etc/is_vagrant_vm" ]; then
   # See this answer for why I need this here:
   # https://unix.stackexchange.com/a/76256/246406
   SOCK="/tmp/ssh-agent-$USER-screen"
-  echo $SSH_AUTH_SOCK
-  echo $SOCK
   if test $SSH_AUTH_SOCK && [ $SSH_AUTH_SOCK != $SOCK ]
   then
     rm -f /tmp/ssh-agent-$USER-screen
@@ -64,6 +62,5 @@ if [ -e "/etc/is_vagrant_vm" ]; then
   fi
 else
   # This is my real machine, I need a running ssh agent here
-  echo "EVAL SSH AGENT"
   eval `ssh-agent`
 fi
