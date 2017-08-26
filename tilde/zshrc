@@ -48,9 +48,10 @@ export DISABLE_SPRING='SORRY_BUT_YOU_ARE_WAY_TOO_PROBLEMATIC'
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-eval `ssh-agent`
-
-if [ -e "/etc/is_vagrant_vm" ]; then
+if [ ! -e "/etc/is_vagrant_vm" ]; then
+  eval `ssh-agent -s` > /dev/null
+  ssh-add -A 2> /dev/null
+else
   # SSH sock connected in my tmux session.
   #
   # See this answer for why I need this here:
