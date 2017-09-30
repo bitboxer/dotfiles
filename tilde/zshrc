@@ -44,6 +44,9 @@ source ~/.zsh/fzf.sh
 
 source ~/.secrets
 
+# Enable erlang shell history
+export ERL_AFLAGS="-kernel shell_history enabled"
+# Disable spring in rails
 export DISABLE_SPRING='SORRY_BUT_YOU_ARE_WAY_TOO_PROBLEMATIC'
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
@@ -62,4 +65,7 @@ else
     ln -sf $SSH_AUTH_SOCK $SOCK
     export SSH_AUTH_SOCK=$SOCK
   fi
+
+  export GPG_TTY=$(tty)
 fi
+
