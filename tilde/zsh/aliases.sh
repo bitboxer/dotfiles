@@ -55,7 +55,7 @@ alias rba="git rebase --abort"
 
 alias git="hub"
 
-tmuxssh() { autossh -M 0 -t $@ 'tmux attach || tmux new' }
+tmuxssh() { autossh -M 0 -t $@ 'tmux -CC new-session -A -s main' }
 
 # These tools need admin permission to work
 alias htop="sudo htop"
@@ -65,4 +65,4 @@ alias m="make"
 
 alias im="iex -S mix"
 
-alias shell="vagrant ssh -c \"tmux -CC new-session -A -s main\""
+alias shell="cd ~/code/dotfiles && vagrant ssh -c \"tmux -CC new-session -A -s main\""
