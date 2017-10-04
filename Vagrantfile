@@ -14,7 +14,6 @@ Vagrant.configure(2) do |config|
   config.vm.hostname = "vm"
 
   config.vm.synced_folder "~/code", "/home/vagrant/mac_code", type: "nfs"
-  config.vm.synced_folder "~/.gnupg", "/home/vagrant/.gnupg", type: "nfs"
   config.vm.synced_folder "~/Downloads", "/home/vagrant/Downloads", type: "nfs"
 
   config.vm.provider :virtualbox do |v|

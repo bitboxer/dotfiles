@@ -60,6 +60,8 @@
       - inotify-tools
       - meld
       - grc
+      - gnugp2
+      - gnupg-agent
     npm_packages:
       - bower
       - gulp
@@ -84,6 +86,7 @@
     go_packages:
       - github/hub
       - realestate-com-au/shush
+      - simeji/jid/cmd/jid
     marks:
       c: /home/vagrant/code
       d: /home/vagrant/Downloads
@@ -98,7 +101,6 @@
     - name: Link Dotfiles
       file: path=/home/vagrant/.{{ item }} src=/vagrant/tilde/{{ item }} owner=vagrant group=vagrant state=link
       with_items: "{{ dotfiles.stdout_lines }}"
-
     - name: Add APT Keys
       apt_key: url="{{ item }}"
       with_items: "{{ apt_keys }}"
