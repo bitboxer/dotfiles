@@ -87,7 +87,7 @@
                                     {
                                         "key_code": "tab",
                                         "modifiers": [
-                                          "left_control"
+                                            "left_control"
                                         ]
                                     }
                                 ],
@@ -119,8 +119,8 @@
                                     {
                                         "key_code": "tab",
                                         "modifiers": [
-                                          "left_control",
-                                          "shift"
+                                            "left_control",
+                                            "shift"
                                         ]
                                     }
                                 ],
