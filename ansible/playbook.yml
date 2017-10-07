@@ -11,6 +11,7 @@
     neovim_version: 0.2.0
     phantom_version: 2.1.1
     go_version: 1.8.3
+    tmux_version: 2.5
     apt_keys:
       - 'http://packages.erlang-solutions.com/ubuntu/erlang_solutions.asc'
       - 'https://deb.nodesource.com/gpgkey/nodesource.gpg.key'
@@ -36,7 +37,7 @@
       - ruby{{ ruby_version }}
       - ruby{{ ruby_version }}-dev
       - tig
-      - tmux
+      - libevent-dev
       - tree
       - wget
       - youtube-dl
@@ -60,7 +61,7 @@
       - inotify-tools
       - meld
       - grc
-      - gnugp2
+      - gnupg2
       - gnupg-agent
     npm_packages:
       - bower
@@ -118,6 +119,9 @@
       apt: name={{ item }}
       with_items: "{{ apt_packages }}"
       become: true
+
+    - name: replace gpg-agent config
+      command: bash -c "echo \"default-cache-ttl 21600\\nmax-cache-ttl 259200\" > ~/.gnupg/gpg-agent.conf"
 
     - name: Install oh-my-zsh
       git: repo=https://github.com/robbyrussell/oh-my-zsh.git dest=/home/vagrant/.oh-my-zsh
@@ -236,7 +240,19 @@
     - name: Download fzf
       git: repo=https://github.com/junegunn/fzf.git dest=/home/vagrant/.fzf
     - name: Install fzf
-      command: /home/vagrant/.fzf/install
+      command: /home/vagrant/.fzf/install --bin
+
+    - name: Download tmux
+      get_url: >
+        url=https://github.com/tmux/tmux/releases/download/{{ tmux_version }}/tmux-{{ tmux_version }}.tar.gz
+        dest=/tmp/tmux.tar.gz
+      become: true
+    - name: Unarchive tmux
+      unarchive: src=/tmp/tmux.tar.gz dest=/tmp copy=false
+      become: true
+    - name: Install tmux
+      command: bash -c "cd /tmp/tmux-{{ tmux_version }} && ./configure && make && make install"
+      become: true
 
     - name: Download tmux-yank
       git: repo=https://github.com/tmux-plugins/tmux-yank.git dest=/home/vagrant/.tmux-yank
@@ -247,5 +263,5 @@
 
     - name: Mark the box as vagrant box to check in shell scripts
       become: true
-      commant: touch /etc/is_vagrant_vm
+      file: path=/etc/is_vagrant_vm state=touch owner=root group=sys mode=0777
 
