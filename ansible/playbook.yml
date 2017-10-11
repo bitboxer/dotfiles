@@ -261,6 +261,9 @@
       user: name=vagrant shell=/bin/zsh
       become: true
 
+    - name: install awscli
+      command: pip install awscli --user
+
     - name: Mark the box as vagrant box to check in shell scripts
       become: true
       file: path=/etc/is_vagrant_vm state=touch owner=root group=sys mode=0777
