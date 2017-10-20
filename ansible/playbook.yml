@@ -63,6 +63,7 @@
       - grc
       - gnupg2
       - gnupg-agent
+      - pwgen
     npm_packages:
       - bower
       - gulp
