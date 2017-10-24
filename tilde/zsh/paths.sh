@@ -19,8 +19,8 @@ export PATH=/usr/local/go/bin/:$PATH
 
 export PATH=~/.local/bin:$PATH
 
-if [ -d "~/.fzf/bin" ]; then
-  export PATH="$PATH:~/.fzf/bin"
+if [ -d "$HOME/.fzf/bin" ]; then
+  export PATH="$PATH:$HOME/.fzf/bin"
 fi
 
 # added python paths
