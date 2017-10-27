@@ -245,7 +245,6 @@ let g:startify_skiplist = [
             \ ]
 
 let g:startify_bookmarks = [
-            \ '~/vimwiki/index.wiki',
             \ ]
 
 hi StartifyBracket ctermfg=240
@@ -326,8 +325,6 @@ Plug 'tpope/vim-projectionist'
 
 " github pull requests
 Plug 'AndrewRadev/ginitpull.vim'
-
-Plug 'vimwiki/vimwiki'
 
 Plug 'enricobacis/vim-airline-clock'
 
