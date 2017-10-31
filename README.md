@@ -38,7 +38,7 @@ I have modified my keyboard a bit for my needs.
 
 Vagrant boxes can be thrown away. Everything that I don't want to reinstall
 after I rebuild the box is in another disk image. I am using the
-[vagrant-persistant-storage](vagrant plugin install vagrant-persistent-storage)
+[vagrant-persistant-storage](https://github.com/kusnier/vagrant-persistent-storage)
 plugin for this.
 
 Install it via
