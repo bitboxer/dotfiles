@@ -103,6 +103,9 @@
     - name: Update permission on persistant storage
       command: chown vagrant:vagrant /home/vagrant/persistant
       become: true
+    - name: Add vm to hosts file
+      command: bash -c "echo \"127.0.0.1 vm\" >> /etc/hosts"
+      become: true
     - name: Symlink code directory
       command: ln -s /home/vagrant/persistant/code /home/vagrant/code
     - shell: ls -1 /vagrant/tilde
