@@ -103,6 +103,8 @@
     - name: Update permission on persistant storage
       command: chown vagrant:vagrant /home/vagrant/persistant
       become: true
+    - name: Symlink code directory
+      command: ln -s /home/vagrant/persistant/code /home/vagrant/code
     - shell: ls -1 /vagrant/tilde
       register: dotfiles
     - name: Link Dotfiles
@@ -269,6 +271,10 @@
 
     - name: install awscli
       command: pip install awscli --user
+
+    - name: update terraform
+      command: /vagrant/tilde/bin/update_terraform
+      become: true
 
     - name: Mark the box as vagrant box to check in shell scripts
       become: true
