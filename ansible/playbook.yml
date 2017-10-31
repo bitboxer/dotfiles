@@ -64,6 +64,7 @@
       - gnupg2
       - gnupg-agent
       - pwgen
+      - httpie
     npm_packages:
       - bower
       - gulp
