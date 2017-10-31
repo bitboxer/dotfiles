@@ -155,6 +155,9 @@
         groups: docker
         append: yes
       become: true
+    - name: install docker-compose
+      command: bash -c "/vagrant/tilde/bin/update_docker_compose"
+      become: true
 
     - name: Set the timezone
       command: timedatectl set-timezone Europe/Berlin
@@ -241,12 +244,12 @@
       git: repo=https://github.com/junegunn/vim-plug.git dest=/home/vagrant/.vimplug
     - name: Linking vimplug
       command: bash -c "mkdir -p ~/.config/nvim/autoload/ && cp -f $HOME/.vimplug/plug.vim $HOME/.config/nvim/autoload/plug.vim"
-    - name: Install neovim packages
-      command: nvim +PlugInstall +UpdateRemotePlugin +qa
     - name: Install neovim python2 binding
       command: pip install neovim
     - name: Install neovim python3 binding
       command: pip3 install neovim
+    - name: Install neovim packages
+      command: nvim +PlugInstall +UpdateRemotePlugin +qa
 
     - name: Download fzf
       git: repo=https://github.com/junegunn/fzf.git dest=/home/vagrant/.fzf
