@@ -15,13 +15,21 @@ Vagrant.configure(2) do |config|
 
   config.vm.synced_folder "~/code", "/home/vagrant/mac_code", type: "nfs"
   config.vm.synced_folder "~/Downloads", "/home/vagrant/Downloads", type: "nfs"
-  config.vm.synced_folder "~/.gnupg", "/home/vagrant/.gnupg", type: "rsync", rsync__exclude: "S.gpg-agent.*"
+  config.vm.synced_folder "~/.gnupg", "/home/vagrant/.gnupg", type: "rsync", rsync__exclude: ["S.gpg-agent.*", "gpg-agent.conf"]
 
   config.vm.provider :virtualbox do |v|
     v.cpus = 4
-    v.memory = 8056
+    v.memory = 3056
     v.customize ["modifyvm", :id, "--cableconnected1", "on"]
   end
+
+  config.persistent_storage.enabled = true
+  config.persistent_storage.location = "~/code/vagrant_persistant.vdi"
+  config.persistent_storage.size = 10_000
+  config.persistent_storage.mountname = "persistant"
+  config.persistent_storage.filesystem = "ext4"
+  config.persistent_storage.mountpoint = "/home/vagrant/persistant"
+  config.persistent_storage.volgroupname = "persistantgroup"
 
   config.vm.provision "ansible_local" do |ansible|
     ansible.playbook = "ansible/playbook.yml"
