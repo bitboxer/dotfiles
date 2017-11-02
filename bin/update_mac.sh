@@ -4,4 +4,4 @@ brew update
 brew upgrade
 brew cleanup
 
-nvim +PlugUpdate +UpdateRemovePlugins +qa
+nvim +PlugUpdate +UpdateRemotePlugins +qa
