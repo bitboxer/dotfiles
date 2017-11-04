@@ -17,6 +17,8 @@ export GOPATH=~/go
 export PATH=~/go/bin:$PATH
 export PATH=/usr/local/go/bin/:$PATH
 
+export PATH=$HOME/.yarn/bin:$PATH
+
 export PATH=~/.local/bin:$PATH
 
 if [ -d "$HOME/.fzf/bin" ]; then

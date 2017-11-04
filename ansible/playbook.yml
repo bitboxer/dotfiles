@@ -5,7 +5,7 @@
     user_name: "Bodo Tasche"
     email: "bodo@wannawork.de"
     url: "https://bitboxer.de"
-    nodejs_version: 7.x
+    nodejs_version: 8.x
     ruby_version: 2.4
     rust_version: 1.19.0
     neovim_version: 0.2.0
