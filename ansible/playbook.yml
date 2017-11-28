@@ -74,6 +74,7 @@
       - alex
       - markdownlint-cli
       - jwtgen
+      - tldr
     ruby_gems:
       - awesome_print
       - bundler
