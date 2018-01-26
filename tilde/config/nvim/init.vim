@@ -161,7 +161,6 @@ endfunction
 
 Plug 'justinmk/vim-sneak'
 Plug 'tpope/vim-rails'
-Plug 'bronson/vim-trailing-whitespace'
 
 " Textobj Rubyblock: Custom text object for selecting ruby blocks
 Plug 'kana/vim-textobj-user'
@@ -339,6 +338,11 @@ nmap <silent> <leader>rv :TestVisit<CR>
 Plug 'blueyed/vim-qf_resize'
 
 Plug 'jreybert/vimagit'
+
+Plug 'Chiel92/vim-autoformat'
+let g:autoformat_autoindent = 0
+let g:autoformat_retab = 0
+au BufWrite *.{ex,exs} :Autoformat
 
 " **[ experimental area - end   ]************************************
 
