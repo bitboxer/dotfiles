@@ -7,11 +7,11 @@
     url: "https://bitboxer.de"
     nodejs_version: 8.x
     ruby_version: 2.4
-    rust_version: 1.19.0
-    neovim_version: 0.2.1
+    rust_version: 1.24.0
+    neovim_version: 0.2.2
     phantom_version: 2.1.1
-    go_version: 1.8.3
-    tmux_version: 2.5
+    go_version: "1.10"
+    tmux_version: 2.6
     apt_keys:
       - 'http://packages.erlang-solutions.com/ubuntu/erlang_solutions.asc'
       - 'https://deb.nodesource.com/gpgkey/nodesource.gpg.key'
@@ -214,7 +214,7 @@
 
     - name: Download go
       get_url: >
-        url=https://storage.googleapis.com/golang/go{{ go_version }}.linux-amd64.tar.gz
+        url=https://dl.google.com/go/go{{ go_version }}.linux-amd64.tar.gz
         dest=/tmp/go{{ go_version }}.linux-amd64.tar.gz
     - name: Uncompress go archive
       unarchive: >
