@@ -3,6 +3,7 @@
 *.*~
 .*.swp
 *.orig
+.mix_tasks
 
 .DS_Store
 .AppleDouble
