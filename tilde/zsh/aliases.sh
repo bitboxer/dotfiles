@@ -55,6 +55,10 @@ alias rba="git rebase --abort"
 
 alias git="hub"
 
+# docker
+docker-stop-all() { docker stop $(docker ps -aq) }
+alias docker-cleanup="docker-stop-all && docker system prune --volumes -a"
+
 tmuxssh() { autossh -M 0 -t $@ 'tmux -CC new-session -A -s main' }
 
 # These tools need admin permission to work
