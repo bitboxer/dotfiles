@@ -4,8 +4,10 @@
 Vagrant.configure(2) do |config|
   config.vm.box = "bento/ubuntu-16.04"
 
+  config.vm.network :forwarded_port, guest: 3000, host: 3000
   config.vm.network :forwarded_port, guest: 4000, host: 4000
   config.vm.network :forwarded_port, guest: 5000, host: 5000
+  config.vm.network :forwarded_port, guest: 8080, host: 8080
 
   config.ssh.forward_agent = true
   config.ssh.forward_x11 = true
@@ -21,6 +23,15 @@ Vagrant.configure(2) do |config|
     v.cpus = 4
     v.memory = 3056
     v.customize ["modifyvm", :id, "--cableconnected1", "on"]
+
+    # Compare the time every 10 seconds
+    v.customize [
+      "guestproperty",
+      "set",
+      :id,
+      "/VirtualBox/GuestAdd/VBoxService/--timesync-interval",
+      "10000"
+    ]
   end
 
   config.persistent_storage.enabled = true
