@@ -342,7 +342,10 @@ Plug 'jreybert/vimagit'
 Plug 'Chiel92/vim-autoformat'
 let g:autoformat_autoindent = 0
 let g:autoformat_retab = 0
-au BufWrite *.{ex,exs} :Autoformat
+let g:elixir_autoformat_enabled = 0
+
+Plug 'mhinz/vim-mix-format'
+let g:mix_format_on_save = 1
 
 " **[ experimental area - end   ]************************************
 
