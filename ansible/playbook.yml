@@ -5,37 +5,28 @@
     user_name: "Bodo Tasche"
     email: "bodo@wannawork.de"
     url: "https://bitboxer.de"
-    nodejs_version: 8.x
-    ruby_version: 2.4
+    ruby_version: 2.5.1
     rust_version: 1.24.0
+    elixir_version: 1.6.4
+    erlang_version: 20.3
+    node_version: 8.11.1
+    go_version: "1.10"
     neovim_version: 0.2.2
     phantom_version: 2.1.1
-    go_version: "1.10"
     tmux_version: 2.6
     apt_keys:
-      - 'http://packages.erlang-solutions.com/ubuntu/erlang_solutions.asc'
-      - 'https://deb.nodesource.com/gpgkey/nodesource.gpg.key'
       - 'https://download.docker.com/linux/ubuntu/gpg'
     apt_repositories:
-      - 'deb http://packages.erlang-solutions.com/ubuntu xenial contrib'
-      - 'deb https://deb.nodesource.com/node_{{ nodejs_version }} xenial main'
       - 'deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable'
-      - 'ppa:brightbox/ruby-ng'
       - 'ppa:git-core/ppa'
     apt_packages:
       - build-essential
       - curl
       - docker-ce
-      - elixir
-      - erlang
       - git
       - git-crypt
       - htop
       - jq
-      - nodejs
-      - ruby-switch
-      - ruby{{ ruby_version }}
-      - ruby{{ ruby_version }}-dev
       - tig
       - libevent-dev
       - tree
@@ -164,25 +155,72 @@
       command: timedatectl set-timezone Europe/Berlin
       become: true
 
+    - name: Set default shell for Vagrant user
+      user: name=vagrant shell=/bin/zsh
+      become: true
+
     - name: Create the marks directory
       file: path=/home/vagrant/.marks state=directory
     - name: Configure the marks
       file: path=/home/vagrant/.marks/{{ item.key }} state=link src={{ item.value }} force=yes
       with_dict: "{{ marks }}"
 
+    - name: Install asdf
+      warn: false
+      shell: |
+        rm -rf ~/.asdf || true
+        git clone https://github.com/asdf-vm/asdf.git ~/.asdf
+        cd ~/.asdf
+        git checkout tags/v0.4.3
+    - name: Install asdf plugins
+      shell: |
+        ~/.asdf/bin/asdf plugin-add erlang http://github.com/asdf-vm/asdf-erlang
+        ~/.asdf/bin/asdf plugin-add elixir http://github.com/asdf-vm/asdf-elixir
+        ~/.asdf/bin/asdf plugin-add ruby http://github.com/asdf-vm/asdf-ruby
+        ~/.asdf/bin/asdf plugin-add node http://github.com/asdf-vm/asdf-nodejs
+        ~/.asdf/bin/asdf plugin-add go http://github.com/kennyp/asdf-golang
+        ~/.asdf/bin/asdf plugin-add rust http://github.com/code-lever/asdf-rust
+
+    - name: Install erlang
+      command: ~/.asdf/bin/asdf install erlang {{ erlang_version }}
+    - name: Install elixir
+      command: ~/.asdf/bin/asdf install elixir {{ elixir_version }}
+    - name: Install ruby
+      command: ~/.asdf/bin/asdf install ruby {{ ruby_version }}
+    - name: Install node
+      command: ~/.asdf/bin/asdf install node {{ node_version }}
+    - name: Install go
+      command: ~/.asdf/bin/asdf install go {{ go_version }}
+    - name: Install rust
+      command: ~/.asdf/bin/asdf install rust {{ rust_version }}
+    - name: store versions
+      shell: |
+        echo erlang {{ erlang_version }} >> ~/.tool-versions
+        echo elixir {{ elixir_version }} >> ~/.tool-versions
+        echo ruby {{ ruby_version }} >> ~/.tool-versions
+        echo node {{ node_version }} >> ~/.tool-versions
+        echo go {{ go_version }} >> ~/.tool-versions
+        echo rust {{ rust_version }} >> ~/.tool-versions
+
     - name: Install default Ruby gems
-      command: gem install {{ item }}
+      command: /bin/zsh -c 'source /home/vagrant/.asdf/asdf.sh && gem install {{ item }}'
       with_items: "{{ ruby_gems }}"
-      become: true
 
     - name: Install default NPM packages
-      command: npm install -g {{ item }}
+      command: /bin/zsh -c 'source /home/vagrant/.asdf/asdf.sh && npm install -g {{ item }}'
       with_items: "{{ npm_packages }}"
-      become: true
 
-    - command: npm set init-author-name "{{ user_name }}"
-    - command: npm set init-author-email "{{ email }}"
-    - command: npm set init-author-url "{{ url }}"
+    - command: /bin/zsh -c 'source /home/vagrant/.asdf/asdf.sh && npm set init-author-name "{{ user_name }}"'
+    - command: /bin/zsh -c 'source /home/vagrant/.asdf/asdf.sh && npm set init-author-email"{{ email }}"'
+    - command: /bin/zsh -c 'source /home/vagrant/.asdf/asdf.sh && npm set init-author-url "{{ url }}"'
+
+    - name: Install Cargo packages
+      command: /bin/zsh -c 'source /home/vagrant/.asdf/asdf.sh && cargo install --verbose --force {{ item }}'
+      with_items: "{{ cargo_packages }}"
+
+    - name: Install go packages
+      command: /bin/zsh -c 'source /home/vagrant/.asdf/asdf.sh && go get github.com/{{ item }}'
+      with_items: "{{ go_packages }}"
 
     - name: Download phantomjs
       get_url: url=https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-{{ phantom_version }}-linux-x86_64.tar.bz2 dest=/tmp/phantomjs.tar.bz2
@@ -193,40 +231,6 @@
     - name: Move phantomjs
       command: cp /tmp/phantomjs-{{ phantom_version }}-linux-x86_64/bin/phantomjs /usr/local/bin/phantomjs
       become: true
-
-    - name: Download Rust
-      get_url: >
-        url=https://static.rust-lang.org/dist/rust-{{ rust_version }}-x86_64-unknown-linux-gnu.tar.gz
-        dest=/tmp/rust-{{ rust_version }}-x86_64-unknown-linux-gnu.tar.gz
-    - name: Uncompress Rust archive
-      unarchive: >
-        src=/tmp/rust-{{ rust_version }}-x86_64-unknown-linux-gnu.tar.gz
-        dest=/tmp
-        copy=no
-    - name: Install Rust
-      command: "/tmp/rust-{{ rust_version }}-x86_64-unknown-linux-gnu/install.sh"
-      args:
-        creates: /usr/local/lib/rustlib/uninstall.sh
-      become: true
-    - name: Install Cargo packages
-      command: cargo install --verbose --force {{ item }}
-      with_items: "{{ cargo_packages }}"
-
-    - name: Download go
-      get_url: >
-        url=https://dl.google.com/go/go{{ go_version }}.linux-amd64.tar.gz
-        dest=/tmp/go{{ go_version }}.linux-amd64.tar.gz
-    - name: Uncompress go archive
-      unarchive: >
-        src=/tmp/go{{ go_version }}.linux-amd64.tar.gz
-        dest=/tmp
-        copy=no
-    - name: Install go
-      command: cp -r /tmp/go /usr/local/go
-      become: true
-    - name: Install go packages
-      command: /usr/local/go/bin/go get github.com/{{ item }}
-      with_items: "{{ go_packages }}"
 
     - name: Download NeoVim
       get_url: >
@@ -255,7 +259,7 @@
     - name: Download fzf
       git: repo=https://github.com/junegunn/fzf.git dest=/home/vagrant/.fzf
     - name: Install fzf
-      command: /home/vagrant/.fzf/install --bin
+      command: /bin/zsh -c 'source /home/vagrant/.asdf/asdf.sh && /home/vagrant/.fzf/install --bin'
 
     - name: Download tmux
       get_url: >
@@ -272,10 +276,6 @@
     - name: Download tmux-yank
       git: repo=https://github.com/tmux-plugins/tmux-yank.git dest=/home/vagrant/.tmux-yank
 
-    - name: Set default shell for Vagrant user
-      user: name=vagrant shell=/bin/zsh
-      become: true
-
     - name: install awscli
       command: pip install awscli --user
 
@@ -286,4 +286,3 @@
     - name: Mark the box as vagrant box to check in shell scripts
       become: true
       file: path=/etc/is_vagrant_vm state=touch owner=root group=sys mode=0777
-
