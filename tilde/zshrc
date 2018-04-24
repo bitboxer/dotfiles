@@ -68,3 +68,7 @@ else
 fi
 
 source ~/.secrets
+
+. $HOME/.asdf/asdf.sh
+
+. $HOME/.asdf/completions/asdf.bash
