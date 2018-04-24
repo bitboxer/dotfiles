@@ -10,6 +10,7 @@
     elixir_version: 1.6.4
     erlang_version: 20.3
     node_version: 8.11.1
+    terraform_version: 0.11.7
     go_version: "1.10"
     neovim_version: 0.2.2
     phantom_version: 2.1.1
@@ -180,6 +181,7 @@
         ~/.asdf/bin/asdf plugin-add node http://github.com/asdf-vm/asdf-nodejs
         ~/.asdf/bin/asdf plugin-add go http://github.com/kennyp/asdf-golang
         ~/.asdf/bin/asdf plugin-add rust http://github.com/code-lever/asdf-rust
+        ~/.asdf/bin/asdf plugin-add terraform https://github.com/Banno/asdf-hashicorp
 
     - name: Install erlang
       command: ~/.asdf/bin/asdf install erlang {{ erlang_version }}
@@ -193,6 +195,8 @@
       command: ~/.asdf/bin/asdf install go {{ go_version }}
     - name: Install rust
       command: ~/.asdf/bin/asdf install rust {{ rust_version }}
+    - name: Install terraform
+      command: ~/.asdf/bin/asdf install terraform {{ terraform_version }}
     - name: store versions
       shell: |
         echo erlang {{ erlang_version }} >> ~/.tool-versions
@@ -201,6 +205,7 @@
         echo node {{ node_version }} >> ~/.tool-versions
         echo go {{ go_version }} >> ~/.tool-versions
         echo rust {{ rust_version }} >> ~/.tool-versions
+        echo terraform {{ terraform_version }} >> ~/.tool-versions
 
     - name: Install default Ruby gems
       command: /bin/zsh -c 'source /home/vagrant/.asdf/asdf.sh && gem install {{ item }}'
@@ -278,10 +283,6 @@
 
     - name: install awscli
       command: pip install awscli --user
-
-    - name: update terraform
-      command: /vagrant/tilde/bin/update_terraform
-      become: true
 
     - name: Mark the box as vagrant box to check in shell scripts
       become: true
