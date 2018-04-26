@@ -4,6 +4,7 @@
 .*.swp
 *.orig
 .mix_tasks
+.nvimrc
 
 .DS_Store
 .AppleDouble
