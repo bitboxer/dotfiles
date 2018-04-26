@@ -69,4 +69,11 @@ alias m="make"
 
 alias im="iex -S mix"
 
-alias shell="cd ~/code/dotfiles && vagrant ssh -c \"tmux -CC new-session -A -s main\""
+shell() {
+  cd ~/code/dotfiles
+  vagrant_status=$(vagrant status)
+  if [[ ! $vagrant_status =~ 'running' ]]; then
+    vagrant up
+  fi
+  vagrant ssh -c "tmux -CC new-session -A -s main"
+}
