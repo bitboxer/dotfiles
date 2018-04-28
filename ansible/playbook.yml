@@ -18,7 +18,7 @@
     apt_keys:
       - 'https://download.docker.com/linux/ubuntu/gpg'
     apt_repositories:
-      - 'deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable'
+      - 'deb [arch=amd64] https://download.docker.com/linux/ubuntu artful stable'
       - 'ppa:git-core/ppa'
     apt_packages:
       - build-essential
@@ -256,8 +256,10 @@
       command: bash -c "mkdir -p ~/.config/nvim/autoload/ && cp -f $HOME/.vimplug/plug.vim $HOME/.config/nvim/autoload/plug.vim"
     - name: Install neovim python2 binding
       command: pip install neovim
+      become: true
     - name: Install neovim python3 binding
       command: pip3 install neovim
+      become: true
     - name: Install neovim packages
       command: nvim +PlugInstall +UpdateRemotePlugin +qa
 
