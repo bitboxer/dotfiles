@@ -33,3 +33,9 @@ Temporary Items
 
 .mix_tasks
 .tool-versions
+
+# Visual Studio Code
+.vscode
+.vs
+
+.env
