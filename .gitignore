@@ -1,6 +1,8 @@
 tilde/bundle/cache/
 tilde/bundle/ruby/
+tilde/config/autostart
 tilde/config/Cryptocat
+tilde/config/Microsoft
 tilde/config/configstore/*
 tilde/config/git
 tilde/config/gtk-2.0/
