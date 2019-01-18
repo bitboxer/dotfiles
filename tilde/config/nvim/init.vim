@@ -65,7 +65,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 if executable('ag')
   " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
   let g:ctrlp_user_command =
-    \ 'ag %s --files-with-matches -g "" --ignore "\.git$\|\.hg$\|\.svn$"'
+        \ 'ag %s --files-with-matches -g "" --ignore "\.git$\|\.hg$\|\.svn$"'
 
   " ag is fast enough that CtrlP doesn't need to cache
   let g:ctrlp_use_caching = 0
@@ -226,25 +226,25 @@ let g:startify_session_delete_buffers = 1
 let g:startify_custom_header = ["   Welcome! "]
 
 let g:startify_list_order = [
-  \ ['   LRU within this dir:'],
-  \ 'dir',
-  \ ['   LRU:'],
-  \ 'files',
-  \ ['   Bookmarks:'],
-  \ 'bookmarks',
-  \ ['   Sessions:'],
-  \ 'sessions',
-  \ ]
+      \ ['   LRU within this dir:'],
+      \ 'dir',
+      \ ['   LRU:'],
+      \ 'files',
+      \ ['   Bookmarks:'],
+      \ 'bookmarks',
+      \ ['   Sessions:'],
+      \ 'sessions',
+      \ ]
 
 let g:startify_skiplist = [
-            \ 'COMMIT_EDITMSG',
-            \ 'bundle/.*/doc',
-            \ '/data/repo/neovim/runtime/doc',
-            \ '/Users/mhi/local/vim/share/vim/vim74/doc',
-            \ ]
+      \ 'COMMIT_EDITMSG',
+      \ 'bundle/.*/doc',
+      \ '/data/repo/neovim/runtime/doc',
+      \ '/Users/mhi/local/vim/share/vim/vim74/doc',
+      \ ]
 
 let g:startify_bookmarks = [
-            \ ]
+      \ ]
 
 hi StartifyBracket ctermfg=240
 hi StartifyFile    ctermfg=147
@@ -344,10 +344,13 @@ Plug 'jreybert/vimagit'
 Plug 'Chiel92/vim-autoformat'
 let g:autoformat_autoindent = 0
 let g:autoformat_retab = 0
+let g:autoformat_remove_trailing_spaces = 0
 let g:elixir_autoformat_enabled = 0
 
+autocmd FileType javascript au BufWrite * :Autoformat
+
 Plug 'mhinz/vim-mix-format'
-let g:mix_format_on_save = 1
+" let g:mix_format_on_save = 1
 
 " **[ experimental area - end   ]************************************
 
@@ -468,7 +471,7 @@ vnoremap r "_dP
 " Remember last location in file, but not for commit messages.
 " see :help last-position-jump
 au BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= line("$")
-  \| exe "normal! g`\"" | endif
+      \| exe "normal! g`\"" | endif
 
 " Spelling highlights in bright green
 hi clear SpellBad
