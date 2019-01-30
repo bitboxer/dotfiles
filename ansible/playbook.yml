@@ -20,6 +20,7 @@
     apt_repositories:
       - 'deb [arch=amd64] https://download.docker.com/linux/ubuntu artful stable'
       - 'ppa:git-core/ppa'
+      - 'ppa:openjdk-r/ppa'
     apt_packages:
       - build-essential
       - curl
@@ -57,6 +58,7 @@
       - gnupg-agent
       - pwgen
       - httpie
+      - openjdk-11-jdk
     npm_packages:
       - bower
       - gulp
