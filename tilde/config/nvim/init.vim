@@ -345,9 +345,11 @@ Plug 'Chiel92/vim-autoformat'
 let g:autoformat_autoindent = 0
 let g:autoformat_retab = 0
 let g:autoformat_remove_trailing_spaces = 0
-let g:elixir_autoformat_enabled = 0
+let g:elixir_autoformat_enabled = 1
+let g:formatdef_mix_format = "'cd '.expand('%:h').'; cat '.expand('%:t').' | mix format -'"
 
 autocmd FileType javascript au BufWrite * :Autoformat
+autocmd FileType elixir au BufWrite * :Autoformat
 
 Plug 'mhinz/vim-mix-format'
 " let g:mix_format_on_save = 1
