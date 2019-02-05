@@ -15,12 +15,12 @@
     neovim_version: 0.2.2
     phantom_version: 2.1.1
     tmux_version: 2.6
+    java_version: openjdk-11.0.1
     apt_keys:
       - 'https://download.docker.com/linux/ubuntu/gpg'
     apt_repositories:
       - 'deb [arch=amd64] https://download.docker.com/linux/ubuntu artful stable'
       - 'ppa:git-core/ppa'
-      - 'ppa:openjdk-r/ppa'
     apt_packages:
       - build-essential
       - curl
@@ -58,7 +58,6 @@
       - gnupg-agent
       - pwgen
       - httpie
-      - openjdk-11-jdk
     npm_packages:
       - bower
       - gulp
@@ -184,6 +183,7 @@
         ~/.asdf/bin/asdf plugin-add go http://github.com/kennyp/asdf-golang
         ~/.asdf/bin/asdf plugin-add rust http://github.com/code-lever/asdf-rust
         ~/.asdf/bin/asdf plugin-add terraform https://github.com/Banno/asdf-hashicorp
+        ~/.asdf/bin/asdf plugin-add java
 
     - name: Install erlang
       command: ~/.asdf/bin/asdf install erlang {{ erlang_version }}
@@ -199,6 +199,8 @@
       command: ~/.asdf/bin/asdf install rust {{ rust_version }}
     - name: Install terraform
       command: ~/.asdf/bin/asdf install terraform {{ terraform_version }}
+    - name: Install java
+      command: ~/.asdf/bin/asdf install java {{ java_version }}
     - name: store versions
       shell: |
         echo erlang {{ erlang_version }} >> ~/.tool-versions
@@ -208,6 +210,7 @@
         echo go {{ go_version }} >> ~/.tool-versions
         echo rust {{ rust_version }} >> ~/.tool-versions
         echo terraform {{ terraform_version }} >> ~/.tool-versions
+        echo java {{ java_version }} >> ~/.tool-versions
 
     - name: Install default Ruby gems
       command: /bin/zsh -c 'source /home/vagrant/.asdf/asdf.sh && gem install {{ item }}'
