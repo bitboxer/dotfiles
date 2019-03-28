@@ -17,7 +17,7 @@
   branch = auto
 
 [core]
-  excludesfile = ~/.gitignore
+	excludesfile = ~/.gitignore
   editor = nvim
 
 [apply]

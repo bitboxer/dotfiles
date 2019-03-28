@@ -5,6 +5,7 @@ tilde/config/Cryptocat
 tilde/config/Microsoft
 tilde/config/configstore/*
 tilde/config/git
+tilde/config/hcloud
 tilde/config/gtk-2.0/
 tilde/config/heroku
 tilde/config/htop

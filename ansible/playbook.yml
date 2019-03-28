@@ -85,6 +85,7 @@
       - github/hub
       - realestate-com-au/shush
       - simeji/jid/cmd/jid
+      - hetznercloud/cli/cmd/hcloud
     marks:
       c: /home/vagrant/code
       d: /home/vagrant/Downloads
@@ -229,7 +230,7 @@
       with_items: "{{ cargo_packages }}"
 
     - name: Install go packages
-      command: /bin/zsh -c 'source /home/vagrant/.asdf/asdf.sh && go get github.com/{{ item }}'
+      command: /bin/zsh -c 'source /home/vagrant/.asdf/asdf.sh && go get -u github.com/{{ item }}'
       with_items: "{{ go_packages }}"
 
     - name: Download phantomjs
