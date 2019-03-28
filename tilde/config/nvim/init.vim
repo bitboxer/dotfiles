@@ -309,7 +309,7 @@ nmap [d <Plug>DittoLess                " Show the previous matches
 Plug 'neomake/neomake'
 autocmd! BufWritePost * Neomake
 autocmd! BufReadPost * Neomake
-let g:neomake_markdown_enabled_makers = ['alex', 'markdownlint', 'proselint']
+let g:neomake_markdown_enabled_makers = ['alex', 'markdownlint']
 let g:neomake_elixir_enabled_makers = ['mix', 'credo']
 
 command Errors lopen
@@ -346,10 +346,8 @@ let g:autoformat_autoindent = 0
 let g:autoformat_retab = 0
 let g:autoformat_remove_trailing_spaces = 0
 let g:elixir_autoformat_enabled = 1
-let g:formatdef_mix_format = "'cd '.expand('%:h').'; cat '.expand('%:t').' | mix format -'"
 
 autocmd FileType javascript au BufWrite * :Autoformat
-autocmd FileType elixir au BufWrite * :Autoformat
 
 Plug 'mhinz/vim-mix-format'
 " let g:mix_format_on_save = 1
