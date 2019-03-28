@@ -10,7 +10,7 @@ Vagrant.configure(2) do |config|
   config.vm.network :forwarded_port, guest: 8080, host: 8080
 
   config.ssh.forward_agent = true
-  config.ssh.forward_x11 = true
+#  config.ssh.forward_x11 = true
 
   config.vm.network "private_network", ip: "192.168.23.33"
   config.vm.hostname = "vm"
