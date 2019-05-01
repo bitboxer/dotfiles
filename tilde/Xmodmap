@@ -1,0 +1,4 @@
+keycode 20 = asciitilde question asciitilde question ssharp
+keycode 34 = backslash bar backslash bar udiaeresis Udiaeresis
+keycode 47 = bracketleft braceleft bracketleft braceleft odiaeresis Odiaeresis
+keycode 48 = bracketright braceright bracketleft braceleft adiaeresis Adiaeresis
