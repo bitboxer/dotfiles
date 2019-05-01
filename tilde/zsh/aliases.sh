@@ -75,5 +75,10 @@ shell() {
   if [[ ! $vagrant_status =~ 'running' ]]; then
     vagrant up
   fi
-  vagrant ssh -c "tmux -CC new-session -A -s main"
+  if [[ $(uname -a) =~ 'Linux' ]]; then
+    vagrant ssh -c "tmux new-session -A -s main"
+  fi
+  if [[ $(uname -a) =~ 'Darwin' ]]; then
+    vagrant ssh -c "tmux -CC new-session -A -s main"
+  fi
 }
