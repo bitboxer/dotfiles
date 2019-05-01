@@ -1,0 +1,1 @@
+ps aux | grep -i '[x]cape' && killall -9 xcape; hash xcape 2>&1 >/dev/null && xcape -e 'Control_L=Escape' -t 100 &
