@@ -75,9 +75,6 @@ source ~/.secrets
 
 . $HOME/.asdf/completions/asdf.bash
 
-if [[ $(uname -a) =~ 'Linux' ]]; then
-  TERM=konsole-256color
-fi
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 source <(hcloud completion zsh)
