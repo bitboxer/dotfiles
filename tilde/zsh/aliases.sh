@@ -82,3 +82,7 @@ shell() {
     vagrant ssh -c "tmux -CC new-session -A -s main"
   fi
 }
+
+if [ -x "$(command -v xdg-open)" ]; then
+  alias open="xdg-open"
+fi
