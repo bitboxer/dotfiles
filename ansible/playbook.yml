@@ -22,74 +22,73 @@
       - "deb [arch=amd64] https://download.docker.com/linux/ubuntu artful stable"
       - "ppa:git-core/ppa"
     apt_packages:
-      - build-essential
-      - curl
-      - docker-ce
-      - git
-      - git-crypt
-      - gettext
-      - htop
-      - jq
-      - tig
-      - libevent-dev
-      - tree
-      - wget
-      - youtube-dl
-      - zsh
-      - libtool
-      - libtool-bin
       - autoconf
       - automake
+      - build-essential
       - cmake
-      - libncurses5-dev
-      - g++
-      - pkg-config
-      - unzip
-      - software-properties-common
-      - python-pip
-      - python3-pip
-      - xorg
-      - xsel
+      - curl
+      - dirmngr
+      - docker-ce
       - exuberant-ctags
       - ffmpeg
-      - inotify-tools
-      - meld
-      - grc
-      - gnupg2
-      - gnupg-agent
-      - pwgen
-      - httpie
-      - gpg
-      - dirmngr
+      - g++
       - gettext
+      - git
+      - git-crypt
+      - gnupg-agent
+      - gnupg2
+      - gpg
+      - grc
+      - htop
+      - httpie
+      - inotify-tools
+      - jq
+      - libevent-dev
+      - libncurses5-dev
+      - libtool
+      - libtool-bin
+      - meld
+      - pkg-config
+      - pwgen
+      - python-pip
+      - python3-pip
+      - software-properties-common
+      - tig
+      - tree
+      - unzip
+      - wget
+      - xorg
+      - xsel
+      - youtube-dl
+      - zsh
     npm_packages:
+      - alex
       - bower
       - gulp
-      - yarn
       - jscs
       - jshint
-      - alex
-      - markdownlint-cli
       - jwtgen
+      - markdownlint-cli
       - tldr
+      - yarn
     ruby_gems:
       - awesome_print
       - bundler
+      - github_changelog_generator
       - manpages
       - mdless
+      - neovim
       - pry
       - tmuxinator
-      - neovim
-      - github_changelog_generator
     cargo_packages:
       - cargo-outdated
-      - rustfmt
       - ripgrep
+      - rustfmt
     go_packages:
       - github/hub
+      - hetznercloud/cli/cmd/hcloud
       - realestate-com-au/shush
       - simeji/jid/cmd/jid
-      - hetznercloud/cli/cmd/hcloud
     marks:
       c: /home/vagrant/code
       d: /home/vagrant/Downloads
