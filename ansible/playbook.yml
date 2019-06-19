@@ -138,7 +138,10 @@
       git: repo=https://github.com/zsh-users/zsh-syntax-highlighting.git dest=/home/vagrant/.zsh-syntax-highlighting/
 
     - name: Install antibody
-      command: bash -c "curl -sL https://git.io/antibody | bash -s"
+      command: bash -c "curl -sfL git.io/antibody | sh -s - -b /usr/local/bin"
+      become: true
+      args:
+        creates: /usr/local/bin/antibody
 
     - name: Start docker on boot
       systemd: name=docker enabled=yes
