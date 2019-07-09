@@ -1,0 +1,11 @@
+#!/bin/bash
+# Simple command to display the wireless strenght signal
+#
+clear
+while x=1
+  do /System/Library/PrivateFrameworks/Apple*.framework/Versions/Current/Resources/airport -I \
+    | grep CtlRSSI \
+    | sed -e 's/^.*://g' \
+    | xargs -I SIGNAL printf "\rWifi dBm: SIGNAL"
+  sleep 0.2
+done
