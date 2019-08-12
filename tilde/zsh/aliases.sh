@@ -53,10 +53,11 @@ alias rbm="git rebase master -i --autostash"
 alias rbc="git rebase --continue"
 alias rba="git rebase --abort"
 
-alias git="hub"
+# Use a function to keep git auto completions
+git() {hub $@}
 
 # docker
-docker-stop-all() { docker stop $(docker ps -aq) }
+docker_stop_all() { docker stop $(docker ps -aq) }
 alias docker-cleanup="docker-stop-all && docker system prune --volumes -a"
 
 tmuxssh() { autossh -M 0 -t $@ 'tmux -CC new-session -A -s main' }
