@@ -10,6 +10,8 @@
   merged = !git branch -r --merged | grep -v HEAD | xargs -L1 git --no-pager log --pretty=tformat:'%Cgreen%d%Creset - %h by %an (%Cblue%ar%Creset)' -1
   pf = push --force-with-lease
   up = pull --rebase --autostash
+  unpushed = log --branches --not --remotes --no-walk --decorate --oneline
+
 
 [color]
   diff = auto
