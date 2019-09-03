@@ -42,9 +42,12 @@ alias gpf='git pf'
 alias gpb='git push --set-upstream origin HEAD' # Push local branch to remote
 alias gpr='git push --set-upstream origin HEAD && open-pr "$*"' # Push local branch to remote
 alias gpbf='git pf --set-upstream origin HEAD' # Push local branch to remote and force it
-alias gco='git checkout'
-alias gcb='git checkout -b'
+alias gco='echo "use gsw!"; gsw'
+alias gcb='echo "use gswc!"; gswc'
+alias gsw='git switch'
+alias gswc='git switch -c'
 alias glc='git log -1 --pretty=%B | tr -d "\n" | pbcopy' # Last git commit message to clipboard
+
 
 alias changelog='git log `git log -1 --format=%H -- CHANGELOG*`..; cat CHANGELOG*'
 
