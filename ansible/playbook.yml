@@ -56,6 +56,7 @@
       - tig
       - tree
       - unzip
+      - virtualbox-guest-additions-iso
       - wget
       - xorg
       - xsel
