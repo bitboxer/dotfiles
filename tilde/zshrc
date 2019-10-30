@@ -75,6 +75,8 @@ source ~/.secrets
 
 . $HOME/.asdf/completions/asdf.bash
 
+. ~/.asdf/plugins/java/set-java-home.sh
+
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 source <(hcloud completion zsh)
