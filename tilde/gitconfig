@@ -4,7 +4,7 @@
   signingkey = BE5B07AA
 
 [alias]
-  co = checkout
+  co = "!f() { echo 'Please use gsw or git restore'; }; f"
   lg = log --color --graph --pretty=format:'%C(yellow)%h%Creset %C(green)%s%Creset %C(red)(%cr)%Creset - %an'
   unmerged = !git branch -r --no-merged | grep -v HEAD | xargs -L1 git --no-pager log --pretty=tformat:'%Cgreen%d%Creset - %h by %an (%Cblue%ar%Creset)' -1
   merged = !git branch -r --merged | grep -v HEAD | xargs -L1 git --no-pager log --pretty=tformat:'%Cgreen%d%Creset - %h by %an (%Cblue%ar%Creset)' -1
