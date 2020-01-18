@@ -346,30 +346,30 @@
                         "vendor_id": 12136
                     },
                     "ignore": false,
-                    "manipulate_caps_lock_led": true,
+                    "manipulate_caps_lock_led": false,
                     "simple_modifications": [
-                        {
-                            "from": {
-                                "key_code": "left_alt"
-                            },
-                            "to": {
-                                "key_code": "left_gui"
-                            }
-                        },
-                        {
-                            "from": {
-                                "key_code": "left_gui"
-                            },
-                            "to": {
-                                "key_code": "left_alt"
-                            }
-                        },
                         {
                             "from": {
                                 "key_code": "application"
                             },
                             "to": {
                                 "key_code": "right_alt"
+                            }
+                        },
+                        {
+                            "from": {
+                                "key_code": "left_alt"
+                            },
+                            "to": {
+                                "key_code": "left_gui"
+                            }
+                        },
+                        {
+                            "from": {
+                                "key_code": "left_gui"
+                            },
+                            "to": {
+                                "key_code": "left_alt"
                             }
                         },
                         {
@@ -392,7 +392,7 @@
                         "vendor_id": 12136
                     },
                     "ignore": false,
-                    "manipulate_caps_lock_led": true,
+                    "manipulate_caps_lock_led": false,
                     "simple_modifications": []
                 }
             ],
