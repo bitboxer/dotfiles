@@ -12,7 +12,6 @@
   up = pull --rebase --autostash
   unpushed = log --branches --not --remotes --no-walk --decorate --oneline
 
-
 [color]
   diff = auto
   status = auto

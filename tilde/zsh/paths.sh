@@ -7,7 +7,8 @@ export PATH=~/.bin:$PATH
 
 # Added local bin to path for binstubs
 export PATH=~/bin:$PATH
-export PATH=./bin:$PATH
+# git-safe bin, see https://thoughtbot.com/blog/git-safe
+export PATH=.git/safe/../../bin:$PATH
 
 # AVM stuff :)
 export PATH=~/.cargo/bin:$PATH
