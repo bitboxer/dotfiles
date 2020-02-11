@@ -1,12 +1,14 @@
+ansible/playbook.retry
 tilde/bundle/cache/
 tilde/bundle/ruby/
-tilde/config/autostart
 tilde/config/Cryptocat
 tilde/config/Microsoft
+tilde/config/autostart
 tilde/config/configstore/*
+tilde/config/gh
 tilde/config/git
-tilde/config/hcloud
 tilde/config/gtk-2.0/
+tilde/config/hcloud
 tilde/config/heroku
 tilde/config/htop
 tilde/config/hub
@@ -22,5 +24,4 @@ tilde/config/nyaovim
 tilde/config/yarn
 tilde/secrets
 tilde/zsh/local_aliases
-ansible/playbook.retry
 .*
