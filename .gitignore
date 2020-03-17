@@ -22,6 +22,7 @@ tilde/config/nvim/shada
 tilde/config/nvim/spell
 tilde/config/nyaovim
 tilde/config/yarn
+tilde/config/youtube-dl/
 tilde/secrets
 tilde/zsh/local_aliases
 .*
