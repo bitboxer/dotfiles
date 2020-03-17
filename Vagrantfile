@@ -16,13 +16,13 @@ Vagrant.configure(2) do |config|
   config.vm.network "private_network", ip: "192.168.23.33"
   config.vm.hostname = "vm"
 
-  config.vm.synced_folder "/System/Volumes/Data/Users/bitboxer/code", "/home/vagrant/mac_code", type: "nfs"
-  config.vm.synced_folder "/System/Volumes/Data/Users/bitboxer/Downloads", "/home/vagrant/Downloads", type: "nfs"
-  config.vm.synced_folder "/System/Volumes/Data/Users/bitboxer/.gnupg", "/home/vagrant/.gnupg", type: "rsync", rsync__exclude: ["S.gpg-agent.*", "gpg-agent.conf"]
+  config.vm.synced_folder "/Users/bitboxer/code", "/home/vagrant/mac_code", type: "nfs"
+  config.vm.synced_folder "/Users/bitboxer/Downloads", "/home/vagrant/Downloads", type: "nfs"
+  config.vm.synced_folder "/Users/bitboxer/.gnupg", "/home/vagrant/.gnupg", type: "rsync", rsync__exclude: ["S.gpg-agent.*", "gpg-agent.conf"]
 
   config.vm.provider :virtualbox do |v|
     v.cpus = 4
-    v.memory = 3056
+    v.memory = 2056
     v.customize ["modifyvm", :id, "--cableconnected1", "on"]
 
     # Compare the time every 10 seconds
