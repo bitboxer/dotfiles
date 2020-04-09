@@ -12,7 +12,7 @@
     node_version: 10.16.0
     terraform_version: 0.11.7
     go_version: "1.10"
-    neovim_version: 0.3.6
+    neovim_version: 0.4.3
     phantom_version: 2.1.1
     tmux_version: 2.9a
     java_version: openjdk-11.0.1
@@ -85,6 +85,7 @@
       - cargo-outdated
       - ripgrep
       - rustfmt
+      - exa
     go_packages:
       - github/hub
       - hetznercloud/cli/cmd/hcloud
