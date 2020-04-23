@@ -73,8 +73,6 @@ source ~/.secrets
 
 . $HOME/.asdf/asdf.sh
 
-. $HOME/.asdf/completions/asdf.bash
-
 test -e "${HOME}/.asdf/plugins/java/set-java-home.sh" &&  source "${HOME}/.asdf/plugins/java/set-java-home.sh"
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
