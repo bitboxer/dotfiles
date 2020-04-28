@@ -47,7 +47,7 @@ alias gcb='echo "use gswc!"; gswc'
 alias gsw='git switch'
 alias gswc='git switch -c'
 alias glc='git log -1 --pretty=%B | tr -d "\n" | pbcopy' # Last git commit message to clipboard
-
+alias ghpr="gh pr create --fill"
 
 alias changelog='git log `git log -1 --format=%H -- CHANGELOG*`..; cat CHANGELOG*'
 
