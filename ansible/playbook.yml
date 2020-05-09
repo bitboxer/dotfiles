@@ -62,6 +62,7 @@
       - xsel
       - youtube-dl
       - zsh
+      - chromium-chromedriver
     npm_packages:
       - alex
       - bower

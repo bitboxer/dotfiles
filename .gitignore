@@ -1,9 +1,11 @@
+.*
 ansible/playbook.retry
 tilde/bundle/cache/
 tilde/bundle/ruby/
 tilde/config/Cryptocat
 tilde/config/Microsoft
 tilde/config/autostart
+tilde/config/chromium
 tilde/config/configstore/*
 tilde/config/gh
 tilde/config/git
@@ -25,4 +27,3 @@ tilde/config/yarn
 tilde/config/youtube-dl/
 tilde/secrets
 tilde/zsh/local_aliases
-.*
