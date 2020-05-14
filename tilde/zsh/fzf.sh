@@ -40,7 +40,7 @@ fbr() {
     echo "$branches" |
     fzf --no-hscroll --no-multi\
         --ansi --preview="git --no-pager log -150 --pretty=format:%s '..{1}'") || return
-  git checkout $(awk '{print $2}' <<<"$target" )
+  git switch $(awk '{print $1}' <<<"$target" )
 }
 
 # fco - checkout git commit
