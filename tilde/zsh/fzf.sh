@@ -31,10 +31,16 @@ fkill() {
 
 # fbr - checkout git branch
 fbr() {
-  local branches branch
-  branches=$(git branch) &&
-  branch=$(echo "$branches" | fzf +s +m --query="$1") &&
-  git checkout $(echo "$branch" | sed "s/.* //")
+  local branches
+  branches=$(
+    git --no-pager branch --all \
+      --format="%(if)%(HEAD)%(then)%(else)%(if:equals=HEAD)%(then)%(else)%(refname:short)%(end)%(end)" \
+    | sed '/^$/d') || return
+  target=$(
+    echo "$branches" |
+    fzf --no-hscroll --no-multi\
+        --ansi --preview="git --no-pager log -150 --pretty=format:%s '..{1}'") || return
+  git checkout $(awk '{print $2}' <<<"$target" )
 }
 
 # fco - checkout git commit
@@ -45,27 +51,12 @@ fco() {
   git checkout $(echo "$commit" | sed "s/ .*//")
 }
 
-# fq1 [QUERY]
-# - Immediately select the file when there's only one match.
-#   If not, start the fuzzy finder as usual.
-fq1() {
-  local lines
-  lines=$(fzf --filter="$1" --no-sort)
-  if [ -z "$lines" ]; then
-    return 1
-  elif [ $(wc -l <<< "$lines") -eq 1 ]; then
-    echo "$lines"
-  else
-    echo "$lines" | fzf --query="$1"
-  fi
-}
-
 # fe [QUERY]
 # - Open the selected file with the default editor
 #   (Bypass fuzzy finder when there's only one match)
 fe() {
-  local file
-  file=$(fq1 "$1") && ${EDITOR:-vim} "$file"
+  IFS=$'\n' files=($(fzf-tmux --query="$1" --multi --select-1 --exit-0 --preview 'bat --style=numbers --color=always {} | head -500'))
+  [[ -n "$files" ]] && ${EDITOR:-vim} "${files[@]}"
 }
 
 # Use ~~ as the trigger sequence instead of the default **

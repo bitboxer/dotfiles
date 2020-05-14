@@ -24,6 +24,7 @@
     apt_packages:
       - autoconf
       - automake
+      - bat
       - build-essential
       - cmake
       - curl
