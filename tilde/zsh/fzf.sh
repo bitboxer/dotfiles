@@ -33,7 +33,7 @@ fkill() {
 fbr() {
   local branches
   branches=$(
-    git --no-pager branch --all \
+    git --no-pager branch \
       --format="%(if)%(HEAD)%(then)%(else)%(if:equals=HEAD)%(then)%(else)%(refname:short)%(end)%(end)" \
     | sed '/^$/d') || return
   target=$(
