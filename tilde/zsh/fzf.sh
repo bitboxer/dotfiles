@@ -39,7 +39,7 @@ fbr() {
   target=$(
     echo "$branches" |
     fzf --no-hscroll --no-multi\
-        --ansi --preview="git --no-pager log -150 --pretty=format:%s '..{1}'") || return
+    --preview="git --no-pager log --color=always -150 --pretty=format:'%C(green)%ad%C(reset) %C(white bold)%s%C(reset)' --date=relative '..{1}'") || return
   git switch $(awk '{print $1}' <<<"$target" )
 }
 
