@@ -58,3 +58,6 @@
 	trustExitCode = true
 [pull]
 	ff = only
+
+[init]
+  templateDir = ~/.git/template/
