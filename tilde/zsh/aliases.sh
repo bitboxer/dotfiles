@@ -52,7 +52,8 @@ alias ghpr="gh pr create --fill"
 alias changelog='git log `git log -1 --format=%H -- CHANGELOG*`..; cat CHANGELOG*'
 
 alias rb="git rebase --autostash $@"
-alias rbm="git rebase master -i --autostash"
+alias rbm="echo 'Consider renaming to main :)' && git rebase master -i --autostash"
+alias rbd="git rebase main -i --autostash"
 alias rbc="git rebase --continue"
 alias rba="git rebase --abort"
 
