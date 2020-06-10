@@ -52,10 +52,19 @@ alias ghpr="gh pr create --fill"
 alias changelog='git log `git log -1 --format=%H -- CHANGELOG*`..; cat CHANGELOG*'
 
 alias rb="git rebase --autostash $@"
-alias rbm="echo 'Consider renaming to main :)' && git rebase master -i --autostash"
-alias rbd="git rebase main -i --autostash"
 alias rbc="git rebase --continue"
 alias rba="git rebase --abort"
+
+rbm() {
+  if [[ $(git branch --list master) ]]; then
+      echo '************************************************';
+      echo '* Consider renaming master brancht to main !   *';
+      echo '************************************************';
+      git rebase master -i --autostash
+  else
+      git rebase main -i --autostash
+  fi
+}
 
 # Use a function to keep git auto completions
 git() {hub $@}
