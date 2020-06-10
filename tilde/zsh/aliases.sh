@@ -57,9 +57,9 @@ alias rba="git rebase --abort"
 
 rbm() {
   if [[ $(git branch --list master) ]]; then
-      echo '**********************************************';
-      echo '* Consider renaming master brancht to main ! *';
-      echo '**********************************************';
+      echo '*********************************************';
+      echo '* Consider renaming master branch to main ! *';
+      echo '*********************************************';
       git rebase master -i --autostash
   else
       git rebase main -i --autostash
