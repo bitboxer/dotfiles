@@ -55,6 +55,17 @@ alias rb="git rebase --autostash $@"
 alias rbc="git rebase --continue"
 alias rba="git rebase --abort"
 
+gswm() {
+  if [[ $(git branch --list master) ]]; then
+      echo '*********************************************';
+      echo '* Consider renaming master branch to main ! *';
+      echo '*********************************************';
+      git switch master
+  else
+      git switch main
+  fi
+}
+
 rbm() {
   if [[ $(git branch --list master) ]]; then
       echo '*********************************************';
