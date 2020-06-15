@@ -9,6 +9,8 @@ brews=(
   wifi-password
 )
 
+brew analytics off
+
 brew install "${brews[@]}"
 
 brew tap caskroom/cask
