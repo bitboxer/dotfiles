@@ -16,19 +16,28 @@
                 },
                 "rules": [
                     {
-                        "conditions": [
-                            {
-                                "input_sources": [
-                                    {
-                                        "language": "de.*"
-                                    }
-                                ],
-                                "type": "input_source_if"
-                            }
-                        ],
                         "description": "Change german ö Key to [",
                         "manipulators": [
                             {
+                                "conditions": [
+                                    {
+                                        "input_sources": [
+                                            {
+                                                "language": "de.*"
+                                            }
+                                        ],
+                                        "type": "input_source_if"
+                                    },
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 24672,
+                                                "vendor_id": 65261
+                                            }
+                                        ],
+                                        "type": "device_unless"
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "semicolon"
                                 },
@@ -43,19 +52,28 @@
                         ]
                     },
                     {
-                        "conditions": [
-                            {
-                                "input_sources": [
-                                    {
-                                        "language": "de.*"
-                                    }
-                                ],
-                                "type": "input_source_if"
-                            }
-                        ],
                         "description": "Change german ä Key to ]",
                         "manipulators": [
                             {
+                                "conditions": [
+                                    {
+                                        "input_sources": [
+                                            {
+                                                "language": "de.*"
+                                            }
+                                        ],
+                                        "type": "input_source_if"
+                                    },
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 24672,
+                                                "vendor_id": 65261
+                                            }
+                                        ],
+                                        "type": "device_unless"
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "quote"
                                 },
@@ -70,19 +88,28 @@
                         ]
                     },
                     {
-                        "conditions": [
-                            {
-                                "input_sources": [
-                                    {
-                                        "language": "de.*"
-                                    }
-                                ],
-                                "type": "input_source_if"
-                            }
-                        ],
                         "description": "Change german ü Key to \\",
                         "manipulators": [
                             {
+                                "conditions": [
+                                    {
+                                        "input_sources": [
+                                            {
+                                                "language": "de.*"
+                                            }
+                                        ],
+                                        "type": "input_source_if"
+                                    },
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 24672,
+                                                "vendor_id": 65261
+                                            }
+                                        ],
+                                        "type": "device_unless"
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "open_bracket"
                                 },
@@ -98,19 +125,28 @@
                         ]
                     },
                     {
-                        "conditions": [
-                            {
-                                "input_sources": [
-                                    {
-                                        "language": "de.*"
-                                    }
-                                ],
-                                "type": "input_source_if"
-                            }
-                        ],
                         "description": "Change german ß Key to ~",
                         "manipulators": [
                             {
+                                "conditions": [
+                                    {
+                                        "input_sources": [
+                                            {
+                                                "language": "de.*"
+                                            }
+                                        ],
+                                        "type": "input_source_if"
+                                    },
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 24672,
+                                                "vendor_id": 65261
+                                            }
+                                        ],
+                                        "type": "device_unless"
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "hyphen"
                                 },
@@ -125,19 +161,28 @@
                         ]
                     },
                     {
-                        "conditions": [
-                            {
-                                "input_sources": [
-                                    {
-                                        "language": "de.*"
-                                    }
-                                ],
-                                "type": "input_source_if"
-                            }
-                        ],
                         "description": "Change german shift ö Key to {",
                         "manipulators": [
                             {
+                                "conditions": [
+                                    {
+                                        "input_sources": [
+                                            {
+                                                "language": "de.*"
+                                            }
+                                        ],
+                                        "type": "input_source_if"
+                                    },
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 24672,
+                                                "vendor_id": 65261
+                                            }
+                                        ],
+                                        "type": "device_unless"
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "semicolon",
                                     "modifiers": {
@@ -157,19 +202,28 @@
                         ]
                     },
                     {
-                        "conditions": [
-                            {
-                                "input_sources": [
-                                    {
-                                        "language": "de.*"
-                                    }
-                                ],
-                                "type": "input_source_if"
-                            }
-                        ],
                         "description": "Change german shift ä Key to ]",
                         "manipulators": [
                             {
+                                "conditions": [
+                                    {
+                                        "input_sources": [
+                                            {
+                                                "language": "de.*"
+                                            }
+                                        ],
+                                        "type": "input_source_if"
+                                    },
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 24672,
+                                                "vendor_id": 65261
+                                            }
+                                        ],
+                                        "type": "device_unless"
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "quote",
                                     "modifiers": {
@@ -189,19 +243,28 @@
                         ]
                     },
                     {
-                        "conditions": [
-                            {
-                                "input_sources": [
-                                    {
-                                        "language": "de.*"
-                                    }
-                                ],
-                                "type": "input_source_if"
-                            }
-                        ],
                         "description": "Change german shift ü Key to \\",
                         "manipulators": [
                             {
+                                "conditions": [
+                                    {
+                                        "input_sources": [
+                                            {
+                                                "language": "de.*"
+                                            }
+                                        ],
+                                        "type": "input_source_if"
+                                    },
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 24672,
+                                                "vendor_id": 65261
+                                            }
+                                        ],
+                                        "type": "device_unless"
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "open_bracket",
                                     "modifiers": {
@@ -221,19 +284,28 @@
                         ]
                     },
                     {
-                        "conditions": [
-                            {
-                                "input_sources": [
-                                    {
-                                        "language": "de.*"
-                                    }
-                                ],
-                                "type": "input_source_if"
-                            }
-                        ],
                         "description": "Change german option ö Key to ö",
                         "manipulators": [
                             {
+                                "conditions": [
+                                    {
+                                        "input_sources": [
+                                            {
+                                                "language": "de.*"
+                                            }
+                                        ],
+                                        "type": "input_source_if"
+                                    },
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 24672,
+                                                "vendor_id": 65261
+                                            }
+                                        ],
+                                        "type": "device_unless"
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "semicolon",
                                     "modifiers": {
@@ -250,19 +322,28 @@
                         ]
                     },
                     {
-                        "conditions": [
-                            {
-                                "input_sources": [
-                                    {
-                                        "language": "de.*"
-                                    }
-                                ],
-                                "type": "input_source_if"
-                            }
-                        ],
                         "description": "Change german option ä Key to ä",
                         "manipulators": [
                             {
+                                "conditions": [
+                                    {
+                                        "input_sources": [
+                                            {
+                                                "language": "de.*"
+                                            }
+                                        ],
+                                        "type": "input_source_if"
+                                    },
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 24672,
+                                                "vendor_id": 65261
+                                            }
+                                        ],
+                                        "type": "device_unless"
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "quote",
                                     "modifiers": {
@@ -279,19 +360,28 @@
                         ]
                     },
                     {
-                        "conditions": [
-                            {
-                                "input_sources": [
-                                    {
-                                        "language": "de.*"
-                                    }
-                                ],
-                                "type": "input_source_if"
-                            }
-                        ],
                         "description": "Change german option ü Key to ü",
                         "manipulators": [
                             {
+                                "conditions": [
+                                    {
+                                        "input_sources": [
+                                            {
+                                                "language": "de.*"
+                                            }
+                                        ],
+                                        "type": "input_source_if"
+                                    },
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 24672,
+                                                "vendor_id": 65261
+                                            }
+                                        ],
+                                        "type": "device_unless"
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "open_bracket",
                                     "modifiers": {
@@ -308,19 +398,28 @@
                         ]
                     },
                     {
-                        "conditions": [
-                            {
-                                "input_sources": [
-                                    {
-                                        "language": "de.*"
-                                    }
-                                ],
-                                "type": "input_source_if"
-                            }
-                        ],
                         "description": "Change german option ß Key to ß",
                         "manipulators": [
                             {
+                                "conditions": [
+                                    {
+                                        "input_sources": [
+                                            {
+                                                "language": "de.*"
+                                            }
+                                        ],
+                                        "type": "input_source_if"
+                                    },
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 24672,
+                                                "vendor_id": 65261
+                                            }
+                                        ],
+                                        "type": "device_unless"
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "hyphen",
                                     "modifiers": {
@@ -337,19 +436,28 @@
                         ]
                     },
                     {
-                        "conditions": [
-                            {
-                                "input_sources": [
-                                    {
-                                        "language": "de.*"
-                                    }
-                                ],
-                                "type": "input_source_if"
-                            }
-                        ],
                         "description": "Change german shift option ö Key to Ö",
                         "manipulators": [
                             {
+                                "conditions": [
+                                    {
+                                        "input_sources": [
+                                            {
+                                                "language": "de.*"
+                                            }
+                                        ],
+                                        "type": "input_source_if"
+                                    },
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 24672,
+                                                "vendor_id": 65261
+                                            }
+                                        ],
+                                        "type": "device_unless"
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "semicolon",
                                     "modifiers": {
@@ -370,19 +478,28 @@
                         ]
                     },
                     {
-                        "conditions": [
-                            {
-                                "input_sources": [
-                                    {
-                                        "language": "de.*"
-                                    }
-                                ],
-                                "type": "input_source_if"
-                            }
-                        ],
                         "description": "Change german option ä Key to Ä",
                         "manipulators": [
                             {
+                                "conditions": [
+                                    {
+                                        "input_sources": [
+                                            {
+                                                "language": "de.*"
+                                            }
+                                        ],
+                                        "type": "input_source_if"
+                                    },
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 24672,
+                                                "vendor_id": 65261
+                                            }
+                                        ],
+                                        "type": "device_unless"
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "quote",
                                     "modifiers": {
@@ -403,19 +520,28 @@
                         ]
                     },
                     {
-                        "conditions": [
-                            {
-                                "input_sources": [
-                                    {
-                                        "language": "de.*"
-                                    }
-                                ],
-                                "type": "input_source_if"
-                            }
-                        ],
                         "description": "Change german option ü Key to Ü",
                         "manipulators": [
                             {
+                                "conditions": [
+                                    {
+                                        "input_sources": [
+                                            {
+                                                "language": "de.*"
+                                            }
+                                        ],
+                                        "type": "input_source_if"
+                                    },
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 24672,
+                                                "vendor_id": 65261
+                                            }
+                                        ],
+                                        "type": "device_unless"
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "open_bracket",
                                     "modifiers": {
@@ -439,6 +565,17 @@
                         "description": "Change caps_lock to control if pressed with other keys, to escape if pressed alone.",
                         "manipulators": [
                             {
+                                "conditions": [
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 24672,
+                                                "vendor_id": 65261
+                                            }
+                                        ],
+                                        "type": "device_unless"
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "caps_lock",
                                     "modifiers": {
@@ -465,6 +602,17 @@
                         "description": "left_control is hyper key",
                         "manipulators": [
                             {
+                                "conditions": [
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 24672,
+                                                "vendor_id": 65261
+                                            }
+                                        ],
+                                        "type": "device_unless"
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "left_control",
                                     "modifiers": {
@@ -628,6 +776,17 @@
                         "description": "Add Volume up shortcut",
                         "manipulators": [
                             {
+                                "conditions": [
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 24672,
+                                                "vendor_id": 65261
+                                            }
+                                        ],
+                                        "type": "device_unless"
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "8",
                                     "modifiers": {
@@ -652,6 +811,17 @@
                         "description": "Add Volume down shortcut",
                         "manipulators": [
                             {
+                                "conditions": [
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 24672,
+                                                "vendor_id": 65261
+                                            }
+                                        ],
+                                        "type": "device_unless"
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "9",
                                     "modifiers": {
@@ -676,6 +846,17 @@
                         "description": "Add Volume mute shortcut",
                         "manipulators": [
                             {
+                                "conditions": [
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 24672,
+                                                "vendor_id": 65261
+                                            }
+                                        ],
+                                        "type": "device_unless"
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "0",
                                     "modifiers": {
@@ -816,18 +997,18 @@
                     "simple_modifications": [
                         {
                             "from": {
-                                "key_code": "non_us_backslash"
+                                "key_code": "grave_accent_and_tilde"
                             },
                             "to": {
-                                "key_code": "grave_accent_and_tilde"
+                                "key_code": "non_us_backslash"
                             }
                         },
                         {
                             "from": {
-                                "key_code": "grave_accent_and_tilde"
+                                "key_code": "non_us_backslash"
                             },
                             "to": {
-                                "key_code": "non_us_backslash"
+                                "key_code": "grave_accent_and_tilde"
                             }
                         }
                     ]
@@ -899,6 +1080,19 @@
                         "is_pointing_device": true,
                         "product_id": 130,
                         "vendor_id": 12136
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": false,
+                    "simple_modifications": []
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 24672,
+                        "vendor_id": 65261
                     },
                     "ignore": false,
                     "manipulate_caps_lock_led": false,
