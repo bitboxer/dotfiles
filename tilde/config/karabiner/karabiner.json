@@ -645,6 +645,15 @@
                                             "^org\\.mozilla\\.firefox$"
                                         ],
                                         "type": "frontmost_application_if"
+                                    },
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 24672,
+                                                "vendor_id": 65261
+                                            }
+                                        ],
+                                        "type": "device_unless"
                                     }
                                 ],
                                 "from": {
@@ -677,10 +686,101 @@
                                             "^org\\.mozilla\\.firefox$"
                                         ],
                                         "type": "frontmost_application_if"
+                                    },
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 24672,
+                                                "vendor_id": 65261
+                                            }
+                                        ],
+                                        "type": "device_unless"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "semicolon",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "tab",
+                                        "modifiers": [
+                                            "left_control",
+                                            "shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },{
+                        "description": "Change next tab shortcut in Firefox to ctrl+] Planck",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^org\\.mozilla\\.firefox$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    },
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 24672,
+                                                "vendor_id": 65261
+                                            }
+                                        ],
+                                        "type": "device_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "close_bracket",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "tab",
+                                        "modifiers": [
+                                            "left_control"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Change previous tab shortcut in Firefox to ctrl+[ Planck",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^org\\.mozilla\\.firefox$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    },
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 24672,
+                                                "vendor_id": 65261
+                                            }
+                                        ],
+                                        "type": "device_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "open_bracket",
                                     "modifiers": {
                                         "mandatory": [
                                             "command"
