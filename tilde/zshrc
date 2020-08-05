@@ -23,7 +23,7 @@ setopt HIST_IGNORE_DUPS
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(gitfast dirhelper extract forklift jump chruby gem tmuxinator mix-fast docker docker-compose)
+plugins=(dirhelper extract forklift jump chruby gem tmuxinator mix-fast docker docker-compose)
 
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
