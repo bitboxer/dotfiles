@@ -3,6 +3,9 @@ ZSH=$HOME/.oh-my-zsh
 
 fpath=("$HOME/.zsh/completions" $fpath)
 
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path ~/.zsh/cache
+
 ZSH_CUSTOM=$HOME/.zsh/oh-my-zsh
 
 # Set name of the theme to load.
