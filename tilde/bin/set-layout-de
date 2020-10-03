@@ -1,0 +1,2 @@
+#!/bin/sh
+~/.bin/xkbswitch -s 2
