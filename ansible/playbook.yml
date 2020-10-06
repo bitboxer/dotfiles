@@ -257,6 +257,9 @@
       command: /bin/zsh -c 'source /home/vagrant/.asdf/asdf.sh && go get -u github.com/{{ item }}'
       with_items: "{{ go_packages }}"
 
+    - name: Reshim all installed packages
+      command: ~/.asdf/bin/asdf reshim
+
     - name: Download phantomjs
       get_url: url=https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-{{ phantom_version }}-linux-x86_64.tar.bz2 dest=/tmp/phantomjs.tar.bz2
       become: true
@@ -274,7 +277,7 @@
     - name: Uncompress NeoVim archive
       unarchive: >
         src=/tmp/neovim-{{ neovim_version }}.tar.gz
-        dest=/tmp
+        dest=/tmp   
         copy=no
     - name: Install NeoVim
       command: bash -c "CMAKE_BUILD_TYPE=RelWithDebInfo make && sudo make install"
