@@ -5,16 +5,16 @@
     user_name: "Bodo Tasche"
     email: "bodo@wannawork.de"
     url: "https://bitboxer.de"
-    ruby_version: 2.5.1
-    rust_version: 1.34.0
-    elixir_version: 1.6.4
-    erlang_version: 20.3
-    node_version: 10.16.0
-    terraform_version: 0.11.7
-    go_version: "1.10"
-    neovim_version: 0.4.3
+    ruby_version: 2.7.1
+    rust_version: 1.46.0
+    elixir_version: 1.10.0
+    erlang_version: 23.1
+    node_version: 14.13.0
+    terraform_version: 0.11.7 
+    go_version: "1.15"
+    neovim_version: 0.4.4
     phantom_version: 2.1.1
-    tmux_version: 2.9a
+    tmux_version: 3.1b
     java_version: openjdk-11.0.1
     apt_keys:
       - "https://download.docker.com/linux/ubuntu/gpg"
@@ -51,7 +51,6 @@
       - meld
       - pkg-config
       - pwgen
-      - python-pip
       - python3-pip
       - software-properties-common
       - tig
@@ -91,7 +90,6 @@
     go_packages:
       - github/hub
       - hetznercloud/cli/cmd/hcloud
-      - realestate-com-au/shush
       - simeji/jid/cmd/jid
     marks:
       c: /home/vagrant/code
@@ -286,9 +284,6 @@
       git: repo=https://github.com/junegunn/vim-plug.git dest=/home/vagrant/.vimplug
     - name: Linking vimplug
       command: bash -c "mkdir -p ~/.config/nvim/autoload/ && cp -f $HOME/.vimplug/plug.vim $HOME/.config/nvim/autoload/plug.vim"
-    - name: Install neovim python2 binding
-      command: pip install neovim
-      become: true
     - name: Install neovim python3 binding
       command: pip3 install neovim
       become: true
