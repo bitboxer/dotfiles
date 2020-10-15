@@ -319,3 +319,7 @@
     - name: Mark the box as vagrant box to check in shell scripts
       become: true
       file: path=/etc/is_vagrant_vm state=touch owner=root group=sys mode=0777
+
+    - name: Increase file watcher limits
+      become: true
+      command: bash -c "echo fs.inotify.max_user_watches=524288 | tee -a /etc/sysctl.conf && sysctl -p && sysctl --system"
