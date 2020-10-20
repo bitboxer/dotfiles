@@ -20,6 +20,7 @@
 [core]
 	excludesfile = ~/.gitignore
   editor = nvim
+	attributesfile = ~/.gitattributes
 
 [apply]
   whitespace = nowarn
