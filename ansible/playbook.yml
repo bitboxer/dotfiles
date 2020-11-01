@@ -323,3 +323,7 @@
     - name: Increase file watcher limits
       become: true
       command: bash -c "echo fs.inotify.max_user_watches=524288 | tee -a /etc/sysctl.conf && sysctl -p && sysctl --system"
+    
+    - name: Install github client
+      become: true
+      command: bash -c "apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0; apt-add-repository https://cli.github.com/packages; apt update; apt install gh"
