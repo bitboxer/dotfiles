@@ -109,6 +109,8 @@ Plug 'morhetz/gruvbox'
 " Polyglot: A collection of language packs, loaded on demand
 Plug 'sheerun/vim-polyglot'
 
+Plug 'Einenlum/yaml-revealer'
+
 " vue files need special handling because of their
 " mix of different languages in one big file
 autocmd FileType vue syntax sync fromstart
