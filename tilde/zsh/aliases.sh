@@ -61,8 +61,10 @@ gswm() {
       echo '* Consider renaming master branch to main ! *';
       echo '*********************************************';
       git switch master
-  else
+  elif [[ $(git branch --list main) ]]; then
       git switch main
+  else
+      git switch develop
   fi
 }
 
@@ -72,8 +74,10 @@ rbm() {
       echo '* Consider renaming master branch to main ! *';
       echo '*********************************************';
       git rebase master -i --autostash
-  else
+  elif [[ $(git branch --list main) ]]; then
       git rebase main -i --autostash
+  else
+      git rebase develop -i --autostash
   fi
 }
 
