@@ -15,6 +15,7 @@ tilde/config/heroku
 tilde/config/htop
 tilde/config/hub
 tilde/config/pulse
+tilde/config/iterm2
 tilde/config/inkscape/*
 tilde/config/karabiner
 tilde/config/keybase
