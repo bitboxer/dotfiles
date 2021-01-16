@@ -296,7 +296,7 @@
     - name: Download fzf
       git: repo=https://github.com/junegunn/fzf.git dest=/home/vagrant/.fzf
     - name: Install fzf
-      command: /bin/zsh -c 'source /home/vagrant/.asdf/asdf.sh && /home/vagrant/.fzf/install --bin'
+      command: /bin/zsh -c 'source /home/vagrant/.asdf/asdf.sh && /home/vagrant/.fzf/install --all --no-update-rc --no-bash --no-fish'
 
     - name: Download tmux
       get_url: >
