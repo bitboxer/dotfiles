@@ -180,7 +180,7 @@
         rm -rf ~/.asdf || true
         git clone https://github.com/asdf-vm/asdf.git ~/.asdf
         cd ~/.asdf
-        git checkout tags/v0.7.2
+        git checkout "$(git describe --abbrev=0 --tags)"
       args:
         warn: no
     - name: Install asdf plugins
@@ -236,6 +236,9 @@
         echo rust {{ rust_version }} >> ~/.tool-versions
         echo terraform {{ terraform_version }} >> ~/.tool-versions
         echo java {{ java_version }} >> ~/.tool-versions
+
+    - name: Reshim all installed packages
+      command: ~/.asdf/bin/asdf reshim
 
     - name: Install default Ruby gems
       command: /bin/zsh -c 'source /home/vagrant/.asdf/asdf.sh && gem install {{ item }}'

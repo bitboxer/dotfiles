@@ -4,6 +4,8 @@
 Vagrant.configure(2) do |config|
   config.vm.box = "bento/ubuntu-20.04"
 
+  config.vm.network :private_network, ip: "10.11.12.13"
+
   config.vm.network :forwarded_port, guest: 3000, host: 3000
   config.vm.network :forwarded_port, guest: 4000, host: 4000
   config.vm.network :forwarded_port, guest: 5000, host: 5000
@@ -46,5 +48,6 @@ Vagrant.configure(2) do |config|
   config.vm.provision "ansible_local" do |ansible|
     ansible.playbook = "ansible/playbook.yml"
     ansible.install_mode = "pip"
+    ansible.pip_install_cmd = "sudo apt-get install -y python3-distutils && curl -s https://bootstrap.pypa.io/get-pip.py | sudo python3"
   end
 end
