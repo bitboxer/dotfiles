@@ -26,6 +26,7 @@
       - automake
       - bat
       - build-essential
+      - chromium-chromedriver
       - cmake
       - curl
       - dirmngr
@@ -42,6 +43,7 @@
       - grc
       - htop
       - httpie
+      - imagemagick
       - inotify-tools
       - jq
       - libevent-dev
@@ -50,6 +52,7 @@
       - libtool-bin
       - meld
       - pkg-config
+      - postgresql
       - pwgen
       - python3-pip
       - software-properties-common
@@ -62,7 +65,6 @@
       - xsel
       - youtube-dl
       - zsh
-      - chromium-chromedriver
     npm_packages:
       - alex
       - bower
