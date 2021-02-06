@@ -24,7 +24,7 @@ Vagrant.configure(2) do |config|
 
   config.vm.provider :virtualbox do |v|
     v.cpus = 4
-    v.memory = 2056
+    v.memory = 3556
     v.customize ["modifyvm", :id, "--cableconnected1", "on"]
 
     # Compare the time every 10 seconds
