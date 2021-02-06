@@ -7,6 +7,7 @@ brews=(
   ansible
   tmux
   wifi-password
+  topgrade
 )
 
 brew analytics off

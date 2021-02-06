@@ -89,6 +89,7 @@
       - ripgrep
       - rustfmt
       - exa
+      - topgrade
     go_packages:
       - github/hub
       - hetznercloud/cli/cmd/hcloud
