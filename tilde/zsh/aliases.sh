@@ -9,7 +9,14 @@ alias trst="touch tmp/restart"
 alias tlog="tail -f log/development.log"
 
 # Bundler
-alias be="bundle exec"
+be() {
+  if [ -f "bin/$1" ]; then
+    "bin/$@"
+  else
+    "bundle exec $@"
+  fi
+}
+
 alias bi="bundle install"
 alias ber="bundle exec rake"
 
