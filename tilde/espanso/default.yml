@@ -24,6 +24,8 @@ matches:
     vars:
       - name: "clipboard"
         type: "clipboard"
+  - trigger: ":clog"
+    replace: "console.log($|$)"
 
   - trigger: ":extip"
     replace: "{{output}}"
