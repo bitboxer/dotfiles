@@ -11,9 +11,9 @@ alias tlog="tail -f log/development.log"
 # Bundler
 be() {
   if [ -f "bin/$1" ]; then
-    "bin/$@"
+    bin/$@
   else
-    "bundle exec $@"
+    bundle exec $@
   fi
 }
 
