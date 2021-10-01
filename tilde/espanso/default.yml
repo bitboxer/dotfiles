@@ -55,3 +55,6 @@ matches:
 
   - trigger: ":sloth:"
     replace: "🦥"
+
+  - trigger: ":depreb:"
+    replace: "@dependabot rebase"
