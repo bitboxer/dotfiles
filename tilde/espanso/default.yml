@@ -58,3 +58,6 @@ matches:
 
   - trigger: ":depreb:"
     replace: "@dependabot rebase"
+
+  - trigger: ":e:"
+    replace: "€"
