@@ -4,20 +4,19 @@
 Vagrant.configure(2) do |config|
   config.vm.box = "bento/ubuntu-20.04"
 
-  config.vm.network :private_network, ip: "10.11.12.13"
+  config.vm.network :private_network, ip: "192.168.56.33"
 
   config.vm.network :forwarded_port, guest: 3000, host: 3000
   config.vm.network :forwarded_port, guest: 3001, host: 3001
   config.vm.network :forwarded_port, guest: 3035, host: 3035
   config.vm.network :forwarded_port, guest: 4000, host: 4000
-  config.vm.network :forwarded_port, guest: 5000, host: 5000
+#  config.vm.network :forwarded_port, guest: 5000, host: 5000
   config.vm.network :forwarded_port, guest: 6060, host: 6060
   config.vm.network :forwarded_port, guest: 8080, host: 8088
 
   config.ssh.forward_agent = true
 #  config.ssh.forward_x11 = true
 
-  config.vm.network "private_network", ip: "192.168.23.33"
   config.vm.hostname = "vm"
 
   config.vm.synced_folder "/Users/bitboxer/code", "/home/vagrant/mac_code", type: "nfs"
