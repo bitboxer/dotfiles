@@ -21,6 +21,7 @@
 	excludesfile = ~/.gitignore
   editor = nvim
 	attributesfile = ~/.gitattributes
+  pager = delta
 
 [apply]
   whitespace = nowarn
@@ -30,6 +31,7 @@
 
 [merge]
   tool = meld
+  conflictstyle = diff3
 
 [push]
   default = simple
@@ -64,3 +66,11 @@
 [init]
   templateDir = ~/.git/template/
 	defaultBranch = main
+
+[interactive]
+  diffFilter = delta --color-only
+
+[delta]
+  navigate = true  # use n and N to move between diff sections
+  line-numbers = true
+  hunk-header-style = omit

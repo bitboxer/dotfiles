@@ -1,3 +1,5 @@
+#!/bin/bash
+
 if [[ ! "$OSTYPE" =~ ^darwin ]]; then
   echo "This can only be run on a mac"
   exit 1
@@ -8,6 +10,8 @@ brews=(
   tmux
   wifi-password
   topgrade
+  tig
+  git-delta
 )
 
 brew analytics off

@@ -316,6 +316,15 @@
       command: bash -c "cd /tmp/tmux-{{ tmux_version }} && ./configure && make && make install"
       become: true
 
+    - name: Download delta
+      get_url: >
+        url=https://github.com/dandavison/delta/releases/download/{{ delta_version}}/git-delta_{{ delta_version}}_amd64.deb
+        dest=/tmp/delta_amd64.deb
+      become: true
+    - name: Install delta
+      command: dpkg -i /tmp/delta_arm64.deb
+      become: true
+
     - name: Download tmux-yank
       git: repo=https://github.com/tmux-plugins/tmux-yank.git dest=/home/vagrant/.tmux-yank
 

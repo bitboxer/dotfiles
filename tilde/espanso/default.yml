@@ -50,14 +50,5 @@ matches:
         params:
           format: "%Y-%m-%d"
 
-  - trigger: ":flip:"
-    replace: "(╯°□°）╯︵ ┻━┻"
-
-  - trigger: ":sloth:"
-    replace: "🦥"
-
   - trigger: ":depreb:"
     replace: "@dependabot rebase"
-
-  - trigger: ":e:"
-    replace: "€"
