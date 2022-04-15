@@ -14,6 +14,7 @@
     go_version: "1.15"
     neovim_version: 0.4.4
     phantom_version: 2.1.1
+    delta_version: 0.12.1
     tmux_version: 3.1b
     java_version: openjdk-11.0.1
     apt_keys:
@@ -318,7 +319,7 @@
 
     - name: Download delta
       get_url: >
-        url=https://github.com/dandavison/delta/releases/download/{{ delta_version}}/git-delta_{{ delta_version}}_amd64.deb
+        url=https://github.com/dandavison/delta/releases/download/{{ delta_version }}/git-delta_{{ delta_version }}_amd64.deb
         dest=/tmp/delta_amd64.deb
       become: true
     - name: Install delta
