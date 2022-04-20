@@ -5,6 +5,9 @@ if [[ ! "$OSTYPE" =~ ^darwin ]]; then
   exit 1
 fi
 
+brew tap caskroom/cask
+brew tap cantino/mcfly
+
 brews=(
   ansible
   tmux
@@ -12,13 +15,13 @@ brews=(
   topgrade
   tig
   git-delta
+  cantino/mcfly/mcfly
 )
 
 brew analytics off
 
 brew install "${brews[@]}"
 
-brew tap caskroom/cask
 
 apps=(
   iterm2
