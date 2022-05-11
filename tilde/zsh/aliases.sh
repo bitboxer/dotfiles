@@ -41,6 +41,7 @@ alias gitx='echo "Use tower!!!" && to'
 # git
 alias gs='git status'
 alias gd='git diff'
+alias gdc='git diff --cached'
 alias glog='git log'
 alias gca='git commit -v -a -S'
 alias gcaa='git commit -v -a -S --amend'
