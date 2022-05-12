@@ -39,8 +39,8 @@ Vagrant.configure(2) do |config|
   end
 
   config.persistent_storage.enabled = true
-  config.persistent_storage.location = "~/code/vagrant_persistant.vdi"
-  config.persistent_storage.size = 10_000
+  config.persistent_storage.location = "~/code/vagrant.vdi"
+  config.persistent_storage.size = 20_000
   config.persistent_storage.mountname = "persistant"
   config.persistent_storage.filesystem = "ext4"
   config.persistent_storage.mountpoint = "/home/vagrant/persistant"
