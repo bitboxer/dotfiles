@@ -56,7 +56,6 @@ antibody bundle < ~/.zsh/bundles.txt
 
 export ZSH_PLUGINS_ALIAS_TIPS_TEXT="💡 Alias tip: "
 
-source ~/.zsh/paths.sh
 source ~/.zsh/aliases.sh
 source ~/.zsh/colorify.sh
 source ~/.zsh/fzf.sh
@@ -92,7 +91,7 @@ source ~/.secrets
 
 test -e "${HOME}/.asdf/plugins/java/set-java-home.zsh" &&  source "${HOME}/.asdf/plugins/java/set-java-home.zsh"
 
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+source ~/.zsh/paths.sh
 
 source <(hcloud completion zsh)
 

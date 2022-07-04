@@ -7,8 +7,6 @@ export PATH=~/.bin:$PATH
 
 # Added local bin to path for binstubs
 export PATH=~/bin:$PATH
-# git-safe bin, see https://thoughtbot.com/blog/git-safe
-export PATH=.git/safe/../../bin:$PATH
 
 # AVM stuff :)
 export PATH=~/.cargo/bin:$PATH
@@ -20,6 +18,7 @@ export PATH=~/go/bin:$PATH
 export PATH=/usr/local/go/bin/:$PATH
 
 export PATH=$HOME/.yarn/bin:$PATH
+export PATH=$HOME/.config/yarn/global/node_modules/.bin:$PATH
 
 export PATH=~/.local/bin:$PATH
 
@@ -29,3 +28,7 @@ fi
 
 # added python paths
 export PATH=~/Library/Python/2.7/bin:$PATH
+
+# git-safe bin, see https://thoughtbot.com/blog/git-safe
+export PATH=.git/safe/../../bin:$PATH
+
