@@ -8,6 +8,7 @@ tilde/config/autostart
 tilde/config/chromium
 tilde/config/configstore/*
 tilde/config/fish/
+tilde/config/flipperdevices.com
 tilde/config/fontforge/
 tilde/config/gh
 tilde/config/git
