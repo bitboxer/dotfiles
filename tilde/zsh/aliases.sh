@@ -127,3 +127,4 @@ if [ -x "$(command -v xdg-open)" ]; then
 fi
 
 alias ls="exa --git"
+alias cop="git add -N .; git diff --name-only | xargs rubocop --fix"
