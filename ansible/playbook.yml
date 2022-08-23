@@ -12,7 +12,7 @@
     node_version: 14.13.0
     terraform_version: 0.11.7 
     go_version: "1.15"
-    neovim_version: 0.4.4
+    neovim_version: 0.7.0
     phantom_version: 2.1.1
     delta_version: 0.12.1
     tmux_version: 3.1b
