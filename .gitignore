@@ -22,6 +22,7 @@ tilde/config/iterm2
 tilde/config/karabiner
 tilde/config/keybase
 tilde/config/mc/*
+tilde/config/neofetch/
 tilde/config/nextjs-nodejs/
 tilde/config/nvim/autoload/plug.vim
 tilde/config/nvim/plugged
