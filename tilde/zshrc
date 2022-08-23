@@ -89,11 +89,11 @@ source ~/.secrets
 
 source ~/.zsh/paths.sh
 
-source <(hcloud completion zsh)
-
 . $HOME/.asdf/asdf.sh
 
 test -e "${HOME}/.asdf/plugins/java/set-java-home.zsh" &&  source "${HOME}/.asdf/plugins/java/set-java-home.zsh"
+
+source <(hcloud completion zsh)
 
 eval "$(mcfly init zsh)"
 
