@@ -104,7 +104,7 @@ let g:airline#extensions#branch#displayed_head_limit = 17
 set laststatus=2
 
 " Color Theme
-Plug 'morhetz/gruvbox'
+Plug 'ellisonleao/gruvbox.nvim'
 
 " Polyglot: A collection of language packs, loaded on demand
 Plug 'sheerun/vim-polyglot'
