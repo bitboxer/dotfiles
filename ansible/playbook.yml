@@ -117,6 +117,8 @@
     - name: Link Dotfiles
       file: path=/home/vagrant/.{{ item }} src=/vagrant/tilde/{{ item }} owner=vagrant group=vagrant state=link
       with_items: "{{ dotfiles.stdout_lines }}"
+    - name: Link neovim
+      file: path=/home/vagrant/.config/nvim/init.vim src=/vagrant/tilde/init.vim owner=vagrant group=vagrant state=link
     - name: Add APT Keys
       apt_key: url="{{ item }}"
       with_items: "{{ apt_keys }}"
