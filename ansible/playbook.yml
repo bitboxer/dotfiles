@@ -112,11 +112,16 @@
       become: true
     - name: Symlink code directory
       file: src=/home/vagrant/persistant/code dest=/home/vagrant/code state=link
-    - shell: ls -1 /vagrant/tilde
+    - shell: ls -1 /vagrant/tilde | grep -v config | grep -v init.vim
       register: dotfiles
     - name: Link Dotfiles
       file: path=/home/vagrant/.{{ item }} src=/vagrant/tilde/{{ item }} owner=vagrant group=vagrant state=link
       with_items: "{{ dotfiles.stdout_lines }}"
+    - shell: ls -1 /vagrant/tilde/config | grep -v init.vim
+      register: configs
+    - name: Link Dotfiles
+      file: path=/home/vagrant/.config/{{ item }} src=/vagrant/tilde/{{ item }} owner=vagrant group=vagrant state=link
+      with_items: "{{configs.stdout_lines }}"
     - name: Link neovim
       file: path=/home/vagrant/.config/nvim/init.vim src=/vagrant/tilde/init.vim owner=vagrant group=vagrant state=link
     - name: Add APT Keys
