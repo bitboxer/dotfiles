@@ -1,6 +1,8 @@
 # Homebrew must be first in PATH
 export PATH=/usr/local/sbin:$PATH
 export PATH=/usr/local/bin:$PATH
+# Faster homebrew installs using the API instead of slow checksums
+export HOMEBREW_INSTALL_FROM_API=1
 
 # scripts from this repo
 export PATH=~/.bin:$PATH
