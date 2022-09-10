@@ -75,3 +75,5 @@
   navigate = true  # use n and N to move between diff sections
   line-numbers = true
   hunk-header-style = omit
+[add "interactive"]
+	useBuiltin = false
