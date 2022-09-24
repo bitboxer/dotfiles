@@ -2,3 +2,4 @@
 ansible/playbook.retry
 tilde/bundle/cache/
 tilde/bundle/ruby/
+tilde/secrets
