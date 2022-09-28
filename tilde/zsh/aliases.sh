@@ -1,5 +1,5 @@
 # Serve local dir via http
-alias servethis='ruby -run -e httpd . -p 5000'
+alias servethis='ruby -run -e httpd . -p 4000'
 
 # Start pry for rails console debugging
 alias pryc='pry -I . -rconfig/environment'
