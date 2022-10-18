@@ -486,7 +486,7 @@ lua <<EOF
 require('nvim-treesitter.configs').setup {
   -- one of "all", "maintained" (parsers with maintainers),
   -- or a list of languages
-  ensure_installed = { "javascript", "ruby", "elixir", "comment", "typescript" },
+  ensure_installed = { "javascript", "ruby", "elixir", "comment", "typescript", "heex" },
   highlight = {
     enable = true
   }
