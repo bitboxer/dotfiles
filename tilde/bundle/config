@@ -1,8 +1,6 @@
 ---
 BUNDLE_JOBS: '3'
 BUNDLE_CONSOLE: pry
-BUNDLE_BUILD__EVENTMACHINE: "--with-cppflags=-I/usr/local/opt/openssl/include"
-BUNDLE_BUILD__PUMA: "--with-cppflags=-I/usr/local/opt/openssl/include"
 BUNDLE_GEM__TEST: rspec
 BUNDLE_GEM__MIT: true
 BUNDLE_GEM__COC: true

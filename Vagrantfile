@@ -11,8 +11,16 @@ Vagrant.configure(2) do |config|
   config.vm.network :forwarded_port, guest: 3035, host: 3035
   config.vm.network :forwarded_port, guest: 4000, host: 4000
 #  config.vm.network :forwarded_port, guest: 5000, host: 5000
+  config.vm.network :forwarded_port, guest: 5010, host: 5010 # Bitgrip Storybook
   config.vm.network :forwarded_port, guest: 6060, host: 6060
   config.vm.network :forwarded_port, guest: 8080, host: 8088
+  config.vm.network :forwarded_port, guest: 8081, host: 8081 # Bitgrip App
+  config.vm.network :forwarded_port, guest: 41945, host: 41945 # Bitgrip Storybook
+  config.vm.network :forwarded_port, guest: 43367, host: 43367 # Bitgrip Storybook
+  config.vm.network :forwarded_port, guest: 35000, host: 35000 # Bitgrip Storybook
+  config.vm.network :forwarded_port, guest: 39207, host: 39207 # Bitgrip Storybook # Bitgrip Storybook
+
+  39207
 
   config.ssh.forward_agent = true
 #  config.ssh.forward_x11 = true
