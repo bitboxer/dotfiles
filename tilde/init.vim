@@ -135,12 +135,7 @@ noremap <Leader>g :GundoToggle<CR>
 " http://vimcasts.org/episodes/search-for-the-selected-text/
 Plug 'nelstrom/vim-visual-star-search'
 
-" Open Markdown files in Marked
-Plug 'itspriddle/vim-marked'
-noremap <leader>m :MarkedOpen<CR>
-let g:marked_app = "Markoff"
-
-" Toggle comment bloccks
+" Toggle comment blocks
 Plug 'scrooloose/nerdcommenter'
 
 " vue files have mixed content, so this
