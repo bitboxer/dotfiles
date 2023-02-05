@@ -19,8 +19,8 @@ provision:
 - mode: user
   script: |
    #!/bin/bash
-   ln -s /mnt/lima-persistant/code ~/code
-   ln -s /mnt/lima-persistant/customers ~/customers
+   [ ! -d ~/code ] && ln -s /mnt/lima-persistant/code ~/code
+   [ ! -d ~/customers ] && ln -s /mnt/lima-persistant/customers ~/customers
    sh /Users/bitboxer/code/dotfiles/bin/setup_all.sh
    EOF
 

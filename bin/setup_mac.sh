@@ -23,7 +23,6 @@ brew analytics off
 
 brew install "${brews[@]}"
 
-
 apps=(
   iterm2
   qlcolorcode
