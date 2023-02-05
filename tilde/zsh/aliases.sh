@@ -118,10 +118,14 @@ alias im="iex -S mix"
 
 shell() {
   cd ~/code/dotfiles || exit
-  limactl_status=$(limactl ls box)
-  if [[ ! $limactl_status == *'Running'* ]]; then
+  if [[ ! -d "$HOME/.lima/box" ]]; then
+    echo "Lima box does not exist, creating it..."
+    limactl start box.yml
+  elif [[ ! $(limactl ls box) == *'Running'* ]]; then
+    echo "Lima box is not running, starting it..."
     limactl start box
   fi
+
   if [[ $(uname -a) =~ 'Linux' ]]; then
     limactl shell box tmux new-session -A -s main
   fi
