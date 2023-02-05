@@ -21,6 +21,6 @@ provision:
    #!/bin/bash
    [ ! -d ~/code ] && ln -s /mnt/lima-persistant/code ~/code
    [ ! -d ~/customers ] && ln -s /mnt/lima-persistant/customers ~/customers
-   sh /Users/bitboxer/code/dotfiles/bin/setup_all.sh
+   sh /Users/bitboxer/code/dotfiles/bin/setup_linux_full.sh
    EOF
 
