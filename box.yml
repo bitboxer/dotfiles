@@ -1,0 +1,26 @@
+images:
+- location: "https://cloud.debian.org/images/cloud/bullseye/20221205-1220/debian-11-generic-amd64-20221205-1220.qcow2"
+  arch: "x86_64"
+  digest: "sha512:25c6f2b5d61b0897077533023cccb05badb2d3fd5adc9ca9071fb8f1fe5ffe682a09f12279ef8013dc5641d20ff16eedc09e3b4657d81bcf455bdb9b4cd8ba54"
+- location: "https://cloud.debian.org/images/cloud/bullseye/20221205-1220/debian-11-generic-arm64-20221205-1220.qcow2"
+  arch: "aarch64"
+  digest: "sha512:9d09c70030bbbc4680f4ada358a2fc3e57f73d37789384a4230d4f374629a3edc04982ac67423e8dc4531cba9abf5f89891a974d51ebc8f48bfc626d4171f09b"
+mounts:
+- location: "~"
+- location: "/tmp/lima"
+  writable: true
+ssh:
+  localPort: 0
+  loadDotSSHPubKeys: true
+  forwardAgent: true
+additionalDisks:
+- persistant
+provision:
+- mode: user
+  script: |
+   #!/bin/bash
+   ln -s /mnt/lima-persistant/code ~/code
+   ln -s /mnt/lima-persistant/customers ~/customers
+   sh /Users/bitboxer/code/dotfiles/bin/setup_all.sh
+   EOF
+

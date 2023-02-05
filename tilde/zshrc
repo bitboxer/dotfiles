@@ -93,6 +93,8 @@ test -e "${HOME}/.asdf/plugins/java/set-java-home.zsh" &&  source "${HOME}/.asdf
 
 source <(hcloud completion zsh)
 
+source <(limactl completion zsh)
+
 # suggestion styling
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#444,underline"
 

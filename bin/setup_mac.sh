@@ -16,6 +16,7 @@ brews=(
   tig
   git-delta
   cantino/mcfly/mcfly
+  lima
 )
 
 brew analytics off

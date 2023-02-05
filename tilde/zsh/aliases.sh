@@ -1,3 +1,4 @@
+#!/bin/bash
 # Serve local dir via http
 alias servethis='ruby -run -e httpd . -p 4000'
 
@@ -11,9 +12,11 @@ alias tlog="tail -f log/development.log"
 # Bundler
 be() {
   if [ -f "bin/$1" ]; then
-    bin/$@
+    cmd="$1"
+    shift
+    "bin/$cmd" "$@"
   else
-    bundle exec $@
+    bundle exec "$@"
   fi
 }
 
@@ -29,15 +32,6 @@ alias j="jump"
 alias vim="nvim"
 alias vi="nvim"
 
-to() {
-  if [[ "$#" > 0 ]]; then
-    gittower $@
-  else
-    gittower `git rev-parse --show-toplevel`
-  fi
-}
-alias gitx='echo "Use tower!!!" && to'
-
 # git
 alias gs='git status'
 alias gd='git diff'
@@ -50,7 +44,9 @@ alias gl='git pull'
 alias gp='git push'
 alias gpf='git pf'
 alias gpb='git push --set-upstream origin HEAD' # Push local branch to remote
-alias gpr='git push --set-upstream origin HEAD && open-pr "$*"' # Push local branch to remote
+gpr() {
+  git push --set-upstream origin HEAD && open-pr "$*" # Push local branch to remote
+}
 alias gpbf='git pf --set-upstream origin HEAD' # Push local branch to remote and force it
 alias gco='echo "use gsw!"; gsw'
 alias gcb='echo "use gswc!"; gswc'
@@ -61,7 +57,10 @@ alias ghpr="gh pr create --fill"
 
 alias changelog='git log `git log -1 --format=%H -- CHANGELOG*`..; cat CHANGELOG*'
 
-alias rb="git rebase --autostash $@"
+rb() {
+  git rebase --autostash "$@"
+}
+
 alias rbc="git rebase --continue"
 alias rba="git rebase --abort"
 
@@ -92,39 +91,44 @@ rbm() {
 }
 
 # Use a function to keep git auto completions
-git() {hub $@}
+git() { 
+  hub "$@"
+}
 
 # docker
-docker_stop_all() { docker stop $(docker ps -aq) }
+docker_stop_all() { 
+  docker stop "$(docker ps -aq)"
+}
 alias docker-cleanup="docker-stop-all && docker system prune --volumes -a"
 
-tmuxssh() { autossh -M 0 -t $@ 'tmux -CC new-session -A -s main' }
+tmuxssh() { 
+  autossh -M 0 -t "$@" 'tmux -CC new-session -A -s main' 
+}
 
 # These tools need admin permission to work
 alias htop="sudo htop"
-alias mtr="sudo mtr $@"
+
+mtr() { 
+  sudo "mtr" "$@" 
+}
 
 alias m="make"
 
 alias im="iex -S mix"
 
 shell() {
-  cd ~/code/dotfiles
-  vagrant_status=$(vagrant status)
-  if [[ ! $vagrant_status =~ 'running' ]]; then
-    vagrant up
+  cd ~/code/dotfiles || exit
+  limactl_status=$(limactl ls box)
+  if [[ ! $limactl_status == *'Running'* ]]; then
+    limactl start box
   fi
   if [[ $(uname -a) =~ 'Linux' ]]; then
-    vagrant ssh -c "tmux new-session -A -s main"
+    limactl shell box tmux new-session -A -s main
   fi
   if [[ $(uname -a) =~ 'Darwin' ]]; then
-    vagrant ssh -c "tmux -CC new-session -A -s main"
+    limactl shell box tmux -CC new-session -A -s main
   fi
 }
-
-if [ -x "$(command -v xdg-open)" ]; then
-  alias open="xdg-open"
-fi
 
 alias ls="exa --git"
 alias cop="git add -N .; git diff --name-only | xargs bundle exec rubocop --fix"
