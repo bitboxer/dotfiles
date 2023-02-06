@@ -21,7 +21,7 @@ sudo apt install -y autoconf automake bat \
        libncurses5-dev libtool libtool-bin meld \
        pkg-config pwgen software-properties-common \
        tig tree unzip wget autossh zsh imagemagick \
-       tmux locales-all hub exa
+       locales-all
 
 if [[ -d "$HOME/.oh-my-zsh" ]]; then
   message "oh-my-zsh already installed, updating"
@@ -56,12 +56,8 @@ else
 fi
 export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 
-if [[ ! -f "/home/linuxbrew/.linuxbrew/bin/mcfly" ]]; then
-  message "Install mcfly"
-  brew install mcfly
-else
-  message "mcfly already installed"
-fi
+message "Install Homebrew packages"
+brew install mcfly delta gh ripgrep exa tmux hub topgrade
 
 message "Set the timezone"
 sudo sh -c "timedatectl set-timezone Europe/Berlin"
@@ -100,6 +96,14 @@ else
   message "Installing fzf"
   git clone https://github.com/junegunn/fzf.git ~/.fzf
   /bin/zsh -c 'source ~/.asdf/asdf.sh && ~/.fzf/install --all --no-update-rc --no-bash --no-fish'
+fi
+
+if [[ ! -d "$HOME/.tmux-yank" ]]; then
+  message "Installing tmux-yank"
+  git clone https://github.com/tmux-plugins/tmux-yank.git "$HOME/.tmux-yank"
+else
+  message "tmux-yank already installed, updating"
+  (cd "$HOME/.tmux-yank" && git pull)
 fi
 
 touch ~/.secrets

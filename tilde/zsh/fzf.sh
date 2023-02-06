@@ -23,7 +23,7 @@ fda() {
 
 # fh - repeat history
 fh() {
-  eval $(history | fzf +s | sed 's/ *[0-9]* *//')
+  eval "$(history | fzf +s | sed 's/ *[0-9]* *//')"
 }
 
 # fkill - kill process
@@ -42,7 +42,7 @@ fbr() {
     echo "$branches" |
     fzf --no-hscroll --no-multi\
     --preview="git --no-pager log --color=always -150 --pretty=format:'%C(green)%ad%C(reset) %C(white bold)%s%C(reset)' --date=relative '..{1}'") || return
-  git switch $(awk '{print $1}' <<<"$target" )
+  git switch "$(awk '{print $1}' <<<"$target" )"
 }
 
 # fco - checkout git commit
