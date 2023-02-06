@@ -16,6 +16,12 @@ ssh:
 additionalDisks:
 - persistant
 provision:
+- mode: system
+  script: |
+   #!/bin/bash
+   fstrim /
+   fstrim /mnt/lima-persistant
+   EOF
 - mode: user
   script: |
    #!/bin/bash

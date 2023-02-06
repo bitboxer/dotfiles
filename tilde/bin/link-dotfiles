@@ -1,0 +1,24 @@
+#!/bin/sh
+# Based on link-dotfiles by Lucas Dohmen, MIT license
+# https://github.com/moonglum/dotfiles/blob/main/tilde/exe/link-dotfiles
+
+# link all provided files as dotfiles in ~
+set -eu
+
+# idempotent ln -s
+ilns() {
+	file_description=$(file -bh "$2")
+  source="$(realpath "$1")"
+
+	if [ "$file_description" = "symbolic link to $source" ]
+	then
+		echo "Already linked correctly: $2"
+	else
+		ln -s "$source" "$2"
+	fi
+}
+
+for file in "$@"
+do
+	ilns "$file" "$HOME/.$(basename "$file")"
+done
