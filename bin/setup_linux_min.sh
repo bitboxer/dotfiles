@@ -57,7 +57,7 @@ fi
 export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 
 message "Install Homebrew packages"
-brew install mcfly delta gh ripgrep exa tmux hub topgrade
+brew install mcfly delta exa
 
 message "Set the timezone"
 sudo sh -c "timedatectl set-timezone Europe/Berlin"
@@ -96,14 +96,6 @@ else
   message "Installing fzf"
   git clone https://github.com/junegunn/fzf.git ~/.fzf
   /bin/zsh -c 'source ~/.asdf/asdf.sh && ~/.fzf/install --all --no-update-rc --no-bash --no-fish'
-fi
-
-if [[ ! -d "$HOME/.tmux-yank" ]]; then
-  message "Installing tmux-yank"
-  git clone https://github.com/tmux-plugins/tmux-yank.git "$HOME/.tmux-yank"
-else
-  message "tmux-yank already installed, updating"
-  (cd "$HOME/.tmux-yank" && git pull)
 fi
 
 touch ~/.secrets
