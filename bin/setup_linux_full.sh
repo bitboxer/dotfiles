@@ -10,9 +10,9 @@ sh "$base_dir/setup_linux_min.sh"
 
 sudo add-apt-repository -y ppa:yt-dlp/stable 
 sudo apt update
-sudo apt install -y postgresql ffmpeg jq yt-dlp
+sudo apt install -y postgresql ffmpeg jq yt-dlp gh
 
-brew install ripgrep tmux hub topgrade
+brew install tmux topgrade
 
 if [[ ! -d "$HOME/.tmux-yank" ]]; then
   message "Installing tmux-yank"

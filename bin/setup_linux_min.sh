@@ -57,7 +57,7 @@ fi
 export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 
 message "Install Homebrew packages"
-brew install mcfly delta exa
+brew install mcfly delta exa ripgrep hub 
 
 message "Set the timezone"
 sudo sh -c "timedatectl set-timezone Europe/Berlin"
