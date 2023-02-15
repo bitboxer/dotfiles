@@ -1,12 +1,12 @@
 # My dotfiles #
 
 This is my dotfiles repo with all the things I need for my day to day work. I
-am developing inside of a vagrant box that is provisioned via ansible. Start it
-via `vagrant up && vagrant ssh`. From time to time I will do a `vagrant
-destroy` to have a clean machine.
+am developing inside of a lima box that is provisioned via shell scripts. Start it
+via `limactl start box.yml && limactl ssh box`. From time to time I will do a
+`limactl stop box && limactl delete box` to have a clean machine.
 
-There is lot of things configured and installed into that vagrant box. For
-details you can look into the [ansible playbook](ansible/playbook.yml) and
+There is lot of things configured and installed into that box. For
+details you can look into the [bin/setup_all.sh](bin/setup_all.sh) and
 the configuration of all the tools inside of the [tilde](tilde) directory.
 
 For my day to day work I am using tmux and neovim together with lots of other
@@ -16,11 +16,6 @@ Javascript and have the tooling optimized for that.
 I have no developer tools installed on my mac, but added a couple of
 apps on my mac to make it my ideal working machine. Most of them can be
 found [in this article](https://thesweetsetup.com/bodo-tasches-mac-iphone-setup/).
-
-## Clipboard ##
-
-To have a clipboard that is shared with the terminal session in my vagrant box
-I am using the X11 protocol. Details for this can be found in [this blogpost](https://bitboxer.de/2017/08/06/ssh-with-clipboard/).
 
 ## Keyboard ##
 
@@ -36,16 +31,9 @@ I have modified my keyboard a bit for my needs.
 
 ## Persistant storage
 
-Vagrant boxes can be thrown away. Everything that I don't want to reinstall
-after I rebuild the box is in another disk image. I am using the
-[vagrant-persistant-storage](https://github.com/kusnier/vagrant-persistent-storage)
-plugin for this.
-
-Install it via
-
-```
-$ vagrant plugin install vagrant-persistent-storage
-```
+Lima boxes can be thrown away. Everything that I don't want to reinstall
+after I rebuild the box is in another disk image. That image is called `persistent`
+and is created with `limactl disk create persistant --size 10g`
 
 ## Thanks ##
 

@@ -1,0 +1,23 @@
+#!/bin/sh
+# Based on link-dotfiles by Lucas Dohmen, MIT license
+# https://github.com/moonglum/dotfiles/blob/main/tilde/exe/link-dotfiles
+
+# link all provided files as dotfiles in ~
+
+set -eu
+
+# idempotent ln -s
+
+for file in "$@"
+do
+  file="$(readlink -e "$file")"
+  item=$(basename "$file")
+	
+  [ "$item" !=  "config" ] && ./ilns "$file" "$HOME/.$(basename "$file")"
+done
+
+for file in "$@/config"
+do
+  file="$(readlink -e "$file")"
+  ./ilns "$file" "$HOME/.config/$(basename "$file")"
+done

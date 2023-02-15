@@ -1,3 +1,5 @@
+#!/bin/sh
+
 # Homebrew must be first in PATH
 export PATH=/usr/local/sbin:$PATH
 export PATH=/usr/local/bin:$PATH
@@ -34,3 +36,6 @@ export PATH=~/Library/Python/2.7/bin:$PATH
 # git-safe bin, see https://thoughtbot.com/blog/git-safe
 export PATH=.git/safe/../../bin:$PATH
 
+if [[ -f "/home/linuxbrew/.linuxbrew/bin/brew" ]]; then
+  export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
+fi

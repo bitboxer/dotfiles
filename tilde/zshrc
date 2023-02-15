@@ -67,22 +67,6 @@ export GPG_TTY=$(tty)
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-if [ ! -e "/etc/is_vagrant_vm" ]; then
-  eval `ssh-agent -s` > /dev/null
-  ssh-add -A 2> /dev/null
-else
-  # SSH sock connected in my tmux session.
-  #
-  # See this answer for why I need this here:
-  # https://unix.stackexchange.com/a/76256/246406
-  SOCK="/tmp/ssh-agent-$USER-screen"
-  if test $SSH_AUTH_SOCK && [ $SSH_AUTH_SOCK != $SOCK ]; then
-    rm -f /tmp/ssh-agent-$USER-screen
-    ln -sf $SSH_AUTH_SOCK $SOCK
-    export SSH_AUTH_SOCK=$SOCK
-  fi
-fi
-
 source ~/.secrets
 
 source ~/.zsh/paths.sh
@@ -91,9 +75,12 @@ source ~/.zsh/paths.sh
 
 test -e "${HOME}/.asdf/plugins/java/set-java-home.zsh" &&  source "${HOME}/.asdf/plugins/java/set-java-home.zsh"
 
-source <(hcloud completion zsh)
+if [ -x "$(command -v limactl)" ]; then
+  source <(limactl completion zsh)
+fi
 
 # suggestion styling
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#444,underline"
 
 eval "$(mcfly init zsh)"
+
