@@ -1,8 +1,12 @@
 #!/bin/bash
 
-echo ""
-echo "-> Setting up ✨ ALL THE THINGS ✨"
-echo ""
+message() {
+  echo ""
+  echo "=> ${1}"
+  echo ""
+}
+
+message "Setting up ✨ ALL THE THINGS ✨"
 
 base_dir="$(dirname "$0")"
 
@@ -10,9 +14,9 @@ base_dir="$(dirname "$0")"
 
 sudo add-apt-repository -y ppa:yt-dlp/stable 
 sudo apt update
-sudo apt install -y tmux postgresql ffmpeg jq yt-dlp gh
+sudo apt install -y tmux postgresql ffmpeg jq yt-dlp gh python3 python3-pip libyaml-dev
 
-brew install topgrade
+brew install topgrade neovim
 
 if [[ ! -d "$HOME/.tmux-yank" ]]; then
   message "Installing tmux-yank"
@@ -22,16 +26,32 @@ else
   (cd "$HOME/.tmux-yank" && git pull)
 fi
 
-# Install:
-# - yarn
-# - node
-# - ruby
-# - bundler
-# - elixir
-# - neovim
+message "Installing neovim"
+mkdir -p "$HOME/.config/nvim"
+mkdir -p "$HOME/.cache/nvim/"
+./tilde/bin/ilns "$(readlink -e "$base_dir"/../tilde/nvim/init.vim)"  "$HOME/.config/nvim/init.vim"
 
-# TODO: set editor to nvim only if nvim is present
+if [ ! -e "$HOME/.config/nvim/autoload/plug.vim" ]; then
+  message "Installing vim-plug"
+  curl -fLo "$HOME/.config/nvim/autoload/plug.vim" --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+fi
+pip3 install neovim
+nvim +PlugInstall +UpdateRemotePlugin +qA
 
-# - command: /bin/zsh -c 'source /home/vagrant/.asdf/asdf.sh && cd ~/ && npm set init-author-name "{{ user_name }}"'
-# - command: /bin/zsh -c 'source /home/vagrant/.asdf/asdf.sh && cd ~/ && npm set init-author-email"{{ email }}"'
-# - command: /bin/zsh -c 'source /home/vagrant/.asdf/asdf.sh && cd ~/ && npm set init-author-url "{{ url }}"'
+asdf install nodejs 18.14.0
+asdf install erlang 25.2
+asdf install elixir 1.14
+asdf install ruby 3.2.1
+
+{ 
+  echo erlang 25.2
+  echo elixir 1.14
+  echo ruby 3.2.1
+  echo nodejs 18.14.0
+} >> ~/.tool-versions
+
+asdf reshim
+
+/bin/zsh -c 'source /home/vagrant/.asdf/asdf.sh && npm install -g yarn'
+/bin/zsh -c 'source /home/vagrant/.asdf/asdf.sh && gem install bundler'

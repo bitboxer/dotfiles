@@ -20,7 +20,7 @@ sudo apt-get install -y autoconf automake bat \
        libncurses5-dev libtool libtool-bin meld \
        pkg-config pwgen software-properties-common \
        tig tree unzip wget autossh zsh imagemagick \
-       locales-all < "/dev/null"
+       locales-all libssl-dev < "/dev/null"
 
 touch "$HOME/.zsh_history"
 
