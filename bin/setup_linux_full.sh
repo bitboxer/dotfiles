@@ -6,13 +6,13 @@ echo ""
 
 base_dir="$(dirname "$0")"
 
-sh "$base_dir/setup_linux_min.sh"
+"$base_dir/setup_linux_min.sh"
 
 sudo add-apt-repository -y ppa:yt-dlp/stable 
 sudo apt update
-sudo apt install -y postgresql ffmpeg jq yt-dlp gh
+sudo apt install -y tmux postgresql ffmpeg jq yt-dlp gh
 
-brew install tmux topgrade
+brew install topgrade
 
 if [[ ! -d "$HOME/.tmux-yank" ]]; then
   message "Installing tmux-yank"

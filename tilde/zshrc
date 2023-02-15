@@ -84,4 +84,3 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#444,underline"
 
 eval "$(mcfly init zsh)"
 
-cd ~/

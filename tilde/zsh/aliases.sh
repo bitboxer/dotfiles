@@ -47,6 +47,9 @@ alias gpb='git push --set-upstream origin HEAD' # Push local branch to remote
 gpr() {
   git push --set-upstream origin HEAD && open-pr "$*" # Push local branch to remote
 }
+gu() {
+  git fetch origin "$1":"$1" # Update branch without checking it out
+}
 alias gpbf='git pf --set-upstream origin HEAD' # Push local branch to remote and force it
 alias gco='echo "use gsw!"; gsw'
 alias gcb='echo "use gswc!"; gswc'
@@ -127,10 +130,10 @@ shell() {
   fi
 
   if [[ $(uname -a) =~ 'Linux' ]]; then
-    limactl shell box tmux new-session -A -s main
+    limactl shell --workdir="/home/$USER.linux" --shell="/usr/bin/zsh" box SHELL=/usr/bin/zsh tmux new-session -A -s main
   fi
   if [[ $(uname -a) =~ 'Darwin' ]]; then
-    limactl shell box tmux -CC new-session -A -s main
+    limactl shell --workdir="/home/$USER.linux" --shell="/usr/bin/zsh" box SHELL=/usr/bin/zsh tmux -CC new-session -A -s main
   fi
 }
 

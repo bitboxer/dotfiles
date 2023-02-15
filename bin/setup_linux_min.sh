@@ -8,20 +8,21 @@ message() {
 
 message "Linking dotfiles"
 
-# for name in ; do [ "$name" != foo.org ] && rm -- "$name"; done
-# "$(dirname "$0")/../tilde/bin/link-dotfiles" "$(dirname "$0")"/../tilde/*
+"$(dirname "$0")/../tilde/bin/link-dotfiles" "$(dirname "$0")"/../tilde/*
 
 message "Installing apt packages"
 
-sudo apt update
-sudo apt install -y autoconf automake bat \
+sudo apt-get update
+sudo apt-get install -y autoconf automake bat \
        build-essential cmake curl dirmngr \
        g++ gettext git git-crypt gnupg-agent \
        gnupg2 gpg grc htop inotify-tools libevent-dev \
        libncurses5-dev libtool libtool-bin meld \
        pkg-config pwgen software-properties-common \
        tig tree unzip wget autossh zsh imagemagick \
-       locales-all
+       locales-all < "/dev/null"
+
+touch "$HOME/.zsh_history"
 
 if [[ -d "$HOME/.oh-my-zsh" ]]; then
   message "oh-my-zsh already installed, updating"
