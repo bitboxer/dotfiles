@@ -103,7 +103,7 @@ let g:airline#extensions#branch#displayed_head_limit = 17
 set laststatus=2
 
 " Color Theme
-Plug 'ellisonleao/gruvbox.nvim'
+Plug 'Mofiqul/dracula.nvim'
 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
@@ -346,7 +346,7 @@ call plug#end()
 
 " colorscheme Tomorrow-Night-Bright
 set background=dark
-colorscheme gruvbox
+colorscheme dracula
 
 " Show invisible characters:
 " Tabs and trailing whitespace
