@@ -12,8 +12,8 @@ brews=(
   ansible
   tmux
   wifi-password
-  topgrade
   tig
+  topgrade
   git-delta
   cantino/mcfly/mcfly
   lima
