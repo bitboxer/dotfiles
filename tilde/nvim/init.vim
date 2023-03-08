@@ -55,7 +55,7 @@ set title
 set diffopt=vertical,filler
 autocmd FileType git set nofoldenable
 
-call plug#begin('~/.nvim/plugged')
+call plug#begin('~/.nvimconfig/plugged')
 
 " CtrlP: Full path fuzzy finder
 Plug 'ctrlpvim/ctrlp.vim'

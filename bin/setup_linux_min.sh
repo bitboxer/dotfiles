@@ -8,12 +8,12 @@ message() {
 
 message "Linking dotfiles"
 
-"$(dirname "$0")/../tilde/bin/link-dotfiles" "$(dirname "$0")"/../tilde/*
+"$(dirname "$0")/../tilde/bin/link-dotfiles" "$(dirname "$0")"/../tilde
 
 message "Installing apt packages"
 
 sudo apt-get update
-sudo apt-get install -y autoconf automake bat \
+sudo apt-get install -y autoconf automake \
        build-essential cmake curl dirmngr \
        g++ gettext git git-crypt gnupg-agent \
        gnupg2 gpg grc htop inotify-tools libevent-dev \
@@ -58,7 +58,7 @@ fi
 export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 
 message "Install Homebrew packages"
-brew install mcfly delta exa ripgrep hub 
+brew install mcfly delta exa ripgrep hub bat
 
 message "Set the timezone"
 sudo sh -c "timedatectl set-timezone Europe/Berlin"

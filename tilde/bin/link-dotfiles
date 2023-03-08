@@ -7,17 +7,17 @@
 set -eu
 
 # idempotent ln -s
-
-for file in "$@"
+#
+for file in "$1"/*
 do
   file="$(readlink -e "$file")"
   item=$(basename "$file")
 	
-  [ "$item" !=  "config" ] && ./ilns "$file" "$HOME/.$(basename "$file")"
+  [ "$item" !=  "config" ] && $(dirname "$0")/ilns "$file" "$HOME/.$(basename "$file")"
 done
 
-for file in "$@/config"
+for file in "$1"/config/*
 do
   file="$(readlink -e "$file")"
-  ./ilns "$file" "$HOME/.config/$(basename "$file")"
+  $(dirname "$0")/ilns "$file" "$HOME/.config/$(basename "$file")"
 done
