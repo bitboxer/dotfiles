@@ -69,8 +69,6 @@ export GPG_TTY=$(tty)
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-source ~/.secrets
-
 source ~/.zsh/paths.sh
 
 . $HOME/.asdf/asdf.sh
@@ -86,3 +84,4 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#444,underline"
 
 eval "$(mcfly init zsh)"
 
+source ~/.secrets
