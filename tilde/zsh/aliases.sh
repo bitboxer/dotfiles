@@ -57,6 +57,7 @@ alias gsw='git switch'
 alias gswc='git switch -c'
 alias glc='git log -1 --pretty=%B | tr -d "\n" | pbcopy' # Last git commit message to clipboard
 alias ghpr="gh pr create --fill"
+alias gst='git stash -u' # stash all files, even untracked ones
 
 alias changelog='git log `git log -1 --format=%H -- CHANGELOG*`..; cat CHANGELOG*'
 
@@ -126,6 +127,7 @@ shell() {
     limactl start box.yml
   elif [[ ! $(limactl ls box) == *'Running'* ]]; then
     echo "Lima box is not running, starting it..."
+    limactl disk unlock persistant
     limactl start box
   fi
 
