@@ -1,7 +1,7 @@
-local usbLogger = hs.logger.new('usb', 'debug')
+local logger = hs.logger.new('init script', 'debug')
 
 function isExternalKeyboard(usbDevice)
-    -- usbLogger.df("pname %s, vname %s, vId %s, pId %s", usbDevice.productName, usbDevice.vendorName, usbDevice.vendorID, usbDevice.productID)
+    -- logger.df("pname %s, vname %s, vId %s, pId %s", usbDevice.productName, usbDevice.vendorName, usbDevice.vendorID, usbDevice.productID)
     return usbDevice.vendorID == 12951 and usbDevice.productID == 6505
 end
 
@@ -62,3 +62,12 @@ end
 
 wifiWatcher = hs.wifi.watcher.new(ssidChangedCallback)
 wifiWatcher:start()
+
+function wakeUpCallback(event)
+    if (event == hs.caffeinate.watcher.screensDidUnlock) then
+        ssidChangedCallback()
+    end
+end
+
+wakeUpWatcher = hs.caffeinate.watcher.new(wakeUpCallback)
+wakeUpWatcher:start()
