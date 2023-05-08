@@ -6,7 +6,6 @@ if [[ ! "$OSTYPE" =~ ^darwin ]]; then
 fi
 
 brew tap caskroom/cask
-brew tap cantino/mcfly
 
 brews=(
   ansible
@@ -15,7 +14,6 @@ brews=(
   tig
   topgrade
   git-delta
-  cantino/mcfly/mcfly
   lima
 )
 
@@ -42,3 +40,6 @@ apps=(
 )
 
 brew cask install "${apps[@]}"
+
+bash <(curl https://raw.githubusercontent.com/ellie/atuin/main/install.sh)
+atuin import auto

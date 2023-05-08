@@ -58,7 +58,7 @@ fi
 export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 
 message "Install Homebrew packages"
-brew install mcfly git-delta exa ripgrep hub bat
+brew install git-delta exa ripgrep hub bat
 
 message "Set the timezone"
 sudo sh -c "timedatectl set-timezone Europe/Berlin"
@@ -98,5 +98,8 @@ else
   git clone https://github.com/junegunn/fzf.git ~/.fzf
   /bin/zsh -c 'source ~/.asdf/asdf.sh && ~/.fzf/install --all --no-update-rc --no-bash --no-fish'
 fi
+
+bash <(curl https://raw.githubusercontent.com/ellie/atuin/main/install.sh)
+atuin import auto
 
 touch ~/.secrets

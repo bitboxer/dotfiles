@@ -82,6 +82,6 @@ fi
 # suggestion styling
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#444,underline"
 
-eval "$(mcfly init zsh)"
+eval "$(atuin init zsh)"
 
 source ~/.secrets
