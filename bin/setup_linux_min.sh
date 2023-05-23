@@ -99,7 +99,9 @@ else
   /bin/zsh -c 'source ~/.asdf/asdf.sh && ~/.fzf/install --all --no-update-rc --no-bash --no-fish'
 fi
 
-bash <(curl https://raw.githubusercontent.com/ellie/atuin/main/install.sh)
-atuin import auto
+if ! [ -x "$(command -v atuin)" ]; then
+  bash <(curl https://raw.githubusercontent.com/ellie/atuin/main/install.sh)
+  atuin import auto
+fi
 
 touch ~/.secrets
