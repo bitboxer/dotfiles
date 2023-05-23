@@ -7,9 +7,11 @@ end
 
 function configureKeyboard(event)
     if isExternalKeyboard(event) and event.eventType == "added" then
+        logger.log("Setting US keyboard after plugging in")
         hs.keycodes.setLayout("U.S.")
     end
     if isExternalKeyboard(event) and event.eventType == "removed" then
+        logger.log("Setting German keyboard after plugging in")
         hs.keycodes.setLayout("Deutsch (Programmieren)")
     end
 end
@@ -27,12 +29,14 @@ function checkKeyboardOnWakeup(event)
                 keyboardLayout = "U.S."
             end
         end
+        logger.log("Keyboard set after wake up")
+        logger.log(keyboardLayout)
         hs.keycodes.setLayout(keyboardLayout)
     end
 end
 
 function string.starts(String, Start)
-    return string.sub(String, 1, string.len(Start)) == Start
+    return string.sub(String or "", 1, string.len(Start)) == Start
 end
 
 local keyboardWatcher = hs.usb.watcher.new(configureKeyboard)
@@ -48,11 +52,17 @@ lastSSID = hs.wifi.currentNetwork()
 function ssidChangedCallback()
     newSSID = hs.wifi.currentNetwork()
 
-    if string.starts(newSSID, homeSSID) and string.starts(lastSSID, homeSSID) then
+    logger.log("SSIDs")
+    logger.log(lastSSID)
+    logger.log(newSSID)
+    logger.log(string.starts(newSSID, homeSSID))
+    if (string.starts(newSSID, homeSSID) and not string.starts(lastSSID, homeSSID)) then
         -- We just joined our home WiFi network
+        logger.log("--> Home SSID")
         hs.network.configuration.open():setLocation("Home")
-    elseif newSSID ~= homeSSID and lastSSID == homeSSID then
+    elseif not string.starts(newSSID, homeSSID) and string.starts(lastSSID, homeSSID) then
         -- We just departed our home WiFi network
+        logger.log("--> Other SSID")
         hs.audiodevice.defaultOutputDevice():setVolume(0)
         hs.network.configuration.open():setLocation("Automatic")
     end
@@ -71,3 +81,12 @@ end
 
 wakeUpWatcher = hs.caffeinate.watcher.new(wakeUpCallback)
 wakeUpWatcher:start()
+
+hs.hotkey.bind({"left_ctrl"}, "f16", function()
+  hs.application.open('iTerm.app')
+end)
+
+hs.hotkey.bind({"left_ctrl"}, "f17", function()
+  hs.application.open('Visual Studio Code.app')
+end)
+
