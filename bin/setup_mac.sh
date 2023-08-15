@@ -15,6 +15,7 @@ brews=(
   topgrade
   git-delta
   lima
+  difftastic
 )
 
 brew analytics off

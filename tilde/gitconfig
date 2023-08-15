@@ -49,6 +49,7 @@
 [diff]
   compactionHeuristic = true
 	colorMoved = default
+	external = difft
 
 [commit]
   gpgsign = true
