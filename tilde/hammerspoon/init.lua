@@ -56,11 +56,11 @@ function ssidChangedCallback()
     logger.log(lastSSID)
     logger.log(newSSID)
     logger.log(string.starts(newSSID, homeSSID))
-    if (string.starts(newSSID, homeSSID) and not string.starts(lastSSID, homeSSID)) then
+    if (string.starts(newSSID, homeSSID) and (lastSSID == nil or not string.starts(lastSSID, homeSSID))) then
         -- We just joined our home WiFi network
         logger.log("--> Home SSID")
         hs.network.configuration.open():setLocation("Home")
-    elseif not string.starts(newSSID, homeSSID) and string.starts(lastSSID, homeSSID) then
+    elseif not string.starts(newSSID, homeSSID) and (lastSSID == nil or string.starts(lastSSID, homeSSID)) then
         -- We just departed our home WiFi network
         logger.log("--> Other SSID")
         hs.audiodevice.defaultOutputDevice():setVolume(0)
@@ -83,10 +83,10 @@ wakeUpWatcher = hs.caffeinate.watcher.new(wakeUpCallback)
 wakeUpWatcher:start()
 
 hs.hotkey.bind({"left_ctrl"}, "f16", function()
-  hs.application.open('iTerm.app')
+    hs.application.open('iTerm.app')
 end)
 
 hs.hotkey.bind({"left_ctrl"}, "f17", function()
-  hs.application.open('Visual Studio Code.app')
+    hs.application.open('Visual Studio Code.app')
 end)
 
