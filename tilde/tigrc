@@ -91,3 +91,6 @@ color   tree.directory         221     default
 #   LINE(PALETTE_4, "", COLOR_DEFAULT, COLOR_DEFAULT, 0), \
 #   LINE(PALETTE_5, "", COLOR_WHITE, COLOR_DEFAULT, 0), \
 #   LINE(PALETTE_6, "", COLOR_RED, )
+
+# Open git diff
+bind generic d >sh -c "DELTA_PAGER='less -RKc' git show %(commit)"
