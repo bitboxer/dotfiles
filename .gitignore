@@ -5,6 +5,7 @@ tilde/secrets
 tilde/nvim/Ditto/dittofile.txt
 
 # rerun will later be added via install script
-tilde/bin/rerun 
+tilde/bin/rerun
+tilde/bin/kepubify
 
 playbook.yml_old
