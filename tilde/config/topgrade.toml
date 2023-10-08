@@ -1,8 +1,9 @@
+[misc]
 # Don't ask for confirmations
 #assume_yes = true
 
 # Disable specific steps - same options as the command line flag
-disable = ["node"]
+disable = ["node", "pnpm", "shell"]
 
 # Ignore failures for these steps
 #ignore_failures = ["powershell"]
@@ -11,8 +12,8 @@ disable = ["node"]
 #only = ["system", "emacs"]
 
 # Do not ask to retry failed steps (default: false)
-#no_retry = true
 
+#no_retry = true
 # Run inside tmux
 #run_in_tmux = true
 
@@ -58,6 +59,8 @@ disable = ["node"]
 # Custom commands
 [commands]
 "Git Completions" = "curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.zsh > ~/code/dotfiles/tilde/zsh/completions/git-completion.zsh"
+"Custom oh-my-zsh" = "zsh -c 'cd ~/.oh-my-zsh/tools; ./upgrade.sh'"
+"Custom antibody"= "antibody update"
 
 [brew]
 #greedy_cask = true
