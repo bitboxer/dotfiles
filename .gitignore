@@ -3,6 +3,7 @@ tilde/bundle/cache/
 tilde/bundle/ruby/
 tilde/secrets
 tilde/nvim/Ditto/dittofile.txt
+tilde/nvim/autoload/
 
 # rerun will later be added via install script
 tilde/bin/rerun

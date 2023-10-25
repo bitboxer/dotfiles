@@ -51,8 +51,10 @@ source $ZSH/oh-my-zsh.sh
 
 export EDITOR=nvim
 
-source <(antibody init)
-antibody bundle < ~/.zsh/bundles.txt
+source $HOMEBREW_PREFIX/opt/antidote/share/antidote/antidote.zsh
+
+source <(antidote init)
+antidote bundle < ~/.zsh/bundles.txt
 
 export ZSH_PLUGINS_ALIAS_TIPS_TEXT="💡 Alias tip: "
 

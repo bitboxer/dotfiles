@@ -6,18 +6,28 @@
 
 set -eu
 
+getPath() {
+  if ! command -v realpath &> /dev/null
+  then 
+     readlink -e "$1"
+  else
+    realpath "$1"
+  fi
+}
+
 # idempotent ln -s
 #
 for file in "$1"/*
 do
-  file="$(readlink -e "$file")"
+  file="$(getPath "$file")"
   item=$(basename "$file")
-	
+
   [ "$item" !=  "config" ] && $(dirname "$0")/ilns "$file" "$HOME/.$(basename "$file")"
 done
 
 for file in "$1"/config/*
 do
-  file="$(readlink -e "$file")"
+  file="$(getPath "$file")"
   $(dirname "$0")/ilns "$file" "$HOME/.config/$(basename "$file")"
 done
+

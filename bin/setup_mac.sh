@@ -5,7 +5,7 @@ if [[ ! "$OSTYPE" =~ ^darwin ]]; then
   exit 1
 fi
 
-brew tap caskroom/cask
+brew tap homebrew/cask
 
 brews=(
   ansible
@@ -16,6 +16,7 @@ brews=(
   git-delta
   lima
   difftastic
+  antidote
 )
 
 brew analytics off
