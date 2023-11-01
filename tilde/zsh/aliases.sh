@@ -115,10 +115,6 @@ tmuxssh() {
 # These tools need admin permission to work
 alias htop="sudo htop"
 
-mtr() { 
-  sudo "mtr" "$@" 
-}
-
 alias m="make"
 
 alias im="iex -S mix"
