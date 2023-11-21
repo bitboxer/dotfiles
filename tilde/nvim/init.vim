@@ -532,10 +532,6 @@ local lsp_flags = {
   -- This is the default in Nvim 0.7+
   debounce_text_changes = 150,
 }
-require('lspconfig')['elixirls'].setup{
-    on_attach = on_attach,
-    flags = lsp_flags,
-}
 require('lspconfig')['pyright'].setup{
     on_attach = on_attach,
     flags = lsp_flags,
@@ -552,5 +548,30 @@ require('lspconfig')['rust_analyzer'].setup{
       ["rust-analyzer"] = {}
     }
 }
+
+local lspconfig = require("lspconfig")
+local configs = require("lspconfig.configs")
+
+local lexical_config = {
+  filetypes = { "elixir", "eelixir", "heex" },
+  cmd = { vim.fn.expand("~/code/lexical/_build/dev/package/lexical/bin/start_lexical.sh") },
+  settings = {},
+}
+
+if not configs.lexical then
+  configs.lexical = {
+    default_config = {
+      filetypes = lexical_config.filetypes,
+      cmd = lexical_config.cmd,
+      root_dir = function(fname)
+        return lspconfig.util.root_pattern("mix.exs", ".git")(fname) or vim.loop.os_homedir()
+      end,
+      -- optional settings
+      settings = lexical_config.settings,
+    },
+  }
+end
+
+lspconfig.lexical.setup({})
 EOF
 

@@ -51,7 +51,7 @@ source $ZSH/oh-my-zsh.sh
 
 export EDITOR=nvim
 
-source $HOMEBREW_PREFIX/opt/antidote/share/antidote/antidote.zsh
+source /usr/local/opt/antidote/share/antidote/antidote.zsh
 
 source <(antidote init)
 antidote bundle < ~/.zsh/bundles.txt
