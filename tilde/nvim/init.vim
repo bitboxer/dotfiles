@@ -272,7 +272,7 @@ function! DoRemote(arg)
   UpdateRemotePlugins
 endfunction
 
-Plug 'williamboman/nvim-lsp-installer'
+Plug 'williamboman/mason.nvim'
 Plug 'neovim/nvim-lspconfig'
 
 " **[ experimental area - start ]************************************
@@ -487,9 +487,7 @@ require('nvim-treesitter.configs').setup {
   }
 }
 
-require('nvim-lsp-installer').setup {
-  automatic_installation = true
-}
+require("mason").setup()
 
 -- Actually setup the language servers so that they're available for
 -- our LSP client. I'm mainly working with Ruby and JS, so I'm configuring
