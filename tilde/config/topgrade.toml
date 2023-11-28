@@ -60,7 +60,7 @@ disable = ["node", "pnpm", "shell"]
 [commands]
 "Git Completions" = "curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.zsh > ~/code/dotfiles/tilde/zsh/completions/git-completion.zsh"
 "Custom oh-my-zsh" = "zsh -c 'cd ~/.oh-my-zsh/tools; ./upgrade.sh'"
-"Custom antidote"= "antidote update"
+"Custom antidote"= "source ~/.zshrc && antidote update"
 
 [brew]
 #greedy_cask = true
