@@ -13,9 +13,11 @@ end
 
 
 function configureKeyboard(event)
+    logger.log("usb event")
+    logger.log(event.eventType)
+
     if isExternalKeyboard(event) then
         logger.log("External keyboard")
-        logger.log(event.eventType)
     end
     if isExternalKeyboard(event) and event.eventType == "added" then
         logger.log("Setting US keyboard after plugging in")
@@ -79,14 +81,12 @@ function ssidChangedCallback()
         hs.network.configuration.open():setLocation("Automatic")
     end
 
-    if (string.starts(newSSID, workSSID)) then
-        if isExternalKeyboardPresent() then
-          logger.log("Setting US keyboard because of work SSID")
-          hs.keycodes.setLayout("U.S.")
-        end
+    if isExternalKeyboardPresent() then
+      logger.log("Setting US keyboard because detected keyboard")
+      hs.keycodes.setLayout("U.S.")
     else
-        logger.log("Setting German keyboard because of not work SSID")
-        hs.keycodes.setLayout("Deutsch (Programmieren)")
+      logger.log("Setting DE keyboard because did not detect keyboard")
+      hs.keycodes.setLayout("Deutsch (Programmieren)")
     end
 
     lastSSID = newSSID
