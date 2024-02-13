@@ -139,5 +139,5 @@ shell() {
   fi
 }
 
-alias ls="exa --git"
+alias ls="eza --git"
 alias cop="git add -N .; git diff --name-only | xargs bundle exec rubocop --fix"
