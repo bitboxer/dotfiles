@@ -6,11 +6,10 @@ function isExternalKeyboard(usbDevice)
 end
 
 function isExternalKeyboardPresent()
-  return hs.fnutils.some(hs.usb.attachedDevices(), function(device)
-    return isExternalKeyboard(device)
-  end)
+    return hs.fnutils.some(hs.usb.attachedDevices(), function(device)
+        return isExternalKeyboard(device)
+    end)
 end
-
 
 function configureKeyboard(event)
     logger.log("usb event")
@@ -82,11 +81,11 @@ function ssidChangedCallback()
     end
 
     if isExternalKeyboardPresent() then
-      logger.log("Setting US keyboard because detected keyboard")
-      hs.keycodes.setLayout("U.S.")
+        logger.log("Setting US keyboard because detected keyboard")
+        hs.keycodes.setLayout("U.S.")
     else
-      logger.log("Setting DE keyboard because did not detect keyboard")
-      hs.keycodes.setLayout("Deutsch (Programmieren)")
+        logger.log("Setting DE keyboard because did not detect keyboard")
+        hs.keycodes.setLayout("Deutsch (Programmieren)")
     end
 
     lastSSID = newSSID
@@ -112,3 +111,11 @@ hs.hotkey.bind({"left_ctrl"}, "f17", function()
     hs.application.open('Visual Studio Code.app')
 end)
 
+function toggleMute()
+    local teams = hs.application.find("com.microsoft.teams")
+    if not (teams == null) then
+        hs.eventtap.keyStroke({"cmd", "shift"}, "m", 0, teams)
+    end
+end
+
+hs.hotkey.bind({"left_ctrl"}, "f18", "Muted / Unmuted", toggleMute)
