@@ -4,6 +4,8 @@ tilde/bundle/ruby/
 tilde/secrets
 tilde/nvim/Ditto/dittofile.txt
 tilde/nvim/autoload/
+tilde/config/karabiner/assets/
+tilde/config/karabiner/automatic_backups/
 
 # rerun will later be added via install script
 tilde/bin/rerun
