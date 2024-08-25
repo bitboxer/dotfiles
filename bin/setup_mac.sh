@@ -17,6 +17,7 @@ brews=(
   lima
   difftastic
   antidote
+  lazygit
 )
 
 brew analytics off

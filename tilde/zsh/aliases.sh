@@ -74,43 +74,45 @@ alias rba="git rebase --abort"
 
 gswm() {
   if [[ $(git branch --list master) ]]; then
-      echo '*********************************************';
-      echo '* Consider renaming master branch to main ! *';
-      echo '*********************************************';
-      git switch master
+    echo '*********************************************'
+    echo '* Consider renaming master branch to main ! *'
+    echo '*********************************************'
+    git switch master
   elif [[ $(git branch --list main) ]]; then
-      git switch main
+    git switch main
   else
-      git switch develop
+    git switch develop
   fi
 }
 
 rbm() {
   if [[ $(git branch --list master) ]]; then
-      echo '*********************************************';
-      echo '* Consider renaming master branch to main ! *';
-      echo '*********************************************';
-      git rebase master -i --autostash
+    echo '*********************************************'
+    echo '* Consider renaming master branch to main ! *'
+    echo '*********************************************'
+    git rebase master -i --autostash
   elif [[ $(git branch --list main) ]]; then
-      git rebase main -i --autostash
+    git rebase main -i --autostash
   else
-      git rebase develop -i --autostash
+    git rebase develop -i --autostash
   fi
 }
 
 # Use a function to keep git auto completions
-git() { 
+git() {
   hub "$@"
 }
 
+alias lg="lazygit"
+
 # docker
-docker_stop_all() { 
+docker_stop_all() {
   docker stop "$(docker ps -aq)"
 }
 alias docker-cleanup="docker-stop-all && docker system prune --volumes -a"
 
-tmuxssh() { 
-  autossh -M 0 -t "$@" 'tmux -CC new-session -A -s main' 
+tmuxssh() {
+  autossh -M 0 -t "$@" 'tmux -CC new-session -A -s main'
 }
 
 # These tools need admin permission to work
