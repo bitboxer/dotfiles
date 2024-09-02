@@ -8,7 +8,6 @@
     "lazyvim.plugins.extras.lang.elixir",
     "lazyvim.plugins.extras.lang.json",
     "lazyvim.plugins.extras.lang.markdown",
-    "lazyvim.plugins.extras.lang.ruby",
     "lazyvim.plugins.extras.lang.sql",
     "lazyvim.plugins.extras.lang.svelte",
     "lazyvim.plugins.extras.lang.tailwind",
@@ -24,3 +23,4 @@
   },
   "version": 6
 }
+
