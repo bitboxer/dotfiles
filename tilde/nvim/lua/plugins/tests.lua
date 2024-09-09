@@ -3,7 +3,7 @@ return {
   {
     "nvim-neotest/neotest",
     opts = {
-      adapters = { "neotest-jest", "neotest-vitest", "neotest-elixir" },
+      adapters = { "neotest-jest", "neotest-elixir" },
     },
     requires = { "haydenmeade/neotest-jest", "jfpedroza/neotest-elixir" },
   },
