@@ -73,7 +73,7 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 source ~/.zsh/paths.sh
 
-. $HOME/.asdf/asdf.sh
+source /usr/local/opt/asdf/libexec/asdf.sh
 
 test -e "${HOME}/.asdf/plugins/java/set-java-home.zsh" &&  source "${HOME}/.asdf/plugins/java/set-java-home.zsh"
 
