@@ -1,6 +1,7 @@
 Application.put_env(:elixir, :ansi_enabled, true)
 
 IEx.configure(
+  auto_reload: true,
   colors: [
     syntax_colors: [
       number: :light_yellow,
