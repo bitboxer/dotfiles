@@ -4,3 +4,5 @@
 vim.g.mapleader = ","
 vim.opt.relativenumber = false
 vim.opt.spelllang = { "en", "de" }
+
+vim.g.snacks_animate = false
