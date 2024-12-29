@@ -1,5 +1,8 @@
 font-size = 16
+
 cursor-style = block
+cursor-style-blink = false
+shell-integration-features = no-cursor
 
 keybind = all:super+shift+[=goto_split:previous
 keybind = all:super+shift+]=goto_split:next
