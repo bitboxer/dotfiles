@@ -1,4 +1,5 @@
-font-size = 16
+font-family = "Hasklug Nerd Font"
+font-size = 18
 
 cursor-style = block
 cursor-style-blink = false
@@ -8,3 +9,5 @@ keybind = all:super+shift+[=goto_split:previous
 keybind = all:super+shift+]=goto_split:next
 keybind = super+]=next_tab
 keybind = super+[=previous_tab
+
+keybind = super+f=write_screen_file:open
