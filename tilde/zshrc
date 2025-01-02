@@ -73,7 +73,7 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 source ~/.zsh/paths.sh
 
-source /usr/local/opt/asdf/libexec/asdf.sh
+source /opt/homebrew/opt/asdf/libexec/asdf.sh
 
 test -e "${HOME}/.asdf/plugins/java/set-java-home.zsh" &&  source "${HOME}/.asdf/plugins/java/set-java-home.zsh"
 
@@ -87,3 +87,10 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#444,underline"
 eval "$(atuin init zsh --disable-up-arrow)"
 
 source ~/.secrets
+
+# bun completions
+[ -s "${HOME}/.bun/_bun" ] && source "${HOME}/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
