@@ -4,6 +4,7 @@ tilde/bundle/ruby/
 tilde/secrets
 tilde/nvim/Ditto/dittofile.txt
 tilde/nvim/autoload/
+tilde/nvim/spell/
 tilde/config/karabiner/assets/
 tilde/config/karabiner/automatic_backups/
 
