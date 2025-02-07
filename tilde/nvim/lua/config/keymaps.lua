@@ -4,8 +4,7 @@
 local map = LazyVim.safe_keymap_set
 
 vim.keymap.set("n", "<C-p>", function()
-  -- require("telescope.builtin").find_files()
-  require("fzf-lua").files()
+  Snacks.picker.files()
 end, { desc = "Find files" })
 
 vim.keymap.set("n", "<leader>ghm", function()
