@@ -21,6 +21,8 @@
   editor = nvim
 	attributesfile = ~/.gitattributes
   pager = delta
+	fsmonitor = true
+	untrackedCache = true
 
 [apply]
   whitespace = nowarn
@@ -35,6 +37,7 @@
 [push]
   default = simple
 	autoSetupRemote = true
+	followTags = true
 
 [tig]
   line-graphics = "utf-8"
@@ -43,12 +46,17 @@
   check = true
 
 [rebase]
-  autosquash = true
+	autoSquash = true
+	autoStash = true
+	updateRefs = true
 
 [diff]
   compactionHeuristic = true
-	colorMoved = default
+	colorMoved = plain
 	external = difft
+	algorithm = histogram
+	mnemonicPrefix = true
+	renames = true
 
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
@@ -58,6 +66,7 @@
 	trustExitCode = true
 [pull]
 	ff = only
+	rebase = true
 
 [init]
   templateDir = ~/.git/template/
@@ -74,3 +83,19 @@
 	useBuiltin = false
 [commit]
 	template = /Users/bitboxer/.stCommitMsg
+	verbose = true
+[column]
+	ui = auto
+[branch]
+	sort = -committerdate
+[tag]
+	sort = version:refname
+[fetch]
+	prune = true
+	pruneTags = true
+	all = true
+[help]
+	autocorrect = prompt
+[rerere]
+	enabled = true
+	autoupdate = true
