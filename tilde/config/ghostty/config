@@ -6,7 +6,7 @@ cursor-style = block
 cursor-style-blink = false
 shell-integration-features = no-cursor
 
-macos-titlebar-style = tabs
+macos-titlebar-style = native
 bold-is-bright = true
 
 keybind = all:super+shift+[=goto_split:previous
