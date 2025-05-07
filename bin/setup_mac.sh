@@ -14,7 +14,6 @@ brews=(
   tig
   topgrade
   git-delta
-  lima
   difftastic
   antidote
   lazygit

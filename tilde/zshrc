@@ -75,10 +75,6 @@ source ~/.zsh/paths.sh
 
 test -e "${HOME}/.asdf/plugins/java/set-java-home.zsh" &&  source "${HOME}/.asdf/plugins/java/set-java-home.zsh"
 
-if [ -x "$(command -v limactl)" ]; then
-  source <(limactl completion zsh)
-fi
-
 # suggestion styling
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#444,underline"
 

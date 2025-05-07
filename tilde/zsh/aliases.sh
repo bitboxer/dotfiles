@@ -122,24 +122,5 @@ alias m="make"
 
 alias im="iex -S mix"
 
-shell() {
-  cd ~/code/dotfiles || exit
-  if [[ ! -d "$HOME/.lima/box" ]]; then
-    echo "Lima box does not exist, creating it..."
-    limactl start box.yml
-  elif [[ ! $(limactl ls box) == *'Running'* ]]; then
-    echo "Lima box is not running, starting it..."
-    limactl disk unlock persistant
-    limactl start box
-  fi
-
-  if [[ $(uname -a) =~ 'Linux' ]]; then
-    limactl shell --workdir="/home/$USER.linux" --shell="/usr/bin/zsh" box SHELL=/usr/bin/zsh tmux new-session -A -s main
-  fi
-  if [[ $(uname -a) =~ 'Darwin' ]]; then
-    limactl shell --workdir="/home/$USER.linux" --shell="/usr/bin/zsh" box SHELL=/usr/bin/zsh tmux -CC new-session -A -s main
-  fi
-}
-
 alias ls="eza --git"
 alias cop="git add -N .; git diff --name-only | xargs bundle exec rubocop --fix"
