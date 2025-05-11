@@ -15,3 +15,5 @@ keybind = super+]=next_tab
 keybind = super+[=previous_tab
 
 keybind = super+f=write_screen_file:open
+
+macos-option-as-alt = false
