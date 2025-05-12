@@ -38,10 +38,9 @@ disable = ["node", "pnpm", "shell", "asdf", "gem", "ruby_gems"]
 [git]
 #max_concurrency = 5
 # Additional git repositories to pull
-#repos = [
-#    "~/src/*/",
-#    "~/.config/something"
-#]
+repos = [
+   "~/code/textfox",
+]
 
 # Don't pull the predefined git repos
 #predefined_repos = false
