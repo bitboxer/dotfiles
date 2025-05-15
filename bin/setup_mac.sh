@@ -17,6 +17,7 @@ brews=(
   difftastic
   antidote
   lazygit
+  yazi
 )
 
 brew analytics off

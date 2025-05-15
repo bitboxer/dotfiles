@@ -124,3 +124,12 @@ alias im="iex -S mix"
 
 alias ls="eza --git"
 alias cop="git add -N .; git diff --name-only | xargs bundle exec rubocop --fix"
+
+function y() {
+  local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+  yazi "$@" --cwd-file="$tmp"
+  if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+    builtin cd -- "$cwd"
+  fi
+  rm -f -- "$tmp"
+}
