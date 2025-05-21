@@ -1,2 +1,0 @@
-# This is needed for Cmd-R history search in irb
-bind "^R" em-inc-search-prev

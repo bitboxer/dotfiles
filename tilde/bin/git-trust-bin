@@ -1,4 +1,0 @@
-#!/bin/sh
-
-echo "✨ Trusting this repo now ✨"
-mkdir -p .git/safe
